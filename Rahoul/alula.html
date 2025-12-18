@@ -1,0 +1,716 @@
+<!DOCTYPE html> <!-- تعريف نوع مستند HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية واتجاه من اليمين لليسار -->
+<head> <!-- بداية قسم الرأس الذي يحتوي الإعدادات العامة للصفحة -->
+    <meta charset="UTF-8"> <!-- تحديد ترميز الحروف ليكون UTF-8 لدعم العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل الصفحة متجاوبة مع الشاشات المختلفة -->
+    <title>العُلا | أرض التاريخ الساحر والطبيعة التي لا تُنسى</title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجية CSS -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية قسم الرأس -->
+<body> <!-- بداية جسم الصفحة الذي يحتوي المحتوى الظاهر للمستخدم -->
+
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel --> <!-- تعليق: بداية قسم السلايدر/الكاروusel -->
+<div class="carousel"> <!-- حاوية الكاروسيل الرئيسية -->
+    <img src="images/صورة العلا الرئسية.jpeg" class="active" alt="العلا " style="height: 750px; object-fit: cover;"> <!-- صورة الخلفية الرئيسية للكاروسيل مع ارتفاع ثابت وتعبئة كاملة -->
+    <div class="carousel-text"><h2 class="titleright title">العُلا </h2><p class="p">حيث يتناغم عبق التاريخ مع سحر الطبيعة </p>  </div> <!-- نص فوق الصورة: عنوان ووصف قصير -->
+</div> <!-- نهاية الكاروسيل -->
+
+<section class="container"> <!-- مقطع يحتوي نبذة عن العلا داخل كونتينر منسق -->
+  <h1 class="titleright">عن العُلا</h1> <!-- عنوان القسم: عن العلا -->
+  <p class="titleright read-more-text"> <!-- فقرة الوصف مع كلاس للتحكم واتساع خاص بالقراءة المزيد -->
+اكتشف العلا، جوهرة الصحراء الشمالية الغربية التي تحتضن تاريخًا يمتد لما يقارب 7000 سنة، بتناغم ساحر بين الصخورالشاهقة والواحات الخضراء.    <!-- نص أول عن وصف عام للعلا -->
+<br>       تأمل مدائن صالح، أول موقع سعودي على قائمة اليونسكو للتراث العالمي، واستمتع بتكوينات صخرية مذهلة مثل صخرة الفيل الشاهقة التي ترتفع 52 مترًا، <!-- سطر جديد يصف مدائن صالح وصخرة الفيل -->
+    <br> وتجوّل في واحة العلا الغنية بالنخيل أو انطلق في مغامرات بين الكثبان الذهبية والتضاريس الفريدة. <!-- سطر جديد يصف الواحة والمغامرات في العلا -->
+    <span class="dots">...</span> <!-- جزء يظهر نقاط (...) عند طي النص قبل "اقرأ المزيد" -->
+    <span class="more"> <!-- جزء مخفي يُعرض عند الضغط على زر "اقرأ المزيد" -->
+        في سبتمبر، عش أجواء مهرجان العلا للفنون والموسيقى 
+      <br> 
+      واستمتع بالإقامة في منتجعات فاخرة مثل بانيان تري العلا وهابيتاس العلا، لتجربة تجمع بين التاريخ والطبيعة والفخامة في قلب الصحراء.
+    </span> <!-- نهاية النص الإضافي المخفي -->
+  </p> <!-- نهاية فقرة نبذة عن العلا -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر يغيّر حالة النص بين الإخفاء والإظهار باستدعاء دالة toggleText -->
+</section> <!-- نهاية قسم "عن العلا" -->
+
+
+<!-- ابرزالفعاليات --> <!-- تعليق: بداية قسم أبرز الفعاليات -->
+<section class="container"id="rh-events-section"> <!-- حاوية القسم داخل كونتينر -->
+    <h2 class="titleright">أبرزالفعاليات</h2>      <!-- عنوان القسم: أبرز الفعاليات -->
+    <div class="slider-wrapper"> <!-- حاوية للسلايدر الذي يحتوي كروت الفعاليات -->
+
+        <button class="slide-btn left">&#10094;</button> <!-- زر التنقل للسلايدر إلى اليسار (السهم الأيمن بصرياً في RTL) -->
+
+        <div class="cards-track"> <!-- مسار الكروت التي تتحرك أفقياً في السلايدر -->
+
+        <div class="card" data-id="مهرجان سماء العلا" data-link="https://www.experiencealula.com/ar/alula-moments/alula-skies-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت فعالية: يحتوي بيانات تعريفية ورابط -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة الكرت للمفضلة -->
+            <img src="images/مهرجان سماء العلا.jpeg" alt=""> <!-- صورة للفعالية -->
+            <div class="card-body"> <!-- جسم الكرت الذي يحتوي النصوص والأزرار -->
+                <div class="card-title">مهرجان سماء العلا</div> <!-- عنوان الفعالية -->
+                <div class="card-text"> تجربة ساحرة حيث تحلّق المناطيد بين صخور الصحراء التاريخية، وتتلألأ السماء بألوان ساحرة</div> <!-- وصف مختصر للفعالية -->
+                <a href="https://www.experiencealula.com/ar/alula-moments/alula-skies-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد</a> <!-- زر رابط لصفحة تفاصيل الفعالية -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت الفعالية الأولى -->
+
+        <div class="card" data-id="شتاء طنطورة العلا" data-link="https://www.experiencealula.com/ar/whats-on/festivals/winter-at-tantora?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت فعالية شتاء طنطورة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/شتاء طنطورة.jpeg" alt=""> <!-- صورة الفعالية -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">شتاء طنطورة</div> <!-- عنوان الفعالية -->
+                <div class="card-text">احتفال شتوي يجمع الموسيقى والفن والطعام والعروض التراثية في قلب العُلا</div> <!-- وصف موجز -->
+                <a href="https://www.experiencealula.com/ar/whats-on/festivals/winter-at-tantora?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت شتاء طنطورة -->
+
+        <div class="card" data-id="سباق لهيب العلا" data-link="https://www.experiencealula.com/ar/whats-on/events/alula-desert-blaze?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت فعالية سباق لهيب العلا -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/سباق لهيب العلا.jpeg" alt=""> <!-- صورة الفعالية -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">سباق لهيب العلا</div> <!-- عنوان الفعالية -->
+                <div class="card-text">سباق صحراوي عالمي يمر عبر واحات وكثبان العُلا والمواقع الأثرية، ويشمل مسافات من 5 كم حتى الماراثون الكامل</div> <!-- وصف الفعالية -->
+                <a href="https://www.experiencealula.com/ar/whats-on/events/alula-desert-blaze?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت سباق لهيب العلا -->
+
+        <div class="card" data-id="مهرجان الممالك االعلا" data-link="https://www.experiencealula.com/ar/alula-moments/ancient-kingdoms-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت مهرجان الممالك القديمة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/مهرجان الممالك القديمة.jpeg" alt=""> <!-- صورة المهرجان -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">مهرجان الممالك القديمة</div> <!-- عنوان الفعالية -->
+                <div class="card-text">احتفال سنوي بالتراث والتاريخ في العُلا، يتيح للجمهور استكشاف المواقع الأثرية والاستمتاع بالعروض الضوئية</div> <!-- وصف موجز -->
+                <a href="https://www.experiencealula.com/ar/alula-moments/ancient-kingdoms-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت مهرجان الممالك القديمة -->
+
+        <div class="card" data-id="مهرجان العُلا للاستجمام" data-link="https://www.experiencealula.com/ar/alula-moments/alula-wellness-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت مهرجان الاستجمام -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/مهرجان العُلا للاستجمام والعافية.jpeg" alt=""> <!-- صورة الفعالية -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">مهرجان العلا للاستجمام والاسترخاء</div> <!-- عنوان الفعالية -->
+                <div class="card-text">فعالية سنوية تركز على الاسترخاء والصحة النفسية، وتشمل التأمل، اليوغا، تمارين اللياقة وتجارب رفاهية في مواقع طبيعية</div> <!-- وصف موجز -->
+                <a href="https://www.experiencealula.com/ar/alula-moments/alula-wellness-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت مهرجان الاستجمام -->
+
+        <div class="card" data-id="بطولة كأس الفرسان للقدرة والتحمّل" data-link="https://www.experiencealula.com/ar/whats-on/events/alfursan-endurance-alula?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت بطولة الفرسان للقدرة والتحمل -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/بطولة كأس خادم الحرمين الشريفين الدولية للقدرة والتحمل.jpeg" alt=""> <!-- صورة البطولة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">بطولة كأس الفرسان للقدرة والتحمّل</div> <!-- عنوان الفعالية -->
+                <div class="card-text">بطولة كأس خادم الحرمين الدولية للقدرة والتحمل: سباق سنوي للخيول في صحراء ومواقع العُلا التاريخية</div> <!-- وصف البطولة -->
+                <a href="https://www.experiencealula.com/ar/whats-on/events/alfursan-endurance-alula?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت بطولة الفرسان -->
+
+        <div class="card" data-id="طواف العل" data-link="https://www.experiencealula.com/ar/alula-moments/sports-events-in-alula/alula-tour?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت طواف العلا -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/طواف العلا.jpeg" alt=""> <!-- صورة الطواف -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">طواف العلا</div> <!-- عنوان الفعالية -->
+                <div class="card-text">سباق دراجات هوائية سنوي متعدد المراحل في صحراء العُلا، يمر عبر المواقع الأثرية والطبيعة الصحراوية الخلابة</div> <!-- وصف الفعالية -->
+                <a href="https://www.experiencealula.com/ar/alula-moments/sports-events-in-alula/alula-tour?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت طواف العلا -->
+
+        </div> <!-- نهاية مسار الكروت للفعاليات -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر التنقل للسلايدر إلى اليمين -->
+
+    </div> <!-- نهاية حاوية السلايدر -->
+</section> <!-- نهاية قسم أبرز الفعاليات -->
+
+
+
+<!--  تجارب و المغامرات  --> <!-- تعليق: بداية قسم التجارب والمغامرات -->
+<section class="container"> <!-- حاوية القسم داخل كونتينر -->
+    <h2 class="titleright">التجارب و المغامرات</h2>      <!-- عنوان القسم: التجارب والمغامرات -->
+    <div class="slider-wrapper"> <!-- حاوية السلايدر الخاص بالتجارب -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تنقل إلى اليسار -->
+
+        <div class="cards-track"> <!-- مسار كروت التجارب -->
+
+        <div class="card" data-id="المنطاد" data-link="https://ksa.heroballoonflights.com/ar?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت تجربة رحلات المناطيد -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/المنطاد.jpeg" alt="المنطاد"> <!-- صورة المنطاد -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp>رحلات المناطيد في العلا</samp><span style="margin-right:130px;"> من 1,295 ريال  </span></div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">رحلة تحلّق بك بهدوء فوق جبال العُلا الذهبية ووديانها الواسعة، لتكشف لك سحر الصحراء ومعالمها التاريخية</div> <!-- وصف التجربة -->
+                <a href="https://ksa.heroballoonflights.com/ar?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn btn-background ">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت المنطاد -->
+
+        <div class="card" data-id="زيبلاين العلا" data-link="https://tickets.experiencealula.com/ar/experiences/alula-zipline-experience?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت تجربة زيبلاين العلا -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/زيبلاين العلا.jpeg" alt="زيبلاين العلا"> <!-- صورة الزيبلاين -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp>تجربة زيبلاين العلا</samp><samp style="margin-right:160px;">من 180 ريال</samp></div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">انزلق بسرعة بين الجبال والوديان واستمتع بإثارة المغامرة والمناظر الخلابة للصحراء والتكوينات الصخرية المدهشة</div> <!-- وصف التجربة -->
+                <a href="https://tickets.experiencealula.com/ar/experiences/alula-zipline-experience?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت زيبلاين -->
+
+        <div class="card" data-id="أرجوحة العلا العملاقة" data-link="https://tickets.experiencealula.com/ar/experiences/giant-rope-swing?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت أرجوحة العلا العملاقة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/أرجوحة العلا العملاقة.jpeg" alt="أرجوحة العلا العملاقة"> <!-- صورة الأرجوحة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp>ارجوحة العلا العملاقة</samp><samp style="margin-right:155px;">من 250 ريال</samp></div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">تجربة مليئة بالإثارة، تتأرجح فوق تضاريس الصحراء والوادي العميق لتعيش لحظات من المغامرة والمتعة</div> <!-- وصف التجربة -->
+                <a href="https://tickets.experiencealula.com/ar/experiences/giant-rope-swing?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت الأرجوحة -->
+
+        <div class="card" data-id="مساء الحجر" data-link="https://tickets.experiencealula.com/ar/experiences/hegra-after-dark?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound&date=2025-12-03"> <!-- كرت تجربة مساء الحِجر -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/مساء الحجر.jpeg" alt="مساء الحجر"> <!-- صورة التجربة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp> مساء الحِجر </samp><samp style="margin-right:180px;">من 70 ريال</samp></div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">تجربة مسائية ساحرة في الحِجر الأثري، مع أضواء على الصخور القديمة وعروض موسيقية وفنية بين التاريخ والطبيعة</div> <!-- وصف التجربة -->
+                <a href="https://tickets.experiencealula.com/ar/experiences/hegra-after-dark?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound&date=2025-12-03" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت مساء الحِجر -->
+
+        <div class="card" data-id="سلم العلا" data-link="https://tickets.experiencealula.com/ar/experiences/alula-stairway?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت تجربة سلم العلا -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/سلم العلا.jpeg" alt="سلم العلا"> <!-- صورة التجربة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp>  سلّم العُلا </samp><samp style="margin-right:195px;"></samp>من 150 ريال</div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">تسلق سلمًا معلّقًا 45 مترًا في قلب العُلا، ثم انزلق عبر زيبلاين 100 متر فوق المناظر الصحراوية الخلابة إلى الوادي</div> <!-- وصف التجربة -->
+                <a href="https://tickets.experiencealula.com/ar/experiences/alula-stairway?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت سلم العلا -->
+
+        <div class="card" data-id="جولة بلدة العلا القديمة" data-link="https://tickets.experiencealula.com/ar/experiences/old-town-day-tour?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت جولة البلدة القديمة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/جولة بلدة العلا القديمة.jpeg" alt="جولة بلدة العلا القديمة"> <!-- صورة الجولة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp>  جولة بلدة العلا القديمة</samp><samp style="margin-right:160px;"></samp>من 70 ريال</div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">تجربة تعرّف الزائر على تاريخ وتراث العُلا من خلال التجول في المنازل التقليدية والأسواق القديمة والمباني الحجرية العريقة</div> <!-- وصف التجربة -->
+                <a href="https://tickets.experiencealula.com/ar/experiences/old-town-day-tour?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت جولة البلدة القديمة -->
+
+        <div class="card" data-id="قصص من السماء - عرض طائرات الدرون" data-link="https://tickets.experiencealula.com/ar/experiences/hegra-drone-show?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت عرض طائرات الدرون -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/قصص من السماء - عرض طائرات الدرون.jpeg" alt="قصص من السماء - عرض طائرات الدرون"> <!-- صورة العرض -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp>  قصص من السماء - عرض طائرات الدرون </samp><samp style="margin-right:70px;">من 35 ريال</samp></div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">تجربة مذهلة تحلق بك إلى عالم الإبداع، حيث ترسم طائرات الدرون عروضًا ضوئية مذهلة في السماء تروي قصصًا ساحرة</div> <!-- وصف التجربة -->
+                <a href="https://tickets.experiencealula.com/ar/experiences/hegra-drone-show?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn"> احجزالان </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت عرض طائرات الدرون -->
+
+        <div class="card" data-id="جولة سيارات الاندروفر الكلاسيكية في دادان وجبل عكمة" data-link="https://tickets.experiencealula.com/ar/experiences/dadan-vintage-landrover-tour?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound&date=2025-12-08"> <!-- كرت جولة اللاندروفر الكلاسيكية -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/جولة سيارات الاندروفر الكلاسيكية في دادان وجبل عكمة.jpeg" alt="جولة سيارات الاندروفر الكلاسيكية في دادان وجبل عكمة"> <!-- صورة الجولة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"><samp> جولة سيارات الاندروفر الكلاسيكية   </samp><samp style="margin-right:100px;"> من 500 ريال </samp></div> <!-- عنوان التجربة مع السعر -->
+                <div class="card-text">جولة ممتعة بسيارات اللاندروفر الكلاسيكية لاستكشاف آثار دادان العريقة ونقوش جبل عكمة وسط طبيعة العلا الساحرة </div> <!-- وصف التجربة -->
+                <a href="https://tickets.experiencealula.com/ar/experiences/dadan-vintage-landrover-tour?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound&date=2025-12-08" class="btn"> احجزالان </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت جولة اللاندروفر -->
+
+        </div> <!-- نهاية مسار الكروت للتجارب -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر التنقل للسلايدر إلى اليمين -->
+    </div> <!-- نهاية حاوية السلايدر -->
+</section> <!-- نهاية قسم التجارب والمغامرات -->
+
+
+<!-- اشهر خيارات الإقامة  --> <!-- تعليق: بداية قسم أشهر خيارات الإقامة -->
+<section class="container" id="rh-accommodation-section"> <!-- حاوية القسم داخل كونتينر -->
+    <h2 class="titleright">اشهر خيارات الإقامة</h2>      <!-- عنوان القسم: أشهر خيارات الإقامة -->
+    <div class="slider-wrapper"> <!-- حاوية السلايدر الخاص بالإقامة -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر السلايدر جهة اليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- مسار كروت أماكن الإقامة -->
+
+        <div class="card" data-id="منتجع Caravan AlUla by Our Habitas" data-link="https://www.booking.com/hotel/sa/caravan-by-habitas-alula.ar.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&nflt=sth%3D358&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763583012&srpvid=8a258dcb394d061e&type=total&ucfs=1&"> <!-- كرت لمكان الإقامة Caravan AlUla -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/منتجع Caravan AlUla by Our Habitas.jpeg" alt="منتجع Caravan AlUla by Our Habitas"> <!-- صورة المنتجع -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">   Caravan AlUla by Our Habitas</div> <!-- اسم مكان الإقامة -->
+                <div class="card-text">  يقدم إقامة فاخرة في كرفانات أريستريم وسط طبيعة العلا الصحراوية لتجربة هادئة ومميزة تحت السماء المفتوحة </div> <!-- وصف قصير عن المنتجع -->
+                <a href="https://www.booking.com/hotel/sa/caravan-by-habitas-alula.ar.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&nflt=sth%3D358&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763583012&srpvid=8a258dcb394d061e&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز في Booking -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت Caravan AlUla -->
+
+        <div class="card" data-id="منتج Banyan Tree AlUla" data-link="https://www.booking.com/hotel/sa/banyan-tree-alula.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=9102195&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584544&srpvid=00c590cad6670635&type=total&ucfs=1&"> <!-- كرت منتجع Banyan Tree AlUla -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/منتج Banyan Tree AlUla.jpeg" alt="منتج Banyan Tree AlUla"> <!-- صورة المنتجع -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">  Banyan Tree AlUla </div> <!-- اسم مكان الإقامة -->
+                <div class="card-text"> منتجع فاخر في وادي عشار يقدم خيامًا وصروحًا مصممة بيئيًا وسط الصحراء مع سبا ومرافق راقية لتجربة هادئة وفاخرة </div> <!-- وصف المنتجع -->
+                <a href="https://www.booking.com/hotel/sa/banyan-tree-alula.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=9102195&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584544&srpvid=00c590cad6670635&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت Banyan Tree -->
+
+        <div class="card" data-id="منتجعCloud 7 Residence AlUla" data-link="https://www.booking.com/hotel/sa/cloud7-residences-alula-alula-city.html?aid=356980&label=gog235jc-10CAsoxAFCImNsb3VkNy1yZXNpZGVuY2VzLWFsdWxhLWFsdWxhLWNpdHlICVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKG1_jIBsACAdICJDNlZGIzZmE2LWQ5MDYtNDk2ZC04NzFmLTdmZDhkYWJhZmM4Y9gCAeACAQ&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584910&srpvid=5ac19183a6cb0836&type=total&ucfs=1&"> <!-- كرت منتجع Cloud 7 Residence AlUla -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/منتجعCloud 7 Residence AlUla.jpeg" alt="منتجعCloud 7 Residence AlUla"> <!-- صورة المنتجع -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">  Cloud 7 Residence AlUla   </div> <!-- اسم مكان الإقامة -->
+                <div class="card-text"> إقامة عصرية ومريحة في بونغالو به تراس ومطبخ صغير، ضمن مجتمع هادئ في العُلا مع مرافق مثل مسبح وصالة لياقة. </div> <!-- وصف المنتجع -->
+                <a href="https://www.booking.com/hotel/sa/cloud7-residences-alula-alula-city.html?aid=356980&label=gog235jc-10CAsoxAFCImNsb3VkNy1yZXNpZGVuY2VzLWFsdWxhLWFsdWxhLWNpdHlICVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKG1_jIBsACAdICJDNlZGIzZmE2LWQ5MDYtNDk2ZC04NzFmLTdmZDhkYWJhZmM4Y9gCAeACAQ&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584910&srpvid=5ac19183a6cb0836&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت Cloud 7 -->
+
+        <div class="card" data-id="منتجعOur Habitas AlUla" data-link="https://www.booking.com/hotel/sa/habitas-alula-resort.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763587033&srpvid=42cc8fa1d59e0776&type=total&ucfs=1&"> <!-- كرت Our Habitas AlUla -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/منتجعOur Habitas AlUla.jpeg" alt="منتجعOur Habitas AlUla"> <!-- صورة المنتجع -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Our Habitas AlUla </div> <!-- اسم المنتجع -->
+                <div class="card-text"> منتجع فاخر مستدام في وادي عشار بالعُلا يقدم فيلات أنيقة مع سبا، مسبح، وأنشطة عافية وسط الطبيعة والتاريخ  </div> <!-- وصف المنتجع -->
+                <a href="https://www.booking.com/hotel/sa/habitas-alula-resort.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763587033&srpvid=42cc8fa1d59e0776&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت Our Habitas -->
+
+        <div class="card" data-id="منتجع Shaden Resort AlUla" data-link="https://www.booking.com/hotel/sa/mntj-shdn.html?aid=356980&label=gog235jc-10CAsoxAFCCW1udGotc2hkbkgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AuDX-MgGwAIB0gIkOWQzM2NkMTAtN2E4Mi00NTExLWFhOGMtOTQxNmIwMjNkOTk22AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584999&srpvid=faf391b0ef1603bd&type=total&ucfs=1&"> <!-- كرت Shaden Resort -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/منتجع Shaden Resort AlUla.jpeg" alt="منتجع Shaden Resort AlUla"> <!-- صورة المنتجع -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Shaden Resort AlUla </div> <!-- اسم المنتجع -->
+                <div class="card-text">منتجع راقٍ يجمع بين التصميم العربي والفخامة الحديثة، غرف وفيلات، سبا، ومرافق ترفيهية وسط الطبيعة الصحراوية </div> <!-- وصف المنتجع -->
+                <a href="https://www.booking.com/hotel/sa/mntj-shdn.html?aid=356980&label=gog235jc-10CAsoxAFCCW1udGotc2hkbkgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AuDX-MgGwAIB0gIkOWQzM2NkMTAtN2E4Mi00NTExLWFhOGMtOTQxNmIwMjNkOTk22AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584999&srpvid=faf391b0ef1603bd&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت Shaden -->
+
+        <div class="card" data-id="Dar Tantora The House Hotel" data-link="https://www.booking.com/hotel/sa/dar-tantora-the-house.html?aid=356980&label=gog235jc-10CAsoxAFCFWRhci10YW50b3JhLXRoZS1ob3VzZUgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atfj-MgGwAIB0gIkYTVkZjljYTktMDI5Mi00YmJkLWI0N2ItMDI1MjAxNWQ2NmVk2AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763586588&srpvid=af4094acb7b903eb&type=total&ucfs=1&"> <!-- كرت Dar Tantora The House Hotel -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/Dar Tantora The House Hotel.jpeg" alt="Dar Tantora The House Hotel"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Dar Tantora The House Hotel </div> <!-- اسم الفندق -->
+                <div class="card-text"> منتجع تراثي فخم في قلب البلدة القديمة بالعُلا يوفر أجنحة فاخرة، سبا، مسبح، وتجربة ثقافية أصيلة </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/dar-tantora-the-house.html?aid=356980&label=gog235jc-10CAsoxAFCFWRhci10YW50b3JhLXRoZS1ob3VzZUgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atfj-MgGwAIB0gIkYTVkZjljYTktMDI5Mi00YmJkLWI0N2ItMDI1MjAxNWQ2NmVk2AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763586588&srpvid=af4094acb7b903eb&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت Dar Tantora -->
+
+        <div class="card" data-id="Ashar Tented Resort" data-link="https://www.booking.com/hotel/sa/mntj-wd-shr-l-l.html?aid=356980&label=gog235jc-10CAsoxAFCD21udGotd2Qtc2hyLWwtbEgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4At_q-MgGwAIB0gIkNDhiMTZkMzQtYmY0ZS00NTAxLTg3MTMtNmMxNTFmOTc1Zjcx2AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763587433&srpvid=27c0967008f50195&type=total&ucfs=1&"> <!-- كرت Ashar Tented Resort -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/Ashar Tented Resort.jpeg" alt="Ashar Tented Resort"> <!-- صورة المنتجع -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Ashar Tented Resort </div> <!-- اسم المنتجع -->
+                <div class="card-text"> منتجع خيام فاخرة في وادي عشار بالعُلا يقدم إقامة مريحة مع سبا، مسبح، وإطلالات صحراوية خلابة </div> <!-- وصف المنتجع -->
+                <a href="https://www.booking.com/hotel/sa/mntj-wd-shr-l-l.html?aid=356980&label=gog235jc-10CAsoxAFCD21udGotd2Qtc2hyLWwtbEgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4At_q-MgGwAIB0gIkNDhiMTZkMzQtYmY0ZS00NTAxLTg3MTMtNmMxNTFmOTc1Zjcx2AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763587433&srpvid=27c0967008f50195&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت Ashar Tented Resort -->
+
+        <div class="card" data-id="The Chedi Hegra, AlUla" data-link="https://www.booking.com/hotel/sa/the-chedi-hegra-alula.html?aid=356980&label=gog235jc-10CAsoxAFCFXRoZS1jaGVkaS1oZWdyYS1hbHVsYUgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AuDv-MgGwAIB0gIkNTRiMGI1ZmYtODg5MS00YTY1LThkZWMtMjhiZmUwYjA3MzA52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763588071&srpvid=a80397b05d720235&type=total&ucfs=1&"> <!-- كرت The Chedi Hegra -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/The Chedi Hegra, AlUla.jpeg" alt="The Chedi Hegra, AlUla"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">The Chedi Hegra, AlUla  </div> <!-- اسم الفندق -->
+                <div class="card-text"> منتجع فاخر في موقع هيغرا بالعُلا يجمع بين التراث والرفاهية مع غرف وأجنحة مطلة على الصحراء </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/the-chedi-hegra-alula.html?aid=356980&label=gog235jc-10CAsoxAFCFXRoZS1jaGVkaS1oZWdyYS1hbHVsYUgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AuDv-MgGwAIB0gIkNTRiMGI1ZmYtODg5MS00YTY1LThkZWMtMjhiZmUwYjA3MzA52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763588071&srpvid=a80397b05d720235&type=total&ucfs=1&" class="btn">احجزالان   </a> <!-- زر الحجز -->
+            </div> <!-- نهاية جسم الكرت -->
+      </div> <!-- نهاية آخر كرت في هذا المسار -->
+
+     </div> <!-- نهاية مسار كروت أماكن الإقامة -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك السلايدر إلى اليمين -->
+    </div> <!-- نهاية حاوية السلايدر لأماكن الإقامة -->
+</section> <!-- نهاية قسم أشهر خيارات الإقامة -->
+
+<!-- الانشطة السياحة -->
+<section class="container" id="rh-activities-section"> <!-- حاوية قسم الأنشطة السياحية -->
+    <h2 class="titleright"> الانشطة السياحة</h2>      <!-- عنوان القسم: الأنشطة السياحية -->
+    <div class="slider-wrapper"> <!-- حاوية السلايدر -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر السلايدر لليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- مسار كروت الأنشطة السياحية -->
+
+        <div class="card" data-id="كرت الحجر" data-link="http://experiencealula.com/ar/places-to-go/hegra?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_hegra&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g165DKtV72wUHEJd4tt-szGL0C_qh1QZmnWnrbzMTREHwwMjzb7DCBoCuGAQAvD_BwE"> <!-- كرت نشاط: موقع الحِجر -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/صورة كرت الحجر.jpeg" alt="صورة كرت الحجر"> <!-- صورة الحِجر -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">الحجر</div> <!-- عنوان النشاط -->
+                <div class="card-text"> الحِجر موقع أثري نبطّي فريد يضم مقابر وقصورًا منحوتة في الجبال، ويُعد من أهم مواقع اليونسكو في السعودية</div> <!-- وصف النشاط -->
+                <a href="http://experiencealula.com/ar/places-to-go/hegra?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_hegra&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g165DKtV72wUHEJd4tt-szGL0C_qh1QZmnWnrbzMTREHwwMjzb7DCBoCuGAQAvD_BwE" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت الحِجر -->
+
+        <div class="card" data-id="ميدان المنشية" data-link="https://www.experiencealula.com/ar/places-to-go/almanshiyah-plaza"> <!-- كرت ميدان المنشية -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/ميدان المنشية.jpeg" alt="ميدان المنشية"> <!-- صورة الميدان -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">المنشية بلازا</div> <!-- عنوان النشاط -->
+                <div class="card-text">ميدان المنشية ساحة تاريخية نابضة بالحياة تشتهر بتجمعاتها الشعبية وأسواقها وأنشطتها الثقافية </div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/almanshiyah-plaza" class="btn"> اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت المنشية -->
+
+        <div class="card" data-id="كرت البلدة القديمة" data-link="https://www.experiencealula.com/ar/places-to-go/alula-old-town"> <!-- كرت البلدة القديمة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/صورت كرت البلدة القديمة.jpeg" alt="صورت كرت البلدة القديمة"> <!-- صورة البلدة القديمة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">البلدة القديمة</div> <!-- عنوان النشاط -->
+                <div class="card-text">البلدة القديمة في العُلا موقع تراثي يضم بيوتًا طينية وأزقة تاريخية تعكس حياة العُلا القديمة بروحها الأصيلة </div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/alula-old-town" class="btn">اعرف المزيد </a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت البلدة القديمة -->
+
+        <div class="card" data-id=" كرت جبل الفيل" data-link="https://www.experiencealula.com/ar/places-to-go/elephant-rock"> <!-- كرت جبل الفيل -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/صورت كرت جبل الفيل.jpeg" alt="صورت كرت جبل الفيل"> <!-- صورة جبل الفيل -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">جبل الفيل</div> <!-- عنوان النشاط -->
+                <div class="card-text">جبل الفيل معلم طبيعي شهير , صخرة عملاقة على شكل فيل نُحتت طبيعيًا عبر الزمن وسط منظر صحراوي مذهل</div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/elephant-rock" class="btn">اعرف المزيد </a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت جبل الفيل -->
+
+        <div class="card" data-id="تأمّل النجوم العلا" data-link="https://www.experiencealula.com/ar/about/features/worlds-best-place-for-stargazing"> <!-- كرت تأمل النجوم -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/تأمّل النجوم العلا.jpeg" alt="تأمّل النجوم العلا"> <!-- صورة النشاط -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">تأمّل النجوم العلا</div> <!-- عنوان النشاط -->
+                <div class="card-text"> تأمّل النجوم في العُلا تجربة ليلية فريدة لمراقبة السماء الصافية والنجوم المتلألئة وسط صحراء هادئة وتكوينات صخرية مذهلة</div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/about/features/worlds-best-place-for-stargazing" class="btn">اعرف المزيد </a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت تأمل النجوم -->
+
+        <div class="card" data-id="حي الجديدة للفنون" data-link="https://www.experiencealula.com/ar/places-to-go/aljadidah-arts-district?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_aljadidaharts&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-gxmk7JSnsPaQuYh4JSLe__WhvYumlMRSk1KiAunaRTK-nXfA2qetExoCvRoQAvD_BwE"> <!-- كرت حي الجديدة للفنون -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/حي الجديدة للفنون.jpeg" alt="حي الجديدة للفنون"> <!-- صورة الحي -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">حي الجديدة للفنون</div> <!-- عنوان النشاط -->
+                <div class="card-text">حي الجديدة للفنون بالعُلا مساحة إبداعية تجمع المعارض، الورش الفنية، والفعاليات الثقافية لتعزيز الفن المحلي والمعاصر</div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/aljadidah-arts-district?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_aljadidaharts&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-gxmk7JSnsPaQuYh4JSLe__WhvYumlMRSk1KiAunaRTK-nXfA2qetExoCvRoQAvD_BwE" class="btn">اعرف المزيد</a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت حي الجديدة -->
+
+        <div class="card" data-id="دادان الأثري العلا" data-link="https://www.experiencealula.com/ar/places-to-go/dadan?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_dadan&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE"> <!-- كرت دادان الأثري -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/دادان الأثري العلا.jpeg" alt="  دادان الأثري العلا "> <!-- صورة الموقع -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> دادان الأثري </div> <!-- عنوان النشاط -->
+                <div class="card-text">موقع دادان الأثري وجبل عِكمة معالم أثرية ونقوش صخرية تحكي تاريخ وحضارة العُلا القديمة </div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/dadan?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_dadan&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE" class="btn">اعرف المزيد </a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت دادان -->
+
+        <div class="card" data-id="جبل عكمة العلا" data-link="https://www.experiencealula.com/ar/places-to-go/jabal-ikmah?_gl=1*1wqva68*_up*MQ..*_gs*MQ..&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&utm_source=google&utm_medium=search&utm_campaign=cn%7Ealulanewalwayson_ch%7Esearch_mk%7Esa&utm_content=brandvariation_dadan&utm_term=ag%7Ealulanewalwayson_mk%7Esa_lg%7Ear&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE"> <!-- كرت جبل عكمة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/جبل عكمة العلا.jpeg" alt=" جبل عكمة العلا   "> <!-- صورة جبل عكمة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">  جبل عِكمة</div> <!-- عنوان النشاط -->
+                <div class="card-text"> جبل عِكمة: موقع تاريخي يُعرف بـ"مكتبة العلا المفتوحة" لاحتوائه على نقوش ثمودية ولحيانية نادرة تعود لآلاف السنين </div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/jabal-ikmah?_gl=1*1wqva68*_up*MQ..*_gs*MQ..&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&utm_source=google&utm_medium=search&utm_campaign=cn%7Ealulanewalwayson_ch%7Esearch_mk%7Esa&utm_content=brandvariation_dadan&utm_term=ag%7Ealulanewalwayson_mk%7Esa_lg%7Ear&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE" class="btn">اعرف المزيد </a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت جبل عكمة -->
+
+        <div class="card" data-id="وادي الفن" data-link="https://www.experiencealula.com/ar/places-to-go/wadi-alfann"> <!-- كرت وادي الفن -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/وادي الفن.jpeg" alt="وادي الفن"> <!-- صورة الوادي -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">وادي الفن</div> <!-- عنوان النشاط -->
+                <div class="card-text">موقع دادان الأثري وجبل عِكمة معالم أثرية ونقوش صخرية تحكي تاريخ وحضارة العُلا القديمة</div> <!-- وصف (قد يحتاج تعديل لأنه مكرر من دادان) -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/wadi-alfann" class="btn">اعرف المزيد </a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت وادي الفن -->
+
+        <div class="card" data-id="قاعة المرايا" data-link="https://www.experiencealula.com/ar/places-to-go/maraya"> <!-- كرت قاعة مرايا -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/قاعة المرايا.jpeg" alt="قاعة المرايا"> <!-- صورة القاعة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title">قاعة مرايا</div> <!-- عنوان النشاط -->
+                <div class="card-text">قاعة مرايا صالة زجاجية مرآية تعكس الجبال المحيطة وتستضيف فعاليات ثقافية وفنية عالمية </div> <!-- وصف النشاط -->
+                <a href="https://www.experiencealula.com/ar/places-to-go/maraya" class="btn">اعرف المزيد </a> <!-- زر اعرف المزيد -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت قاعة مرايا -->
+       
+     </div> <!-- نهاية مسار كروت الأنشطة السياحية -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك السلايدر إلى اليمين -->
+    </div> <!-- نهاية حاوية السلايدر -->
+</section> <!-- نهاية قسم الأنشطة السياحية -->
+
+
+
+<section class="containerimg"> <!-- قسم خاص بالخريطة التفاعلية مع صور جانبية -->
+
+    <h2>الخريطة التفاعلية</h2> <!-- عنوان القسم: الخريطة التفاعلية -->
+
+    <div class="map-wrapper"> <!-- حاوية تضم القائمة الجانبية وصندوق الخريطة -->
+
+        <!-- القائمة الجانبية -->
+        <div class="map-sidebar"> <!-- العمود الجانبي الذي يحتوي كروت المواقع المرتبطة بالخريطة -->
+            <a href="https://www.experiencealula.com/ar/places-to-go/jabal-ikmah?_gl=1*1wqva68*_up*MQ..*_gs*MQ..&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&utm_source=google&utm_medium=search&utm_campaign=cn%7Ealulanewalwayson_ch%7Esearch_mk%7Esa&utm_content=brandvariation_dadan&utm_term=ag%7Ealulanewalwayson_mk%7Esa_lg%7Ear" class="card-link" target="_blank"> <!-- رابط خارجي لموقع جبل عكمة يفتح في تبويب جديد -->
+                <div class="map-card" data-lat="26.688703281480468" data-lng="37.904193789776315" data-name="جبل عكمة " data-zoom="13"> <!-- كرت في القائمة الجانبية مع إحداثيات للموقع -->
+                    <img src="images/جبل عكمة العلا.jpeg" alt="جبل عكمة العلا "> <!-- صورة للموقع -->
+                    <span> جبل عكمة</span> <!-- اسم الموقع أسفل الصورة -->
+                </div> <!-- نهاية كرت جبل عكمة -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://ksa.heroballoonflights.com/ar?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="card-link" target="_blank"> <!-- رابط لرحلات المناطيد -->
+                <div class="map-card" data-lat="26.81868800743913" data-lng="37.9221144060504" data-name="رحلات المناطيد في العلا" data-zoom="12"> <!-- كرت مع إحداثيات رحلات المناطيد -->
+                    <img src="images/المنطاد.jpeg " alt=" المنطاد"> <!-- صورة المنطاد -->
+                    <span>رحلات المناطيد في العلا</span> <!-- اسم الموقع -->
+                </div> <!-- نهاية كرت رحلات المناطيد -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/whats-on/events/alfursan-endurance-alula?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="card-link" target="_blank"> <!-- رابط بطولة الفرسان -->
+                <div class="map-card" data-lat="26.67786758669683" data-lng="37.98774401349402" data-name=" بطولة كأس الفرسان للقدرة والتحمّل" data-zoom="13"> <!-- كرت مع إحداثيات البطولة -->
+                    <img src="images/بطولة كأس خادم الحرمين الشريفين الدولية للقدرة والتحمل.jpeg" alt=" بطولة كأس خادم الحرمين الشريفين الدولية للقدرة والتحمل "> <!-- صورة البطولة -->
+                    <span>بطولة كأس الفرسان للقدرة والتحمّل</span> <!-- اسم الفعالية -->
+                </div> <!-- نهاية كرت بطولة الفرسان -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/places-to-go/elephant-rock" class="card-link" target="_blank"> <!-- رابط جبل الفيل -->
+                <div class="map-card" data-lat="26.68913991214303" data-lng="37.98163443840461" data-name="جبل الفيل " data-zoom="13"> <!-- كرت إحداثيات جبل الفيل -->
+                    <img src="images/صورت كرت جبل الفيل.jpeg" alt="صورت كرت جبل الفيل  "> <!-- صورة جبل الفيل -->
+                    <span> جبل الفيل</span> <!-- اسم الموقع -->
+                </div> <!-- نهاية كرت جبل الفيل -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://tickets.experiencealula.com/ar/experiences/alula-zipline-experience?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="card-link" target="_blank"> <!-- رابط زيبلاين العلا -->
+                <div class="map-card" data-lat="26.675109514261486" data-lng="37.86688681209919" data-name="زيبلاين العلا" data-zoom="16"> <!-- كرت إحداثيات زيبلاين -->
+                    <img src="images/زيبلاين العلا.jpeg" alt="زيبلاين العلا"> <!-- صورة زيبلاين -->
+                    <span>زيبلاين العلا</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت زيبلاين -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://tickets.experiencealula.com/ar/experiences/giant-rope-swing?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="card-link" target="_blank"> <!-- رابط أرجوحة العلا -->
+                <div class="map-card" data-lat="26.676011081704985" data-lng="37.86635227116467" data-name="أرجوحة العلا العملاقة" data-zoom="16"> <!-- كرت إحداثيات الأرجوحة -->
+                    <img src="images/أرجوحة العلا العملاقة.jpeg" alt="أرجوحة العلا العملاقة"> <!-- صورة الأرجوحة -->
+                    <span>أرجوحة العلا العملاقة</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت الأرجوحة -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://tickets.experiencealula.com/ar/experiences/alula-stairway?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="card-link" target="_blank"> <!-- رابط سلم العلا -->
+                <div class="map-card" data-lat="26.674373620667087" data-lng="37.86730550820942" data-name="سلم العلا " data-zoom="16"> <!-- كرت إحداثيات سلم العلا -->
+                    <img src="images/سلم العلا.jpeg" alt="سلم العلا "> <!-- صورة سلم العلا -->
+                    <span>سلم العلا </span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت سلم العلا -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="http://experiencealula.com/ar/places-to-go/hegra?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_hegra&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g165DKtV72wUHEJd4tt-szGL0C_qh1QZmnWnrbzMTREHwwMjzb7DCBoCuGAQAvD_BwE" class="card-link" target="_blank"> <!-- رابط موقع الحِجر -->
+                <div class="map-card" data-lat="26.771486826531927" data-lng="37.94550261561351" data-name=" الحجر" data-zoom="12"> <!-- كرت إحداثيات الحِجر -->
+                    <img src="images/صورة كرت الحجر.jpeg" alt=" صورة كرت الحجر"> <!-- صورة الحِجر -->
+                    <span> الحجر</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت الحِجر -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/places-to-go/almanshiyah-plaza" class="card-link" target="_blank"> <!-- رابط المنشية بلازا -->
+                <div class="map-card" data-lat="26.60252395471255" data-lng="37.9397273619931" data-name="المنشية بلازا " data-zoom="13"> <!-- كرت إحداثيات المنشية بلازا -->
+                    <img src="images/ميدان المنشية.jpeg" alt="ميدان المنشية  "> <!-- صورة الميدان -->
+                    <span> المنشية بلازا</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت المنشية -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/places-to-go/alula-old-town" class="card-link" target="_blank"> <!-- رابط البلدة القديمة -->
+                <div class="map-card" data-lat="26.6250543781188" data-lng="37.915397894192616" data-name="البلدة القديمة " data-zoom="16"> <!-- كرت إحداثيات البلدة القديمة -->
+                    <img src="images/صورت كرت البلدة القديمة.jpeg" alt="صورت كرت البلدة القديمة  "> <!-- صورة البلدة القديمة -->
+                    <span> البلدة القديمة</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت البلدة القديمة -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/places-to-go/aljadidah-arts-district?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_aljadidaharts&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-gxmk7JSnsPaQuYh4JSLe__WhvYumlMRSk1KiAunaRTK-nXfA2qetExoCvRoQAvD_BwE" class="card-link" target="_blank"> <!-- رابط حي الجديدة للفنون -->
+                <div class="map-card" data-lat="26.630632617667796" data-lng="37.91145149422851" data-name="حي الجديدة للفنون " data-zoom="14"> <!-- كرت الإحداثيات -->
+                    <img src="images/حي الجديدة للفنون.jpeg" alt=" حي الجديدة للفنون"> <!-- صورة الحي -->
+                    <span> حي الجديدة للفنون</span> <!-- اسم الحي -->
+                </div> <!-- نهاية كرت حي الجديدة للفنون -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/places-to-go/dadan?utm_source=google&utm_medium=search&utm_campaign=cn~alulanewalwayson_ch~search_mk~sa&utm_term=ag~alulanewalwayson_mk~sa_lg~ar&utm_content=brandvariation_dadan&gad_source=1&gad_campaignid=20641991422&gbraid=0AAAAABjRTcIIR2pfKmHCy2rCdTm05kzHU&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g3SOifU9a5b558BeYxHsgErP1_r0lUPXrT4DZni__JwMOAmW_Pxo4hoCvW4QAvD_BwE" class="card-link" target="_blank"> <!-- رابط دادان -->
+                <div class="map-card" data-lat="26.647149783929958" data-lng="37.91609851931924" data-name="دادان الأثري " data-zoom="13"> <!-- كرت الإحداثيات -->
+                    <img src="images/دادان الأثري العلا.jpeg" alt=" دادان الأثري العلا"> <!-- صورة دادان -->
+                    <span> دادان الأثري</span> <!-- اسم الموقع -->
+                </div> <!-- نهاية كرت دادان الأثري -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/places-to-go/wadi-alfann" class="card-link" target="_blank"> <!-- رابط وادي الفن -->
+                <div class="map-card" data-lat="26.65853570828004" data-lng="38.02369100000001" data-name=" وادي الفن" data-zoom="12"> <!-- كرت الإحداثيات -->
+                    <img src="images/وادي الفن.jpeg" alt=" وادي الفن"> <!-- صورة الوادي -->
+                    <span> وادي الفن</span> <!-- اسم الموقع -->
+                </div> <!-- نهاية كرت وادي الفن -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.experiencealula.com/ar/places-to-go/maraya" class="card-link" target="_blank"> <!-- رابط قاعة المرايا -->
+                <div class="map-card" data-lat="26.74358706876927" data-lng="37.86566894823115" data-name="قاعة المرايا " data-zoom="13"> <!-- كرت الإحداثيات -->
+                    <img src="images/قاعة المرايا.jpeg" alt="قاعة المرايا "> <!-- صورة القاعة -->
+                    <span> قاعة المرايا</span> <!-- اسم القاعة -->
+                </div> <!-- نهاية كرت قاعة المرايا -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/caravan-by-habitas-alula.ar.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&nflt=sth%3D358&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763583012&srpvid=8a258dcb394d061e&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط Caravan AlUla -->
+                <div class="map-card" data-lat="26.757739276501603" data-lng="37.86962730716266" data-name=" Caravan AlUla by Our Habitas " data-zoom="13"> <!-- كرت الإحداثيات -->
+                    <img src="images/منتجع Caravan AlUla by Our Habitas.jpeg" alt="  منتجع Caravan AlUla by Our Habitas  "> <!-- صورة المنتجع -->
+                    <span> Caravan AlUla by Our Habitas </span> <!-- اسم المنتجع -->
+                </div> <!-- نهاية كرت Caravan AlUla -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/mntj-wd-shr-l-l.html?aid=356980&label=gog235jc-10CAsoxAFCD21udGotd2Qtc2hyLWwtbEgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4At_q-MgGwAIB0gIkNDhiMTZkMzQtYmY0ZS00NTAxLTg3MTMtNmMxNTFmOTc1Zjcx2AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763587433&srpvid=27c0967008f50195&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط Ashar Tented Resort -->
+                <div class="map-card" data-lat="26.744584579199948" data-lng="37.849256512954476" data-name=" Ashar Tented Resort" data-zoom="17"> <!-- كرت الإحداثيات -->
+                    <img src="images/Ashar Tented Resort.jpeg" alt="Ashar Tented Resort"> <!-- صورة المنتجع -->
+                    <span> Ashar Tented Resort</span> <!-- اسم المنتجع -->
+                </div> <!-- نهاية كرت Ashar -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/banyan-tree-alula.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=9102195&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584544&srpvid=00c590cad6670635&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط Banyan Tree AlUla -->
+                <div class="map-card" data-lat="26.74373653106269" data-lng="37.849325770420606" data-name=" Banyan Tree AlUla" data-zoom="17"> <!-- كرت الإحداثيات -->
+                    <img src="images/منتج Banyan Tree AlUla.jpeg" alt=" منتجع Banyan Tree AlUla"> <!-- صورة المنتجع -->
+                    <span> Banyan Tree AlUla</span> <!-- اسم المنتجع -->
+                </div> <!-- نهاية كرت Banyan Tree -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/habitas-alula-resort.html?aid=356980&label=gog235jc-10CAMYyAEoxAFCBmFsLXVsYUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AqTH-MgGwAIB0gIkY2ZhMjlhMGEtMTM1NC00MTRmLWEyNGQtNWJiYmNjNDIwMzM52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&nflt=sth%3D358&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763587033&srpvid=42cc8fa1d59e0776&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط Our Habitas -->
+                <div class="map-card" data-lat="26.761981933882566" data-lng="37.858906347489274" data-name=" Our Habitas AlUla" data-zoom="16"> <!-- كرت الإحداثيات -->
+                    <img src="images/منتجعOur Habitas AlUla.jpeg" alt=" منتجعOur Habitas AlUla  "> <!-- صورة المنتجع -->
+                    <span> Our Habitas AlUla</span> <!-- اسم المنتجع -->
+                </div> <!-- نهاية كرت Our Habitas -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/cloud7-residences-alula-alula-city.html?aid=356980&label=gog235jc-10CAsoxAFCImNsb3VkNy1yZXNpZGVuY2VzLWFsdWxhLWFsdWxhLWNpdHlICVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKG1_jIBsACAdICJDNlZGIzZmE2LWQ5MDYtNDk2ZC04NzFmLTdmZDhkYWJhZmM4Y9gCAeACAQ&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584910&srpvid=5ac19183a6cb0836&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط Cloud 7 Residence -->
+                <div class="map-card" data-lat="26.55029106646449" data-lng="37.94317384765408" data-name=" Cloud 7 Residence AlUla" data-zoom="17"> <!-- كرت الإحداثيات -->
+                    <img src="images/منتجعCloud 7 Residence AlUla.jpeg" alt="منتجع Cloud 7 Residence AlUla"> <!-- صورة المنتجع -->
+                    <span> Cloud 7 Residence AlUla</span> <!-- اسم المنتجع -->
+                </div> <!-- نهاية كرت Cloud 7 -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/mntj-shdn.html?aid=356980&label=gog235jc-10CAsoxAFCCW1udGotc2hkbkgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AuDX-MgGwAIB0gIkOWQzM2NkMTAtN2E4Mi00NTExLWFhOGMtOTQxNmIwMjNkOTk22AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763584999&srpvid=faf391b0ef1603bd&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط Shaden Resort -->
+                <div class="map-card" data-lat="26.662180748355677" data-lng="37.96242951415161" data-name=" Shaden Resort AlUla" data-zoom="14"> <!-- كرت الإحداثيات -->
+                    <img src="images/منتجع Shaden Resort AlUla.jpeg" alt=" منتجع Shaden Resort AlUla "> <!-- صورة المنتجع -->
+                    <span> Shaden Resort AlUla </span> <!-- اسم المنتجع -->
+                </div> <!-- نهاية كرت Shaden -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/dar-tantora-the-house.html?aid=356980&label=gog235jc-10CAsoxAFCFWRhci10YW50b3JhLXRoZS1ob3VzZUgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Atfj-MgGwAIB0gIkYTVkZjljYTktMDI5Mi00YmJkLWI0N2ItMDI1MjAxNWQ2NmVk2AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763586588&srpvid=af4094acb7b903eb&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط Dar Tantora -->
+                <div class="map-card" data-lat="26.624467571293756" data-lng="37.9163092191577" data-name=" Dar Tantora The House Hotel" data-zoom="16"> <!-- كرت الإحداثيات -->
+                    <img src="images/Dar Tantora The House Hotel.jpeg" alt=" Dar Tantora The House Hotel"> <!-- صورة الفندق -->
+                    <span> Dar Tantora The House Hotel</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Dar Tantora -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/the-chedi-hegra-alula.html?aid=356980&label=gog235jc-10CAsoxAFCFXRoZS1jaGVkaS1oZWdyYS1hbHVsYUgzWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AuDv-MgGwAIB0gIkNTRiMGI1ZmYtODg5MS00YTY1LThkZWMtMjhiZmUwYjA3MzA52AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3092572&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763588071&srpvid=a80397b05d720235&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط The Chedi Hegra -->
+                <div class="map-card" data-lat="26.810082158996593" data-lng="37.95382803599564" data-name=" The Chedi Hegra, AlUla" data-zoom="14"> <!-- كرت الإحداثيات -->
+                    <img src="images/The Chedi Hegra, AlUla.jpeg" alt=" The Chedi Hegra, AlUla"> <!-- صورة الفندق -->
+                    <span> The Chedi Hegra, AlUla</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت The Chedi -->
+            </a> <!-- نهاية الرابط -->
+
+        </div> <!-- نهاية العمود الجانبي للقائمة -->
+
+        <!-- صندوق الخريطة -->
+        <div id="map" data-first-zoom="10"></div> <!-- عنصر الخريطة الذي سيتم تهيئته بواسطة Leaflet مع زوم ابتدائي 10 -->
+
+    </div> <!-- نهاية حاوية الخريطة والقائمة الجانبية -->
+
+    <!-- مكتبة Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- ربط ملف CSS لمكتبة الخرائط Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- ربط ملف JavaScript لمكتبة Leaflet -->
+
+    <!-- ملف JS واحد لكل الصفحات -->
+    <script src="js/map.js"></script> <!-- ربط ملف JavaScript المخصص للتعامل مع الخريطة في جميع الصفحات -->
+
+</section> <!-- نهاية قسم الخريطة التفاعلية -->
+
+
+
+<footer> <!-- بداية الفوتر (ذيل الصفحة) -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق النشر -->
+    <div> <!-- حاوية روابط مواقع التواصل -->
+        <a href="#">فيسبوك</a> |  <!-- رابط (افتراضي) لفيسبوك -->
+        <a href="#">تويتر</a> |  <!-- رابط (افتراضي) لتويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط (افتراضي) لإنستجرام -->
+    </div> <!-- نهاية حاوية روابط التواصل -->
+</footer> <!-- نهاية الفوتر -->
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف JavaScript الرئيسي للموقع (السلايدر/القائمة/المفضلة إلخ) -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML -->

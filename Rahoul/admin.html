@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند بأنه HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية والاتجاه من اليمين لليسار -->
+<head> <!-- بداية ترويسة الصفحة (رأس الموقع) -->
+    <meta charset="UTF-8"> <!-- ترميز الأحرف UTF-8 لدعم اللغة العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل التصميم متجاوب مع الشاشات المختلفة -->
+    <title>لوحة الأدمن | رحول</title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجية CSS -->
+</head> <!-- نهاية ترويسة الصفحة -->
+<body> <!-- بداية جسم الصفحة (المحتوى الظاهر للمستخدم) -->
+  
+ 
+
+  <nav class="rh-adminNav">
+    <div class="rh-adminNav__brand">لوحة الأدمن</div>
+
+    <div class="rh-adminNav__actions">
+<button class="login-btn" onclick="window.location.href='index.html'"> رجوع للموقع</button>
+      <button id="rhAdminLogoutBtn" class="login-btn" type="button">تسجيل الخروج</button>
+    </div>
+  </nav>
+
+  <main class="rh-adminWrap">
+    <div class="rh-adminGrid">
+          
+      <section class="rh-panel">
+        <h2 class="rh-panel__title">إضافة كرت جديد</h2>
+
+        <!-- المدينة (قائمة متحركة مع البحث) -->
+<label class="rh-label">المدينة</label>
+<div class="rh-cityWrap">
+  <input id="rhCityInput" class="rh-input" type="text" placeholder="اكتب اسم المدينة..." autocomplete="off" />
+  <div id="rhCityDropdown" class="rh-cityDropdown"></div>
+</div>
+
+<!-- نخزن الرابط الحقيقي للمدينة هنا تلقائياً -->
+<input id="rhCityPage" type="hidden" />
+
+
+        <form id="rhAddCardForm" class="rh-form">
+          <label class="rh-label">القسم</label>
+          <select id="rhCardCategory" class="rh-input" required>
+            <option value="events">ابرز الفعاليات  </option>
+            <option value="activities">الأنشطة السياحية</option>
+            <option value="restaurants">المطاعم</option>
+            <option value="accommodation">ابرز خيارات الاقامة </option>
+          </select>
+
+          <label class="rh-label">العنوان</label>
+          <input id="rhCardTitle" class="rh-input" type="text" required />
+
+          <label class="rh-label">الوصف</label>
+          <textarea id="rhCardDesc" class="rh-input" rows="3" required></textarea>
+
+          <label class="rh-label">الرابط </label>
+          <input id="rhCardLink" class="rh-input" type="url" placeholder="https://..." />
+
+          <label class="rh-label">رابط صورة </label>
+          <input id="rhCardImg" class="rh-input" type="url" placeholder="https://..." />
+
+          <button class="rh-primaryBtn" type="submit">إضافة</button>
+          <p class="rh-hint">إذا ما حطيت صورة، نستخدم صورة افتراضية.</p>
+        </form>
+      </section>
+
+      <section class="rh-panel">
+        <div class="rh-panel__head">
+          <h2 class="rh-panel__title">الكروت المضافة</h2>
+          <button id="rhClearAllBtn" class="rh-dangerBtn" type="button">حذف الكل</button>
+        </div>
+
+        <div id="rhAdminCardsList" class="rh-adminList"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- مهم: نحمّل نفس script.js عشان الحماية + ثم admin.js -->
+  <script src="script.js"></script>
+</body>
+</html>

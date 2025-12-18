@@ -1,0 +1,671 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند كـ HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية واتجاه النص من اليمين لليسار -->
+<head> <!-- بداية رأس الصفحة (لا يظهر للمستخدم مباشرة) -->
+    <meta charset="UTF-8"> <!-- ترميز الحروف ليقبل العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل الصفحة متجاوبة مع الشاشات المختلفة -->
+    <title>الشرقية </title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف تنسيقات CSS الخارجي -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية رأس الصفحة -->
+<body> <!-- بداية جسم الصفحة (كل ما يظهر للمستخدم) -->
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+<!-- Carousel -->
+<div class="carousel"> <!-- بداية قسم السلايدر (الكاروسيل) -->
+    <img src="images/الشرقية4.jpg" class="active" alt="الشرقية " style="height: 750px; object-fit: cover;"> <!-- صورة خلفية السلايدر مع ارتفاع ثابت وتعبئة كاملة -->
+    <div class="carousel-text"><h2 class="titleright title">الشرقية </h2><p class="p">الشرقية وجهة بحرية نابضة تجمع بين الأجواء المنعشة والكورنيشات الجميلة والمقاهي الممتدة على الخليج. </p>  </div> <!-- نص فوق السلايدر يحتوي عنوان ووصف قصير -->
+</div> <!-- نهاية قسم الكاروسيل -->
+
+<section class="container"> <!-- بداية قسم عن المنطقة الشرقية داخل حاوية عامة -->
+  <h1 class="titleright">عن المنطقة الشرقية</h1> <!-- عنوان القسم الرئيسي -->
+  <p class="titleright read-more-text"> <!-- فقرة نصية مع كلاس للتحكم في نمط "اقرأ المزيد" -->
+تحظى المنطقة الشرقية بمكانة خاصة في قلوب السكان والزوار على حد سواء. هنا، يتباطأ إيقاع الوقت في عطلات نهاية الأسبوع <!-- بداية النص الظاهر -->
+    <br>       فتصبح الأيام أهدأ، وتغدو الذكريات أعمق وأدفأ. سواء كنت تتنزه على كورنيش الخبر <!-- سطر جديد داخل الفقرة باستخدام br -->
+    <span class="dots">...</span> <!-- نقاط الحذف (تظهر قبل الضغط على اقرأ المزيد) -->
+    <span class="more"> <!-- جزء النص الإضافي الذي يتم إظهاره عند الضغط على اقرأ المزيد -->
+       أو تستعيد ذكريات العائلة في الدمام،
+<br> أو تكتشف شيئًا جديدًا في الظهران؛ فهنا يلتقي الحنين بالاكتشاف، وتبدو كل زيارة مألوفة ومليئة بالمفاجئات.
+    </span> <!-- نهاية النص الإضافي -->
+  </p> <!-- نهاية الفقرة -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر "اقرأ المزيد" يستدعي دالة toggleText من جافاسكربت -->
+</section> <!-- نهاية قسم عن المنطقة الشرقية -->
+
+
+<!-- أبرزالفعاليات -->
+<section class="container" id="rh-events-section"> <!-- بداية قسم أبرز الفعاليات داخل حاوية -->
+    <h2 class="titleright">أبرزالفعاليات</h2>      <!-- عنوان القسم "أبرز الفعاليات" -->
+    <div class="slider-wrapper"> <!-- حاوية السلايدر الذي يحتوي الكروت -->
+
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر سهم لليسار لتحريك السلايدر -->
+
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية أفقية تتحرك بداخلها كروت الفعاليات -->
+
+            <div class="card" data-id="موسم شتاء إثراء"
+                 data-link="https://www.ithra.com/ar/programme/2025/ithra-winter"> <!-- كرت فعالية مع بيانات مخصصة للتخزين أو الاستخدام في JS -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة الكرت للمفضلة -->
+                <img src="images/موسم شتاء إثراء.jpg" alt="موسم شتاء إثراء"> <!-- صورة الفعالية -->
+                <div class="card-body"> <!-- جسم الكرت الذي يحتوي النص -->
+                    <div class="card-title">موسم شتاء إثراء </div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        احتفلوا بأجواء الشتاء مع موسم إثراء الشتوي، والذي يعد برنامجًا متكاملًا من الأنشطة الفنية والثقافية وورش العمل والعروض الموسيقية.
+                    </div> <!-- وصف مختصر للفعالية -->
+                    <a href="https://www.ithra.com/ar/programme/2025/ithra-winter" target="_blank" class="btn">احجز الان </a> <!-- زر يحول لموقع الحجز في تبويب جديد -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية كرت الفعالية الأولى -->
+
+            <div class="card" data-id="أمسية كوبليه"
+                 data-link="https://dammam.platinumlist.net/ar/event-tickets/couplet-night-in-dammam"> <!-- كرت فعالية أمسية كوبليه -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب للمفضلة -->
+                <img src="images/أمسية كوبليه.jpg" alt="أمسية كوبليه"> <!-- صورة الفعالية -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">أمسية كوبليه</div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        هذه الأمسية الموسيقية التفاعلية تتمحور ستكون حولكم أنتم — جمهورنا العاشق للكوبليه.
+                        لذا احجزوا أماكنكم، واطّلعوا على قائمة الأغاني
+                    </div> <!-- وصف مختصر -->
+                    <a href="https://dammam.platinumlist.net/ar/event-tickets/couplet-night-in-dammam" target="_blank" class="btn">احجز الان </a> <!-- زر الحجز -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية كرت أمسية كوبليه -->
+        
+            <div class="card" data-id="ليلة التحدي"
+                 data-link="https://www.ithra.com/ar/programme/2025/ithra-winter/youth-studio/games-night"> <!-- كرت فعالية ليلة التحدي -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/ليلة التحدي.webp" alt="ليلة التحدي"> <!-- صورة الفعالية -->
+                <div class="card-body">
+                    <div class="card-title">ليلة التحدي </div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        استمتع بليلة مليئة بالمتعة والمنافسة مع ليلة التحدي، التي تجمع الشباب في أجواءٍ من المرح والتعاون. تتضمن الفعالية ألعابًا جماعية وتحديات إبداعية تعزز روح الفريق
+                    </div> <!-- وصف الفعالية -->
+                    <a href="https://www.ithra.com/ar/programme/2025/ithra-winter/youth-studio/games-night" target="_blank" class="btn">احجز الان </a> <!-- زر الحجز -->
+                </div>
+            </div> <!-- نهاية كرت ليلة التحدي -->
+
+            <div class="card" data-id="سوق إل ميركاتو"
+                 data-link="https://www.ithra.com/ar/programme/2025/ithra-winter/winter-souq/el-merkaco-souq"> <!-- كرت فعالية سوق إل ميركاتو -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب -->
+                <img src="images/سوق إل ميركاتو.webp" alt="سوق إل ميركاتو"> <!-- صورة الفعالية -->
+                <div class="card-body">
+                    <div class="card-title"> سوق إل ميركاتو</div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        سوق إسباني نابض بالحياة في إثراء. يجلب هذا السوق الروح الحيوية لإسبانيا إلى المملكة، ويعرض الحرف الإسبانية التقليدية، السيراميك المنسوجات والأطعمة الفاخرة،
+                    </div> <!-- وصف الفعالية -->
+                    <a href="https://www.ithra.com/ar/programme/2025/ithra-winter/winter-souq/el-merkaco-souq" target="_blank" class="btn"> احجز الان</a> <!-- زر الحجز -->
+                </div>
+            </div>         <!-- نهاية كرت سوق إل ميركاتو -->
+
+            <div class="card" data-id="اتفقنا في الدمام"
+                 data-link="https://dammam.platinumlist.net/ar/event-tickets/101850/etfqna-in-dammam"> <!-- كرت فعالية اتفقنا في الدمام -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/اتفقنا في الدمام.webp" alt="اتفقنا في الدمام"> <!-- صورة الفعالية -->
+                <div class="card-body">
+                    <div class="card-title">اتفقنا في الدمام </div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        اتفقنا في الدمام تجربة مسرحية عائلية تجمع بين الدمى والضحك والرسائل الهادفة. من خلال قصصٍ ملهمة عن التعاون والشجاعة والإبداع
+                    </div> <!-- وصف مختصر -->
+                    <a href="https://dammam.platinumlist.net/ar/event-tickets/101850/etfqna-in-dammam" target="_blank" class="btn"> احجز الان</a> <!-- زر الحجز -->
+                </div>
+            </div> <!-- نهاية كرت اتفقنا في الدمام -->
+        
+            <div class="card" data-id="جلسات الخبر"
+                 data-link="https://khobar.platinumlist.net/ar/event-tickets/103062/oumaima-taleb-in-jalasat-al-khobar-season?utm_source=google&utm_medium=cpc&utm_campaign=23299251064&utm_content=187835467654-785527453427--p-&utm_term=%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%A8%D8%B1&deep_link=https%3A%2F%2Fkhobar.platinumlist.net%2Far%2Fevent-tickets%2F103062%2Foumaima-taleb-in-jalasat-al-khobar-season%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D23299251064%26utm_content%3D187835467654-785527453427--p-%26utm_term%3D%25D9%2585%25D9%2588%25D8%25B3%25D9%2585%2520%25D8%25A7%25D9%2584%25D8%25AE%25D8%25A8%25D8%25B1&gad_source=1&gad_campaignid=23299251064&gbraid=0AAAAAoJf563LamoqyfTCC5El_4JjwSzAF&gclid=Cj0KCQiAiqDJBhCXARIsABk2kSkhA26xFj8sv2zEWtQE7FVCgfQIYGzKYrBoyQmmegzKQndqA5hrEyUaAhzLEALw_wcB"> <!-- كرت جلسات موسم الخبر مع رابط طويل للحجز -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/جلسات الخبر.png" alt="جلسات موسم الخبر"> <!-- صورة الفعالية -->
+                <div class="card-body">
+                    <div class="card-title">جلسات موسم الخبر</div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        يطل عليكم الفنان فهد الكبيسي والفنانة أميمة طالب، إحدى أبرز الأصوات في العالم العربي، يقدمان لكم ليلة لا تُنسى مليئة بالموسيقى والمشاعر.
+                        مع عروضهم المليئة بالروح والإحساس
+                    </div> <!-- وصف الفعالية -->
+                    <a href="https://khobar.platinumlist.net/ar/event-tickets/103062/oumaima-taleb-in-jalasat-al-khobar-season?utm_source=google&utm_medium=cpc&utm_campaign=23299251064&utm_content=187835467654-785527453427--p-&utm_term=%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%A8%D8%B1&deep_link=https%3A%2F%2Fkhobar.platinumlist.net%2Far%2Fevent-tickets%2F103062%2Foumaima-taleb-in-jalasat-al-khobar-season%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D23299251064%26utm_content%3D187835467654-785527453427--p-%26utm_term%3D%25D9%2585%25D9%2588%25D8%25B3%25D9%2585%2520%25D8%25A7%25D9%2584%25D8%25AE%25D8%25A8%25D8%25B1&gad_source=1&gad_campaignid=23299251064&gbraid=0AAAAAoJf563LamoqyfTCC5El_4JjwSzAF&gclid=Cj0KCQiAiqDJBhCXARIsABk2kSkhA26xFj8sv2zEWtQE7FVCgfQIYGzKYrBoyQmmegzKQndqA5hrEyUaAhzLEALw_wcB" target="_blank" class="btn">احجز الان </a> <!-- زر الحجز -->
+                </div>    
+            </div> <!-- نهاية كرت جلسات موسم الخبر -->
+      
+            <div class="card" data-id="مهرجان نسيم الخبر"
+                 data-link="https://khobar.platinumlist.net/ar/event-tickets/102446/khobar-breeze-festival"> <!-- كرت مهرجان نسيم الخبر -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/مهرجان نسيم الخبر.png" alt="مهرجان نسيم الخبر"> <!-- صورة الفعالية -->
+                <div class="card-body">
+                    <div class="card-title"> مهرجان نسيم الخبر</div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        احتفل بسحر الساحل في مهرجان نسيم الخبر، حيث تجتمع الثقافة والترفيه العائلي والاستجمام البحري في تجربة تمتد لشهرٍ كامل على الواجهة البحرية للخبر.
+                    </div> <!-- وصف الفعالية -->
+                    <a href="https://khobar.platinumlist.net/ar/event-tickets/102446/khobar-breeze-festival" target="_blank" class="btn"> احجز الان</a> <!-- زر الحجز -->
+                </div>
+            </div> <!-- نهاية كرت مهرجان نسيم الخبر -->
+
+            <div class="card" data-id="شاطئ 180 في الخبر"
+                 data-link="https://khobar.platinumlist.net/ar/event-tickets/180-beach-club"> <!-- كرت شاطئ 180 للسيدات -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة القلب -->
+                <img src="images/شاطئ 180 في الخبر.jpg" alt="شاطئ 180 في الخبر"> <!-- صورة الفعالية -->
+                <div class="card-body">
+                    <div class="card-title"> شاطىء 180 الخاص للسيدات! في الخبر</div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        يجمع الشاطئ سيدات المجتمع من كل مناطق المملكة ودول الخليج في مكان واحد لقضاء يوم كامل ممتع في السباحة مع امواج شاطىء العزيزية الجميلة في اجواء موسيقية ممتعة
+                    </div> <!-- وصف الفعالية -->
+                    <a href="https://khobar.platinumlist.net/ar/event-tickets/180-beach-club" target="_blank" class="btn">احجز الان </a> <!-- زر الحجز -->
+                </div>  
+            </div> <!-- نهاية كرت شاطئ 180 -->
+
+        </div> <!-- نهاية مسار الكروت -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر سهم لليمين لتحريك السلايدر -->
+    </div> <!-- نهاية غلاف السلايدر -->
+</section> <!-- نهاية قسم أبرز الفعاليات -->
+
+<!-- الانشطة السياحية-->
+<section class="container" id="rh-activities-section"> <!-- بداية قسم الأنشطة السياحية -->
+    <h2 class="titleright">الانشطة السياحية </h2>      <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر الخاص بالأنشطة السياحية -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية الكروت الأفقية -->
+
+            <div class="card" data-id="القرية الشعبية"
+                 data-link="https://www.cobone.com/ar/deals/activities-dammam/heritage-village-entry-ticket/183062?srsltid=AfmBOor4IRNJ_Lrc-bOKo0XQezuCjdYb2aVVPtPGpUUwvUkV6e7dmUvE"> <!-- كرت نشاط القرية الشعبية -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/القرية الشعبية.jpg" alt="القرية الشعبية"> <!-- صورة النشاط -->
+                <div class="card-body">
+                    <div class="card-title">القرية الشعبية</div> <!-- عنوان النشاط -->
+                    <div class="card-text">
+                        المكان الذي تلتقي فيه بماضي المملكة العربية السعودية، وتراث مناطقها، على مساحة تمتد إلى 21 ألف متر مربع، فعمارته الجميلة تخبئ في داخلها تاريخًا عريقًا
+                    </div> <!-- وصف النشاط -->
+                    <a href="https://www.cobone.com/ar/deals/activities-dammam/heritage-village-entry-ticket/183062?srsltid=AfmBOor4IRNJ_Lrc-bOKo0XQezuCjdYb2aVVPtPGpUUwvUkV6e7dmUvE" target="_blank" class="btn"> احجز الان</a> <!-- زر الحجز -->
+                </div>
+            </div> <!-- نهاية كرت القرية الشعبية -->
+
+            <div class="card" data-id="اثراء"
+                 data-link="https://saudipedia.com/article/6560/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D9%85%D8%B9%D8%B1%D9%81%D8%A9/%D8%A5%D8%AB%D8%B1%D8%A7%D8%A1"> <!-- كرت نشاط إثراء -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- المفضلة -->
+                <img src="images/اثراء.jpg" alt="مركز الملك عبدالعزيز الثقافي العالمي - إثراء"> <!-- صورة إثراء -->
+                <div class="card-body">
+                    <div class="card-title">مركز الملك عبدالعزيز الثقافي العالمي - إثراء</div> <!-- عنوان النشاط -->
+                    <div class="card-text">
+                        ركز ثقافي عالمي في المملكة العربية السعودية، يقع في الظهران بالمنطقة الشرقية، ويستهدف تعزيز سبل التنمية البشرية والاستدامة بالعلم والابتكار.
+                    </div> <!-- وصف النشاط -->
+                    <a href="https://saudipedia.com/article/6560/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D9%85%D8%B9%D8%B1%D9%81%D8%A9/%D8%A5%D8%AB%D8%B1%D8%A7%D8%A1" target="_blank" class="btn">اعرف المزيد</a> <!-- زر لمعرفة المزيد -->
+                </div>
+            </div> <!-- نهاية كرت إثراء -->
+
+            <div class="card" data-id="جزيرة المرجان  الدمام"
+                 data-link="https://www.rehlat.com.sa/ar/explore/dammam/marjan-island-dammam-saudi-ogpged1x"> <!-- كرت جزيرة المرجان -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- قلب المفضلة -->
+                <img src="images/جزيرة المرجان  الدمام.jpg" alt="جزيرة المرجان  الدمام"> <!-- صورة الجزيرة -->
+                <div class="card-body">
+                    <div class="card-title">جزيرة المرجان  الدمام</div> <!-- عنوان النشاط -->
+                    <div class="card-text">
+                        يمكنك زيارة جزيرة المرجان في الدمام، والاستمتاع بلحظات من الاسترخاء والهدوء على أول جزيرة اصطناعية في السعودية. وتمتد هذه الجزيرة على مساحة 7 كيلومتر مربع،
+                    </div> <!-- وصف النشاط -->
+                    <a href="https://www.rehlat.com.sa/ar/explore/dammam/marjan-island-dammam-saudi-ogpged1x" target="_blank" class="btn">اعرف المزيد</a> <!-- زر المزيد -->
+                </div>
+            </div> <!-- نهاية كرت جزيرة المرجان -->
+        
+            <div class="card" data-id="الهاف مون"
+                 data-link="https://www.rehlat.com.sa/ar/explore/dammam/half-moon-beach-dammam-saudi-arabia-9dgic736kp"> <!-- كرت شاطئ نصف القمر -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/الهاف مون.jpg" alt="شاطئ نصف القمر (هاف مون)"> <!-- صورة الشاطئ -->
+                <div class="card-body">
+                    <div class="card-title">شاطئ نصف القمر (هاف مون)</div> <!-- عنوان النشاط -->
+                    <div class="card-text">
+                        شاطئ نصف القمر من أشهر الشواطئ في السعودية، ومن أطولها في منطقة الخليج العربي ويمتد على طول 18 كيلومتر تقريباً، وسمى بذلك بسبب شكله المنحني على شكل نصف قمر
+                    </div> <!-- وصف النشاط -->
+                    <a href="https://www.rehlat.com.sa/ar/explore/dammam/half-moon-beach-dammam-saudi-arabia-9dgic736kp" target="_blank" class="btn">اعرف المزيد</a> <!-- زر المزيد -->
+                </div>
+            </div> <!-- نهاية كرت الهاف مون -->
+        
+            <div class="card" data-id="الواجهة البحرية بالخبر"
+                 data-link="https://www.almosafer.com/ar/city-guides/al-khobar/attractions/khobar-seafront"> <!-- كرت الواجهة البحرية بالخبر -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- قلب المفضلة -->
+                <img src="images/الواجهة البحرية بالخبر.webp" alt="الواجهة البحرية بالخبر"> <!-- صورة الواجهة البحرية -->
+                <div class="card-body">
+                    <div class="card-title">الواجهة البحرية بالخبر</div> <!-- عنوان النشاط -->
+                    <div class="card-text">
+                        تستقبل الواجهة البحرية بالخبر زوارها بالماء والخضرة، حيث تنتشر أشجار شامخة على مد البصر، وتتوزع التحف الفنية في الأرجاء
+                    </div> <!-- وصف النشاط -->
+                    <a href="https://www.almosafer.com/ar/city-guides/al-khobar/attractions/khobar-seafront" target="_blank" class="btn">اعرف المزيد</a> <!-- زر المزيد -->
+                </div>
+            </div> <!-- نهاية كرت الواجهة البحرية بالخبر -->
+        
+            <div class="card" data-id="اجدان ووك"
+                 data-link="https://ajdan.com/en"> <!-- كرت اجدان ووك -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- المفضلة -->
+                <img src="images/اجدان ووك.webp" alt="اجدان ووك"> <!-- صورة اجدان ووك -->
+                <div class="card-body">
+                    <div class="card-title">اجدان ووك</div> <!-- عنوان النشاط -->
+                    <div class="card-text">
+                        تتميز منطقة اجدان ووك المفعمة بالحياة بموقعها الفريد على طريق الأمير تركي (طريق الكورنيش)، لتكون مقصدَا في المنطقة الشرقية تجعل الحياة الخارجية جزءاً لا يتجزأ.
+                    </div> <!-- وصف النشاط -->
+                    <a href="https://ajdan.com/en" target="_blank" class="btn">اعرف المزيد</a> <!-- زر المزيد -->
+                </div>
+            </div> <!-- نهاية كرت اجدان ووك -->
+        
+            <div class="card" data-id="سايتك"
+                 data-link="https://scitech.sa/"> <!-- كرت سايتك -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- المفضلة -->
+                <img src="images/سايتك.jpg" alt="سايتك"> <!-- صورة سايتك -->
+                <div class="card-body">
+                    <div class="card-title">سايتك</div> <!-- عنوان النشاط -->
+                    <div class="card-text">
+                        يأخذك مركز سايتك في رحلة تفاعلية مشوّقة حيث تتحول المعرفة إلى تجربة، وتصبح الاكتشافات جزءًا من يومك. كما يقدم المركز العلوم والتقنية بأساليب حديثة وممتعة
+                    </div> <!-- وصف النشاط -->
+                    <a href="https://scitech.sa/" target="_blank" class="btn">اعرف المزيد</a> <!-- زر المزيد -->
+                </div>
+            </div> <!-- نهاية كرت سايتك -->
+
+        </div> <!-- نهاية مسار الكروت -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك الأنشطة لليمين -->
+    </div> <!-- نهاية غلاف السلايدر -->
+</section> <!-- نهاية قسم الأنشطة السياحية -->
+
+
+
+<!-- اشهر خيارات الإقامة -->
+<section class="container" id="rh-accommodation-section"> <!-- بداية قسم أشهر خيارات الإقامة -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر يسار -->
+
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية الكروت الأفقية -->
+
+        <div class="card" data-id="شيراتون"
+             data-link="https://www.booking.com/hotel/sa/sheraton-dammam-towers.ar.html?aid=356980&label=gog235jc-10CAsoxAFCFnNoZXJhdG9uLWRhbW1hbS10b3dlcnNIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALp14fJBsACAdICJGY5NTgxYWQ3LTgwMDgtNGQ4ZC05Y2Y0LTBhYjdjMWFiNmRiMtgCAeACAQ&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=4167123_94104828_0_42_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3091069&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=4167123_94104828_0_42_0&hpos=1&matching_block_id=4167123_94104828_0_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=4167123_94104828_0_42_0__31230&srepoch=1763830771&srpvid=127e7775f7fb03bb&type=total&ucfs=1&"> <!-- كرت فندق شيراتون -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر مفضلة -->
+            <img src="images/شيراتون.webp" alt="فندق وبرج ومركز المؤتمرات شيراتون الدمام"> <!-- صورة الفندق -->
+            <div class="card-body">
+                <div class="card-title">فندق وبرج ومركز المؤتمرات شيراتون الدمام </div> <!-- عنوان الفندق -->
+                <div class="card-text">هذا الفندق الفاخر ذو الـ 5 نجوم يقع في قلب الحي التجاري بمدينة الدمام. يتميز الفندق بمركز صحي (سبا) فاخر وعدة مسابح.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/sheraton-dammam-towers.ar.html?aid=356980&label=gog235jc-10CAsoxAFCFnNoZXJhdG9uLWRhbW1hbS10b3dlcnNIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALp14fJBsACAdICJGY5NTgxYWQ3LTgwMDgtNGQ4ZC05Y2Y0LTBhYjdjMWFiNmRiMtgCAeACAQ&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=4167123_94104828_0_42_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3091069&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=4167123_94104828_0_42_0&hpos=1&matching_block_id=4167123_94104828_0_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=4167123_94104828_0_42_0__31230&srepoch=1763830771&srpvid=127e7775f7fb03bb&type=total&ucfs=1&" class="btn">احجز الان </a> <!-- زر الحجز -->
+            </div>
+        </div> <!-- نهاية كرت شيراتون -->
+
+        <div class="card" data-id="ويندهام جاردن"
+             data-link="https://www.booking.com/hotel/sa/wyndham-garden-dammam.ar.html?aid=356980&label=gog235jc-10CAsoxAFCFXd5bmRoYW0tZ2FyZGVuLWRhbW1hbUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Au7Zh8kGwAIB0gIkMjA5ZjA2ZGMtNWZiOS00MDQzLWJlYTMtOWExOTU3MTQ0NWJk2AIB4AIB&sid=a8ce1a17506792d12181d99e01ea77ff&age=0&all_sr_blocks=426431401_128900745_2_34_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3091069&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=426431401_128900745_2_34_0&hpos=1&matching_block_id=426431401_128900745_2_34_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=426431401_128900745_2_34_0__29750&srepoch=1763831031&srpvid=5cb777f7519a0528&type=total&ucfs=1&"> <!-- كرت فندق ويندهام جاردن -->
+          <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+          <img src="images/ويندهام جاردن.jpg" alt="ويندهام جاردن"> <!-- صورة الفندق -->
+          <div class="card-body">
+              <div class="card-title">ويندهام جاردن </div> <!-- عنوان الفندق -->
+              <div class="card-text">يقع Wyndham Garden Dammam في قلب مدينة الدمام، ويضم مركزًا للياقة البدنية. يتوفر للضيوف حوض استحمام ساخن وخدمة تأجير السيارات.</div> <!-- وصف الفندق -->
+              <a href="https://www.booking.com/hotel/sa/wyndham-garden-dammam.ar.html?aid=356980&label=gog235jc-10CAsoxAFCFXd5bmRoYW0tZ2FyZGVuLWRhbW1hbUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Au7Zh8kGwAIB0gIkMjA5ZjA2ZGMtNWZiOS00MDQzLWJlYTMtOWExOTU3MTQ0NWJk2AIB4AIB&sid=a8ce1a17506792d12181d99e01ea77ff&age=0&all_sr_blocks=426431401_128900745_2_34_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3091069&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=426431401_128900745_2_34_0&hpos=1&matching_block_id=426431401_128900745_2_34_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=426431401_128900745_2_34_0__29750&srepoch=1763831031&srpvid=5cb777f7519a0528&type=total&ucfs=1&" class="btn"> احجز الان</a> <!-- زر الحجز -->
+          </div>
+        </div> <!-- نهاية كرت ويندهام جاردن -->
+
+        <div class="card" data-id="فندق ريزدنس ان الدمام"
+             data-link="https://www.marriott.com/ar/hotels/dmmri-residence-inn-dammam/overview/"> <!-- كرت فندق ريزدنس إن -->
+          <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- قلب -->
+          <img src="images/فندق ريزدنس ان الدمام.jpg" alt="فندق ريزدنس ان الدمام"> <!-- صورة الفندق -->
+          <div class="card-body">
+              <div class="card-title">فندق ريزدنس ان الدمام </div> <!-- عنوان الفندق -->
+              <div class="card-text">صُمم فندق ريزيدنس إن الدمام ليوفر لك إقامة ممتدة استثنائية. سواء أكنت معنا لبضعة أيام أو لبضعة أسابيع أو لبضعة أشهر، سيحظى روتينك اليومي باهتمامنا</div> <!-- وصف الفندق -->
+              <a href="https://www.marriott.com/ar/hotels/dmmri-residence-inn-dammam/overview/" class="btn">احجز الان </a> <!-- زر الحجز -->
+          </div>
+        </div>        <!-- نهاية كرت فندق ريزدنس إن -->
+
+        <div class="card" data-id="لفيت"
+             data-link="https://www.booking.com/hotel/sa/lafit-serviced-apartments.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1763968630&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&#no_availability_msg"> <!-- كرت لفيت -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/لفيت.jpg" alt="  لفيت"> <!-- صورة الشقق الفندقية -->
+            <div class="card-body">
+                <div class="card-title">لفيت</div> <!-- عنوان مكان الإقامة -->
+                <div class="card-text"> ويوفر واي فاي مجاني في جميع أنحاء مكان الإقامة، ومركز للياقة البدنية ومواقف خاصة للسيارات مجاناً للضيوف الذين يقودون سياراتهم.</div> <!-- وصف مختصر -->
+                <a href="https://www.booking.com/hotel/sa/lafit-serviced-apartments.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1763968630&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&#no_availability_msg" class="btn">احجز الان </a> <!-- زر الحجز -->
+            </div>
+        </div> <!-- نهاية كرت لفيت -->
+        
+        <div class="card" data-id="سوفيتل"
+             data-link="https://www.booking.com/hotel/sa/sofitel-al-khobar-the-corniche.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=17456807_94314169_2_42_0_1189855&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=17456807_94314169_2_42_0_1189855&hpos=4&matching_block_id=17456807_94314169_2_42_0_1189855&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=17456807_94314169_2_42_0_1189855_42500&srepoch=1763971002&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&"> <!-- كرت فندق سوفيتل كورنيش الخبر -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+            <img src="images/سوفيتل.jpg" alt="سوفيتل كورنيش الخبر"> <!-- صورة الفندق -->
+            <div class="card-body">
+                <div class="card-title">سوفيتل كورنيش الخبر</div> <!-- عنوان الفندق -->
+                <div class="card-text">يقع على طول الكورنيش الخلاب، كما يدعو مكان الإقامة ضيوفه للاستمتاع بتجربة كل شيء بدءاً من الإطلالات الرائعة على البحر ووصولاً إلى المأكولات الشهية.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/sofitel-al-khobar-the-corniche.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=17456807_94314169_2_42_0_1189855&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=17456807_94314169_2_42_0_1189855&hpos=4&matching_block_id=17456807_94314169_2_42_0_1189855&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=17456807_94314169_2_42_0_1189855_42500&srepoch=1763971002&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&" class="btn">احجز الان </a> <!-- زر الحجز -->
+            </div>
+        </div> <!-- نهاية كرت سوفيتل -->
+        
+        <div class="card" data-id="هيلتون جاردن إن الخبر"
+             data-link="https://www.booking.com/hotel/sa/hilton-garden-inn-al-khobar-saudi-arabia.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=269364101_106009407_2_42_0_1257147&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=269364101_106009407_2_42_0_1257147&hpos=3&matching_block_id=269364101_106009407_2_42_0_1257147&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=269364101_106009407_2_42_0_1257147_28900&srepoch=1763971027&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&"> <!-- كرت فندق هيلتون جاردن إن الخبر -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+            <img src="images/هيلتون جاردن إن الخبر.jpg" alt="هيلتون جاردن إن الخبر"> <!-- صورة الفندق -->
+            <div class="card-body">
+                <div class="card-title">هيلتون جاردن إن الخبر</div> <!-- عنوان الفندق -->
+                <div class="card-text"> ويتميز بمسبح خارجي ومواقف خاصة للسيارات مجاناً وصالة مشتركة وتراس. يوفر هذا الفندق المصنف 4 نجوم مركزاً أعمال وخدمة كونسيرج.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/hilton-garden-inn-al-khobar-saudi-arabia.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=269364101_106009407_2_42_0_1257147&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=269364101_106009407_2_42_0_1257147&hpos=3&matching_block_id=269364101_106009407_2_42_0_1257147&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=269364101_106009407_2_42_0_1257147_28900&srepoch=1763971027&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&" class="btn">احجز الان </a> <!-- زر الحجز -->
+            </div>
+        </div> <!-- نهاية كرت هيلتون جاردن -->
+        
+        <div class="card" data-id="نافيتي ورويك الخبر"
+             data-link="https://www.booking.com/hotel/sa/sumou-alkhobar.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=0_0_2_0_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=0_0_2_0_0&hpos=5&matching_block_id=0_0_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=0_0_2_0_0__23279&srepoch=1763971434&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&"> <!-- كرت فندق نافيتي ورويك الخبر -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+            <img src="images/نافيتي ورويك الخبر.jpg" alt="نافيتي ورويك الخبر"> <!-- صورة الفندق -->
+            <div class="card-body">
+                <div class="card-title">نافيتي ورويك الخبر</div> <!-- عنوان الفندق -->
+                <div class="card-text">يقع فندق نافيتي ورويك الخبر في الخبر، كما يبعد مكان الإقامة مسافة 100 متر من لولو ماركت، بجانب غرفة التجارة، في حين يُمكن للضيف الاستمتاع بالمطعم المتوفر في الموقع.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/sumou-alkhobar.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=0_0_2_0_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=0_0_2_0_0&hpos=5&matching_block_id=0_0_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=0_0_2_0_0__23279&srepoch=1763971434&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&" class="btn">احجز الان </a> <!-- زر الحجز -->
+            </div>
+        </div> <!-- نهاية كرت نافيتي ورويك الخبر -->
+
+     </div> <!-- نهاية مسار كروت الإقامة -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر يمين لتحريك كروت الإقامة -->
+    </div> <!-- نهاية غلاف السلايدر لقسم الإقامة -->
+</section> <!-- نهاية قسم أشهر خيارات الإقامة -->
+
+
+
+
+
+
+<section class="containerimg"> <!-- بداية قسم الخريطة التفاعلية مع كلاس خاص للصور/الخريطة -->
+    
+    <h2 >الخريطة التفاعلية</h2> <!-- عنوان قسم الخريطة التفاعلية -->
+
+<div class="map-wrapper"> <!-- غلاف يحتوي على القائمة الجانبية والخريطة معاً -->
+
+    <!-- القائمة الجانبية -->
+    <div class="map-sidebar"> <!-- عمود الكروت التي تتحكم بالخريطة -->
+
+        <a href="https://www.ithra.com/ar/programme/2025/ithra-winter" class="card-link">  <!-- رابط يفتح موقع موسم شتاء إثراء -->
+         <div class="map-card" data-lat="26.335683974891985" data-lng="50.12102966278988" data-name="موسم شتاء إثراء" data-zoom="13"> <!-- كرت خريطة مع إحداثيات واسم ونسبة تكبير -->
+            <img src="images/موسم شتاء إثراء.jpg" alt="موسم شتاء إثراء"> <!-- صورة الفعالية -->
+            <span> موسم شتاء إثراء</span> <!-- اسم الفعالية يظهر بجانب الصورة -->
+        </div>
+ 
+</a> <!-- نهاية رابط الكرت الأول -->
+
+        <a href="https://www.ithra.com/ar/programme/2025/ithra-winter/youth-studio/games-night" class="card-link">  <!-- رابط فعالية ليلة التحدي -->
+        <div class="map-card" data-lat="26.33572243605885" data-lng="50.12154464691289" data-name="ليلة التحدي" data-zoom="16"> <!-- كرت داخل القائمة مع إحداثيات أدق -->
+            <img src="images/ليلة التحدي.webp" alt="ليلة التحدي"> <!-- صورة الفعالية -->
+            <span>ليلة التحدي</span> <!-- اسم الفعالية -->
+        </div>
+
+</a> <!-- نهاية الرابط -->
+
+        <a href="https://www.ithra.com/ar/programme/2025/ithra-winter/winter-souq/el-merkaco-souq" class="card-link">  <!-- رابط سوق إل ميركاتو -->
+         <div class="map-card" data-lat="26.335608867831525" data-lng="50.12168886515867" data-name="سوق إل ميركاتو" data-zoom="16"> <!-- كرت الخريطة مع إحداثيات -->
+            <img src="images/سوق إل ميركاتو.webp" alt="سوق إل ميركاتو"> <!-- صورة السوق -->
+            <span>سوق إل ميركاتو</span> <!-- اسم السوق -->
+        </div>
+
+</a> <!-- نهاية رابط سوق إل ميركاتو -->
+
+        <a href="https://dammam.platinumlist.net/ar/event-tickets/etfqna-in-dammam" class="card-link">  <!-- رابط فعالية اتفقنا في الدمام -->
+         <div class="map-card" data-lat="26.38070426187804" data-lng="50.148384327064825" data-name="اتفقنا في الدمام" data-zoom="16"> <!-- كرت خريطة -->
+            <img src="images/اتفقنا في الدمام.webp" alt="اتفقنا في الدمام"> <!-- صورة الفعالية -->
+            <span>اتفقنا في الدمام</span> <!-- اسم الفعالية -->
+        </div>
+
+</a> <!-- نهاية رابط اتفقنا في الدمام -->
+
+        <a href="https://khobar.platinumlist.net/ar/event-tickets/102446/khobar-breeze-festival" class="card-link">  <!-- رابط مهرجان نسيم الخبر -->
+        <div class="map-card" data-lat="26.33609059070732" data-lng="50.226022388441" data-name=" مهرجان نسيم الخبر" data-zoom="12"> <!-- كرت الخريطة للمهرجان -->
+            <img src="images/مهرجان نسيم الخبر.png" alt=" مهرجان نسيم الخبر"> <!-- صورة المهرجان -->
+            <span> مهرجان نسيم الخبر</span> <!-- اسم المهرجان -->
+        </div>
+ 
+</a> <!-- نهاية رابط مهرجان نسيم الخبر -->
+
+        <a href="https://www.cobone.com/ar/deals/activities-dammam/heritage-village-entry-ticket/183062?srsltid=AfmBOor4IRNJ_Lrc-bOKo0XQezuCjdYb2aVVPtPGpUUwvUkV6e7dmUvE" class="card-link">  <!-- رابط القرية الشعبية -->
+         <div class="map-card" data-lat="26.528803430161197" data-lng="50.242446022521946" data-name="القرية الشعبية" data-zoom="13"> <!-- كرت خريطة -->
+            <img src="images/القرية الشعبية.jpg" alt="القرية الشعبية"> <!-- صورة القرية -->
+            <span> القرية الشعبية</span> <!-- اسم القرية -->
+        </div>
+ 
+</a> <!-- نهاية رابط القرية الشعبية -->
+
+        <a href="https://saudipedia.com/article/6560/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D9%85%D8%B9%D8%B1%D9%81%D8%A9/%D8%A5%D8%AB%D8%B1%D8%A7%D8%A1" class="card-link">  <!-- رابط إثراء في الخريطة -->
+         <div class="map-card" data-lat="26.351581994309743" data-lng="50.19932029193536" data-name="إثراء" data-zoom="16"> <!-- كرت خريطة لإثراء -->
+            <img src="images/اثراء.jpg" alt="إثراء"> <!-- صورة إثراء -->
+            <span> إثراء</span> <!-- اسم المكان -->
+        </div>
+
+</a> <!-- نهاية رابط إثراء -->
+
+        <a href="https://www.rehlat.com.sa/ar/explore/dammam/marjan-island-dammam-saudi-ogpged1x" class="card-link">  <!-- رابط جزيرة المرجان -->
+         <div class="map-card" data-lat="26.48378652136799" data-lng="50.106599742404654" data-name="جزيرة المرجان الدمام" data-zoom="14"> <!-- كرت الخريطة للجزيرة -->
+            <img src="images/جزيرة المرجان  الدمام.jpg" alt=" جزيرة المرجان الدمام"> <!-- صورة جزيرة المرجان -->
+            <span> جزيرة المرجان الدمام</span> <!-- اسم الجزيرة -->
+        </div>
+ 
+</a> <!-- نهاية رابط جزيرة المرجان -->
+
+<a href="https://khobar.platinumlist.net/ar/event-tickets/103062/oumaima-taleb-in-jalasat-al-khobar-season?utm_source=google&utm_medium=cpc&utm_campaign=23299251064&utm_content=187835467654-785527453427--p-&utm_term=%D9%85%D9%88%D8%B3%D9%85%20%D8%A7%D9%84%D8%AE%D8%A8%D8%B1&deep_link=https%3A%2F%2Fkhobar.platinumlist.net%2Far%2Fevent-tickets%2F103062%2Foumaima-taleb-in-jalasat-al-khobar-season%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D23299251064%26utm_content%3D187835467654-785527453427--p-%26utm_term%3D%25D9%2585%25D9%2588%25D8%25B3%25D9%2585%2520%25D8%25A7%25D9%2584%25D8%25AE%25D8%25A8%25D8%25B1&gad_source=1&gad_campaignid=23299251064&gbraid=0AAAAAoJf563LamoqyfTCC5El_4JjwSzAF&gclid=Cj0KCQiAiqDJBhCXARIsABk2kSkhA26xFj8sv2zEWtQE7FVCgfQIYGzKYrBoyQmmegzKQndqA5hrEyUaAhzLEALw_wcB" class="card-link">  <!-- رابط جلسات موسم الخبر في الخريطة -->
+        <div class="map-card" data-lat="26.293852908843814" data-lng="50.225496404319436" data-name="جلسات موسم الخبر" data-zoom="13"> <!-- كرت الخريطة للجلسات -->
+            <img src="images/جلسات الخبر.png" alt=" جلسات موسم الخبر"> <!-- صورة الجلسات -->
+            <span>جلسات موسم الخبر</span> <!-- النص الظاهر للكرت -->
+        </div>
+
+</a> <!-- نهاية رابط جلسات موسم الخبر -->
+
+        <a href="https://www.rehlat.com.sa/ar/explore/dammam/half-moon-beach-dammam-saudi-arabia-9dgic736kp" class="card-link">  <!-- رابط شاطئ هاف مون -->
+         <div class="map-card" data-lat="26.194834495575765" data-lng="50.02412989229797" data-name="هاف مون" data-zoom="13"> <!-- كرت هاف مون بالخريطة -->
+            <img src="images/الهاف مون.jpg" alt=" هاف مون"> <!-- صورة الشاطئ -->
+            <span> هاف مون</span> <!-- اسم الشاطئ -->
+        </div>
+
+</a> <!-- نهاية رابط هاف مون -->
+
+        <a href="https://www.almosafer.com/ar/city-guides/al-khobar/attractions/khobar-seafront" class="card-link">  <!-- رابط الواجهة البحرية بالخبر -->
+         <div class="map-card" data-lat="26.29390100266235" data-lng="50.22550713315534" data-name=" الواجهة البحرية بالخبر" data-zoom="12"> <!-- كرت الخريطة للواجهة البحرية -->
+            <img src="images/الواجهة البحرية بالخبر.webp" alt=" الواجهة البحرية بالخبر"> <!-- صورة الواجهة البحرية -->
+            <span> الواجهة البحرية بالخبر</span> <!-- النص الظاهر -->
+        </div>
+ 
+</a> <!-- نهاية رابط الواجهة البحرية -->
+
+        <a href="https://ajdan.com/en" class="card-link">  <!-- رابط اجدان ووك بالخريطة -->
+         <div class="map-card" data-lat="26.283676651658354" data-lng="50.2197184821046" data-name="اجدان ووك" data-zoom="13"> <!-- كرت خريطة لاجدان ووك -->
+            <img src="images/اجدان ووك.webp" alt="اجدان ووك"> <!-- صورة اجدان ووك -->
+            <span> اجدان ووك</span> <!-- الاسم -->
+        </div>
+ 
+</a> <!-- نهاية رابط اجدان ووك -->
+
+        <a href="https://scitech.sa/" class="card-link">  <!-- رابط سايتك على الخريطة -->
+         <div class="map-card" data-lat="26.319470159933132" data-lng="50.2284397596056" data-name=" سايتك" data-zoom="13"> <!-- كرت الخريطة لسايتك -->
+            <img src="images/سايتك.jpg" alt=" سايتك"> <!-- صورة سايتك -->
+            <span> سايتك</span> <!-- اسم المركز -->
+        </div>
+</a>  <!-- نهاية رابط سايتك -->
+
+        <a href="https://khobar.platinumlist.net/ar/event-tickets/180-beach-club" class="card-link">  <!-- رابط شاطئ 180 على الخريطة -->
+        <div class="map-card" data-lat="26.120869337961853" data-lng="50.15832102152062" data-name="شاطىء 180 الخاص للسيدات! في الخبر" data-zoom="13"> <!-- كرت للشاطئ 180 -->
+            <img src="images/شاطئ 180 في الخبر.jpg" alt="شاطىء 180 الخاص للسيدات! في الخبر"> <!-- صورة الشاطئ -->
+            <span> شاطىء 180 الخاص للسيدات! في الخبر</span> <!-- نص الكرت -->
+        </div>
+ 
+
+</a> <!-- نهاية رابط شاطئ 180 -->
+
+        <a href="https://dammam.platinumlist.net/ar/event-tickets/couplet-night-in-dammam" class="card-link">  <!-- رابط أمسية كوبليه في الخريطة -->
+        <div class="map-card" data-lat="26.428953920201533" data-lng="50.118752011719494" data-name="أمسية كوبليه" data-zoom="12" > <!-- كرت أمسية كوبليه مع إحداثيات -->
+            <img src="images/أمسية كوبليه.jpg" alt=" أمسية كوبليه"> <!-- صورة الأمسية -->
+            <span>أمسية كوبليه</span>            <!-- نص اسم الأمسية -->
+        </div>
+
+</a> <!-- نهاية رابط أمسية كوبليه -->
+
+        <a href="https://www.booking.com/hotel/sa/sheraton-dammam-towers.ar.html?aid=356980&label=gog235jc-10CAsoxAFCFnNoZXJhdG9uLWRhbW1hbS10b3dlcnNIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALp14fJBsACAdICJGY5NTgxYWQ3LTgwMDgtNGQ4ZC05Y2Y0LTBhYjdjMWFiNmRiMtgCAeACAQ&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=4167123_94104828_0_42_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3091069&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=4167123_94104828_0_42_0&hpos=1&matching_block_id=4167123_94104828_0_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=4167123_94104828_0_42_0__31230&srepoch=1763830771&srpvid=127e7775f7fb03bb&type=total&ucfs=1&" class="card-link">  <!-- رابط فندق شيراتون على الخريطة -->
+        <div class="map-card" data-lat="26.452773165770925" data-lng="50.12072692706226" data-name=" برج ومركز المؤتمرات" data-zoom="17"> <!-- كرت خريطة لفندق شيراتون -->
+            <img src="images/شيراتون.webp" alt="برج ومركز المؤتمرات"> <!-- صورة الفندق -->
+            <span> برج ومركز المؤتمرات</span> <!-- اسم المكان -->
+        </div>
+
+</a> <!-- نهاية رابط الفندق بالخريطة -->
+
+        <a href="https://www.booking.com/hotel/sa/wyndham-garden-dammam.ar.html?aid=356980&label=gog235jc-10CAsoxAFCFXd5bmRoYW0tZ2FyZGVuLWRhbW1hbUgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Au7Zh8kGwAIB0gIkMjA5ZjA2ZGMtNWZiOS00MDQzLWJlYTMtOWExOTU3MTQ0NWJk2AIB4AIB&sid=a8ce1a17506792d12181d99e01ea77ff&age=0&all_sr_blocks=426431401_128900745_2_34_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3091069&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=426431401_128900745_2_34_0&hpos=1&matching_block_id=426431401_128900745_2_34_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=426431401_128900745_2_34_0__29750&srepoch=1763831031&srpvid=5cb777f7519a0528&type=total&ucfs=1&" class="card-link">  <!-- رابط ويندهام جاردن على الخريطة -->
+         <div class="map-card" data-lat="26.427931298926158" data-lng="50.098223063304054" data-name=" ويندهام جاردن" data-zoom="17"> <!-- كرت خريطة لويندهام -->
+            <img src="images/ويندهام جاردن.jpg" alt=" ويندهام جاردن"> <!-- صورة الفندق -->
+            <span> ويندهام جاردن</span> <!-- اسم الفندق -->
+        </div>
+
+</a> <!-- نهاية رابط ويندهام جاردن -->
+
+        <a href="https://www.marriott.com/ar/hotels/dmmri-residence-inn-dammam/overview/" class="card-link">  <!-- رابط ريزدنس إن على الخريطة -->
+        <div class="map-card" data-lat="26.45176723890795" data-lng="50.11969160933406" data-name="فندق ريزدنس ان الدمام" data-zoom="16"> <!-- كرت خريطة للفندق -->
+            <img src="images/فندق ريزدنس ان الدمام.jpg" alt=" فندق ريزدنس ان الدمام"> <!-- صورة الفندق -->
+            <span> فندق ريزدنس ان الدمام</span> <!-- اسم الفندق -->
+        </div>
+
+</a> <!-- نهاية رابط ريزدنس إن -->
+
+        <a href="https://www.booking.com/hotel/sa/lafit-serviced-apartments.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&soh=1&sr_order=popularity&srepoch=1763968630&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&#no_availability_msg" class="card-link">  <!-- رابط لفيت على الخريطة -->
+        <div class="map-card" data-lat="26.30529351852492" data-lng="50.22325548095234" data-name=" لفيت" data-zoom="17"> <!-- كرت خريطة لمكان لفيت -->
+            <img src="images/لفيت.jpg" alt="لفيت"> <!-- صورة لفيت -->
+            <span> لفيت</span> <!-- الاسم -->
+        </div>
+
+</a>         <!-- نهاية رابط لفيت -->
+        <a href="https://www.booking.com/hotel/sa/sofitel-al-khobar-the-corniche.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=17456807_94314169_2_42_0_1189855&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&highlighted_blocks=17456807_94314169_2_42_0_1189855&hpos=4&matching_block_id=17456807_94314169_2_42_0_1189855&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=17456807_94314169_2_42_0_1189855_42500&srepoch=1763971002&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&" class="card-link">  <!-- رابط سوفيتل على الخريطة -->
+        <div class="map-card" data-lat="26.276626698211327" data-lng="50.22063925960708" data-name=" سوفيتل كورنيش الخبر" data-zoom="14"> <!-- كرت خريطة لسوفيتل -->
+            <img src="images/سوفيتل.jpg" alt=" سوفيتل كورنيش الخبر"> <!-- صورة الفندق -->
+            <span> سوفيتل كورنيش الخبر</span> <!-- نص الاسم -->
+        </div>
+
+</a> <!-- نهاية رابط سوفيتل -->
+
+        <a href="https://www.booking.com/hotel/sa/hilton-garden-inn-al-khobar-saudi-arabia.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=269364101_106009407_2_42_0_1257147&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=269364101_106009407_2_42_0_1257147&hpos=3&matching_block_id=269364101_106009407_2_42_0_1257147&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=269364101_106009407_2_42_0_1257147_28900&srepoch=1763971027&srpvid=5f4c3336e9bc0298&type=total&ucfs=1& class="card-link">  <!-- يوجد خطأ بسيط هنا في ترتيب علامات الاقتباس لكن الفكرة: رابط هيلتون على الخريطة -->
+        <div class="map-card" data-lat="26.307078724449003" data-lng="50.17680694372907" data-name=" هيلتون جاردن إن الخبر" data-zoom="16"> <!-- كرت خريطة للفندق -->
+            <img src="images/هيلتون جاردن إن الخبر.jpg" alt=" هيلتون جاردن إن الخبر"> <!-- صورة الفندق -->
+            <span> هيلتون جاردن إن الخبر</span> <!-- اسم الفندق -->
+        </div>
+ 
+
+</a> <!-- نهاية رابط هيلتون جاردن بالخريطة -->
+
+        <a href="https://www.booking.com/hotel/sa/sumou-alkhobar.ar.html?aid=325250&label=al-khubar-n7yeX9daBwVSr4oEl4qs_AS638200211414%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-527483849512%3Alp9076755%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=0_0_2_0_0&checkin=2025-12-10&checkout=2025-12-11&dest_id=-3092086&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=0_0_2_0_0&hpos=5&matching_block_id=0_0_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=0_0_2_0_0__23279&srepoch=1763971434&srpvid=5f4c3336e9bc0298&type=total&ucfs=1&" class="card-link">  <!-- رابط نافيتي ورويك على الخريطة -->
+        <div class="map-card" data-lat="26.272160265014435" data-lng="50.2167447074894" data-name=" نافيتي ورويك الخبر" data-zoom="14"> <!-- كرت خريطة للفندق -->
+            <img src="images/نافيتي ورويك الخبر.jpg" alt=" نافيتي ورويك الخبر"> <!-- صورة الفندق -->
+            <span> نافيتي ورويك الخبر</span> <!-- النص الظاهر -->
+        </div>
+
+</a> <!-- نهاية رابط نافيتي ورويك -->
+    </div> <!-- نهاية العمود الجانبي للخريطة -->
+
+    <!-- صندوق الخريطة -->
+    <div id="map" data-first-zoom="10"></div> <!-- عنصر فارغ يتم رسم خريطة Leaflet بداخله مع قيمة تكبير ابتدائية -->
+
+</div> <!-- نهاية غلاف الخريطة مع القائمة -->
+
+
+<!-- مكتبة Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- استيراد ملف CSS الخاص بمكتبة Leaflet للخرائط -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- استيراد ملف JavaScript لمكتبة Leaflet -->
+
+<!-- ملف JS واحد لكل الصفحات -->
+<script src="js/map.js"></script> <!-- ربط ملف جافاسكربت (map.js) الذي يدير الخريطة والتفاعل مع الكروت -->
+
+
+</section> <!-- نهاية قسم الخريطة التفاعلية -->
+
+
+<footer> <!-- بداية تذييل الصفحة -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص الحقوق -->
+    <div> <!-- حاوية روابط وسائل التواصل -->
+        <a href="#">فيسبوك</a> |  <!-- رابط فيسبوك -->
+        <a href="#">تويتر</a> |  <!-- رابط تويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط إنستجرام -->
+    </div>
+</footer> <!-- نهاية تذييل الصفحة -->
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف جافاسكربت العام للموقع -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية وثيقة HTML -->

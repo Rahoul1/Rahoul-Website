@@ -1,0 +1,481 @@
+
+
+
+<!DOCTYPE html> <!-- تعريف نوع المستند بأنه HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية مستند HTML وتحديد أن اللغة عربية والاتجاه من اليمين لليسار -->
+<head> <!-- رأس الصفحة: يحتوي على الإعدادات والمعلومات العامة -->
+    <meta charset="UTF-8"> <!-- استخدام ترميز UTF-8 لدعم اللغة العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل الصفحة متجاوبة مع جميع الشاشات -->
+    <title>رحول - دليل السياحة الذكي</title> <!-- عنوان الموقع الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجي الخاص بالموقع -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية رأس الصفحة -->
+<body> <!-- بداية جسم الصفحة الفعلي الذي يظهر للمستخدم -->
+    
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel -->
+<div class="carousel"> <!-- حاوية السلايدر/الهيدر الخاص بالمدينة -->
+    <img src="images/صورت كرت جازان.jpeg" class="active" alt="جازان " style="height: 750px; object-fit: cover;"> <!-- صورة خلفية كبيرة تمثل جازان -->
+    <div class="carousel-text"><h2 class="titleright title">  جازان </h2><p class="p"> جازان منطقة جنوبية جميلة تجمع بين الجبال الخضراء وشواطئ البحر الأحمر وجزر فرسان الساحرة </p></div> <!-- نص فوق الصورة يحتوي اسم جازان ووصف قصير -->
+</div> <!-- نهاية السلايدر -->
+
+<section class="container"> <!-- قسم عام بمحتوى عن جازان -->
+  <h1 class="titleright">عن جازان</h1> <!-- عنوان القسم: عن جازان -->
+  <p class="titleright read-more-text"> <!-- فقرة نصية مع كلاس خاص بميزة "اقرأ المزيد" -->
+    جازان منطقة جنوبية نابضة بالحياة تتميز بطبيعتها المتنوعة بين الجبال والسهول والجزر والشواطئ.
+    <br>تشتهر بجزر فرسان الخلابة، وأسواقها الشعبية الغنية بالتراث، وأجوائها الدافئة طوال العام. <!-- وصف عام لمنطقة جازان -->
+      
+    <span class="dots">...</span> <!-- ثلاث نقاط تظهر عندما يكون النص مختصراً -->
+    <span class="more"> <!-- جزء النص المخفي الذي يظهر عند الضغط على "اقرأ المزيد" -->
+      <br> كما تضم جبالًا مثل جبال فيفا التي تمنح الزائر مناظر خلابة وطقسًا معتدلًا.
+<br>وتجمع جازان بين التراث، الطبيعة، والبحر لتقدّم تجربة سياحية فريدة ومختلفة.
+    </span> <!-- نهاية النص الإضافي -->
+  </p> <!-- نهاية الفقرة -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر يتحكم في إظهار/إخفاء الجزء الإضافي من النص -->
+</section> <!-- نهاية قسم "عن جازان" -->
+
+
+<!-- أبرزالفعاليات -->
+<section class="container"id="rh-events-section"> <!-- قسم لأبرز الفعاليات في جازان -->
+    <h2 class="titleright">أبرزالفعاليات</h2>      <!-- عنوان القسم: أبرز الفعاليات -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر الأفقي للكروت -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر السهم لتمرير الكروت باتجاه اليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية الكروت التي تتحرك أفقياً -->
+        
+            <div class="card" data-id="سيتي هوب" data-link="https://enjoy.sa/ar/events/city-hub-jazan"> <!-- كرت فعالية سيتي هوب مع تخزين رابط في data-link -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/سيتي هب.jpg" alt="سيتي هوب"> <!-- صورة تمثل فعالية سيتي هوب -->
+                <div class="card-body"> <!-- جسم الكرت (النص) -->
+                    <div class="card-title">سيتي هوب </div> <!-- عنوان الكرت -->
+                    <div class="card-text">سيتي هب جازان وجهة ترفيهية نابضة بالحياة تجمع الألعاب والعروض والمطاعم</div> <!-- وصف الفعالية -->
+                    <a href="https://enjoy.sa/ar/events/city-hub-jazan" target="_blank" class="btn">اعرف المزيد</a> <!-- زر يأخذ المستخدم لرابط الحجز/المزيد في تبويب جديد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="كارتنق جازان" data-link="https://enjoy.sa/ar/events/happy-jazan/"> <!-- كرت فعالية كارتنق جازان -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/كارتنق جازان.jpg" alt="كارتنق جازان "> <!-- صورة للكارتنق -->
+                <div class="card-body">
+                    <div class="card-title">كارتنق جازان</div> <!-- عنوان الفعالية -->
+                    <div class="card-text">كارتنق جازان يمنحك جرعة حماس وسرعة وسط أجواء تنافسية ممتعة.</div> <!-- وصف الفعالية -->
+                    <a href="https://enjoy.sa/ar/events/happy-jazan/" target="_blank" class="btn">اعرف المزيد</a> <!-- زر رابط للمزيد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="بينتبول جازان" data-link="https://jizan.platinumlist.net/ar/"> <!-- كرت فعالية بينتبول جازان -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/بينتبول جازان.jpg" alt="بينتبول جازان"> <!-- صورة للبينتبول -->
+                <div class="card-body">
+                    <div class="card-title">بينتبول جازان</div> <!-- عنوان الفعالية -->
+                    <div class="card-text">بينتبول جازان تجربة قتالية ممتعة تجمع الحماس والتحدي في أجواء مليئة بالإثارة</div> <!-- وصف الفعالية -->
+                    <a href="https://jizan.platinumlist.net/ar/" target="_blank" class="btn">اعرف المزيد</a> <!-- زر للمزيد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="مرسى الحافة" data-link="https://ar.tripadvisor.com/LocationPhotoDirectLink-g1074315-d7743371-i473572615-Radisson_Blu_Resort_Jizan-Jazan_Jizan_Province.html"> <!-- كرت مرسى الحافة -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/مرسى الحافه.jpg" alt="مرسى الحافه"> <!-- صورة للمرسى -->
+                <div class="card-body">
+                    <div class="card-title">مرسى الحافه</div> <!-- عنوان المكان -->
+                    <div class="card-text">مرسى الحافة جازان وجهة بحرية ساحرة تجمع بين إطلالة المرفأ.</div> <!-- وصف قصير -->
+                    <a href="https://ar.tripadvisor.com/LocationPhotoDirectLink-g1074315-d7743371-i473572615-Radisson_Blu_Resort_Jizan-Jazan_Jizan_Province.html" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لموقع خارجي -->
+                </div>
+            </div>
+
+            <div class="card" data-id="جزيرة فرسان" data-link="https://stormteamsa.com/ar/%D8%AC%D8%B2%D8%B1-%D9%81%D8%B1%D8%B3%D8%A7%D9%86/p456614944?srsltid=AfmBOor1LQQCsD83attR49gTjxs_rENAQMWGnC4No1hYQE_jFl7g4gaO"> <!-- كرت جزيرة فرسان -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <a href="https://riyadhseason.sa"></a> <!-- رابط فارغ تقريباً (لا يتم استخدامه هنا فعلياً) -->
+                <img src="images/جزيرة فرسان.jpg" alt="جزيرة فرسان"> <!-- صورة لجزيرة فرسان -->
+                <div class="card-body">
+                    <div class="card-title">جزيرةفرسان</div> <!-- عنوان الكرت -->
+                    <div class="card-text">جزيرة فرسان تُبهر زوّارها بشواطئها الفيروزية وتراثها العريق، لتقدم تجربة فريدة.</div> <!-- وصف عن الجزيرة -->
+                    <a href="https://stormteamsa.com/ar/%D8%AC%D8%B2%D8%B1-%D9%81%D8%B1%D8%B3%D8%A7%D9%86/p456614944?srsltid=AfmBOor1LQQCsD83attR49gTjxs_rENAQMWGnC4No1hYQE_jFl7g4gaO" target="_blank" class="btn">اعرف المزيد</a> <!-- زر للمزيد -->
+                </div>
+            </div>
+        
+            <div class="card" data-id="سوبلكس سيتي" data-link="https://www.gea.gov.sa/city-hub-jazan/"> <!-- كرت سوبلكس سيتي -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/سوبلكس جازان.jpg" alt="سوبلكس سيتي"> <!-- صورة للفعالية -->
+                <div class="card-body">
+                    <div class="card-title">سوبلكس سيتي</div> <!-- عنوان الكرت -->
+                    <div class="card-text">سويلكس سيتي وجهة ترفيهية عصرية تجمع بين المغامرة والأنشطة التفاعلية.</div> <!-- وصف الفعالية -->
+                    <a href="https://www.gea.gov.sa/city-hub-jazan/" target="_blank" class="btn">اعرف المزيد</a> <!-- زر للمزيد -->
+                </div>
+            </div>
+        
+            <div class="card" data-id="ممر الغروب" data-link="https://www.spa.gov.sa/N2042365"> <!-- كرت ممر الغروب -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/ممر الغروب جازان.jpg" alt="ممر الغروب "> <!-- صورة الممر -->
+                <div class="card-body">
+                    <div class="card-title">ممر الغروب</div> <!-- عنوان المكان -->
+                    <div class="card-text">ممر الغروب في جازان يأسر الزوّار بإطلالته البحرية الهادئة ولحظات الغروب الخلابة.</div> <!-- وصف عن ممر الغروب -->
+                    <a href="https://www.spa.gov.sa/N2042365" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للمزيد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="شاطئ الهيئة الملكية" data-link="https://www.spa.gov.sa/N2233084"> <!-- كرت شاطئ الهيئة الملكية -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/شاطئ الهئيه الملكيه.jpg" alt="شاطئ الهيئه الملكيه"> <!-- صورة للشاطئ -->
+                <div class="card-body">
+                    <div class="card-title">شاطئ الهيئة الملكية</div> <!-- عنوان الشاطئ -->
+                    <div class="card-text">شاطئ الهيئة الملكية في جازان يتميز برماله الذهبية ومياهه الصافية، ليقدّم تجربة بحرية ممتعة لجميع الزوار.</div> <!-- وصف الشاطئ -->
+                    <a href="https://www.spa.gov.sa/N2233084" target="_blank" class="btn">اعرف المزيد</a> <!-- زر للمزيد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="شاطئ المرجان" data-link="https://www.urtrips.com/murjan-beach-jizan/"> <!-- كرت شاطئ المرجان -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/شاطئ المرجان.jpg" alt="شاطئ المرجان "> <!-- صورة للشاطئ -->
+                <div class="card-body">
+                    <div class="card-title">شاطئ المرجان</div> <!-- عنوان الشاطئ -->
+                    <div class="card-text">شاطئ المرجان في جازان يتميز بمياهه الفيروزية ورماله البيضاء، ليكون وجهة مثاليه.</div> <!-- وصف الشاطئ -->
+                    <a href="https://www.urtrips.com/murjan-beach-jizan/" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للمزيد -->
+                </div>
+            </div>
+        
+        </div> <!-- نهاية مسار الكروت -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر السهم لتمرير الكروت باتجاه اليمين -->
+    </div> <!-- نهاية السلايدر -->
+</section> <!-- نهاية قسم أبرز الفعاليات -->
+
+<!-- الانشطة السياحية-->
+<section class="container" id="rh-activities-section"> <!-- قسم الأنشطة السياحية -->
+    <h2 class="titleright">الانشطة السياحية </h2>      <!-- عنوان القسم: الأنشطة السياحية -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تمرير الكروت لليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية الكروت -->
+
+            <div class="card" data-id="القرية التراثية" data-link="https://waditrip.sa/ar/tour/%D8%A7%D9%84%D9%82%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D8%AB%D9%8A%D8%A9-%D9%81%D9%8A-%D8%AC%D8%A7%D8%B2%D8%A7%D9%86/"> <!-- كرت القرية التراثية -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <a href="https://riyadhseason.sa"></a> <!-- رابط غير مستخدم فعلياً -->
+                <img src="images/القرية التراثيه جازان.webp" alt="القرية التراثيه"> <!-- صورة للقرية التراثية -->
+                <div class="card-body">
+                    <div class="card-title">القرية التراثيه</div> <!-- عنوان الكرت -->
+                    <div class="card-text">القرية التراثية في جازان تأخذك في رحلة عبر الزمن لتستمتع بالتراث الثقافي والمعماري الأصيل للمنطقة.</div> <!-- وصف القرية -->
+                    <a href="https://waditrip.sa/ar/tour/%D8%A7%D9%84%D9%82%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%B1%D8%A7%D8%AB%D9%8A%D8%A9-%D9%81%D9%8A-%D8%AC%D8%A7%D8%B2%D8%A7%D9%86/" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للمزيد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="جبال فيفا" data-link="https://ar.wikipedia.org/wiki/%D9%81%D9%8A%D9%81%D8%A7%D8%A1_(%D8%B3%D9%84%D8%B3%D9%84%D8%A9_%D8%AC%D8%A8%D8%A7%D9%84)"> <!-- كرت جبال فيفا -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/جبال فيفا.webp" alt="جبال فيفا"> <!-- صورة جبال فيفا -->
+                <div class="card-body">
+                    <div class="card-title">جبال فيفا</div> <!-- عنوان الكرت -->
+                    <div class="card-text">جبال فيفا في جازان تتميز بقممها الشاهقة وطبيعتها الخلابة، لتوفر للزوار مناظر رائعة</div> <!-- وصف الجبال -->
+                    <a href="https://ar.wikipedia.org/wiki/%D9%81%D9%8A%D9%81%D8%A7%D8%A1_(%D8%B3%D9%84%D8%B3%D9%84%D8%A9_%D8%AC%D8%A8%D8%A7%D9%84)" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للمزيد -->
+                </div>
+            </div>
+        
+            <div class="card" data-id="قلعة الدوسرية" data-link="https://www.visitsaudi.com/ar/jazan/attraction/al-dosariyah-castle"> <!-- كرت قلعة الدوسرية -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/قلعة الدوسريه جازان.webp" alt="قلعة الدوسريه"> <!-- صورة للقلعة -->
+                <div class="card-body">
+                    <div class="card-title">قلعةالدوسريه بجازان</div> <!-- عنوان الكرت -->
+                    <div class="card-text">قلعة الدوسرية في جازان تُعد رمزًا تاريخيًا يعكس عراقة المنطقة وتراثها الأصيل.</div> <!-- وصف القلعة -->
+                    <a href="https://www.visitsaudi.com/ar/jazan/attraction/al-dosariyah-castle" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للمزيد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="مركز غواص الأحلام" data-link="https://www.visitsaudi.com/ar/jazan/attraction/dream-divers-center"> <!-- كرت مركز غواص الأحلام -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/مركز غواص الاحلام.webp" alt="مركز غواص الاحلام"> <!-- صورة للمركز -->
+                <div class="card-body">
+                    <div class="card-title">مركز غواص الاحلام</div> <!-- عنوان الكرت -->
+                    <div class="card-text">مركز غواص الأحلام في جازان يقدّم تجربة غوص مميزة بين الشعاب المرجانية والمياه الصافية</div> <!-- وصف نشاط الغوص -->
+                    <a href="https://www.visitsaudi.com/ar/jazan/attraction/dream-divers-center" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للمزيد -->
+                </div>
+            </div>
+
+        </div> <!-- نهاية مسار كروت الأنشطة السياحية -->
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تمرير الكروت لليمين -->
+    </div> <!-- نهاية السلايدر -->
+</section> <!-- نهاية قسم الأنشطة السياحية -->
+
+<!-- اشهر خيارات الإقامة -->
+<section class="container" id="rh-accommodation-section"> <!-- قسم أشهر خيارات الإقامة -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      <!-- عنوان القسم: أشهر خيارات الإقامة -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية كروت الفنادق -->
+
+            <div class="card" data-id="فندق نوفتيل جازان" data-link="..."> <!-- كرت فندق نوفتيل (الرابط طويل جداً لذلك تم اختصاره هنا بالتعليق) -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/فندق نوفتيل جازان.jpg" alt="فندق نوفتيل"> <!-- صورة لفندق نوفتيل -->
+                <div class="card-body">
+                    <div class="card-title">فندق نوفتيل</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق نوفتيل جازان يقدم تجربة إقامة عصرية ومريحة مع خدمات عالية.</div> <!-- وصف الفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=2378099&label=olr-gmcc%3ACjwKCAiA55rJBhByEiwAFkY1QCzG8Cq6PwKnLN30iEX-OMWxxZWBW5RuMGiZlLlvdXAnt2EnPOpAsRoC7Z8QAvD_BwE&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=2378099&hotel_id=3157714&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=24&rt_num_rooms=4&rt_num_blocks_per_room=%7B%22315771408%22%3A6%2C%22315771409%22%3A6%2C%22315771401%22%3A6%2C%22315771403%22%3A6%7D&rt_selected_blocks_info=%7B%22315771409_113716993_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_pos…" target="_blank" class="btn">احجزالان</a> <!-- رابط حجز مباشر للفندق عبر Booking -->
+                </div>
+            </div>
+
+            <div class="card" data-id="فندق رينيوم جازان" data-link="..."> <!-- كرت فندق رينيوم (بيانات الحجز في data-link) -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/فندق رينيوم جازان.jpg" alt="فندق رينيوم"> <!-- صورة للفندق -->
+                <div class="card-body">
+                    <div class="card-title">فندق رينيوم</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق رينيوم جازان يوفر إقامة أنيقة ومريحة مع خدمات متميزة.</div> <!-- وصف الفندق -->
+                    <a href="https://www.booking.com/hotel/sa/fndq-rynywm-jzn.ar.html?aid=356980&label=gog235jc-10CAsoxAFCD2ZuZHEtcnlueXdtLWp6bkgBWANoxAGIAQKYATO4AQfIAQ3YAQPoAQH4AQGIAgGoAgG4AtzUn8kGwAIB0gIkZmIzZjc0YTAtNjEzOC00YWRmLTgwMWItYmZmMmViMzFlZGM32AIB4AIB&sid=2307d965066903050f01a463bf561ff9&all_sr_blocks=1478325101_419300669_2_1_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3096152&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1478325101_419300669_2_1_0&hpos=1&matching_block_id=1478325101_419300669_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1478325101_419300669_2_1_0__30167&srepoch=1764223584&srpvid=9c4a2aef2ad10231&type=total&ucfs=1&" target="_blank" class="btn">احجزالان</a> <!-- زر الحجز من موقع بوكينج -->
+                </div>
+            </div>
+
+            <div class="card" data-id="فندق جاردن ميلينيوم جازان" data-link="..."> <!-- كرت فندق جاردن ميلينيوم -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/فندق جاردن ميلينوم جازان.jpg" alt="فندق جاردن ميلينيوم "> <!-- صورة للفندق -->
+                <div class="card-body">
+                    <div class="card-title">فندق ميلينوم</div> <!-- الاسم المعروض للفندق -->
+                    <div class="card-text">فندق جاردن ميلينيوم جازان يجمع بين الفخامة والراحة ليمنح زواره إقامة مميزة.</div> <!-- وصف الفندق -->
+                    <a href="https://secure.booking.com/tpi_book.html?aid=325251&bcom_room_id=807856601&checkin=2025-12-04&checkout=2025-12-05&children_age=&hotel_id=8078566&label=grand-millennium-jazan-3x%2AIoi2Qr5UHHLoJZ7ZFeQSM625935205563%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1647528396438%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&num_adults=2&num_children=0&num_rooms=1&pv=82e62a2357800187&rate_block_id=tpi-cd07d31f60e9494c282ec0e6f057e3c5&srpvid=08d52a1dd4740466&supplier_id=332&ws=ag&" target="_blank" class="btn">احجزالان</a> <!-- رابط الحجز -->
+                </div>
+            </div>
+
+            <div class="card" data-id="فندق قراند ميلينيوم جازان" data-link="..."> <!-- كرت فندق قراند ميلينيوم -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/فندق قراند ميلينيوم جازان.jpg" alt="فندق قراند ميلينيوم"> <!-- صورة للفندق -->
+                <div class="card-body">
+                    <div class="card-title">فندق قراند ميلينيوم</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق جراند ميلينيوم جازان اطلالة جميلة و يجمع بين الفخامة والرفاهية</div> <!-- وصف الفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=grand-millennium-jazan-iLRJ4R*NC29a25*n7YpIBwSM625935205563%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1436947579865%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=6890585&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=45&rt_num_rooms=18&rt_num_blocks_per_room=%7B%22689058506%22%3A3%2C%22689058513%22%3A3%2C%22689058511%22%3A2%2C%22689058507%22%3A2%2C%22689058508%22%3A2%2C%22689058515%22%3A3%2C%22689058502%22%3A2%2C%22689058514%22%3A3%2C%22689058510%22%3A2%2C%22689058503%22%3A3%2C%22689058516%22%3A3%2C%22689058517%22%3A2%2C%22689058501%22%3A3%2C%22689058518%22%3A2%2C%22689058512%22%3A2%2C%22689058505%22%3A3%2C%22689058504%22%3A3%2C%22689058509%22%3A2%7D&rt_selected_blocks_info=%7B%22689058513_424791266_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=475&rt_selected_total_price=475&rt_with_no_dimensions=&rt_relevance_metric_id=ab707952-11cd-4e94-b6fd-1ed21731503c&rt_pageview_id=9c4a2b9172740189&from_source=hotel&srpvid=d9842b8b4f6f061d&selected_rate_689058513=689058513_424791266_2_42_0&nr_rooms_689058513_424791266_2_42_0=1&nr_guests_689058513_424791266_2_42_0=2&nr_guests_689058513_424791266_2_42_0=2&nr_guests_689058513_424791266_2_42_0=2&nr_guests_689058513_424791266_2_42_0=2&nr_guests_689058513_424791266_2_42_0=2&rt_mf_ux_type=0&basket_id=f360f53c-3c43-4de1-8c78-4f6b5cb8ba00" target="_blank" class="btn">احجزالان</a> <!-- رابط الحجز -->
+                </div>
+            </div>
+
+            <div class="card" data-id="منتجع راديسون جازان" data-link="..."> <!-- كرت منتجع راديسون -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/منتجع راديسون جازان.jpg" alt="منتجع راديسون"> <!-- صورة للمنتجع -->
+                <div class="card-body">
+                    <div class="card-title">منتجع راديسون</div> <!-- اسم المنتجع -->
+                    <div class="card-text">منتجع راديسون جازان يقدم تجربة استجمام فاخرة مع إطلالات ساحرة</div> <!-- وصف المنتجع -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM217275847583%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9207286%3Ali%3Adem%3Adm&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=1303970&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=12&rt_num_rooms=6&rt_num_blocks_per_room=%7B%22130397007%22%3A2%2C%22130397008%22%3A2%2C%22130397004%22%3A2%2C%22130397005%22%3A2%2C%22130397001%22%3A2%2C%22130397006%22%3A2%7D&rt_selected_blocks_info=%7B%22130397001_393429846_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=282&rt_selected_total_price=282&rt_with_no_dimensions=&rt_relevance_metric_id=041be38c-6173-4ab5-89a3-db70c471b61b&rt_pageview_id=776b2c6c77330300&from_source=hotel&srpvid=54902c5f8d580200&selected_rate_130397001=130397001_393429846_2_42_0&nr_rooms_130397001_393429846_2_42_0=1&nr_guests_130397001_393429846_2_42_0=2" target="_blank" class="btn">احجزالان</a> <!-- رابط الحجز -->
+                </div>
+            </div>
+
+            <div class="card" data-id="فندق كورت يارد جازان" data-link="..."> <!-- كرت فندق كورت يارد -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/فندق كورت يارد.jpg" alt="كورت يارد"> <!-- صورة للفندق -->
+                <div class="card-body">
+                    <div class="card-title">كورت يارد</div> <!-- اسم الفندق -->
+                    <div class="card-text">قلعة الدوسرية في جازان تُعد رمزًا تاريخيًا يعكس عراقة المنطقة وتراثها الأصيل.</div> <!-- هنا النص يبدو منسوخ بالخطأ من قلعة الدوسرية -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=2378099&label=olr%3ACjwKCAiA55rJBhByEiwAFkY1QJtZ_I1pPWGGsBmqlAZGsuPTyClGsYgP9--4ZV3Plov7brV4OeFOXxoCfYsQAvD_BwE&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=2378099&hotel_id=788854&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=15&rt_num_rooms=5&rt_num_blocks_per_room=%7B%2278885403%22%3A3%2C%2278885402%22%3A3%2C%2278885406%22%3A3%2C%2278885409%22%3A1%2C%2278885404%22%3A5%7D&rt_selected_blocks_info=%7B%2278885404_94540513_0_10_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=421&rt_selected_total_price=421&rt_with_no_dimensions=&rt_relevance_metric_id=a558a921-10cb-4feb-bc9a-dfea677c0ba1&rt_pageview_id=f35a2cfadc5d0164&from_source=hotel&srpvid=9c4a2cf25e8c04eb&selected_rate_78885404=78885404_94540513_0_10_0&nr_rooms_78885404_94540513_0_10_0=1&nr_guests_78885404_94540513_0_10_0=2&nr_guests_78885404_94540513_0_10_0=2&nr_guests_78885404_94540513_0_10_0=2&nr_guests_78885404_94540513_0_10_0=2&nr_guests_78885404_94540513_0_10_0=2&rt_mf_ux_type=0&basket_id=e553017d-22fc-46b5-b36d-a3cb0962913c" target="_blank" class="btn">احجزالان</a> <!-- رابط الحجز -->
+                </div>
+            </div>
+
+        </div> <!-- نهاية مسار كروت الإقامة -->
+      
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تمرير كروت الإقامة لليمين -->
+    </div> <!-- نهاية سلايدر الإقامة -->
+</section> <!-- نهاية قسم الإقامة -->
+
+
+
+
+<section class="containerimg"> <!-- قسم خاص بالخريطة التفاعلية المصغّرة لجازان -->
+
+    <h2>الخريطة التفاعلية</h2> <!-- عنوان القسم: الخريطة التفاعلية -->
+
+    <div class="map-wrapper"> <!-- حاوية الخريطة مع القائمة الجانبية -->
+
+        <!-- القائمة الجانبية -->
+        <div class="map-sidebar"> <!-- قائمة جانبية تحتوي كروت لأماكن محددة في جازان -->
+
+            <!-- ممر الغروب -->
+            <a href="https://www.spa.gov.sa/N2042365" class="card-link" target="_blank"> <!-- رابط خارجي لممر الغروب -->
+                <div class="map-card" data-lat="16.960254839298088" data-lng="42.53738746561683" data-name="ممر الغروب" data-zoom="11"> <!-- كرت يحتوي إحداثيات المكان لإظهارها على الخريطة -->
+                    <img src="images/ممر الغروب جازان.jpg" alt="ممر الغروب"> <!-- صورة لممر الغروب -->
+                    <span>ممر الغروب</span> <!-- اسم المكان -->
+                </div>
+            </a>
+
+            <!-- شاطئ المرجان -->
+            <a href="https://www.urtrips.com/murjan-beach-jizan/" class="card-link" target="_blank"> <!-- رابط خارجي لشاطئ المرجان -->
+                <div class="map-card" data-lat="17.01315060384428" data-lng="42.59589492612881" data-name="شاطئ المرجان" data-zoom="13"> <!-- إحداثيات شاطئ المرجان -->
+                    <img src="images/شاطئ المرجان.jpg" alt="شاطئ المرجان"> <!-- صورة للشاطئ -->
+                    <span>شاطئ المرجان</span> <!-- اسم الشاطئ -->
+                </div>
+            </a>
+
+            <!-- فندق نوفتيل -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=2378099&label=olr-gmcc%3ACjwKCAiA55rJBhByEiwAFkY1QCzG8Cq6PwKnLN30iEX-OMWxxZWBW5RuMGiZlLlvdXAnt2EnPOpAsRoC7Z8QAvD_BwE&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=2378099&hotel_id=3157714&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=24&rt_num_rooms=4&rt_num_blocks_per_room=%7B%22315771408%22%3A6%2C%22315771409%22%3A6%2C%22315771401%22%3A6%2C%22315771403%22%3A6%7D&rt_selected_blocks_info=%7B%22315771409_113716993_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_pos" class="card-link" target="_blank"> <!-- رابط حجز فندق نوفتيل -->
+                <div class="map-card" data-lat="16.88125788088308" data-lng="42.54136515212188" data-name="فندق نوفتيل" data-zoom="13"> <!-- إحداثيات الفندق -->
+                    <img src="images/فندق نوفتيل جازان.jpg" alt="فندق نوفتيل"> <!-- صورة للفندق -->
+                    <span>فندق نوفتيل</span> <!-- اسم الفندق -->
+                </div>
+            </a>
+
+            <!-- فندق رينيوم -->
+            <a href="https://www.booking.com/hotel/sa/fndq-rynywm-jzn.ar.html?aid=356980&label=gog235jc-10CAsoxAFCD2ZuZHEtcnlueXdtLWp6bkgBWANoxAGIAQKYATO4AQfIAQ3YAQPoAQH4AQGIAgGoAgG4AtzUn8kGwAIB0gIkZmIzZjc0YTAtNjEzOC00YWRmLTgwMWItYmZmMmViMzFlZGM32AIB4AIB&sid=2307d965066903050f01a463bf561ff9&all_sr_blocks=1478325101_419300669_2_1_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3096152&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1478325101_419300669_2_1_0&hpos=1&matching_block_id=1478325101_419300669_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1478325101_419300669_2_1_0__30167&srepoch=1764223584&srpvid=9c4a2aef2ad10231&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط حجز فندق رينيوم -->
+                <div class="map-card" data-lat="16.92282723332353" data-lng="42.564697780958475" data-name="فندق رينيوم" data-zoom="13"> <!-- إحداثيات الفندق -->
+                    <img src="images/فندق رينيوم جازان.jpg" alt="فندق رينيوم"> <!-- صورة للفندق -->
+                    <span>فندق رينيوم</span> <!-- اسم الفندق -->
+                </div>
+            </a>
+
+            <!-- فندق قراند ميلينيوم (ميلينوم) -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=grand-millennium-jazan-iLRJ4R*NC29a25*n7YpIBwSM625935205563%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1436947579865%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=6890585&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=45&rt_num_rooms=18&rt_num_blocks_per_room=%7B%22689058506%22%3A3%2C%22689058513%22%3A3%2C%22689058511%22%3A2%2C%22689058507%22%3A2%2C%22689058508%22%3A2%2C%22689058515%22%3A3%2C%22689058502%22%3A2%2C%22689058514%22%3A3%2C%22689058510%22%3A2%2C%22689058503%22%3A3%2C%22689058516%22%3A3%2C%22689058517%22%3A2%2C%22689058501%22%3A3%2C%22689058518%22%3A2%2C%22689058512%22%3A2%2C%22689058505%22%3A3%2C%22689058504%22%3A3%2C%22689058509%22%3A2%7D&rt_selected_blocks_info=%7B%22689058513_424791266_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=475&rt_selected_total_price=475&rt_with_no_dimensions=&rt_relevance_metric_id=ab707952-11cd-4e94-b6fd-1ed21731503c&rt_pageview_id=9c4a2b9172740189&from_source=hotel&srpvid=d9842b8b4f6f061d&selected_rate_689058513=689058513_424791266_2_42_0&nr_rooms_689058513_424791266_2_42_0=1&nr_guests_689058513_424791266_2_42_0=2" class="card-link" target="_blank"> <!-- رابط حجز فندق ميلينيوم -->
+                <div class="map-card" data-lat="16.889604934039834" data-lng="42.57058882641692" data-name="فندق ميلينوم" data-zoom="13"> <!-- إحداثيات الفندق -->
+                    <img src="images/فندق قراند ميلينيوم جازان.jpg" alt="فندق ميلينوم"> <!-- صورة للفندق -->
+                    <span>فندق ميلينوم</span> <!-- اسم الفندق -->
+                </div>
+            </a>
+
+            <!-- منتجع راديسون -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM217275847583%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9207286%3Ali%3Adem%3Adm&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=1303970&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=12&rt_num_rooms=6&rt_num_blocks_per_room=%7B%22130397007%22%3A2%2C%22130397008%22%3A2%2C%22130397004%22%3A2%2C%22130397005%22%3A2%2C%22130397001%22%3A2%2C%22130397006%22%3A2%7D&rt_selected_blocks_info=%7B%22130397001_393429846_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=282&rt_selected_total_price=282&rt_with_no_dimensions=&rt_relevance_metric_id=041be38c-6173-4ab5-89a3-db70c471b61b&rt_pageview_id=776b2c6c77330300&from_source=hotel&srpvid=54902c5f8d580200&selected_rate_130397001=130397001_393429846_2_42_0&nr_rooms_130397001_393429846_2_42_0=1&nr_guests_130397001_393429846_2_42_0=2" class="card-link" target="_blank"> <!-- رابط حجز منتجع راديسون -->
+                <div class="map-card" data-lat="16.92930788681752" data-lng="42.54857539445186" data-name="منتجع راديسون" data-zoom="13"> <!-- إحداثيات المنتجع -->
+                    <img src="images/منتجع راديسون جازان.jpg" alt="منتجع راديسون"> <!-- صورة للمنتجع -->
+                    <span>منتجع راديسون</span> <!-- اسم المنتجع -->
+                </div>
+            </a>
+
+            <!-- كورت يارد -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=2378099&label=olr%3ACjwKCAiA55rJBhByEiwAFkY1QJtZ_I1pPWGGsBmqlAZGsuPTyClGsYgP9--4ZV3Plov7brV4OeFOXxoCfYsQAvD_BwE&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=2378099&hotel_id=788854&maxrooms=10&stage=1&interval=1&checkin=2025-12-04&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=15&rt_num_rooms=5&rt_num_blocks_per_room=%7B%2278885403%22%3A3%2C%2278885402%22%3A3%2C%2278885406%22%3A3%2C%2278885409%22%3A1%2C%2278885404%22%3A5%7D&rt_selected_blocks_info=%7B%2278885404_94540513_0_10_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=421&rt_selected_total_price=421&rt_with_no_dimensions=&rt_relevance_metric_id=a558a921-10cb-4feb-bc9a-dfea677c0ba1&rt_pageview_id=f35a2cfadc5d0164&from_source=hotel&srpvid=9c4a2cf25e8c04eb&selected_rate_78885404=78885404_94540513_0_10_0&nr_rooms_78885404_94540513_0_10_0=1&nr_guests_78885404_94540513_0_10_0=2" class="card-link" target="_blank"> <!-- رابط حجز فندق كورت يارد -->
+                <div class="map-card" data-lat="16.902200287713907" data-lng="42.553069067465096" data-name="كورت يارد" data-zoom="13"> <!-- إحداثيات الفندق -->
+                    <img src="images/فندق كورت يارد.jpg" alt="كورت يارد"> <!-- صورة للفندق -->
+                    <span>كورت يارد</span> <!-- اسم الفندق -->
+                </div>
+            </a>
+
+            <!-- سيتي هوب -->
+            <a href="https://enjoy.sa/ar/events/city-hub-jazan" class="card-link" target="_blank"> <!-- رابط لفعالية سيتي هوب -->
+                <div class="map-card" data-lat="16.822892780849184" data-lng="42.62290533677772" data-name="سيتي هوب" data-zoom="13"> <!-- إحداثيات الموقع -->
+                    <img src="images/سيتي هب.jpg" alt="سيتي هوب"> <!-- صورة للفعالية -->
+                    <span>سيتي هوب</span> <!-- اسم الفعالية -->
+                </div>
+            </a>
+
+            <!-- مرسى الحافة -->
+            <a href="https://ar.tripadvisor.com/LocationPhotoDirectLink-g1074315-d7743371-i473572615-Radisson_Blu_Resort_Jizan-Jazan_Jizan_Province.html" class="card-link" target="_blank"> <!-- رابط لمعلومات مرسى الحافة -->
+                <div class="map-card" data-lat="16.90154761040333" data-lng="42.541161307418776" data-name="مرسى الحافه" data-zoom="13"> <!-- إحداثيات المكان -->
+                    <img src="images/مرسى الحافه.jpg" alt="مرسى الحافه"> <!-- صورة للمكان -->
+                    <span>مرسى الحافه</span> <!-- الاسم المعروض -->
+                </div>
+            </a>
+
+        </div> <!-- نهاية القائمة الجانبية للأماكن على الخريطة -->
+
+        <!-- صندوق الخريطة -->
+        <div id="map" data-first-zoom="10"></div> <!-- عنصر الخريطة نفسه، وسيتم التحكم به من خلال ملف map.js -->
+
+    </div> <!-- نهاية حاوية الخريطة -->
+
+    <!-- مكتبة Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- ربط ملف CSS الخاص بمكتبة الخرائط Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- ربط ملف JavaScript الخاص بمكتبة Leaflet -->
+
+    <!-- ملف JS واحد لكل الصفحات -->
+    <script src="js/map.js"></script> <!-- ملف جافاسكربت المسؤول عن منطق الخريطة (إضافة ماركرات، تحريك الخريطة...إلخ) -->
+
+</section> <!-- نهاية قسم الخريطة التفاعلية لجازان -->
+
+
+
+<footer> <!-- تذييل الصفحة -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق الملكية -->
+    <div> <!-- حاوية روابط السوشال ميديا -->
+        <a href="#">فيسبوك</a> |  <!-- رابط صفحة فيسبوك (حالياً بدون رابط فعلي) -->
+        <a href="#">تويتر</a> |  <!-- رابط تويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط إنستجرام -->
+    </div>
+</footer> <!-- نهاية التذييل -->
+
+<!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف جافاسكربت العام للموقع (السلايدر، زر اقرأ المزيد، النافبار...إلخ) -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML بالكامل -->

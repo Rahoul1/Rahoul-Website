@@ -1,0 +1,486 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند كـ HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية واتجاه الكتابة من اليمين لليسار -->
+<head> <!-- بداية رأس الصفحة (لا يظهر للمستخدم مباشرة) -->
+    <meta charset="UTF-8"> <!-- ترميز الأحرف ليقبل العربية بشكل صحيح -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ضبط عرض الصفحة لتناسب الشاشات المختلفة -->
+    <title>عسير- الطبيعة</title> <!-- عنوان الصفحة في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجية CSS -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية رأس الصفحة -->
+<body> <!-- بداية جسم الصفحة (كل ما يظهر للمستخدم) -->
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel --> <!-- تعليق يوضح أن الجزء التالي خاص بالسلايدر الرئيسي -->
+<div class="carousel"> <!-- حاوية السلايدر (عرض الصور المتحركة) -->
+    <img src="images/صورة عسير الرئيسية.jpeg" class="active" alt="عسير " style="height: 750px; object-fit: cover;"> <!-- صورة رئيسية لعسير في السلايدر مع ارتفاع محدد وتعبئة كاملة -->
+     <div class="carousel-text"><h2 class="titleright title">عسير </h2><p class="p"> عسير منطقة جبلية جميلة تجمع بين الطبيعة الخضراء والمناخ المعتدل والتراث العريق في جنوب غرب السعودية. </p>  </div> <!-- نص فوق السلايدر يوضح عنوان عسير ووصف قصير -->
+</div> <!-- نهاية حاوية السلايدر -->
+
+<section class="container"> <!-- قسم عن عسير داخل حاوية عامة -->
+  <h1 class="titleright">عن عسير</h1> <!-- عنوان القسم: عن عسير -->
+  <p class="titleright read-more-text"> <!-- فقرة نصية مع كلاس لزر "اقرأ المزيد" -->
+    عسير منطقة جبلية جنوب غربي المملكة العربية السعودية، تشتهر بطبيعتها الخلابة ومرتفعاتها الضبابية. تتميز بمناخ
+    <br>          معتدل صيفًا وشتاءً بارد نسبيًا مقارنة ببقية المناطق السعودية.  <!-- سطر جديد يوضح مناخ عسير -->
+    <span class="dots">...</span> <!-- نقاط إكمال النص تظهر قبل التوسّع -->
+    <span class="more">
+      كما تشتهر عسير بتراثها الثقافي الغني وحرفها اليدوية
+      <br> المميزة مثل التطريز والفنون الشعبية.
+    </span> <!-- جزء مخفي من النص يظهر عند الضغط على "اقرأ المزيد" -->
+  </p> <!-- نهاية الفقرة النصية -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر يغيّر حالة النص (إظهار المزيد/أقل) باستدعاء دالة JavaScript -->
+</section> <!-- نهاية قسم عن عسير -->
+
+
+
+
+<!-- أبرزالفعاليات --> <!-- تعليق يوضح بداية قسم أبرز الفعاليات -->
+<section class="container" id="rh-events-section"> <!-- قسم جديد داخل حاوية عامة -->
+    <h2 class="titleright">أبرزالفعاليات</h2>      <!-- عنوان القسم: أبرز الفعاليات -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر للكروت -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر سهم لليسار لتحريك السلايدر -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية الكروت التي تتحرك أفقياً -->
+
+          <div class="card" data-id="عسيب عسير" data-link="https://discoveraseer.com/experiences/oahh-aasyb"> <!-- كرت فعالية "عسيب عسير" مع بيانات مخصصة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة الكرت للمفضلة -->
+            <img src="images/عسيب عسير.jpg" alt="عسيب عسير "> <!-- صورة الكرت -->
+            <div class="card-body"> <!-- جسم الكرت (المحتوى النصي) -->
+                <div class="card-title">عسيب عسير </div> <!-- عنوان الكرت -->
+                <div class="card-text">عسيب وجهة تجمع الهدوء بالفخامة، وتقدم تجربة راقية في قلب الطبيعة.</div> <!-- نص وصفي قصير -->
+                <a href="https://discoveraseer.com/experiences/oahh-aasyb" target="_blank" class="btn">اعرف المزيد</a> <!-- زر ينقل لتفاصيل أكثر في موقع خارجي -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية الكرت الأول -->
+
+         <div class="card" data-id="منتجع الوادي" data-link="https://discoveraseer.com/places/mntgaa-aloady"> <!-- كرت "منتجع الوادي" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/منتجع الوادي.jpg" alt="منتجع الوادي"> <!-- صورة المنتجع -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">منتجع الوادي</div> <!-- عنوان الكرت -->
+                <div class="card-text">منتجع الوادي يمنحك لحظات هادئة وسط طبيعة خلابة وإقامة فاخرة تعكس جمال المكان</div> <!-- وصف الكرت -->
+                <a href="https://discoveraseer.com/places/mntgaa-aloady" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية الكرت الثاني -->
+
+         <div class="card" data-id="نجمه ونهر" data-link="https://discoveraseer.com/experiences/ngm-onhr"> <!-- كرت "نجمه ونهر" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/نجمه ونهر.jpg" alt="نجمة ونهر"> <!-- صورة المكان -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">نجمه ونهر</div> <!-- عنوان الكرت -->
+                <div class="card-text">جمة ونهر مساحة تجمع بين سحر الجمال وهدوء التفاصيل، لتمنحك تجربة استثنائية لا تُنسى.</div> <!-- وصف الكرت -->
+                <a href="https://discoveraseer.com/experiences/ngm-onhr" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية الكرت الثالث -->
+
+        <div class="card" data-id="بلدة بيوني" data-link="https://discoveraseer.com/experiences/byona-alshrf"> <!-- كرت "بلدة بيوني" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/بيوني عسير.jpg" alt="بلدة بيوني"> <!-- صورة البلدة -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">بلدة بيوني</div> <!-- عنوان الكرت -->
+                <div class="card-text">بلدة بيوني تنبض بجمالها الهادئ، وتمنح زائرها شعورًا بالصفاء بين طبيعتها وممرّاتها الراقية.</div> <!-- وصف البلدة -->
+                <a href="https://discoveraseer.com/experiences/byona-alshrf" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div>  <!-- نهاية الكرت الرابع -->
+
+         <div class="card" data-id="سما بارك" data-link="https://discoveraseer.com/experiences/sma-bark"> <!-- كرت "سما بارك" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/سما بارك.jpg" alt="سما بارك"> <!-- صورة سما بارك -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">سما بارك</div> <!-- عنوان الكرت -->
+                <div class="card-text">يقدّم سما بارك عسير تجربة فريدة تجمع بين جمال الطبيعة والرفاهية."</div> <!-- وصف الكرت -->
+                <a href="https://discoveraseer.com/experiences/sma-bark" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية الكرت الخامس -->
+
+        <div class="card" data-id="سكي لاين" data-link="https://azzam.sa/asser.events/%D8%B3%D9%83%D9%8A-%D9%84%D8%A7%D9%8A%D9%86-1/"> <!-- كرت "سكي لاين" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/سكي لاين عسير.jpg" alt="سكي لاين "> <!-- صورة سكي لاين -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">سكي لاين </div> <!-- عنوان الكرت -->
+                <div class="card-text">يمنح سكي لاين عسير زوّاره تجربة ساحرة بإطلالاته المرتفعة على السهول والجبال."</div> <!-- وصف الكرت -->
+                <a href="https://azzam.sa/asser.events/%D8%B3%D9%83%D9%8A-%D9%84%D8%A7%D9%8A%D9%86-1/" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية الكرت السادس -->
+
+     </div> <!-- نهاية حاوية الكروت القابلة للتمرير -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر سهم لليمين لتحريك السلايدر -->
+    </div> <!-- نهاية غلاف السلايدر -->
+</section> <!-- نهاية قسم أبرز الفعاليات -->
+
+<!-- الانشطة السياحية-->
+<section class="container"id="rh-activities-section"> <!-- قسم جديد للأنشطة السياحية -->
+    <h2 class="titleright">الانشطة السياحية </h2>      <!-- عنوان القسم: الأنشطة السياحية -->
+ <div class="slider-wrapper"> <!-- غلاف السلايدر للأنشطة -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر للسحب لليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية كروت الأنشطة -->
+
+        <div class="card" data-id="رجال المع" data-link="https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9_%D8%B1%D8%AC%D8%A7%D9%84_%D8%A3%D9%84%D9%85%D8%B9"> <!-- كرت "رجال ألمع" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- إضافة للمفضلة -->
+            <a href="https://riyadhseason.sa"></a> <!-- رابط فارغ غير مستخدم فعليًا (يمكن حذفه لاحقًا) -->
+            <img src="images/رجال المع.jpg" alt="رجال المع "> <!-- صورة رجال ألمع -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title"> رجال المع</div> <!-- عنوان الكرت -->
+                <div class="card-text">تأسرك رجال ألمع بتراثها العريق وعمارتها الحجرية الفريدة، لتروي جمال التاريخ .</div> <!-- وصف الكرت -->
+                <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9_%D8%B1%D8%AC%D8%A7%D9%84_%D8%A3%D9%84%D9%85%D8%B9" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لمزيد من المعلومات -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت رجال ألمع -->
+
+        <div class="card" data-id="شلالات الحبله" data-link="https://discoveraseer.com/places/alhblh"> <!-- كرت "شلالات الحبلة" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/شلالات الحبله بعسير.jpg" alt="شلالات الحبله "> <!-- صورة الشلالات -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">شلالات الحبله </div> <!-- عنوان الكرت -->
+                <div class="card-text">تأسرك شلالات الحبلة بجريانها الهادئ بين الجبال السمراء، لتقدّم مشهداً طبيعياً أخّاذاً يعكس روعة عسير.</div> <!-- وصف الكرت -->
+                <a href="https://discoveraseer.com/places/alhblh" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت شلالات الحبلة -->
+
+        <div class="card" data-id="كوخ العسل" data-link="https://discoveraseer.com/places/kokh-alaasl"> <!-- كرت "كوخ العسل" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/كوخ العسل.jpg" alt="كوخ العسل"> <!-- صورة كوخ العسل -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">كوخ العسل</div> <!-- عنوان الكرت -->
+                <div class="card-text">.كوخ العسل في عسير ملاذ طبيعي يجمع بين الجمال والهدوء ليخلق أجواءً هادئة تنبض بالطبيعة والجمال</div> <!-- وصف الكرت -->
+                <a href="https://discoveraseer.com/places/kokh-alaasl" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت كوخ العسل -->
+
+        <div class="card" data-id="قرية غيه" data-link="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%82%D8%B1%D9%8A%D8%A9-%D8%BA%D9%8A%D9%87-%D8%B9%D8%B3%D9%8A%D8%B1/"> <!-- كرت "قرية غيه" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/قرية غيه.jpg" alt="قرية غيه"> <!-- صورة القرية -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">قرية غيه</div> <!-- عنوان الكرت -->
+                <div class="card-text">.تعد هذه القرية من أبرز المعالم الطبيعية في المنطقة بسبب تضاريسها الفريدة وجمالها الطبيعي.</div> <!-- وصف القرية -->
+                <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%82%D8%B1%D9%8A%D8%A9-%D8%BA%D9%8A%D9%87-%D8%B9%D8%B3%D9%8A%D8%B1/" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت قرية غيه -->
+     
+        <div class="card" data-id="تلفريك عسير" data-link="https://hid.sa/products/Teleferic---Fridge-Magnetic?srsltid=AfmBOopR9zqW6qag0WN3hZDJXfilHSld8NiGshA8P29cHwLK2wjQWmv8"> <!-- كرت "تلفريك عسير" -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/تلفريك عسير.jpg" alt="تلفريك عسير "> <!-- صورة التلفريك -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">تلفريك عسير </div> <!-- عنوان الكرت -->
+                <div class="card-text">يأخذك تلفريك عسير في رحلة معلّقة بين السحاب، كاشفًا جمال الجبال والوديان."</div> <!-- وصف الكرت -->
+                <a href="https://hid.sa/products/Teleferic---Fridge-Magnetic?srsltid=AfmBOopR9zqW6qag0WN3hZDJXfilHSld8NiGshA8P29cHwLK2wjQWmv8" target="_blank" class="btn">اعرف المزيد</a> <!-- زر التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت تلفريك عسير -->
+
+       </div> <!-- نهاية مسار كروت الأنشطة السياحية -->
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر سهم لليمين لتحريك السلايدر -->
+    </div> <!-- نهاية غلاف السلايدر -->
+</section> <!-- نهاية قسم الأنشطة السياحية -->
+
+
+<!-- اشهر خيارات الإقامة -->
+<section class="container"id="rh-accommodation-section"> <!-- قسم خاص بخيارات الإقامة -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      <!-- عنوان القسم: أشهر خيارات الإقامة -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر -->
+
+        <button class="slide-btn left">&#10094;</button> <!-- زر السحب لليسار -->
+
+        <div class="cards-track"> <!-- مسار الكروت الخاصة بالإقامة -->
+
+         <div class="card" data-id="فندق بيريرا" data-link="https://www.booking.com/hotel/sa/braira-abha-hotels-bh.ar.html?aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVAS217275847583%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9196151%3Ali%3Adec%3Adm&sid=f0fb13f305c8a3014107342f40f71f3a&all_sr_blocks=1405803002_413998292_2_2_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3090713&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1405803002_413998292_2_2_0&hpos=1&matching_block_id=1405803002_413998292_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1405803002_413998292_2_2_0__476000&srepoch=1763851829&srpvid=e9e0a0974d4a0332&type=total&ucfs=1&#tab-main"> <!-- كرت فندق بيريرا مع رابط حجز من Booking -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- إضافة إلى المفضلة -->
+            <img src="images/فندق بيرارا عسير.jpg" alt="فندق بيريرا "> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">فندق بيريرا </div> <!-- اسم الفندق -->
+                <div class="card-text">فندق بيريرا عسير يقدم إقامة فاخرة تجمع بين الراحة والخدمة المميزة في قلب الطبيعة الساحرة.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/braira-abha-hotels-bh.ar.html?aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVAS217275847583%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9196151%3Ali%3Adec%3Adm&sid=f0fb13f305c8a3014107342f40f71f3a&all_sr_blocks=1405803002_413998292_2_2_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3090713&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1405803002_413998292_2_2_0&hpos=1&matching_block_id=1405803002_413998292_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1405803002_413998292_2_2_0__476000&srepoch=1763851829&srpvid=e9e0a0974d4a0332&type=total&ucfs=1&#tab-main" target="_blank" class="btn">احجز الان</a> <!-- زر الحجز الآن -->
+            </div> <!-- نهاية محتوى الكرت -->
+        </div> <!-- نهاية كرت فندق بيريرا -->
+
+        <div class="card" data-id="فندق بودل" data-link="https://www.booking.com/hotel/sa/boudl-mahayel-aseer.ar.html?aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVAS217270755317%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi55324614554%3Atidsa-322685507223%3Alp9196151%3Ali%3Adec%3Adm&sid=f0fb13f305c8a3014107342f40f71f3a&age=1&all_sr_blocks=152508401_419670939_2_2_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3097518&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=152508401_419670939_2_2_0&hpos=1&matching_block_id=152508401_419670939_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=152508401_419670939_2_2_0__234100&srepoch=1763852229&srpvid=68cda15b1ec80398&type=total&ucfs=1&#tab-main"> <!-- كرت فندق بودل مع رابط حجز -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/فندق بودل عسير.jpg" alt="فندق بودل"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">فندق بودل</div> <!-- اسم الفندق -->
+                <div class="card-text">فندق بودل عسير يوفر إقامة مريحة وعصرية وسط أجواء طبيعية خلابة. </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/boudl-mahayel-aseer.ar.html?aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVAS217270755317%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi55324614554%3Atidsa-322685507223%3Alp9196151%3Ali%3Adec%3Adm&sid=f0fb13f305c8a3014107342f40f71f3a&age=1&all_sr_blocks=152508401_419670939_2_2_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3097518&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=152508401_419670939_2_2_0&hpos=1&matching_block_id=152508401_419670939_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=152508401_419670939_2_2_0__234100&srepoch=1763852229&srpvid=68cda15b1ec80398&type=total&ucfs=1&#tab-main" target="_blank" class="btn">احجز الان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية محتوى الكرت -->
+        </div> <!-- نهاية كرت فندق بودل -->
+
+        <div class="card" data-id="فندق بيات" data-link="https://www.bayathotels.com/index?gad_source=1&gad_campaignid=10956609245&gbraid=0AAAAACPYd8OZotDAyhkwI9CqsuD2p9Gmo&gclid=CjwKCAiA24XJBhBXEiwAXElO3-qWq9FQn1xIxqyU5WyMTiiYX1vrxug3kBvq3WJE9jagE7rZXnxURBoCLZ8QAvD_BwE"> <!-- كرت فندق بيات -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/فندق بيات عسير.jpg" alt="بيات  "> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">فندق بيات </div> <!-- اسم الفندق -->
+                <div class="card-text">فندق بيات في عسير يقدم إقامة مريحة وأنيقة مع إطلالات رائعة وخدمة مميزة للنزلاء.</div> <!-- وصف الفندق -->
+                <a href="https://www.bayathotels.com/index?gad_source=1&gad_campaignid=10956609245&gbraid=0AAAAACPYd8OZotDAyhkwI9CqsuD2p9Gmo&gclid=CjwKCAiA24XJBhBXEiwAXElO3-qWq9FQn1xIxqyU5WyMTiiYX1vrxug3kBvq3WJE9jagE7rZXnxURBoCLZ8QAvD_BwE" target="_blank" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية محتوى الكرت -->
+        </div> <!-- نهاية كرت فندق بيات -->
+
+        <div class="card" data-id="فندق ارياش ابها" data-link="https://www.booking.com/hotel/sa/fndq-rysh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=1412669107_417394344_0_2_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=13&highlighted_blocks=1412669107_417394344_0_2_0&hpos=13&matching_block_id=1412669107_417394344_0_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1412669107_417394344_0_2_0__24000&srepoch=1764221862&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl"> <!-- كرت فندق أرياش أبها -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/فندق ارياش ابها.jpeg" alt="فندق ارياش ابها  "> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">فندق ارياش ابها  </div> <!-- اسم الفندق -->
+                <div class="card-text">فندق أرياش أبها يقدم إقامة مريحة وهادئة بإطلالات جميلة وموقع مميز قريب من معالم المدينة.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/fndq-rysh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=1412669107_417394344_0_2_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=13&highlighted_blocks=1412669107_417394344_0_2_0&hpos=13&matching_block_id=1412669107_417394344_0_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1412669107_417394344_0_2_0__24000&srepoch=1764221862&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl" target="_blank" class="btn">احجزالان</a> <!-- زر حجز الفندق -->
+            </div> <!-- نهاية محتوى الكرت -->
+        </div> <!-- نهاية كرت أرياش أبها -->
+
+        <div class="card" data-id="فندق أبها جاردن ميلينيوم" data-link="https://www.booking.com/hotel/sa/fndq-jrdn-mylynywm-bh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=852782704_0_2_0_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=15&highlighted_blocks=852782704_0_2_0_0&hpos=15&matching_block_id=852782704_0_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=852782704_0_2_0_0__20092&srepoch=1764221604&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl"> <!-- كرت فندق أبها جاردن ميلينيوم -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/فندق أبها جاردن ميلينيوم.jpeg" alt="فندق أبها جاردن ميلينيوم "> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">  فندق أبها جاردن ميلينيوم  </div> <!-- اسم الفندق -->
+                <div class="card-text">فندق أبها جاردن ميلينيوم يقدم إقامة راقية بموقع مميز، مع مرافق حديثة وخدمات مريحة للضيوف.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/fndq-jrdn-mylynywm-bh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=852782704_0_2_0_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=15&highlighted_blocks=852782704_0_2_0_0&hpos=15&matching_block_id=852782704_0_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=852782704_0_2_0_0__20092&srepoch=1764221604&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl" target="_blank" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية محتوى الكرت -->
+        </div> <!-- نهاية كرت فندق أبها جاردن ميلينيوم -->
+
+        <div class="card" data-id="كلاسيك بالاس THE CLASSIC PALACE" data-link="https://www.booking.com/hotel/sa/classic-palace-bh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=1490755001_420735256_2_0_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=10&highlighted_blocks=1490755001_420735256_2_0_0&hpos=10&matching_block_id=1490755001_420735256_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1490755001_420735256_2_0_0__49000&srepoch=1764222136&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl"> <!-- كرت كلاسيك بالاس -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/كلاسيك بالاس the classic palace.jpeg" alt="كلاسيك بالاس the classic palace"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- محتوى الكرت -->
+                <div class="card-title">  كلاسيك بالاس the classic palace  </div> <!-- اسم الفندق -->
+                <div class="card-text"> كلاسيك بالاس The Classic Palace يقدم تجربة إقامة فاخرة بتصميم راقٍ ومرافق مريحة في أجواء هادئة. </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/classic-palace-bh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=1490755001_420735256_2_0_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=10&highlighted_blocks=1490755001_420735256_2_0_0&hpos=10&matching_block_id=1490755001_420735256_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1490755001_420735256_2_0_0__49000&srepoch=1764222136&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl" target="_blank" class="btn">احجزالان</a> <!-- زر الحجز -->
+            </div> <!-- نهاية محتوى الكرت -->
+        </div> <!-- نهاية كرت كلاسيك بالاس -->
+
+     </div> <!-- نهاية مسار الكروت -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر التحريك لليمين -->
+
+    </div> <!-- نهاية غلاف السلايدر -->
+</section> <!-- نهاية قسم أشهر خيارات الإقامة -->
+
+
+
+
+
+
+<section class="containerimg"> <!-- قسم خاص بالخريطة التفاعلية مع كلاس مخصص -->
+
+    <h2>الخريطة التفاعلية</h2> <!-- عنوان القسم: الخريطة التفاعلية -->
+
+    <div class="map-wrapper"> <!-- حاوية تجمع القائمة الجانبية مع الخريطة -->
+
+        <!-- القائمة الجانبية -->
+        <div class="map-sidebar"> <!-- عمود جانبي يحتوي على كروت الأماكن المرتبطة بالخريطة -->
+ 
+            <a href="https://discoveraseer.com/experiences/oahh-aasyb" class="card-link" target="_blank"> <!-- رابط خارجي يفتح تفاصيل عسيب عسير -->
+                <div class="map-card" data-lat="18.236851441987284" data-lng="42.679752718045165" data-name="عسيب عسير" data-zoom="13"> <!-- كرت للخريطة مع إحداثيات عسيب عسير -->
+                    <img src="images/عسيب عسير.jpg" alt="عسيب عسير"> <!-- صورة للمكان -->
+                    <span>عسيب عسير</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت عسيب عسير -->
+            </a> <!-- نهاية رابط عسيب عسير -->
+  
+            <a href="https://discoveraseer.com/places/mntgaa-aloady" class="card-link" target="_blank"> <!-- رابط منتجع الوادي -->
+                <div class="map-card" data-lat="18.604524514460266" data-lng="42.71783609449526" data-name="منتجع الوادي" data-zoom="13"> <!-- كرت الخريطة مع الإحداثيات -->
+                    <img src="images/منتجع الوادي.jpg" alt="منتجع الوادي"> <!-- صورة منتجع الوادي -->
+                    <span>منتجع الوادي</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت منتجع الوادي -->
+            </a> <!-- نهاية رابط منتجع الوادي -->
+ 
+            <a href="https://discoveraseer.com/experiences/ngm-onhr" class="card-link" target="_blank"> <!-- رابط نجمة ونهر -->
+                <div class="map-card" data-lat="18.203623780082903" data-lng="42.47822159448438" data-name="نجمه ونهر" data-zoom="13"> <!-- الإحداثيات والاسم -->
+                    <img src="images/نجمه ونهر.jpg" alt="نجمه ونهر"> <!-- صورة للمكان -->
+                    <span>نجمه ونهر</span> <!-- عنوان الكرت -->
+                </div> <!-- نهاية كرت نجمة ونهر -->
+            </a> <!-- نهاية الرابط -->
+ 
+            <a href="https://discoveraseer.com/experiences/sma-bark" class="card-link" target="_blank"> <!-- رابط سما بارك -->
+                <div class="map-card" data-lat="18.268415644408407" data-lng="42.490875949084575" data-name="سما بارك" data-zoom="13"> <!-- كرت مع الإحداثيات -->
+                    <img src="images/سما بارك.jpg" alt="سما بارك"> <!-- صورة سما بارك -->
+                    <span>سما بارك</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت سما بارك -->
+            </a> <!-- نهاية الرابط -->
+ 
+            <a href="https://azzam.sa/asser.events/%D8%B3%D9%83%D9%8A-%D9%84%D8%A7%D9%8A%D9%86-1/" class="card-link" target="_blank"> <!-- رابط سكي لاين -->
+                <div class="map-card" data-lat="18.238665584529603" data-lng="42.683405280992275" data-name="سكي لاين" data-zoom="13"> <!-- كرت مع إحداثيات سكي لاين -->
+                    <img src="images/سكي لاين عسير.jpg" alt="سكي لاين"> <!-- صورة سكي لاين -->
+                    <span>سكي لاين</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت سكي لاين -->
+            </a> <!-- نهاية رابط سكي لاين -->
+ 
+            <a href="https://discoveraseer.com/places/alhblh" class="card-link" target="_blank"> <!-- رابط شلالات الحبلة -->
+                <div class="map-card" data-lat="18.032250031730946" data-lng="42.858348299660406" data-name="شلالات الحبله" data-zoom="13"> <!-- إحداثيات شلالات الحبلة -->
+                    <img src="images/شلالات الحبله بعسير.jpg" alt="شلالات الحبله"> <!-- صورة الشلالات -->
+                    <span>شلالات الحبله</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت شلالات الحبلة -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://discoveraseer.com/places/kokh-alaasl" class="card-link" target="_blank"> <!-- رابط كوخ العسل -->
+                <div class="map-card" data-lat="18.20180933872929" data-lng="42.285138107977346" data-name="كوخ العسل" data-zoom="13"> <!-- كرت مع إحداثيات كوخ العسل -->
+                    <img src="images/كوخ العسل.jpg" alt="كوخ العسل"> <!-- صورة كوخ العسل -->
+                    <span>كوخ العسل</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت كوخ العسل -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%82%D8%B1%D9%8A%D8%A9-%D8%BA%D9%8A%D9%87-%D8%B9%D8%B3%D9%8A%D8%B1/" class="card-link" target="_blank"> <!-- رابط قرية غيه -->
+                <div class="map-card" data-lat="19.101658301258208" data-lng="41.996065708002035" data-name="قرية غيه" data-zoom="13"> <!-- كرت مع الإحداثيات -->
+                    <img src="images/قرية غيه.jpg" alt="قرية غيه"> <!-- صورة القرية -->
+                    <span>قرية غيه</span> <!-- اسم المكان -->
+                </div> <!-- نهاية كرت قرية غيه -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/boudl-mahayel-aseer.ar.html?aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVAS217270755317%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi55324614554%3Atidsa-322685507223%3Alp9196151%3Ali%3Adec%3Adm&sid=f0fb13f305c8a3014107342f40f71f3a&age=1&all_sr_blocks=152508401_419670939_2_2_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3097518&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=152508401_419670939_2_2_0&hpos=1&matching_block_id=152508401_419670939_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=152508401_419670939_2_2_0__234100&srepoch=1763852229&srpvid=68cda15b1ec80398&type=total&ucfs=1&#tab-main" class="card-link" target="_blank"> <!-- رابط فندق بودل -->
+                <div class="map-card" data-lat="18.282160951392044" data-lng="42.49315669873656" data-name="فندق بودل" data-zoom="13"> <!-- كرت مع إحداثيات الفندق -->
+                    <img src="images/فندق بودل عسير.jpg" alt="فندق بودل"> <!-- صورة الفندق -->
+                    <span>فندق بودل</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت فندق بودل -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.bayathotels.com/index?gad_source=1&gad_campaignid=10956609245&gbraid=0AAAAACPYd8OZotDAyhkwI9CqsuD2p9Gmo&gclid=CjwKCAiA24XJBhBXEiwAXElO3-qWq9FQn1xIxqyU5WyMTiiYX1vrxug3kBvq3WJE9jagE7rZXnxURBoCLZ8QAvD_BwE" class="card-link" target="_blank"> <!-- رابط فندق بيات -->
+                <div class="map-card" data-lat="18.288271508212794" data-lng="42.72517723681532" data-name="فندق بيات" data-zoom="13"> <!-- كرت مع إحداثيات الفندق -->
+                    <img src="images/فندق بيات عسير.jpg" alt="فندق بيات"> <!-- صورة الفندق -->
+                    <span>فندق بيات</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت فندق بيات -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/fndq-rysh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=1412669107_417394344_0_2_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=13&highlighted_blocks=1412669107_417394344_0_2_0&hpos=13&matching_block_id=1412669107_417394344_0_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1412669107_417394344_0_2_0__24000&srepoch=1764221862&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl" class="card-link" target="_blank"> <!-- رابط فندق أرياش أبها -->
+                <div class="map-card" data-lat="18.229528363552085" data-lng="42.482640236813786" data-name="فندق ارياش ابها" data-zoom="13"> <!-- كرت الخريطة مع الإحداثيات -->
+                    <img src="images/فندق ارياش ابها.jpeg" alt="فندق ارياش ابها"> <!-- صورة الفندق -->
+                    <span>فندق ارياش ابها</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت فندق أرياش أبها -->
+            </a> <!-- نهاية الرابط -->
+
+            <a href="https://www.booking.com/hotel/sa/fndq-jrdn-mylynywm-bh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=852782704_0_2_0_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=15&highlighted_blocks=852782704_0_2_0_0&hpos=15&matching_block_id=852782704_0_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=852782704_0_2_0_0__20092&srepoch=1764221604&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl" class="card-link" target="_blank"> <!-- رابط فندق أبها جاردن ميلينيوم -->
+                <div class="map-card" data-lat="18.22636035060022" data-lng="42.48797833681361" data-name="فندق أبها جاردن ميلينيوم" data-zoom="13"> <!-- كرت مع الإحداثيات -->
+                    <img src="images/فندق أبها جاردن ميلينيوم.jpeg" alt="فندق أبها جاردن ميلينيوم"> <!-- صورة الفندق -->
+                    <span>فندق أبها جاردن ميلينيوم</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت فندق أبها جاردن ميلينيوم -->
+            </a> <!-- نهاية الرابط -->
+ 
+            <a href="https://www.booking.com/hotel/sa/classic-palace-bh.ar.html?aid=2378099&label=huno.1-bing%3Aa0c27065fc0a1128290419421c668e68&sid=bd321d174aee43cf1d4150d1696df7fd&all_sr_blocks=1490755001_420735256_2_0_0&checkin=2025-12-04&checkout=2025-12-05&dest_id=-3099128&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=10&highlighted_blocks=1490755001_420735256_2_0_0&hpos=10&matching_block_id=1490755001_420735256_2_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1490755001_420735256_2_0_0__49000&srepoch=1764222136&srpvid=816b261559d70014&type=total&ucfs=1&#hotelTmpl" class="card-link" target="_blank"> <!-- رابط كلاسيك بالاس -->
+                <div class="map-card" data-lat="18.23272734353524" data-lng="42.479273400306894" data-name="كلاسيك بالاس the classic palace" data-zoom="13"> <!-- كرت مع إحداثيات الفندق -->
+                    <img src="images/كلاسيك بالاس the classic palace.jpeg" alt="كلاسيك بالاس the classic palace"> <!-- صورة الفندق -->
+                    <span>كلاسيك بالاس the classic palace</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت كلاسيك بالاس -->
+            </a> <!-- نهاية الرابط -->
+
+            
+
+        </div> <!-- نهاية القائمة الجانبية للكروت -->
+
+        <!-- صندوق الخريطة -->
+        <div id="map" data-first-zoom="9"></div> <!-- عنصر الخريطة نفسه (يتم رسمه عبر مكتبة Leaflet) مع مستوى تكبير مبدئي -->
+
+    </div> <!-- نهاية حاوية الخريطة مع القائمة -->
+
+
+    <!-- مكتبة Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- استيراد ملف CSS الخاص بمكتبة Leaflet للخرائط -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- استيراد ملف JavaScript الخاص بمكتبة Leaflet -->
+
+    <!-- ملف JS واحد لكل الصفحات -->
+    <script src="js/map.js"></script> <!-- ربط ملف جافاسكربت المسؤول عن إعداد الخريطة التفاعلية -->
+
+</section> <!-- نهاية قسم الخريطة التفاعلية -->
+
+
+
+
+
+
+<footer> <!-- بداية تذييل الصفحة -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق النشر -->
+    <div> <!-- حاوية روابط شبكات التواصل -->
+        <a href="#">فيسبوك</a> |  <!-- رابط فيسبوك (حاليًا غير مفعّل) -->
+        <a href="#">تويتر</a> |  <!-- رابط تويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط إنستجرام -->
+    </div> <!-- نهاية الحاوية -->
+</footer> <!-- نهاية التذييل -->
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف JavaScript العام للموقع (السلايدر + اقرأ المزيد + المفضلة...) -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML -->

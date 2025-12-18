@@ -1,0 +1,514 @@
+/* ===============================
+   Rahool – Mobile Only Styles
+   يعمل فقط للجوال
+   =============================== */
+
+/* أساسيات */
+*{ box-sizing: border-box; }
+
+body{
+  padding-top: 0px;      /* لأن النافبار fixed */
+  overflow-x: hidden;
+  line-height: 1.8;
+}
+
+/* ===============================
+   NAVBAR (جوال)
+   =============================== */
+
+.navbar{
+  padding: 12px 14px;
+}
+
+/* زر ☰ */
+.nav-toggle{
+  display: none; /* بالديسكتوب مخفي */
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* القائمة (الافتراضي) */
+.nav-links{
+  display: none;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 16px;
+  z-index: 3000;
+}
+
+/* عند الفتح */
+.nav-links.open{ display: flex; }
+
+/* توحيد خلفية الدروب داون */
+.dropdown-menu{
+  position: static;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* عناصر الوجهات (المنسدلة) */
+.dropdown-menu a{
+  color: #fff !important;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* توحيد شكل روابط القائمة (الجوال) */
+.nav-links a{
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.dropdown-menu a:hover{
+  background: rgba(255,255,255,0.12);
+}
+
+.nav-links a:active,
+.dropdown-menu a:active{
+  background: rgba(255,255,255,0.2);
+  transform: scale(0.97);
+}
+
+/* أزرار */
+.nav-actions{ gap: 6px; }
+
+.login-btn,
+.dropbtn{
+  padding: 7px 10px;
+  font-size: 14px;
+}
+
+.circle-btn{
+  width: 40px;
+  height: 40px;
+}
+
+/* ===============================
+   CAROUSEL (جوال)
+   =============================== */
+
+.carousel{
+  max-height: 420px;
+}
+
+.carousel video{
+  height: 420px;
+  object-fit: cover;
+}
+
+/* نص السلايدر */
+.carousel-text{
+  right: 10px;
+  bottom: 10px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.carousel-text h2{
+  font-size: 28px;
+  margin: 0 0 8px 0;
+  margin-left: 350px; /* نفس كودك */
+}
+
+.carousel-text p{
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* نخفي الأسهم بالجوال */
+.carousel-buttons{ display: none; }
+
+/* ===============================
+   SECTIONS
+   =============================== */
+
+.container{
+  padding: 0 12px;
+  margin-bottom: 40px;
+}
+
+.titleright{
+  margin-right: 0;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* ===============================
+   SLIDERS / CARDS
+   =============================== */
+
+.cards-track{ gap: 12px; }
+
+.card{
+  width: 260px !important;
+  min-width: 260px !important;
+}
+
+.card img{ height: 200px; }
+
+.card-title{ font-size: 15px; }
+.card-text{ font-size: 13px; }
+
+.slide-btn{ display: none; }
+
+/* ===============================
+   HOLIDAYS GRID
+   =============================== */
+
+.cards{
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards .card{
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ===============================
+   MAP PAGE
+   =============================== */
+
+.map-wrapper{ flex-direction: column; }
+
+.map-sidebar{
+  width: 100%;
+  max-height: 220px;
+}
+
+.map-card{ gap: 12px; }
+
+.map-card img{
+  width: 90px;
+  height: 70px;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+footer{
+  font-size: 13px;
+  padding: 14px;
+}
+
+/* ===============================
+   MODALS
+   =============================== */
+
+.auth-modal-content{ width: 90%; }
+
+/* ===============================
+   ADMIN (لو فتحت بالجوال)
+   =============================== */
+
+.rh-adminGrid{ grid-template-columns: 1fr; }
+
+/* ===============================
+   نصوص (عن المدينة / وصف)
+   =============================== */
+
+.city-content,
+.about-city,
+.text-box{
+  padding: 18px 16px;
+  margin: 0 auto;
+  max-width: 95%;
+  line-height: 1.9;
+}
+
+.city-content h2,
+.about-city h2{
+  font-size: 22px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.city-content p,
+.about-city p{
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: center;
+  color: #222;
+}
+
+.city-content h2 span,
+.about-city h2 span{
+  background: #bfe6f6;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.read-more,
+.read-more-btn{
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #8b1d1d;
+  font-weight: 600;
+}
+
+/* ===============================
+   ✅ الجوال فقط (ترتيب الناف + القائمة تحت زر ☰)
+   =============================== */
+@media (max-width: 768px){
+
+  /* النافبار + الترتيب النهائي */
+  .navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  /* اللوقو */
+  .navbar-left{
+    order: 1;
+    margin-left: 0;
+  }
+
+  .navbar-left img{
+    height: 45px !important;
+    margin: 0 !important;
+    display: block;
+  }
+
+  /* القلب ثم اللغة ثم تسجيل */
+  .nav-actions{
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .circle-btn{ order: 1; }
+  .dropdown{  order: 2; }
+  .login-btn{ order: 3; }
+
+  /* ☰ */
+  .nav-toggle{
+    order: 3;
+    display: block !important;
+    z-index: 10001;
+  }
+
+  /* ✅ القائمة تطلع تحت زر ☰ بالضبط */
+  .nav-links{
+    position: absolute !important;
+    top: calc(100% + 8px) !important;  /* تحت الناف */
+    left: 12px !important;             /* تحت زر ☰ (يسار) */
+    right: auto !important;
+
+    width: 260px;
+    max-width: calc(100vw - 24px);
+    height: auto !important;
+
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    padding: 16px;
+    border-radius: 14px;
+
+    z-index: 9999;
+
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  .nav-links.open{ display: flex; }
+
+  /* تحسينات عامة للجوال */
+  .title{ font-size: 28px !important; }
+  .p{ font-size: 16px !important; }
+
+  h2{
+    font-size: 22px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .titleright{
+    margin-right: 0 !important;
+    text-align: center !important;
+    font-size: 20px !important;
+  }
+
+  .containerimg{
+    margin: 20px auto !important;
+    padding: 0 14px !important;
+    margin-bottom: 60px !important;
+  }
+
+  .text-content{ width: 100% !important; }
+
+  .text-content p,
+  .region-description,
+  .contact-hero p{
+    font-size: 15px !important;
+    line-height: 1.9 !important;
+    text-align: center !important;
+  }
+
+  .region-title{
+    font-size: 24px !important;
+    text-align: center !important;
+  }
+
+  .region-header{
+    padding: 40px 16px 20px !important;
+    text-align: center !important;
+    margin-top: 60px !important;
+  }
+
+  .cards{ gap: 14px !important; }
+
+  .card{
+    width: 92% !important;
+    min-width: 92% !important;
+    border-radius: 14px !important;
+  }
+
+  .card img{ height: 200px !important; }
+
+  .card-title{ font-size: 16px !important; }
+  .card-text{ font-size: 13px !important; }
+
+  .read-more-btn{
+    width: 100% !important;
+    display: block !important;
+    font-size: 14px !important;
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+  }
+
+  .map-wrapper{
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin: 20px auto !important;
+  }
+
+  .map-sidebar{
+    width: 100% !important;
+    max-height: 220px !important;
+  }
+
+  .map-card{ gap: 12px !important; }
+
+  .map-card img{
+    width: 90px !important;
+    height: 70px !important;
+  }
+
+  .map-card span{ font-size: 14px !important; }
+
+  #map{
+    height: 320px !important;
+    border-radius: 18px !important;
+  }
+
+  footer{
+    font-size: 13px !important;
+    padding: 14px !important;
+  }
+}
+
+@media (max-width: 768px){
+
+  /* كروت سلايدر أبرز الوجهات (داخل cards-track) */
+  .cards-track .card{
+    width: 72vw !important;       /* خليها عريضة */
+    min-width: 72vw !important;
+    max-width: 340px !important;  /* لا تكبر زيادة */
+  }
+
+  .cards-track .card img{
+    height: 240px !important;
+  }
+
+}
+
+@media (max-width: 600px){
+
+  /* كروت صفحة العطل الرسمية */
+  .cards{
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .cards .card{
+    width: 100% !important;
+    max-width: 300px !important;   /* أو شيلها لو تبيها 100% تماماً */
+    margin: 0 auto 16px;
+  }
+
+  .cards .card img{
+    width: 100% !important;
+    height: auto !important;       /* عشان ما تنقص الصورة */
+    display: block;
+  }
+}
+
+/* ===============================
+   Trip Page – Mobile Hero Text
+   خاص بصفحة مخطط الرحلات فقط
+   =============================== */
+@media (max-width: 768px){
+
+  .trip-page .carousel,
+  .trip-page .hero-section{
+    height: 60vh !important;
+  }
+
+  .trip-page .carousel-text{
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 16px 18px !important;
+    text-align: center !important;
+
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.25),
+      transparent
+    );
+  }
+
+  .trip-page .carousel-text h2{
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+    margin: 0 0 8px 0 !important;
+    color: #fff;
+  }
+
+  .trip-page .carousel-text p{
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    margin: 0 auto;
+    max-width: 95%;
+    color: #f1f1f1;
+  }
+}
+
+

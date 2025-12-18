@@ -1,0 +1,835 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند بأنه HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية مستند HTML مع تحديد أن اللغة عربية واتجاه النص من اليمين لليسار -->
+<head> <!-- بداية جزء الرأس الذي يحتوي الإعدادات العامة للصفحة -->
+    <meta charset="UTF-8"> <!-- استخدام ترميز UTF-8 لدعم العربية وباقي اللغات -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل الصفحة متجاوبة مع أحجام الشاشات المختلفة -->
+    <title>الرياض | عاصمة التفوق والعراقة، مدينة المستقبل التي تزهو بتاريخها العريق</title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجية CSS -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head>
+<body> <!-- بداية جسم الصفحة الذي يحتوي المحتوى المرئي للمستخدم -->
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel -->
+<div class="carousel"> <!-- قسم السلايدر (الصورة الرئيسية للمدينة) -->
+    <img src="images/كرت الرياض على الصفحه الرئيسية.jpeg" class="active" alt="الرياض" style="height: 750px; object-fit: cover;"> <!-- صورة كبيرة تمثل الرياض مع ضبط ارتفاع وطريقة ملء الحاوية -->
+    <div class="carousel-text"><h2 class="titleright title">الرياض </h2><p class="p">قلب المملكة النابض بالحياة، تجمع بين أصالة التاريخ وحداثة المستقبل <br> مدينة تزهو بفعالياتها العالمية ومعالمها الفريدة، حيث تتجسد روح التطور والثقافة في كل زاوية</p> </div> <!-- نص فوق الصورة يحتوي عنوان ووصف تعريفي عن الرياض -->
+</div>
+
+<section class="container"> <!-- قسم "عن الرياض" داخل حاوية رئيسية -->
+  <h1 class="titleright">عن الرياض</h1> <!-- عنوان قسم التعريف عن الرياض -->
+  <p class="titleright read-more-text"> <!-- فقرة فيها نص مع خاصية "اقرأ المزيد" -->
+    الرياض هي عاصمة المملكة العربية السعودية وأكبر مدنها. تقع في وسط شبه الجزيرة العربية وتتميز بمزيج من الحداثة
+    <br>       والتاريخ. المدينة مركز اقتصادي وتعليمي وثقافي، وتضم أبراجاً حديثة مثل برج المملكة وبرج الفيصلية، إضافة إلى مواقع
+    <span class="dots">...</span> <!-- ثلاث نقاط تختفي عند الضغط على زر "اقرأ المزيد" -->
+    <span class="more">
+      <br> 
+      تاريخية مثل الدرعية. المناخ صحراوي حار صيفاً ومعتدل شتاءً، والشوارع واسعة مع مشاريع نقل حديثة مثل مترو الرياض.
+    </span> <!-- نص إضافي يظهر عند الضغط على زر "اقرأ المزيد" -->
+  </p>
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر يقوم باستدعاء دالة JS لعرض/إخفاء الجزء الإضافي من النص -->
+</section>
+
+
+
+<!-- أبرز الفعاليات -->
+<section class="container" id="rh-events-section"> <!-- قسم خاص بأبرز الفعاليات في الرياض -->
+    <h2 class="titleright">أبرز الفعاليات</h2>      <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- حاوية للسلايدر الذي يحتوي كروت الفعاليات -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك السلايدر لليسار -->
+        <div class="cards-track"> <!-- مسار الكروت الذي يتحرك أفقياً -->
+
+        <div class="card" data-id="riyadh-zoo" data-link="https://webook.com/ar/zones/riyadh-zoo-rs25"> <!-- كرت فعالية حديقة الحيوان مع بيانات تعريفية -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة الفعالية للمفضلة -->
+            <img src="images/riyadh-zoo.jpg" alt="حديقة الحيوان التفاعلية بالرياض"> <!-- صورة خاصة بحديقة الحيوان -->
+            <div class="card-body"> <!-- جسم الكرت (النصوص والزر) -->
+                <div class="card-title">حديقة الحيوان التفاعلية – Riyadh Zoo</div> <!-- عنوان الكرت -->
+                <div class="card-text">تجربة ممتعة لعشاق الحياة البرية، تشمل عروض الحيوانات النادرة وأنشطة تعليمية للأطفال.</div> <!-- وصف مختصر للفعالية -->
+                <a href="https://webook.com/ar/zones/riyadh-zoo-rs25" target="_blank" class="btn">احجز الان</a> <!-- زر حجز ينقل للموقع الخارجي في تبويب جديد -->
+            </div>
+        </div>
+
+        <div class="card" data-id="boulevard-riyadh" data-link="https://riyadhseason.com/ar/zones/boulevard-city-rs25"> <!-- كرت فعالية بوليفارد رياض سيتي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر قلب للمفضلة -->
+            <img src="images/boulevard-riyadh-city.jpg" alt="بوليفارد رياض سيتي"> <!-- صورة بوليفارد رياض سيتي -->
+            <div class="card-body">
+                <div class="card-title">بوليفارد رياض سيتي</div> <!-- عنوان الفعالية -->
+                <div class="card-text">أشهر وجهات الترفيه والتسوق في موسم الرياض، تضم فعاليات فنية وموسيقية ومطاعم راقية.</div> <!-- وصف الفعالية -->
+                <a href="https://riyadhseason.com/ar/zones/boulevard-city-rs25" target="_blank" class="btn">احجز الان</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="winter-wonderland" data-link="https://www.visitsaudi.com/ar/riyadh/events/winter-wonder-land"> <!-- كرت ونتر وندرلاند -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/winter-wonderland.jpg" alt="ونتر وندرلاند الرياض"> <!-- صورة ونتر وندرلاند -->
+            <div class="card-body">
+                <div class="card-title">ونتر وندرلاند الرياض</div> <!-- عنوان الفعالية -->
+                <div class="card-text">مدينة الألعاب الثلجية والعروض العالمية المميزة لجميع الأعمار ضمن موسم الرياض 2025.</div> <!-- نص وصف للفعالية -->
+                <a href="https://www.visitsaudi.com/ar/riyadh/events/winter-wonder-land" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="غابة البوليفارد" data-link="https://webook.com/ar/experiences/blvd-forest-blvd-world-rs25"> <!-- كرت غابة البوليفارد -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/WEW.jpg" alt="غابة البوليفارد"> <!-- صورة غابة البوليفارد -->
+            <div class="card-body">
+                <div class="card-title"> غابة البوليفارد</div>
+                <div class="card-text">غابة بوليڤارد تعود بحيوانات نادرة في بيئة إفريقية وتجارب تفاعلية.</div> <!-- وصف التجربة -->
+                <a href="https://webook.com/ar/experiences/blvd-forest-blvd-world-rs25" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="the dullmaker" data-link="https://webook.com/ar/experiences/doll-maker-blvd-world-rs25"> <!-- كرت تجربة صانعة الدمى -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/the dullmaker.jpg" alt="صانعة الدمى">
+            <div class="card-body">
+                <div class="card-title"> صانعة الدمى</div>
+                <div class="card-text"> أنت لست مشاهدًا بل بطل؛ عجوز تكشف سرًا مرعبًا يمنح قوة مظلمة، كل زاوية لغز، كل دمية… هل تنجو أم تصبح إحداها؟ </div> <!-- وصف تفاعلي مشوق للتجربة -->
+                <a href="https://webook.com/ar/experiences/doll-maker-blvd-world-rs25" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="war castle" data-link="https://webook.com/ar/experiences/war-hall-blvd-world-rs25"> <!-- كرت فعالية قلعة الحرب -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/war castle.jpg" alt="قلعة الحرب">
+            <div class="card-body">
+                <div class="card-title"> قلعة الحرب</div>
+                <div class="card-text"> تجربة مليئة بالتحدي، من رمي الأطباق بدقة إلى السهام بقوة وتركيز، ومغامرات داخل قلعة أسطورية تمنحك أكشن وتشويق. </div> <!-- وصف مختصر للفعالية -->
+                <a href="https://webook.com/ar/experiences/war-hall-blvd-world-rs25" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="المتحف المفقود" data-link="https://webook.com/ar/experiences/lost-museum-blvd-world-rs25"> <!-- كرت المتحف المفقود -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/egypt.jpg" alt="المتحف المفقود">
+            <div class="card-body">
+                <div class="card-title"> المتحف المفقود</div>
+                <div class="card-text">ادخل المتحف المفقود في مغامرة مليئة بالألغاز والتحديات لاستعادة الكنوز… هل ستجد طريق العودة قبل فوات الأوان؟</div> <!-- وصف مغامرة المتحف -->
+                <a href="https://webook.com/ar/experiences/lost-museum-blvd-world-rs25" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="قصر منتصف الليل" data-link="https://webook.com/ar/experiences/midnight-manor-blvd-world-rs25"> <!-- كرت قصر منتصف الليل -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/TheMidnightmanor.jpg" alt="قصر منتصف الليل">
+            <div class="card-body">
+                <div class="card-title"> قصر منتصف الليل</div>
+                <div class="card-text">أبواب حمراء وممر مظلم، الساعة تعلن منتصف الليل، والمضيف بابتسامة غامضة… هل تنجو أم تبقى للأبد؟</div> <!-- وصف تشويقي للفعالية -->
+                <a href="https://webook.com/ar/experiences/midnight-manor-blvd-world-rs25" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="تشارلي تشونكا" data-link="https://webook.com/ar/restaurants/charlie-chonka/"> <!-- كرت تجربة تشارلي تشونكا -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/1.jpg" alt="تشارلي تشونكا">
+            <div class="card-body">
+                <div class="card-title"> تشارلي تشونكا</div>
+                <div class="card-text">تشارلي تشونكا وذا ليتل كريزي فاكتوري — الأولى في السعودية؛ تجربة مصنع حلويات ومسرحية تنبض بالشوكولاتة.</div> <!-- وصف تجربة المصنع المسرحية -->
+                <a href="https://webook.com/ar/restaurants/charlie-chonka/" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        </div> <!-- نهاية مسار الكروت الخاصة بأبرز الفعاليات -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك السلايدر لليمين -->
+    </div>
+</section>
+
+
+<!-- الانشطة السياحية-->
+<section class="container" id="rh-activities-section"> <!-- قسم خاص بالأنشطة السياحية -->
+    <h2 class="titleright">الانشطة السياحية </h2>      <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- حاوية للسلايدر الخاص بالأنشطة السياحية -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+
+        <div class="cards-track"> <!-- مسار الكروت المتحرك أفقياً -->
+
+        <div class="card" data-id="المصمك" data-link="https://www.visitsaudi.com/ar/riyadh/attractions/al-masmak-palace-in-riyadh"> <!-- كرت قصر المصمك -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/المصمك.png" alt="قصر المصمك">
+            <div class="card-body">
+                <div class="card-title">قصر المصمك</div> <!-- عنوان الكرت -->
+                <div class="card-text">أهم معلم تاريخي في قلب الرياض</div> <!-- وصف مختصر لقصر المصمك -->
+                <a href="https://www.visitsaudi.com/ar/riyadh/attractions/al-masmak-palace-in-riyadh" target="_blank" class="btn">اعرف المزيد</a> <!-- زر "اعرف المزيد" -->
+            </div>
+        </div>
+
+        <div class="card" data-id="مركز الملك فهد الثقافي" data-link="https://safarway.com/property/king-fahad-cultural-centre"> <!-- كرت مركز الملك فهد الثقافي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/GDGDD.jpg" alt="مركز الملك فهد الثقافي">
+            <div class="card-body">
+                <div class="card-title">مركز الملك فهد الثقافي</div>
+                <div class="card-text">عروض مسرحية، أمسيات شعرية، وفعاليات ثقافية مستمرة.</div> <!-- وصف الأنشطة بالمركز -->
+                <a href="https://safarway.com/property/king-fahad-cultural-centre" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="KAFD المالي" data-link="https://www.kafd.sa/ar/"> <!-- كرت مركز الملك عبدالله المالي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/KAFD.webp" alt="مركز الملك عبدالله المالي (KAFD)">
+            <div class="card-body">
+                <div class="card-title">مركز الملك عبدالله المالي (KAFD)</div>
+                <div class="card-text">مبانٍ معمارية مع جولات تعريفية بتاريخ المنطقة وتطورها.</div> <!-- وصف بسيط للمكان -->
+                <a href="https://www.kafd.sa/ar/" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        
+
+        <div class="card" data-id="متحف الطيران السعودي" data-link="https://saudipedia.com/article/13187/"> <!-- كرت متحف الطيران السعودي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/sabq21.avif" alt="متحف الطيران السعودي ">
+            <div class="card-body">
+                <div class="card-title">متحف الطيران السعودي</div>
+                <div class="card-text">عرض طائرات قديمة وتاريخ الطيران العسكري والمدني.</div> <!-- وصف محتوى المتحف -->
+                <a href="https://saudipedia.com/article/13187/" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="حي البجيري – الدرعية" data-link="https://www.diriyah.sa/ar/bujairi-overview"> <!-- كرت حي البجيري -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/ALBGERE.webp" alt="حي البجيري – الدرعية ">
+            <div class="card-body">
+                <div class="card-title">حي البجيري – الدرعية</div>
+                <div class="card-text">جولات في الشوارع القديمة ذات الطابع النجدي.</div> <!-- وصف الحي النجدي التراثي -->
+                <a href="https://www.diriyah.sa/ar/bujairi-overview" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="المتحف الوطني" data-link="https://www.visitsaudi.com/ar/riyadh/attractions/the-national-museum-of-saudi-arabia"> <!-- كرت المتحف الوطني -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/WTNY.webp" alt="المتحف الوطني ">
+            <div class="card-body">
+                <div class="card-title">المتحف الوطني</div>
+                <div class="card-text">8 قاعات ضخمة تعرض تاريخ الجزيرة العربية.</div> <!-- وصف سريع عن المتحف الوطني -->
+                <a href="https://www.visitsaudi.com/ar/riyadh/attractions/the-national-museum-of-saudi-arabia" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="متحف الفلك والفضاء" data-link="https://www.spa.gov.sa/w1844194"> <!-- كرت متحف الفلك والفضاء -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/D9v.jpg" alt="متحف الفلك والفضاء ">
+            <div class="card-body">
+                <div class="card-title">متحف الفلك والفضاء</div>
+                <div class="card-text">تجربة تعليمية تفاعلية عن النجوم، الكواكب، والفضاء</div> <!-- وصف للتجربة التعليمية -->
+                <a href="https://www.spa.gov.sa/w1844194" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="مسجد الإمام تركي الكبير" data-link="https://saudipedia.com/article/14076/"> <!-- كرت مسجد الإمام تركي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/016-2.jpg" alt="مسجد الإمام تركي بن عبدالله الكبير">
+            <div class="card-body">
+                <div class="card-title">مسجد الإمام تركي بن عبدالله الكبير</div>
+                <div class="card-text">من أقدم مساجد العاصمة، بطراز معماري جميل.</div> <!-- وصف للمسجد -->
+                <a href="https://saudipedia.com/article/14076/" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="متحف العلوم والتقنية في الإسلام" data-link="https://www.kaust.edu.sa/ar/about/museum-of-science-technology-in-islam"> <!-- كرت متحف العلوم والتقنية في الإسلام -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/Riyadh-Museums.jpg" alt="متحف العلوم والتقنية في الإسلام">
+            <div class="card-body">
+                <div class="card-title">متحف العلوم والتقنية في الإسلام</div>
+                <div class="card-text">يعرض المخترعات التي ظهر بها المسلمون تاريخياً.</div> <!-- وصف محتوى المتحف -->
+                <a href="https://www.kaust.edu.sa/ar/about/museum-of-science-technology-in-islam" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        </div> <!-- نهاية مسار الكروت الخاصة بالأنشطة السياحية -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك السلايدر لليمين -->
+    </div>
+</section>
+
+
+
+<!-- اشهر خيارات الإقامة   -->
+<section class="container" id="rh-accommodation-section"> <!-- قسم أشهر خيارات الإقامة في الرياض -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      <!-- عنوان القسم -->
+ <div class="slider-wrapper"> <!-- حاوية للسلايدر الخاص بالفنادق -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+
+        <div class="cards-track"> <!-- مسار كروت الفنادق -->
+
+        <div class="card" data-id="mandarin-oriental" data-link="https://www.mandarinoriental.com/en/riyadh/olaya"> <!-- كرت فندق Mandarin Oriental -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/mandarin-oriental.jpg" alt="فندق الماندرين أورينتال الفيصلية">
+            <div class="card-body">
+                <div class="card-title">فندق Mandarin Oriental Al Faisaliah</div>
+                <div class="card-text">فندق فاخر في برج الفيصلية يتميز بإطلالة ساحرة ومطاعم راقية وخدمات خمس نجوم.</div> <!-- وصف مختصر للفندق -->
+                <a href="https://www.mandarinoriental.com/en/riyadh/olaya" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="narcissus-hotel" data-link="https://www.booking.com/hotel/sa/narcissus-and-residence.html?msockid=33814ae2cef66fe51cc85c9bcf006e12/"> <!-- كرت فندق نارسيس -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/narcissus-hotel.jpg" alt="فندق نارسيس الرياض">
+            <div class="card-body">
+                <div class="card-title">فندق Narcissus Hotel & Spa Riyadh</div>
+                <div class="card-text">من أفخم فنادق العاصمة، يقع في قلب العليا ويتميز بتصميم كلاسيكي وخدمات راقية.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/narcissus-and-residence.html?msockid=33814ae2cef66fe51cc85c9bcf006e12/" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="ritz-carlton" data-link="https://www.ritzcarlton.com/en/hotels/ruhrz-the-ritz-carlton-riyadh/overview/"> <!-- كرت فندق الريتز كارلتون -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/ritz-carlton.jpg" alt="الريتز كارلتون الرياض">
+            <div class="card-body">
+                <div class="card-title">فندق The Ritz-Carlton Riyadh</div>
+                <div class="card-text">رمز الفخامة في العاصمة، يضم حدائق فسيحة ومرافق راقية ومطاعم عالمية.</div> <!-- وصف الفندق -->
+                <a href="https://www.ritzcarlton.com/en/hotels/ruhrz-the-ritz-carlton-riyadh/overview/" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="luxury collection hotel" data-link="y&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763697966&srpvid=2bdf1cd2fb930698&type=total&ucfs=1&"> <!-- كرت فندق Luxury Collection -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/a luxury collection hotel.png" alt="فندق A Luxury Collection Hotel">
+            <div class="card-body">
+                <div class="card-title">فندق A Luxury Collection Hotel</div>
+                <div class="card-text">يقع في درعية التاريخية، تصميم تراثي + سبا + بركة سباحة داخلية.</div> <!-- وصف للفندق وموقعه -->
+                <a href="y&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763697966&srpvid=2bdf1cd2fb930698&type=total&ucfs=1&" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="كيتزال" data-link="https://www.luxuryhotelsguides.com/?hotelid=4255170&lang=ar&msclkid=6533197fa9b11c5efb4570604c7aa351"> <!-- كرت فندق كيتزال -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/كيتزال.jpg" alt="فندق كيتزال">
+            <div class="card-body">
+                <div class="card-title">فندق كيتزال</div>
+                <div class="card-text">فندق كيتزال في الرياض يوفر إقامة مع واي فاي ومواقف سيارات مجاناً، بالإضافة إلى غرفة لياقة بدنية.</div> <!-- وصف للخدمات المتوفرة -->
+                <a href="https://www.luxuryhotelsguides.com/?hotelid=4255170&lang=ar&msclkid=6533197fa9b11c5efb4570604c7aa351" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="Fairmont" data-link="https://www.guestreservations.com/fairmont-riyadh-riyadh/booking?msclkid=49844964dc1a10eacf70207b3b9c28fb"> <!-- كرت فندق Fairmont Riyadh -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/Fairmont.jpg" alt="فندق Fairmont Riyadh">
+            <div class="card-body">
+                <div class="card-title">فندق Fairmont Riyadh</div>
+                <div class="card-text">فندق Fairmont Riyadh في الرياض يقدم إقامة فاخرة مع غرف أنيقة، مطاعم متنوعة، سبا ومركز لياقة بدنية.</div> <!-- وصف للفندق -->
+                <a href="https://www.guestreservations.com/fairmont-riyadh-riyadh/booking?msclkid=49844964dc1a10eacf70207b3b9c28fb" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="Burj Rafal Hotel Kempinsk" data-link="https://www.ritzcarlton.com/riyadh"> <!-- كرت Burj Rafal Hotel Kempinski -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/The st.Regis.avif" alt="فندق Burj Rafal Hotel Kempinski">
+            <div class="card-body">
+                <div class="card-title">فندق Burj Rafal Hotel Kempinski</div>
+                <div class="card-text">فندق Burj Rafal Hotel Kempinski في الرياض يقدم إقامة فاخرة مع غرف راقية، مطاعم عالمية وسبا حديث.</div> <!-- وصف للفندق -->
+                <a href="https://www.ritzcarlton.com/riyadh" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="The St. Regis Riyad" data-link="https://www.ritzcarlton.com/riyadh"> <!-- كرت فندق The St. Regis Riyadh -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/Burj-RAFAL-.webp" alt="فندق The St. Regis Riyadh">
+            <div class="card-body">
+                <div class="card-title">فندق The St. Regis Riyadh</div>
+                <div class="card-text">فندق فخم جدًا في الحي الدبلوماسي، يحتوي سبا، مسبح، ولخدمة Butler متميزة.</div> <!-- وصف خدمات الفندق -->
+                <a href="https://www.ritzcarlton.com/riyadh" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="Four Seasons Riyadh" data-link="https://www.fourseasons.com/riyadh/"> <!-- كرت Four Seasons Riyadh -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/2.jpg" alt="فندق Four Seasons Riyadh">
+            <div class="card-body">
+                <div class="card-title">فندق Four Seasons Riyadh</div>
+                <div class="card-text">فندق Four Seasons Riyadh في الرياض يقدم إقامة فاخرة مع غرف أنيقة، مطاعم راقية وسبا متكامل.</div> <!-- وصف للفندق -->
+                <a href="https://www.fourseasons.com/riyadh/" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="JW Marriott Hotel Riyadh" data-link="https://www.marriott.com/en-us/hotels/ruhjb-jw-marriott-hotel-riyadh/overview/?msockid=33814ae2cef66fe51cc85c9bcf006e12"> <!-- كرت فندق JW Marriott -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/jm.jpg" alt="فندق JW Marriott Hotel Riyadh">
+            <div class="card-body">
+                <div class="card-title">فندق JW Marriott Hotel Riyadh</div>
+                <div class="card-text">تصميم نجدي حديث، غرف واسعة مع إطلالات على المدينة، ومطاعم عالمية.</div> <!-- وصف لطابع التصميم والخدمات -->
+                <a href="https://www.marriott.com/en-us/hotels/ruhjb-jw-marriott-hotel-riyadh/overview/?msockid=33814ae2cef66fe51cc85c9bcf006e12" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        </div> <!-- نهاية مسار كروت الفنادق -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك السلايدر لليمين -->
+
+    </div>
+</section>
+
+
+
+<!-- الفعاليات الجارية -->
+<section class="container"> <!-- قسم خاص بالفعاليات الجارية في الوقت الحالي -->
+    <h2 class="titleright">الفعاليات الجارية</h2> <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- حاوية السلايدر -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+
+        <div class="cards-track"> <!-- مسار الكروت -->
+
+        <div class="card" data-id="al-suwaidi-park" data-link="https://webook.com/blog/ar/discover-al-suwaidi-park-riyadh-season/"> <!-- كرت فعالية حديقة السويدي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/al-suwaidi-park.jpg" alt="حديقة السويدي">
+            <div class="card-body">
+                <div class="card-title">فعالية الثقافات العالمية – حديقة السويدي</div>
+                <div class="card-text">مهرجان أسبوعي يعرض ثقافات العالم من موسيقى وأطعمة وعروض فنية متنوعة ضمن موسم الرياض.</div> <!-- وصف الفعالية -->
+                <a href="https://webook.com/blog/ar/discover-al-suwaidi-park-riyadh-season/" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="riyadh-esports-arena" data-link="https://www.gea.gov.sa/largest-electronic-games-festival/"> <!-- كرت واجهة الرياض للألعاب الإلكترونية -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/riyadh-esports-arena.jpg" alt="واجهة الرياض للألعاب الإلكترونية">
+            <div class="card-body">
+                <div class="card-title">واجهة الرياض للألعاب الإلكترونية</div>
+                <div class="card-text">بطولات عالمية في الألعاب الإلكترونية تجمع أبرز اللاعبين والفرق العالمية، وتجارب واقعية مذهلة لعشاق الجيمينغ.</div> <!-- وصف الفعالية -->
+                <a href="https://www.gea.gov.sa/largest-electronic-games-festival/" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="riyadh-toy-festival" data-link="https://webook.com/ar/experiences/riyadh-toy-festival"> <!-- كرت مهرجان الرياض للألعاب -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/riyadh-toy-festival.jpg" alt="مهرجان الرياض للألعاب">
+            <div class="card-body">
+                <div class="card-title">مهرجان الرياض للألعاب 2025</div>
+                <div class="card-text">تجربة عائلية ممتعة مع شخصيات الأنمي، ألعاب الأطفال وعروض تفاعلية في واجهة الرياض بموسم الرياض 2025.</div> <!-- وصف الفعالية -->
+                <a href="https://webook.com/ar/experiences/riyadh-toy-festival" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="mayadeen-new" data-link="https://www.visitsaudi.com/ar/riyadh/events/myadeen"> <!-- كرت فعالية ميادين (ملاحظة: هنا يبدو في خطأ كتابي في بداية السطر لكن المتصفح يتجاهله) -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/mayadeen-new.webp" alt="ميادين">
+            <div class="card-body">
+                <div class="card-title">ميادين</div>
+                <div class="card-text">ميادين وجهة للرماية والتحدي، حيث يمكن للزوار تجربة مهاراتهم بالدقة والإثارة ضمن فعاليات موسم الرياض.</div> <!-- وصف الفعالية -->
+                <a href="https://www.visitsaudi.com/ar/riyadh/events/myadeen" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="riyadh-racing" data-link="https://webook.com/ar/events/riyadh-racing-season-rsace-night-7"> <!-- كرت موسم سباقات الرياض -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/riyadh-racing.webp" alt="موسم سباقات الرياض">
+            <div class="card-body">
+                <div class="card-title">موسم سباقات الرياض</div>
+                <div class="card-text">عِش متعة التشويق في موسم سباقات الرياض بميدان الملك عبدالعزيز، حيث تتنافس نخبة الفرسان والخيول 50 ليلة.</div> <!-- وصف قصير عن الفعالية -->
+                <a href="https://webook.com/ar/events/riyadh-racing-season-rsace-night-7" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="The Ring IV" data-link="https://webook.com/fr/events/night-of-champions-boxing-22-nov-rs26-tickets-127653"> <!-- كرت The Ring IV -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/the-ring.webp" alt="The Ring IV: Night of the Champions">
+            <div class="card-body">
+                <div class="card-title">The Ring IV: Night of the Champions</div>
+                <div class="card-text">The Ring IV: Night of the Champions نزال مثير يجمع أبطالًا في مواجهة قوية مليئة بالتشويق والإثارة.</div> <!-- وصف النزال -->
+                <a href="https://webook.com/fr/events/night-of-champions-boxing-22-nov-rs26-tickets-127653" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="comedy-night" data-link="https://webook.com/ar/events/comedy-night-show-697812"> <!-- كرت كوميدي نايت -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/comedy-night.webp" alt="كوميدي نايت">
+            <div class="card-body">
+                <div class="card-title">كوميدي نايت</div>
+                <div class="card-text">كوميدي نايت تجربة كوميدية مليئة بالضحك والعروض الفكاهية لأبرز الفنانين في أجواء ممتعة.🕺🏻🔥.</div> <!-- وصف الفعالية الكوميدية -->
+                <a href="https://webook.com/ar/events/comedy-night-show-697812" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="royal-rumble" data-link="https://webook.com/ar/experiences/tickets-wwe-experience"> <!-- كرت WWE رويال رامبل الرياض 2026 -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/royal-rumble.webp" alt="WWE رويال رامبل الرياض 2026">
+            <div class="card-body">
+                <div class="card-title">WWE رويال رامبل الرياض 2026</div>
+                <div class="card-text">نطلق النسخة 39 من بطولة "رويال رامبل" للمصارعة الحرة في يناير 2026 بالرياض، ولأول مرة خارج أميركا الشمالية.</div> <!-- وصف للحدث العالمي -->
+                <a href="https://webook.com/ar/experiences/tickets-wwe-experience" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="falcon-new" data-link="https://sfc.org.sa/sa/ar/localauctions/allauctions?activityid=2045&year=2025"> <!-- كرت مزاد نادي الصقور السعودي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/falcon-new.webp" alt="مزاد نادي الصقور السعودي">
+            <div class="card-body">
+                <div class="card-title">مزاد نادي الصقور السعودي</div>
+                <div class="card-text">يمثل مزاد نادي الصقور السعودي حدثًا بارزًا في عالم الصقارة، حيث ينتظره الصقارون سنويًا لعرض صقور الطرح المحلي.</div> <!-- وصف للفعالية -->
+                <a href="https://sfc.org.sa/sa/ar/localauctions/allauctions?activityid=2045&year=2025" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="plauma-circus" data-link="https://riyadh.platinumlist.net/ar/event-tickets/101029/pluma-circus"> <!-- كرت سيرك بلوما -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/plauma-circus.webp" alt="سيرك بلوما في الرياض">
+            <div class="card-body">
+                <div class="card-title">سيرك بلوما في الرياض</div>
+                <div class="card-text">استعدوا لرحلة مدهشة تأخذكم إلى عالمٍ يمزج بين الفن والخيال، حيث يقدّم سيرك بلوما تجربة استثنائية لا تُنسى.</div> <!-- وصف للعرض السيركي -->
+                <a href="https://riyadh.platinumlist.net/ar/event-tickets/101029/pluma-circus" target="_blank" class="btn">احجز الآن</a>
+            </div>
+        </div>
+
+        </div> <!-- نهاية مسار الكروت الخاصة بالفعاليات الجارية -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك السلايدر لليمين -->
+    </div>
+</section>
+
+
+
+
+
+<!-- الخريطة التفاعلية -->
+<section class="containerimg"> <!-- قسم الخريطة التفاعلية للرياض -->
+
+    <h2>الخريطة التفاعلية</h2> <!-- عنوان القسم -->
+
+    <div class="map-wrapper"> <!-- غلاف يحتوي القائمة الجانبية والخريطة معاً -->
+
+        <!-- القائمة الجانبية -->
+        <div class="map-sidebar"> <!-- عمود جانبي يحتوي كروت المواقع المرتبطة بالخريطة -->
+
+            <!-- حديقة الحيوان بالرياض -->
+            <a href="https://webook.com/ar/zones/riyadh-zoo-rs25" target="_blank" class="card-link"> <!-- رابط يفتح موقع حديقة الحيوان في تبويب جديد -->
+                <div class="map-card" data-lat="24.675499107553595" data-lng="46.73747431503344" data-name="حديقة الحيوان بالرياض" data-zoom="17"> <!-- كرت خريطة مع إحداثيات ومعلومات عن حديقة الحيوان -->
+                    <img src="images/riyadh-zoo.jpg" alt="حديقة الحيوان بالرياض">
+                    <span>حديقة الحيوان بالرياض</span>
+                </div>
+            </a>
+
+            <!-- بوليفارد سيتي -->
+            <a href="https://riyadhseason.com/ar/zones/boulevard-city-rs25" target="_blank" class="card-link"> <!-- رابط بوليفارد سيتي -->
+                <div class="map-card" data-lat="24.922267865465194" data-lng="46.59550649050362" data-name="بوليفارد سيتي" data-zoom="15"> <!-- كرت خريطة مع إحداثيات بوليفارد سيتي -->
+                    <img src="images/boulevard-riyadh-city.jpg" alt="بوليفارد سيتي">
+                    <span>بوليفارد سيتي</span>
+                </div>
+            </a>
+
+            <!-- ونترلاند الرياض -->
+            <a href="https://www.visitsaudi.com/ar/riyadh/events/winter-wonder-land" target="_blank" class="card-link"> <!-- رابط ونتر وندرلاند -->
+                <div class="map-card" data-lat="24.80341394785849" data-lng="46.57869757671093" data-name="ونترلاند الرياض" data-zoom="17">
+                    <img src="images/winter-wonderland.jpg" alt="ونترلاند الرياض">
+                    <span>ونترلاند الرياض</span>
+                </div>
+            </a>
+
+            <!-- غابة البوليفارد -->
+            <a href="https://webook.com/ar/experiences/blvd-forest-blvd-world-rs25" target="_blank" class="card-link"> <!-- رابط تجربة غابة البوليفارد -->
+                <div class="map-card" data-lat="24.77908806303525" data-lng="46.60203980066527" data-name="غابة البوليفارد" data-zoom="17">
+                    <img src="images/WEW.jpg" alt="غابة البوليفارد">
+                    <span>غابة البوليفارد</span>
+                </div>
+            </a>
+
+            <!-- صانعة الدمى -->
+            <a href="https://webook.com/ar/experiences/doll-maker-blvd-world-rs25" target="_blank" class="card-link"> <!-- رابط تجربة صانعة الدمى -->
+                <div class="map-card" data-lat="24.775889220818954" data-lng="46.597761860701084" data-name="صانعة الدمى" data-zoom="17">
+                    <img src="images/the dullmaker.jpg" alt="صانعة الدمى">
+                    <span>صانعة الدمى</span>
+                </div>
+            </a>
+
+            <!-- قلعة الحرب -->
+            <a href="https://webook.com/ar/experiences/war-hall-blvd-world-rs25" target="_blank" class="card-link"> <!-- رابط قلعة الحرب -->
+                <div class="map-card" data-lat="24.778076646060946" data-lng="46.598891693381574" data-name="قلعة الحرب" data-zoom="17">
+                    <img src="images/war castle.jpg" alt="قلعة الحرب">
+                    <span>قلعة الحرب</span>
+                </div>
+            </a>
+
+            <!-- المتحف المفقود -->
+            <a href="https://webook.com/ar/experiences/lost-museum-blvd-world-rs25" target="_blank" class="card-link"> <!-- رابط المتحف المفقود -->
+                <div class="map-card" data-lat="24.77633804690057" data-lng="46.603071592642536" data-name="المتحف المفقود" data-zoom="17">
+                    <img src="images/egypt.jpg" alt="المتحف المفقود">
+                    <span>المتحف المفقود</span>
+                </div>
+            </a>
+
+            <!-- قصر منتصف الليل -->
+            <a href="https://webook.com/ar/experiences/midnight-manor-blvd-world-rs25" target="_blank" class="card-link"> <!-- رابط قصر منتصف الليل -->
+                <div class="map-card" data-lat="24.773824778088546" data-lng="46.60223474343137" data-name="قصر منتصف الليل" data-zoom="17">
+                    <img src="images/TheMidnightmanor.jpg" alt="قصر منتصف الليل">
+                    <span>قصر منتصف الليل</span>
+                </div>
+            </a>
+
+            <!-- تشارلي تشونكا -->
+            <a href="https://webook.com/ar/restaurants/charlie-chonka/" target="_blank" class="card-link"> <!-- رابط مطعم/تجربة تشارلي تشونكا -->
+                <div class="map-card" data-lat="24.749737204350094" data-lng="46.52404206048548" data-name="تشارلي تشونكا" data-zoom="17">
+                    <img src="images/1.jpg" alt="تشارلي تشونكا">
+                    <span>تشارلي تشونكا</span>
+                </div>
+            </a>
+
+            <!-- قصر المصمك -->
+            <a href="https://www.visitsaudi.com/ar/riyadh/attractions/al-masmak-palace-in-riyadh" target="_blank" class="card-link"> <!-- رابط قصر المصمك -->
+                <div class="map-card" data-lat="24.631455636355938" data-lng="46.713384842328914" data-name="قصر المصمك" data-zoom="17">
+                    <img src="images/المصمك.png" alt="قصر المصمك">
+                    <span>قصر المصمك</span>
+                </div>
+            </a>
+
+            <!-- مركز الملك فهد الثقافي -->
+            <a href="https://safarway.com/property/king-fahad-cultural-centre" target="_blank" class="card-link"> <!-- رابط مركز الملك فهد الثقافي -->
+                <div class="map-card" data-lat="24.638359841197346" data-lng="46.65386715352187" data-name="مركز الملك فهد الثقافي" data-zoom="17">
+                    <img src="images/GDGDD.jpg" alt="مركز الملك فهد الثقافي">
+                    <span>مركز الملك فهد الثقافي</span>
+                </div>
+            </a>
+
+            <!-- KAFD -->
+            <a href="https://www.kafd.sa/ar/" target="_blank" class="card-link"> <!-- رابط مركز الملك عبدالله المالي -->
+                <div class="map-card" data-lat="24.766022748057534" data-lng="46.64340708051783" data-name="KAFD" data-zoom="17">
+                    <img src="images/KAFD.webp" alt="KAFD">
+                    <span>KAFD</span>
+                </div>
+            </a>
+
+            <!-- متحف القوات الجوية الملكية (متحف الطيران السعودي) -->
+            <a href="https://saudipedia.com/article/13187/" target="_blank" class="card-link"> <!-- رابط متحف الطيران السعودي -->
+                <div class="map-card" data-lat="24.749737204350094" data-lng="46.52404206048548" data-name="متحف القوات الجوية الملكية" data-zoom="17">
+                    <img src="images/sabq21.avif" alt="متحف القوات الجوية الملكية">
+                    <span>متحف القوات الجوية الملكية</span>
+                </div>
+            </a>
+
+
+            <!-- مطل البجيري -->
+            <a href="https://www.diriyah.sa/ar/bujairi-overview" target="_blank" class="card-link"> <!-- رابط مطل البجيري -->
+                <div class="map-card" data-lat="24.73746946460309" data-lng="46.5747764423289" data-name="مطل البجيري" data-zoom="17">
+                    <img src="images/ALBGERE.webp" alt="مطل البجيري">
+                    <span>مطل البجيري</span>
+                </div>
+            </a>
+
+            <!-- المتحف الوطني السعودي -->
+            <a href="https://www.visitsaudi.com/ar/riyadh/attractions/the-national-museum-of-saudi-arabia" target="_blank" class="card-link"> <!-- رابط المتحف الوطني السعودي -->
+                <div class="map-card" data-lat="24.648234818017045" data-lng="46.71080339630234" data-name="المتحف الوطني السعودي" data-zoom="17">
+                    <img src="images/WTNY.webp" alt="المتحف الوطني السعودي">
+                    <span>المتحف الوطني السعودي</span>
+                </div>
+            </a>
+
+            <!-- معرض الرياض للفضاء / متحف الفلك والفضاء -->
+            <a href="https://www.spa.gov.sa/w1844194" target="_blank" class="card-link"> <!-- رابط معرض الرياض للفضاء -->
+                <div class="map-card" data-lat="24.835404472004647" data-lng="46.72868758225744" data-name="معرض الرياض للفضاء" data-zoom="17">
+                    <img src="images/D9v.jpg" alt="معرض الرياض للفضاء">
+                    <span>معرض الرياض للفضاء</span>
+                </div>
+            </a>
+
+            <!-- جامع الإمام تركي بن عبدالله -->
+            <a href="https://saudipedia.com/article/14076/" target="_blank" class="card-link"> <!-- رابط جامع الإمام تركي -->
+                <div class="map-card" data-lat="24.63095704747119" data-lng="46.71088139020429" data-name="جامع الإمام تركي بن عبدالله" data-zoom="17">
+                    <img src="images/016-2.jpg" alt="جامع الإمام تركي بن عبدالله">
+                    <span>جامع الإمام تركي بن عبدالله</span>
+                </div>
+            </a>
+
+            <!-- متحف العلوم والتقنية في الإسلام -->
+            <a href="https://www.kaust.edu.sa/ar/about/museum-of-science-technology-in-islam" target="_blank" class="card-link"> <!-- رابط متحف العلوم والتقنية في الإسلام -->
+                <div class="map-card" data-lat="22.310546582452798" data-lng="39.106239728283995" data-name="متحف العلوم والتقنية في الإسلام" data-zoom="17">
+                    <img src="images/Riyadh-Museums.jpg" alt="متحف العلوم والتقنية في الإسلام">
+                    <span>متحف العلوم والتقنية في الإسلام</span>
+                </div>
+            </a>
+
+            <!-- ماندارين اورينتال الفيصلية -->
+            <a href="https://www.mandarinoriental.com/en/riyadh/olaya" target="_blank" class="card-link"> <!-- رابط فندق ماندارين أورينتال الفيصلية -->
+                <div class="map-card" data-lat="24.690503271767604" data-lng="46.68440257855976" data-name="ماندارين اورينتال الفيصلية" data-zoom="17">
+                    <img src="images/mandarin-oriental.jpg" alt="ماندارين اورينتال الفيصلية">
+                    <span>ماندارين اورينتال الفيصلية</span>
+                </div>
+            </a>
+
+            <!-- وسپا نارسس الرياض -->
+            <a href="https://www.booking.com/hotel/sa/narcissus-and-residence.html?msockid=33814ae2cef66fe51cc85c9bcf006e12/" target="_blank" class="card-link"> <!-- رابط سبا نارسيس -->
+                <div class="map-card" data-lat="24.69586985131759" data-lng="46.68393263623087" data-name="وسبا نارسس الرياض" data-zoom="17">
+                    <img src="images/narcissus-hotel.jpg" alt="وسبا نارسس الرياض">
+                    <span>وسبا نارسس الرياض</span>
+                </div>
+            </a>
+
+            <!-- الريتز - كارلتون -->
+            <a href="https://www.ritzcarlton.com/en/hotels/ruhrz-the-ritz-carlton-riyadh/overview/" target="_blank" class="card-link"> <!-- رابط الريتز كارلتون -->
+                <div class="map-card" data-lat="24.666135698439277" data-lng="46.630583584657806" data-name="الريتز - كارلتون" data-zoom="17">
+                    <img src="images/ritz-carlton.jpg" alt="الريتز - كارلتون">
+                    <span>الريتز - كارلتون</span>
+                </div>
+            </a>
+
+            <!-- Luxury Collection Hotel -->
+            <a href="y&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763697966&srpvid=2bdf1cd2fb930698&type=total&ucfs=1&" target="_blank" class="card-link"> <!-- رابط Luxury Collection Hotel -->
+                <div class="map-card" data-lat="24.740043749800478" data-lng="46.57282787061291" data-name="Luxury Collection Hotel" data-zoom="17">
+                    <img src="images/a luxury collection hotel.png" alt="Luxury Collection Hotel">
+                    <span>Luxury Collection Hotel</span>
+                </div>
+            </a>
+
+            <!-- كيتزال -->
+            <a href="https://www.luxuryhotelsguides.com/?hotelid=4255170&lang=ar&msclkid=6533197fa9b11c5efb4570604c7aa351" target="_blank" class="card-link"> <!-- رابط فندق كيتزال -->
+                <div class="map-card" data-lat="24.78752020571909" data-lng="46.735268222737496" data-name="كيتزال" data-zoom="17">
+                    <img src="images/كيتزال.jpg" alt="كيتزال">
+                    <span>كيتزال</span>
+                </div>
+            </a>
+
+            <!-- Fairmont Riyadh -->
+            <a href="https://www.guestreservations.com/fairmont-riyadh-riyadh/booking?msclkid=49844964dc1a10eacf70207b3b9c28fb" target="_blank" class="card-link"> <!-- رابط Fairmont Riyadh -->
+                <div class="map-card" data-lat="24.808318087459455" data-lng="46.71866480924414" data-name="Fairmont Riyadh" data-zoom="17">
+                    <img src="images/Fairmont.jpg" alt="Fairmont Riyadh">
+                    <span>Fairmont Riyadh</span>
+                </div>
+            </a>
+
+            <!-- رافال سكاي (Burj Rafal) -->
+            <a href="https://www.ritzcarlton.com/riyadh" target="_blank" class="card-link"> <!-- رابط Burj Rafal -->
+                <div class="map-card" data-lat="24.72998898770359" data-lng="46.66250253623087" data-name="رافال سكاي" data-zoom="17">
+                    <img src="images/Burj-RAFAL-.webp" alt="رافال سكاي">
+                    <span>رافال سكاي</span>
+                </div>
+            </a>
+
+            <!-- St. Regis -->
+            <a href="https://www.ritzcarlton.com/riyadh" target="_blank" class="card-link"> <!-- رابط St. Regis -->
+                <div class="map-card" data-lat="24.666658198461636" data-lng="46.62697404177734" data-name="St. Regis" data-zoom="17">
+                    <img src="images/The st.Regis.avif" alt="St. Regis">
+                    <span>St. Regis</span>
+                </div>
+            </a>
+
+            <!-- Four Seasons Hotel -->
+            <a href="https://www.fourseasons.com/riyadh/" target="_blank" class="card-link"> <!-- رابط Four Seasons Hotel -->
+                <div class="map-card" data-lat="24.71150404876129" data-lng="46.675047589757284" data-name="Four Seasons Hotel" data-zoom="17">
+                    <img src="images/2.jpg" alt="Four Seasons Hotel">
+                    <span>Four Seasons Hotel</span>
+                </div>
+            </a>
+
+            <!-- JW Marriott Hotel Riyadh -->
+            <a href="https://www.marriott.com/en-us/hotels/ruhjb-jw-marriott-hotel-riyadh/overview/?msockid=33814ae2cef66fe51cc85c9bcf006e12" target="_blank" class="card-link"> <!-- رابط JW Marriott -->
+                <div class="map-card" data-lat="24.792729599483426" data-lng="46.63317160129728" data-name="JW Marriott Hotel Riyadh" data-zoom="17">
+                    <img src="images/jm.jpg" alt="JW Marriott Hotel Riyadh">
+                    <span>JW Marriott Hotel Riyadh</span>
+                </div>
+            </a>
+
+        </div> <!-- نهاية القائمة الجانبية للخريطة -->
+
+        <!-- صندوق الخريطة -->
+        <div id="map" data-first-zoom="10" data-first-lat="24.77547159419615" data-first-lng="46.71203424057707"></div> <!-- عنصر الخريطة الفعلي، يتم رسم خريطة Leaflet بداخله مع إحداثيات وزوم ابتدائي -->
+
+    </div>
+
+    <!-- مكتبة Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- تحميل ملف CSS الخاص بمكتبة Leaflet للخرائط -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- تحميل ملف JS الخاص بمكتبة Leaflet -->
+
+    <!-- ملف JS واحد لكل الصفحات -->
+    <script src="js/map.js"></script> <!-- ملف جافاسكربت المسؤول عن تهيئة الخريطة التفاعلية والتعامل مع الكروت -->
+
+</section>
+
+
+<footer> <!-- تذييل الموقع -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- حقوق النشر لعام 2025 -->
+    <div>
+        <a href="#">فيسبوك</a> |  <!-- رابط افتراضي لصفحة فيسبوك -->
+        <a href="#">تويتر</a> |  <!-- رابط افتراضي لصفحة تويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط افتراضي لصفحة إنستجرام -->
+    </div>
+</footer>
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف جافاسكربت العام للموقع (السلايدر، المفضلة، اقرأ المزيد، إلخ) -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML -->

@@ -1,0 +1,535 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند بأنه HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية والاتجاه من اليمين لليسار -->
+<head> <!-- بداية ترويسة الصفحة (رأس الموقع) -->
+    <meta charset="UTF-8"> <!-- ترميز الأحرف UTF-8 لدعم اللغة العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل التصميم متجاوب مع الشاشات المختلفة -->
+    <title>رحول - دليل السياحة الذكي</title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجية CSS -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية ترويسة الصفحة -->
+<body> <!-- بداية جسم الصفحة (المحتوى الظاهر للمستخدم) -->
+    
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel -->
+<div class="carousel"> <!-- قسم السلايدر الرئيسي في الصفحة -->
+   <video src="images/فديو واجهة الموقع 2.MOV" muted autoplay loop></video> <!-- فيديو واجهة الموقع يعمل تلقائيًا وصامت ويعاد تكراره -->
+    <div class="carousel-text"><h2 class="title titleright">رحول </h2><p class="p">رحول… لكل من يعشق السفر والترحال <br> هنا تنطلق في رحلة تجمع بين أصالة الماضي وروعة الحاضر اكتشف المملكة بخطى الرحالة وثقة المسافر</p> </div> <!-- نص فوق الفيديو: عنوان + وصف قصير عن الموقع -->
+    <div class="carousel-buttons"> <!-- أزرار التحكم بالسلايدر (في حال كان هناك أكثر من شريحة) -->
+        <button id="prev">&#10094;</button> <!-- زر السهم للأيسر (السابق) -->
+        <button id="next">&#10095;</button> <!-- زر السهم لليمين (التالي) -->
+    </div>
+</div> <!-- نهاية قسم السلايدر -->
+
+<!-- أبرز الوجهات (سلايدر أفقي) -->
+<section class="container"> <!-- بداية قسم أبرز الوجهات داخل حاوية مركزية -->
+    <h2 class="titleright">أبرز الوجهات</h2> <!-- عنوان القسم: أبرز الوجهات -->
+
+    <div class="slider-wrapper"> <!-- غلاف للسلايدر الذي يحتوي الكروت -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- مسار أفقي للكروت يتم تحريكه بالأسهم -->
+
+        <a href="alula.html" class="card-link"> <!-- رابط كامل للكرت يأخذ المستخدم لصفحة العلا -->
+          <div class="card" > <!-- بداية كرت لعرض معلومات عن العلا -->
+              <img src="images/madain.jpg" alt="العُلا"> <!-- صورة تمثل العلا -->
+            <div class="card-body"> <!-- محتوى الكرت النصي -->
+              <div class="card-title"style="text-align:center; font-size:25px; font-weight:bold;">العُلا </div> <!-- عنوان الكرت: العلا -->
+              <div class="card-text"></div> <!-- نص إضافي يمكن تعبئته لاحقًا (حاليًا فارغ) -->
+            </div>
+          </div>
+        </a>
+
+            <a href="riyadh.html" class="card-link"> <!-- كرت مخصص لمدينة الرياض -->
+             <div class="card" >
+                <img src="images/كرت الرياض على الصفحه الرئيسية.jpeg" alt="الرياض "> <!-- صورة لمدينة الرياض -->
+                <div class="card-body">
+                    <div class="card-title"style="text-align:center; font-size:25px; font-weight:bold;">الرياض </div> <!-- عنوان الكرت: الرياض -->
+                    <div class="card-text"></div> <!-- مساحة وصف إضافي -->
+                </div>
+              </div>
+            </a>
+            <a href="jeddah.html" class="card-link"> <!-- كرت مخصص لمدينة جدة -->
+            <div class="card" >
+                <img src="images/صورة كرت جدة في الوجهات.jpeg" alt=" جدة "> <!-- صورة لجدة -->
+                <div class="card-body">
+                    <div class="card-title"style="text-align:center; font-size:25px; font-weight:bold;">جدة</div> <!-- عنوان الكرت: جدة -->
+                    <div class="card-text"></div> <!-- وصف إضافي (فارغ) -->
+                </div>
+             </div>
+            </a>
+            <a href="mecca.html" class="card-link"> <!-- كرت مخصص لمكة المكرمة -->
+            <div class="card">
+                <img src="images/mecca.jpg" alt="مكة المكرمة"> <!-- صورة لمكة المكرمة -->
+                <div class="card-body">
+                    <div class="card-title " style="text-align:center; font-size:25px; font-weight:bold;">مكة المكرمة</div> <!-- عنوان الكرت: مكة المكرمة -->
+                    <div class="card-text"></div> <!-- وصف إضافي -->
+                </div>
+              </div>
+             </a>
+             <a href="medina.html" class="card-link"> <!-- كرت مخصص للمدينة المنورة -->
+            <div class="card">
+                <img src="images/صورة كرت المدينة.jpeg" alt="المدينة المنورة"> <!-- صورة للمدينة المنورة -->
+                <div class="card-body">
+                    <div class="card-title" style="text-align:center; font-size:25px; font-weight:bold;">المدينة المنورة</div> <!-- عنوان الكرت: المدينة المنورة -->
+                    <div class="card-text"></div> <!-- وصف إضافي -->
+                </div>
+              </div>
+            </a>
+            
+            <a href="diriyah.html" class="card-link"> <!-- كرت مخصص للدرعية التاريخية -->
+            <div class="card">
+                <img src="images/diriyah.jpg" alt="الدرعية التاريخية"> <!-- صورة للدرعية -->
+                <div class="card-body">
+                    <div class="card-title"style="text-align:center; font-size:25px; font-weight:bold;">الدرعية التاريخية</div> <!-- عنوان الكرت: الدرعية التاريخية -->
+                    <div class="card-text"></div> <!-- وصف إضافي -->
+                </div>
+            </div>
+           </a>
+        </div> <!-- نهاية مسار الكروت -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك الكروت لليمين -->
+    </div> <!-- نهاية غلاف السلايدر -->
+</section> <!-- نهاية قسم أبرز الوجهات -->
+
+
+
+<!-- الفعاليات الجارية -->
+
+<section class="container"> <!-- قسم الفعاليات الجارية -->
+    <h2 class=" titleright">الفعاليات الجارية</h2> <!-- عنوان القسم: الفعاليات الجارية -->
+    <div class="slider-wrapper"> <!-- غلاف السلايدر الخاص بالفعاليات -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+        <!-- قائمة الكروت -->
+        <div class="cards-track"> <!-- مسار للكروت الخاصة بالفعاليات -->
+
+        <div class="card" data-id="مهرجان الممالك العلا" data-link="https://www.experiencealula.com/ar/alula-moments/ancient-kingdoms-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت فعالية مهرجان الممالك القديمة مع بيانات ID ورابط خارجي -->
+        <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>   <!-- أيقونة قلب لإضافة الفعالية إلى المفضلة -->
+        <img src="images/مهرجان الممالك القديمة.jpeg" alt=""> <!-- صورة لمهرجان الممالك القديمة -->
+        <div class="card-body"> <!-- محتوى الكرت -->
+        <div class="card-title"> مهرجان الممالك  القديمة | العُلا</div> <!-- عنوان الفعالية -->
+        <div class="card-text"> احتفال سنوي بالتراث والتاريخ في العُلا، يتيح للجمهور استكشاف المواقع الأثرية والاستمتاع بالعروض الضوئية</div> <!-- وصف مختصر للفعالية -->
+        <a href="https://www.experiencealula.com/ar/alula-moments/ancient-kingdoms-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn"> اعرف المزيد</a> <!-- زر ينقل إلى موقع الفعالية -->
+    </div>
+ </div>
+
+
+         <div class="card" data-id=" فرقة الفرسان" data-link="https://www.diriyah.sa/ar/things-to-do/events/knights-band" > <!-- كرت فعالية فرقة الفرسان في الدرعية -->
+             <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>   <!-- أيقونة قلب للمفضلة -->
+            <img src="images/صورة فعالية الفرسان ابرز الفعاليات الصفحة الرئيسية.jpg" alt=" فرقة الفرسان  "> <!-- صورة فعالية الفرسان -->
+            <div class="card-body">
+                <div class="card-title">   فرقة الفرسان | الدرعية  </div> <!-- عنوان الفعالية -->
+                <div class="card-text">عرض موسيقي حي متنقل يقدمه موسيقيون دوليون في تجربة تفاعلية نابضة بالحياة</div> <!-- وصف مختصر للفعالية -->
+                <a href="https://www.diriyah.sa/ar/things-to-do/events/knights-band" class="btn">اعرف المزيد  </a> <!-- رابط للمزيد -->
+            </div>
+        </div>
+           
+            <div class="card" data-id="شتاء طنطورة العلا" data-link="https://www.experiencealula.com/ar/whats-on/festivals/winter-at-tantora?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" > <!-- كرت فعالية شتاء طنطورة -->
+             <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>   
+            <img src="images/شتاء طنطورة.jpeg" alt="شتاء طنطورة"> <!-- صورة شتاء طنطورة -->
+            <div class="card-body">
+                <div class="card-title">شتاء طنطورة | العُلا</div> <!-- عنوان الفعالية -->
+                <div class="card-text">احتفال شتوي يجمع الموسيقى والفن والطعام والعروض التراثية في قلب العُلا</div> <!-- وصف الفعالية -->
+                <a href="https://www.experiencealula.com/ar/whats-on/festivals/winter-at-tantora?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn">اعرف المزيد  </a> <!-- رابط المزيد -->
+            </div>
+        </div>
+
+         <div class="card" data-id=" قفز السعودية " data-link="https://riyadh.platinumlist.net/ar/event-tickets/103484/jump-saudi" > <!-- كرت فعالية قفز السعودية -->
+             <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>   
+            <img src="images/صورة فعالية القفز الصفحة الرئيسية ابرز الفعاليات.jpg" alt=" قفز السعودية "> <!-- صورة الفعالية -->
+            <div class="card-body">
+                <div class="card-title">     قفز السعودية | الرياض  </div> <!-- عنوان الفعالية -->
+                <div class="card-text"> بطولة قفز السعودية لقفز الحواجز في الرياض ، وتضم نخبة من فرسان العالم والفرسان السعوديين من منطقة الشرق الأوسط و أوروبا </div> <!-- وصف الفعالية -->
+                <a href="https://riyadh.platinumlist.net/ar/event-tickets/103484/jump-saudi" class="btn">اعرف المزيد  </a> <!-- زر المزيد -->
+            </div>
+        </div>
+
+            
+        <div class="card" data-id=" عرض مرئي قصر سلوى " data-link="https://www.diriyah.sa/ar/whats-on/3d-show" > <!-- كرت فعالية العرض المرئي في قصر سلوى -->
+             <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>   
+            <img src="images/صورة فعالية قصر سلوى الفعاليات الجارية الصفحة الرئيسية.jpeg" alt="قصر سلوى "> <!-- صورة قصر سلوى -->
+            <div class="card-body">
+                <div class="card-title"> عرض مرئي في قصر سلوى | الدرعية  </div> <!-- عنوان الفعالية -->
+                <div class="card-text">عرض مرئي يجسّد بدايات الدولة السعودية الأولى، ويعرض للزوار إرثها عبر عروض مرئية مبهرة داخل طرازه النجدي العريق </div> <!-- وصف الفعالية -->
+                <a href="https://www.diriyah.sa/ar/whats-on/3d-show" class="btn">اعرف المزيد  </a> <!-- زر المزيد -->
+            </div>
+        </div>
+
+           
+
+    <div class="card" data-id=" مخيمات مرباع " data-link="https://riyadh.platinumlist.net/ar/event-tickets/102315/marbaa-camps" > <!-- كرت مخيمات مرباع -->
+             <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>   
+            <img src="images/صورة فعالية الثمامة ابرز الفعاليات الصفحة الرئيسية.jpg" alt="مخيمات مرباع   "> <!-- صورة المخيمات -->
+            <div class="card-body">
+                <div class="card-title">   مخيمات مرباع   | الرياض  </div> <!-- عنوان الفعالية -->
+                <div class="card-text">تنطلق تجربة شتوية متكاملة تحت اسم مرباع لتكون الوجهة الأبرز التي تجمع العائلات والشباب</div> <!-- وصف الفعالية -->
+                <a href="https://riyadh.platinumlist.net/ar/event-tickets/102315/marbaa-camps" class="btn">اعرف المزيد  </a> <!-- زر المزيد -->
+            </div>
+        </div>
+
+    
+
+        <div class="card" data-id="  بوليڤارد وورلد" data-link="https://www.experiencealula.com/ar/alula-moments/ancient-kingdoms-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound"> <!-- كرت فعالية بوليفارد وورلد -->
+        <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>   
+        <img src="images/صورة فالية البوليفارد الصفحة الرئيسية الفعاليات الجارية.jpg" alt=""> <!-- صورة البوليفارد -->
+        <div class="card-body">
+        <div class="card-title">    بوليڤارد وورلد | الرياض</div> <!-- عنوان الفعالية -->
+        <div class="card-text">  تجربة خيالية من قلب الرياض ، نقدم لكم مناطق جديدة مستوحاة من إندونيسيا، كوريا، والكويت!</div> <!-- وصف الفعالية -->
+        <a href="https://www.experiencealula.com/ar/alula-moments/ancient-kingdoms-festival?utm_source=ea.com&utm_medium=cta&utm_campaign=AlUlaOutbound" class="btn"> اعرف المزيد</a> <!-- زر المزيد -->
+    </div>
+</div>
+
+        <div class="card" data-id="mayadeen-new" data-link="https://www.visitsaudi.com/ar/riyadh/events/myadeen"> <!-- كرت فعالية ميادين -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/mayadeen-new.webp" alt="ميادين"> <!-- صورة ميادين -->
+            <div class="card-body">
+                <div class="card-title"> ميادين | الرياض</div> <!-- عنوان الفعالية -->
+                <div class="card-text">ميادين وجهة للرماية والتحدي، حيث يمكن للزوار تجربة مهاراتهم بالدقة والإثارة ضمن فعاليات موسم الرياض.</div> <!-- وصف الفعالية -->
+                <a href="https://www.visitsaudi.com/ar/riyadh/events/myadeen" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز الآن -->
+            </div>
+        </div>
+
+        <div class="card" data-id="riyadh-racing" data-link="https://webook.com/ar/events/riyadh-racing-season-rsace-night-7"> <!-- كرت موسم سباقات الرياض -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/riyadh-racing.webp" alt="موسم سباقات الرياض"> <!-- صورة السباقات -->
+            <div class="card-body">
+                <div class="card-title">موسم سباقات الرياض</div> <!-- عنوان الفعالية -->
+                <div class="card-text">عِش متعة التشويق في موسم سباقات الرياض بميدان الملك عبدالعزيز، حيث تتنافس نخبة الفرسان والخيول 50 ليلة.</div> <!-- وصف مختصر -->
+                <a href="https://webook.com/ar/events/riyadh-racing-season-rsace-night-7" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="The Ring IV" data-link="https://webook.com/fr/events/night-of-champions-boxing-22-nov-rs26-tickets-127653"> <!-- كرت فعالية The Ring IV -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/the-ring.webp" alt="The Ring IV: Night of the Champions"> <!-- صورة الفعالية -->
+            <div class="card-body">
+                <div class="card-title">The Ring IV: Night of the Champions | الرياض </div> <!-- عنوان الفعالية -->
+                <div class="card-text">The Ring IV: Night of the Champions نزال مثير يجمع أبطالًا في مواجهة قوية مليئة بالتشويق والإثارة.</div> <!-- وصف الفعالية -->
+                <a href="https://webook.com/fr/events/night-of-champions-boxing-22-nov-rs26-tickets-127653" target="_blank" class="btn">اعرف المزيد</a> <!-- زر المزيد -->
+            </div>
+        </div>
+
+         <div class="card" data-id="اكواريوم جدة" data-link="https://fakiehaquarium.com/ar"> <!-- كرت فعالية اكواريوم جدة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> 
+            <img src="images/صورة كرت اكواريوم.jpeg" alt="اكواريوم"> <!-- صورة الأكواريوم -->
+            <div class="card-body">
+                <div class="card-title"> اكواريوم | جدة</div> <!-- عنوان الفعالية -->
+                <div class="card-text">معرض بحري يضم مجموعة من الأسماك والكائنات المائية ويتيح للزوار مشاهدتها والتعرف عليها في بيئة آمنة وتعليمية</div> <!-- وصف الفعالية -->
+                <a href="https://fakiehaquarium.com/ar" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="تجربة الغوص جدة" data-link="https://17sixty.com/ar/%D8%A7%D9%84%D8%BA%D9%88%D8%B5-%D9%85%D8%B9-%D8%A7%D8%B3%D9%85%D8%A7%D9%83-%D8%A7%D9%84%D9%82%D8%B1%D8%B4-%D9%81%D9%8A-%D8%AC%D8%AF%D8%A9/"> <!-- كرت تجربة الغوص بجدة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> 
+            <img src="images/صورة كرت تجربة الغوص جدة.jpeg" alt="تجربة الغوص مع أسماك القرش"> <!-- صورة تجربة الغوص -->
+            <div class="card-body">
+                <div class="card-title">تجربة الغوص مع أسماك القرش | جدة</div> <!-- عنوان الفعالية -->
+                <div class="card-text">نشاط بحري مثير يسمح للزوار بالاقتراب من أسماك القرش داخل بيئة آمنة وتحت إشراف متخصصين</div> <!-- وصف التجربة -->
+                <a href="https://17sixty.com/ar/%D8%A7%D9%84%D8%BA%D9%88%D8%B5-%D9%85%D8%B9-%D8%A7%D8%B3%D9%85%D8%A7%D9%83-%D8%A7%D9%84%D9%82%D8%B1%D8%B4-%D9%81%D9%8A-%D8%AC%D8%AF%D8%A9/" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+         
+        <div class="card" data-id="سيان واتربارك جدة" data-link="https://cyanwaterpark.com/ar/buy-tickets?gad_source=1&gad_campaignid=21787240000&gbraid=0AAAAApAmnq8uUHWcIWNMqd6TQ_qWv15MA&gclid=CjwKCAiA_orJBhBNEiwABkdmjB2gs3Mrc6Q5-EHdaaO2JNyKkmTxsmc6SAaoOxaQlQE0TJKYpBAmDxoCvuoQAvD_BwE"> <!-- كرت سيان واتربارك -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> 
+            <img src="images/صورة كرت سيان واتربارك جدة.jpeg" alt="سيان واتربارك"> <!-- صورة الحديقة المائية -->
+            <div class="card-body">
+                <div class="card-title">سيان واتربارك | جدة</div> <!-- عنوان الفعالية -->
+                <div class="card-text">حديقة مائية حديثة في جدة تضم منزلقات مائية كبيرة ومناطق لعب تناسب العائلات والأطفال</div> <!-- وصف الحديقة -->
+                <a href="https://cyanwaterpark.com/ar/buy-tickets?gad_source=1&gad_campaignid=21787240000&gbraid=0AAAAApAmnq8uUHWcIWNMqd6TQ_qWv15MA&gclid=CjwKCAiA_orJBhBNEiwABkdmjB2gs3Mrc6Q5-EHdaaO2JNyKkmTxsmc6SAaoOxaQlQE0TJKYpBAmDxoCvuoQAvD_BwE" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="قارب بحيرة السد" data-link="#"> <!-- كرت قارب بحيرة السد -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/HUSAAK ABHA.png" alt="بحيرة السد"> <!-- صورة البحيرة -->
+            <div class="card-body">
+                <div class="card-title">قارب بحيرة السد | ابها</div> <!-- عنوان النشاط -->
+                <div class="card-text">إبحار وتجربة تصوير عند البحيرة وسط الجبال.</div> <!-- وصف التجربة -->
+                <a href="https://discoveraseer.com/places/bhyrh-sd-abha" class="btn">اعرف المزيد</a> <!-- زر المزيد -->
+            </div>
+        </div>
+
+        <div class="card" data-id="سفاري الطايف" data-link="https://safari-altaif.com/"> <!-- كرت سفاري الطائف -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/صورة كرت سفاري الطايف.jpeg" alt="سفاري الطايف"> <!-- صورة السفاري -->
+                <div class="card-body">
+                    <div class="card-title">سفاري الطايف | الطايف</div> <!-- عنوان النشاط -->
+                    <div class="card-text">تجربة ترفيهية مميزة تتيح للزوار استكشاف الطبيعة والحياة البرية عبر جولات ممتعة وسط جبال وهضاب الطائف</div> <!-- وصف التجربة -->
+                    <a href="https://safari-altaif.com/" class="btn"> اعرف المزيد</a> <!-- زر المزيد -->
+                </div>
+            </div>
+
+            <div class="card" data-id="سفاري على البحيرة الصفراء"
+             data-link="https://www.ootlah.com/ar/attractions-saephof-oth5226-have-a-unique-experience-in-safari-tour.html"> <!-- كرت سفاري البحيرة الصفراء -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/سفاري على البحيرة الصفراء في الأحساء.jpg" alt="سفاري  على البحيرة الصفراء في الأحساء"> <!-- صورة البحيرة -->
+            <div class="card-body">
+                <div class="card-title">سفاري على البحيرة الصفراء | الأحساء </div> <!-- عنوان النشاط -->
+                <div class="card-text">
+                    ستتمتع بجولة بسيارات الدفع الرباعي (الجيوب) مع مرشد وسائق محترف في صحراء الأحساء الذهبية استمتع بجلسة رائعة على البحيرة الصفراء
+                </div> <!-- وصف التجربة -->
+                <a href="https://www.ootlah.com/ar/attractions-saephof-oth5226-have-a-unique-experience-in-safari-tour.html" target="_blank" class="btn">احجز الان</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="ليلة التحدي"
+                 data-link="https://www.ithra.com/ar/programme/2025/ithra-winter/youth-studio/games-night"> <!-- كرت ليلة التحدي في الشرقية -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/ليلة التحدي.webp" alt="ليلة التحدي"> <!-- صورة الفعالية -->
+                <div class="card-body">
+                    <div class="card-title">ليلة التحدي  | الشرقية </div> <!-- عنوان الفعالية -->
+                    <div class="card-text">
+                        استمتع بليلة مليئة بالمتعة والمنافسة مع ليلة التحدي، التي تجمع الشباب في أجواءٍ من المرح والتعاون. تتضمن الفعالية ألعابًا جماعية وتحديات إبداعية تعزز روح الفريق
+                    </div> <!-- وصف الفعالية -->
+                    <a href="https://www.ithra.com/ar/programme/2025/ithra-winter/youth-studio/games-night" target="_blank" class="btn">احجز الان </a> <!-- زر الحجز -->
+                </div>
+            </div>
+
+        </div> <!-- نهاية مسار كروت الفعاليات -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك الكروت لليمين -->
+    </div> <!-- نهاية السلايدر -->
+</section> <!-- نهاية قسم الفعاليات الجارية -->
+
+
+<section class="container"> <!-- قسم خاص بالمواسم السياحية -->
+    <h2 class="titleright">المواسم</h2> <!-- عنوان القسم: المواسم -->
+
+    <div class="slider-wrapper"> <!-- سلايدر لعرض كروت المواسم -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+
+        <!-- قائمة الكروت -->
+        <div class="cards-track"> <!-- مسار الكروت -->
+
+          <a href="Riyadh season.html" class="card-link"> <!-- رابط لصفحة موسم الرياض -->
+            <div class="card">
+                <img src="images/كرت موسم الرياض.jpeg" alt="موسم الرياض "> <!-- صورة كرت موسم الرياض -->
+                <div class="card-body">
+                    <div class="card-title"style="text-align:center;">10 أكتوبر 2025 - 31 مارس 2026 </div> <!-- مدة موسم الرياض -->
+                    <div class="card-text"style="text-align:center; font-size:20px; font-weight:bold;">موسم الرياض</div> <!-- اسم الموسم -->
+                </div>
+            </div>
+           </a>
+
+           <a href="Jeddah season.html" class="card-link"> <!-- رابط لصفحة موسم جدة -->
+            <div class="card">
+                <img src="images/كرت موسم جدة.jpeg" alt="موسم جدة "> <!-- صورة موسم جدة -->
+                <div class="card-body" >
+                    <div class="card-title" style="text-align:center;" > 11 يوليو 2025 - 31 يناير 2026 </div> <!-- مدة موسم جدة -->
+                    <div class="card-text" style="text-align:center; font-size:20px; font-weight:bold;">موسم جدة</div> <!-- اسم الموسم -->
+                </div>
+            </div>
+           </a>
+
+            <a href="AlUla Moments.html" class="card-link"> <!-- رابط لحظات العلا -->
+            <div class="card">
+                <img src="images/كرت لحظات العلا.jpeg" alt="لعظات العلا "> <!-- صورة لحظات العلا -->
+                <div class="card-body">
+                    <div class="card-title" style="text-align:center; ">01 يناير 2025 - 31 ديسمبر 2025</div> <!-- مدة لحظات العلا -->
+                    <div class="card-text" style="text-align:center; font-size:20px; font-weight:bold;">  لحظات العُلا</div> <!-- اسم الموسم -->
+            </div>
+            </div>
+            </a>
+
+            <a href="Khobar season.html" class="card-link"> <!-- رابط موسم الخبر -->
+            <div class="card">
+                <img src="images/كرت موسم الخبر.jpeg" alt=" موسم الخبر"> <!-- صورة موسم الخبر -->
+                <div class="card-body">
+                <div class="card-title" style="text-align:center; ">  29 أكتوبر 2025 - 31 يناير 2026</div> <!-- مدة موسم الخبر -->
+                <div class="card-text" style="text-align:center; font-size:20px; font-weight:bold;">موسم الخبر</div> <!-- اسم الموسم -->
+             </div>
+            </div>
+            </a>
+
+            <a href="Asir Season.html" class="card-link"> <!-- رابط موسم عسير -->
+             <div class="card">
+                <img src="images/كرت موسم عسير.jpeg" alt=" موسم عسير"> <!-- صورة موسم عسير -->
+                <div class="card-body">
+                <div class="card-title" style="text-align:center; "> سيعود مرة أخرى </div> <!-- عبارة عن عودة الموسم مستقبلاً -->
+                <div class="card-text" style="text-align:center; font-size:20px; font-weight:bold;">موسم عسير</div> <!-- اسم الموسم -->
+             </div>
+            </div>
+            </a>
+
+            <a href="Diriyah Season.html" class="card-link"> <!-- رابط موسم الدرعية -->
+            <div class="card">
+                <img src="images/كرت موسم الدرعية.jpeg" alt="موسم الدرعية "> <!-- صورة موسم الدرعية -->
+                <div class="card-body">
+                <div class="card-title" style="text-align:center;">19 ديسمبر 2024 - 31 مارس 2026  </div> <!-- مدة موسم الدرعية -->
+                <div class="card-text" style="text-align:center; font-size:20px; font-weight:bold;">موسم الدرعية</div> <!-- اسم الموسم -->
+             </div>
+            </div>
+            </a>
+         </div> <!-- نهاية مسار كروت المواسم -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك كروت المواسم لليمين -->
+    </div> <!-- نهاية غلاف سلايدر المواسم -->
+</section> <!-- نهاية قسم المواسم -->
+
+
+
+<!-- العطل الرسمية -->
+<section class="container"> <!-- قسم العطل الرسمية -->
+    <h2 class="titleright">العطل الرسمية </h2> <!-- عنوان القسم -->
+
+    
+        <!-- قائمة الكروت -->
+        <div class="cards"> <!-- كروت العطل الرسمية -->
+
+            <a href="Eid al-Fitr.html" class="card-link"> <!-- كرت عيد الفطر -->
+            <div class="card">
+                <img src="images/صورت كرت العيد.jpeg" alt=" عيد الفطر"> <!-- صورة عيد الفطر -->
+                <div class="card-body">
+                    <div class="card-title" style="text-align:center; font-size:32px; font-weight:bold;">عيد الفطر</div> <!-- عنوان الكرت: عيد الفطر -->
+                    <div class="card-text"></div> <!-- نص إضافي -->
+                </div>
+            </div>
+
+             <a href="Eid al-Adha.html" class="card-link"> <!-- كرت عيد الأضحى -->
+            <div class="card">
+                <img src="images/صورت كرت عيد الاضحى.jpeg" alt=" عيد الاضحى"> <!-- صورة عيد الأضحى -->
+                <div class="card-body">
+                    <div class="card-title" style="text-align:center; font-size:32px; font-weight:bold;"> عيد الاضحى </div> <!-- عنوان الكرت: عيد الأضحى -->
+                    <div class="card-text"> </div> <!-- نص إضافي (فارغ) -->
+                </div>
+            </div>
+
+             <a href="National Day.html" class="card-link"> <!-- كرت اليوم الوطني -->
+            <div class="card">
+                <img src="images/كرت اليوم الوطني.jpeg" alt=" اليوم الوطني"> <!-- صورة اليوم الوطني -->
+                <div class="card-body">
+                <div class="card-title" style="text-align:center; font-size:32px; font-weight:bold;"> اليوم الوطني</div> <!-- عنوان الكرت: اليوم الوطني -->
+                <div class="card-text"></div> <!-- نص إضافي -->
+             </div>
+            </div>
+
+             <a href="Foundation Day.html" class="card-link"> <!-- كرت يوم التأسيس -->
+             <div class="card">
+                <img src="images/يوم التأسيس.jpeg" alt="يوم التأسيس "> <!-- صورة يوم التأسيس -->
+                <div class="card-body">
+                    <div class="card-title" style="text-align:center; font-size:32px; font-weight:bold;"> يوم التأسيس</div> <!-- عنوان الكرت: يوم التأسيس -->
+                    <div class="card-text"> </div> <!-- نص إضافي -->
+                </div>
+            </div>
+           
+         </a>
+        </div> <!-- نهاية كروت العطل الرسمية -->
+
+       
+   
+</section> <!-- نهاية قسم العطل الرسمية -->
+
+
+
+
+<!-- Footer -->
+<footer> <!-- تذييل الموقع -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق الملكية -->
+    <div> <!-- روابط شبكات التواصل الاجتماعي -->
+        <a href="#">فيسبوك</a> | 
+        <a href="#">تويتر</a> | 
+        <a href="#">إنستجرام</a>
+    </div>
+</footer> <!-- نهاية التذييل -->
+
+
+<!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف جافاسكربت الرئيسي للموقع للتحكم بالحركة والوظائف -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML بالكامل -->

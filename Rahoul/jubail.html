@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الجبيل</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel -->
+<div class="carousel">
+    <img src="images/الجبيل رئيسي.jpg" class="active" alt="الجبيل " style="height: 750px; object-fit: cover;">
+    <div class="carousel-text"><h2 class="titleright title">الجبيل </h2><p class="p">الجبيل مدينة ساحلية حديثة تجمع بين الشواطئ الجميلة والكورنيش الهادئ والمرافق المتطورة </p>  </div>
+
+</div>
+
+<section class="container">
+  <h1 class="titleright">عن الجبيل</h1>
+  <p class="titleright read-more-text">
+تقع الجبيل في المنطقة الشرقية على شاطئ الخليج العربي، وبالرغم من أنها مدينة صناعية إلا أنها تتميز بالجمال والشواطئ الرائعة والمساحات الخضراء،    
+<br>       والتاريخ. المدينة مركز اقتصادي وتعليمي وثقافي، وتضم أبراجاً حديثة مثل برج المملكة وبرج الفيصلية، 
+    <span class="dots">...</span>
+    <span class="more">
+        إضافة إلى مواقع الإضافة إلى كونها
+      <br> 
+  محمية طبيعية تعيش فيها حيوانات وطيور نادرة.    </span>
+  </p>
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button>
+</section>
+
+
+<!-- الانشطة السياحية-->
+<section class="container" id="rh-activities-section">
+    <h2 class="titleright">الانشطة السياحية </h2>      
+    <div class="slider-wrapper">
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button>
+        <!-- مسار الكروت -->
+        <div class="cards-track">
+
+        <div class="card" data-id="برج الطوية الاثري" data-link="https://www.arabicmagazine.net/arabic/ArticleDetails.aspx?id=8509">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/برج الطوية الاثري.jpg" alt=" برج الطوية الأثري ">
+            <div class="card-body">
+                <div class="card-title">برج الطوية الأثري</div>
+                <div class="card-text">
+                    بُني البرج بأمر من الملك عبد العزيز (طيب الله ثراه) عام 1928م لحماية بئر الطوية، الذي كان المصدر الرئيسي للمياه لسكان الجبيل آنذاك.
+                </div>
+                <a href="https://www.arabicmagazine.net/arabic/ArticleDetails.aspx?id=8509" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="كورنيش النخيل" data-link="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D8%B4%D8%A7%D8%B7%D8%A6-%D8%A7%D9%84%D9%86%D8%AE%D9%8A%D9%84-%D8%A7%D9%84%D8%AC%D8%A8%D9%8A%D9%84/">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/كورنيش النخيل.png" alt="كورنيش النخيل">
+            <div class="card-body">
+                <div class="card-title"> كورنيش النخيل</div>
+                <div class="card-text">
+                    يعد كورنيش النخيل في مدينة الجبيل وجهة سياحية رائعة لمحبي الشواطئ والمشي على الرمال، حيث ستشاهد أمواج البحر، وتستمتع بلحظات هادئة في جلساته المصممة على هيئة عريش.
+                </div>
+                <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D8%B4%D8%A7%D8%B7%D8%A6-%D8%A7%D9%84%D9%86%D8%AE%D9%8A%D9%84-%D8%A7%D9%84%D8%AC%D8%A8%D9%8A%D9%84/" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="منتزه الحمراء" data-link="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%A7%D9%84%D8%AD%D9%85%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%AC%D8%A8%D9%8A%D9%84/">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/منتزه الحمراء.webp" alt="منتزه الحمراء">
+            <div class="card-body">
+                <div class="card-title">منتزه الحمراء</div>
+                <div class="card-text">
+                    يُعد متنزه الحمراء في الجبيل مُتنفسًا لأهالي الحيّ، إذ ينبسط على مساحة 75000 متر مربع، ويتضمن كراسي موزعة على امتداده، ومسارًا للمشاة وآخر للدراجات.
+                </div>
+                <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%A7%D9%84%D8%AD%D9%85%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%AC%D8%A8%D9%8A%D9%84/" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="منتزه تلال دارين" data-link="https://www.news.sa/2019">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/منتزه تلال دارين.jpg" alt="منتزه تلال دارين">
+            <div class="card-body">
+                <div class="card-title">منتزه تلال دارين</div>
+                <div class="card-text">
+                    يمتاز بأجوائه اللطيفة ونسمات هوائه المنعشة وطبيعته الخلابة المكسوة بالمسطحات الخضراء الواسعة المطلة على شاطئ بحري، مما يجعله مقصدًا يوميًّا مثاليًّا.
+                </div>
+                <a href="https://www.news.sa/2019" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="ممشى الديرة" data-link="https://www.news.sa/1882">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/ممشى الديرة.webp" alt="ممشى الديرة">
+            <div class="card-body">
+                <div class="card-title">ممشى الديرة</div>
+                <div class="card-text">
+                    ممشى الديرة هو مجمع طولي مفتوح، بتصميم عصري أنيق، يحتوي على ممشى مُشجر لممارسة المشي، مع خيارات تسوق متعددة.
+                </div>
+                <a href="https://www.news.sa/1882" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="منتزه الدفي" data-link="https://khuruja.arbdar.com/deffi-park/">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/منتزه الدفي.webp" alt="منتزه الدفي">
+            <div class="card-body">
+                <div class="card-title">منتزه الدفي</div>
+                <div class="card-text">
+                    تحتوي الحديقة على مجموعة من المقاعد المعدة للاستراحة والجلوس، ويمكن الاستمتاع بمجرد الجلوس وتأمل الطبيعة من حولك.
+                </div>
+                <a href="https://khuruja.arbdar.com/deffi-park/" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="مرسى الفناتير" data-link="https://www.ootlah.com/ar/attractions-saepsej-oth5062-boat-rental-in-al-jubail.html">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/مرسى الفناتير.webp" alt="مرسى الفناتير">
+            <div class="card-body">
+                <div class="card-title">مرسى الفناتير للرحلات البحرية</div>
+                <div class="card-text">
+                    أحد أجمل الشواطئ في المنطقة الشرقية، تتكاتف فيه مكونات الطبيعة أمام المسطحات الخضراء الممتعة.
+                </div>
+                <a href="https://www.ootlah.com/ar/attractions-saepsej-oth5062-boat-rental-in-al-jubail.html" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="عجائب التلال" data-link="https://webook.com/ar/events/wonder-hills-festival">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/عجائب التلال.webp" alt="مهرجان عجائب التلال">
+            <div class="card-body">
+                <div class="card-title">مهرجان عجائب التلال</div>
+                <div class="card-text">
+                    يعتبر وندر هيلز أحد مشاريع تطوير منطقة تلال دارين في مدينة الجبيل الصناعية ومن أجمل الفعاليات السنوية في المنطقة الشرقية.
+                </div>
+                <a href="https://webook.com/ar/events/wonder-hills-festival" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="شاطئ اللؤلؤة" data-link="https://aljubail.platinumlist.net/ar/event-tickets/87563/the-pearl-beach">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/شاطئ اللؤلؤة.jpeg" alt="شاطئ اللؤلؤة في منتجع إنتركونتيننتال الجبيل">
+            <div class="card-body">
+                <div class="card-title">شاطئ اللؤلؤة في منتجع إنتركونتيننتال الجبيل</div>
+                <div class="card-text">
+                    شاطئ خاص يقدّم مجموعة من الخدمات والمرافق الراقية في بيئة هادئة ومريحة.
+                </div>
+                <a href="https://aljubail.platinumlist.net/ar/event-tickets/87563/the-pearl-beach" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        </div>
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button>
+    </div>
+</section>
+
+<!-- اشهر خيارات الإقامة   -->
+<section class="container" id="rh-accommodation-section">
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      
+    <div class="slider-wrapper">
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button>
+        <!-- مسار الكروت -->
+        <div class="cards-track">
+
+        <div class="card" data-id="بارك ان راديسون" data-link="https://www.booking.com/hotel/sa/park-inn-by-radisson-jubail-industrial-city.ar.html?aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVAS217270755317%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9199200%3Ali%3Adec%3Adm&sid=a8ce1a17506792d12181d99e01ea77ff&dest_id=900040805&dest_type=city">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/بارك ان راديسون.jpg" alt="بارك إن باي راديسون">
+            <div class="card-body">
+                <div class="card-title">بارك إن باي راديسون</div>
+                <div class="card-text">
+                    يتميز بمسبح خارجي ومواقف خاصة للسيارات مجاناً ومركز للياقة البدنية وصالة مشتركة، بالإضافة إلى مطعم وخدمة الغرف.
+                </div>
+                <a href="https://www.booking.com/hotel/sa/park-inn-by-radisson-jubail-industrial-city.ar.html?aid=318615" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="بودل الجبيل" data-link="https://www.booking.com/hotel/sa/danah-aljubail-suites.ar.html?aid=356980">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/بودل الجبيل.jpg" alt="بودل الجبيل">
+            <div class="card-body">
+                <div class="card-title">بودل الجبيل</div>
+                <div class="card-text">
+                    يتميز بمسبح خارجي ومواقف خاصة للسيارات مجاناً ومركز للياقة البدنية وحديقة، مع خدمة الغرف وجهاز صراف آلي.
+                </div>
+                <a href="https://www.booking.com/hotel/sa/danah-aljubail-suites.ar.html?aid=356980" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="انتركونتيننتال الجبيل" data-link="https://www.ihg.com/intercontinental/hotels/ae/ar/dhahran/dhahc/hoteldetail">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/منتجع انتركونتيننتال الجبيل.jpg" alt="فندق إنتركونتيننتال">
+            <div class="card-body">
+                <div class="card-title">فندق إنتركونتيننتال</div>
+                <div class="card-text">
+                    أحد أفضل المنتجعات الشاطئية الفاخرة في المنطقة، من الحدائق المريحة والشاطئ الخاص إلى أماكن الاجتماعات الحديثة.
+                </div>
+                <a href="https://www.ihg.com/intercontinental/hotels/ae/ar/dhahran/dhahc/hoteldetail" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق ورويك" data-link="https://www.booking.com/hotel/sa/warwick-fanateer-al-jubayl.ar.html?aid=325251">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق ورويك.jpg" alt="فندق ورويك الجبيل">
+            <div class="card-body">
+                <div class="card-title">فندق ورويك</div>
+                <div class="card-text">
+                    خيار مميز للعائلات والمسافرين من رجال الأعمال، مع إطلالات جميلة ومرافق متنوعة.
+                </div>
+                <a href="https://www.booking.com/hotel/sa/warwick-fanateer-al-jubayl.ar.html?aid=325251" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق بريرا" data-link="https://www.boudl.com/brand/braira/hotel/braira-al-jubail">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق بريرا.jpg" alt="بريرا الجبيل">
+            <div class="card-body">
+                <div class="card-title">بريرا الجبيل</div>
+                <div class="card-text">
+                    غرف وأجنحة مصممة بعناية، مع موقع قريب من أهم المعالم السياحية ومراكز الأعمال في المدينة.
+                </div>
+                <a href="https://www.boudl.com/brand/braira/hotel/braira-al-jubail" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق قرية الريم" data-link="https://www.booking.com/hotel/sa/alreem-al-jubail.ar.html?aid=1620663">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق قرية الريم.jpg" alt="فندق قرية الريم">
+            <div class="card-body">
+                <div class="card-title">فندق قرية الريم</div>
+                <div class="card-text">
+                    يقع في الجبيل، ويتميز بمسبح خارجي ومواقف سيارات مجانية ومركز للياقة البدنية، على بعد 17 كم من الهيئة الملكية للجبيل وينبع.
+                </div>
+                <a href="https://www.booking.com/hotel/sa/alreem-al-jubail.ar.html?aid=1620663" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق درة جلمودة" data-link="https://www.booking.com/hotel/sa/durrat-jelmouda.ar.html?aid=1620663">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق درة جلمودة.jpg" alt="فندق درة جلمودة">
+            <div class="card-body">
+                <div class="card-title">فندق درة جلمودة</div>
+                <div class="card-text">
+                    يقع في الجبيل، على بعد 5.9 كم من حديقة الدفي، ويتميز بمسبح خارجي ومواقف سيارات مجانية ومركز للياقة البدنية ومطعم.
+                </div>
+                <a href="https://www.booking.com/hotel/sa/durrat-jelmouda.ar.html?aid=1620663" target="_blank" class="btn">اعرف المزيد</a>
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق كورال الجبي" data-link="https://www.booking.com/hotel/sa/coral-beach-jubail.ar.html?aid=1620663">
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق كورال الجبيل.jpg" alt="فندق كورال الجبيل">
+            <div class="card-body">
+                <div class="card-title">فندق كورال الجبيل</div>
+                <div class="card-text">
+                    فندق حديث بمطعم بانورامي مطل على الخليج العربي، يقع مباشرة على البحر، وغرفه الأنيقة تحتوي على أثاث حديث وتلفزيون بشاشة مسطحة.
+                </div>
+                <a href="https://www.booking.com/hotel/sa/coral-beach-jubail.ar.html?aid=1620663" target="_blank" class="btn">احجز الان</a>
+            </div>
+        </div>
+
+        </div>
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="containerimg">
+    
+    <h2 >الخريطة التفاعلية</h2>
+
+<div class="map-wrapper">
+
+    <!-- القائمة الجانبية -->
+    <div class="map-sidebar">
+
+        <a href="https://aljubail.platinumlist.net/ar/event-tickets/87563/the-pearl-beach" class="card-link"> 
+        <div class="map-card" data-lat="27.100092507740975" data-lng="49.581078844756455" data-name="شاطئ اللؤلؤة" data-zoom="15">
+            <img src="images/شاطئ اللؤلؤة.jpeg" alt=" شاطئ اللؤلؤة">
+            <span>شاطئ اللؤلؤة</span>
+        </div>
+</a>
+
+        <a href="https://webook.com/ar/events/wonder-hills-festival" class="card-link"> 
+        <div class="map-card" data-lat="27.195250688521323" data-lng="49.575330743888856" data-name=" مهرجان عجائب التلال " data-zoom="15">
+            <img src="images/عجائب التلال.webp" alt=" مهرجان عجائب التلال">
+            <span> مهرجان عجائب التلال</span>
+        </div>
+</a>
+
+        <a href="https://www.ootlah.com/ar/attractions-saepsej-oth5062-boat-rental-in-al-jubail.html" class="card-link"> 
+        <div class="map-card" data-lat="27.13483966841557" data-lng="49.569036088944245" data-name="مرسى الفناتير للرحلات البحرية" data-zoom="15" >
+            <img src="images/مرسى الفناتير.webp" alt=" مرسى الفناتير للرحلات البحرية">
+            <span>مرسى الفناتير للرحلات البحرية</span>
+        </div>
+</a>        
+
+        <a href="https://www.arabicmagazine.net/arabic/ArticleDetails.aspx?id=8509" class="card-link"> 
+         <div class="map-card" data-lat="27.01292001717776" data-lng="49.636971971164094" data-name=" برج الطوية الأثري " data-zoom="15">
+            <img src="images/برج الطوية الاثري.jpg" alt="برج الطوية الأثري">
+            <span>برج الطوية الأثري </span>
+        </div>
+</a>
+
+        <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D8%B4%D8%A7%D8%B7%D8%A6-%D8%A7%D9%84%D9%86%D8%AE%D9%8A%D9%84-%D8%A7%D9%84%D8%AC%D8%A8%D9%8A%D9%84/" class="card-link"> 
+        <div class="map-card" data-lat="27.11805814234916" data-lng="49.5722968865077" data-name="كورنيش النخيل" data-zoom="15">
+            <img src="images/كورنيش النخيل.png" alt="كورنيش النخيل">
+            <span>كورنيش النخيل</span>
+        </div>
+</a>
+
+        <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%A7%D9%84%D8%AD%D9%85%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%AC%D8%A8%D9%8A%D9%84/" class="card-link"> 
+        <div class="map-card" data-lat="26.93228228261243" data-lng="49.725834557671796" data-name="متنزه الحمراء" data-zoom="15">
+            <img src="images/منتزه الحمراء.webp" alt="متنزه الحمراء">
+            <span>متنزه الحمراء</span>
+        </div>
+</a>
+
+        <a href="https://www.news.sa/2019" class="card-link"> 
+         <div class="map-card" data-lat="27.177482040286744" data-lng="49.58258272513337" data-name="تلال دارين" data-zoom="15">
+            <img src="images/منتزه تلال دارين.jpg" alt="تلال دارين">
+            <span>تلال دارين</span>
+        </div>
+</a>
+
+        <a href="https://www.news.sa/1882" class="card-link"> 
+        <div class="map-card" data-lat="27.17641301307025" data-lng="49.52927592044226" data-name=" ممشى الديرة" data-zoom="15">
+            <img src="images/ممشى الديرة.webp" alt=" ممشى الديرة">
+            <span> ممشى الديرة</span>
+        </div>
+</a> 
+
+        <a href="https://khuruja.arbdar.com/deffi-park/" class="card-link"> 
+         <div class="map-card" data-lat="27.1453011419301" data-lng="49.53314760083543" data-name="منتزه الدفي" data-zoom="15">
+            <img src="images/منتزه الدفي.webp" alt="منتزه الدفي">
+            <span> منتزه الدفي</span>
+        </div>
+</a> 
+
+        <a href="https://www.booking.com/hotel/sa/park-inn-by-radisson-jubail-industrial-city.ar.html?aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVAS217270755317%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9199200%3Ali%3Adec%3Adm&sid=a8ce1a17506792d12181d99e01ea77ff&dest_id=900040805&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763623522&srpvid=e682342e4f1a036d&type=total&ucfs=1&" class="card-link"> 
+         <div class="map-card" data-lat="27.174788856993068" data-lng="49.52714259079407" data-name="بارك إن باي راديسون" data-zoom="15">
+            <img src="images/بارك ان راديسون.jpg" alt="بارك إن باي راديسون">
+            <span> بارك إن باي راديسون</span>
+        </div>
+</a>
+        
+
+        <a href="https://www.booking.com/hotel/sa/danah-aljubail-suites.ar.html?aid=356980&label=gog235jc-10CAsoxAFCFWRhbmFoLWFsanViYWlsLXN1aXRlc0gBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AvaG-8gGwAIB0gIkZTVkZjJiNTQtNWZjMS00Y2FiLWIwNzQtMjczYTgyZTFhZTM12AIB4AIB&sid=a8ce1a17506792d12181d99e01ea77ff&dest_id=900040805&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763623808&srpvid=6c9634bb79d90053&type=total&ucfs=1&" class="card-link"> 
+         <div class="map-card" data-lat="27.16352301389391" data-lng="49.57830113312273" data-name="فندق بودل" data-zoom="15">
+            <img src="images/بودل الجبيل.jpg" alt=" فندق بودل">
+            <span>فندق بودل</span>
+        </div>
+</a>
+
+        <a href="https://www.ihg.com/intercontinental/hotels/ae/ar/find-hotels/select-roomrate?fromRedirect=true&qSrt=sBR&qErm=false&qSlH=DHAHC&qRms=1&qAdlt=1&qChld=0&qCiD=20&qCiMy=102025&qCoD=21&qCoMy=102025&qAAR=6CBARC&qRtP=6CBARC&setPMCookies=true&qSHBrC=IC&qDest=P.O.%20Box%2010167,%20AL%20JUBAIL,%20SA&qpMbw=0&qpMn=1&srb_u=1&qRmFltr=" class="card-link"> 
+         <div class="map-card" data-lat="27.098141284952913" data-lng="49.57830757117181" data-name="انتركونتيننتال بالجبيل" data-zoom="15">
+            <img src="images/منتجع انتركونتيننتال الجبيل.jpg" alt=" انتركونتيننتال بالجبيل">
+            <span> انتركونتيننتال بالجبيل</span>
+        </div>
+</a>
+         
+
+        <a href="https://www.booking.com/hotel/sa/warwick-fanateer-al-jubayl.ar.html?aid=325251&label=warwick-fanateer-al-jubayl-KFiVVRmk5JW1JazvfcHfTAS697425819967%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442848%3Akwd-1656787111640%3Alp9076731%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=a8ce1a17506792d12181d99e01ea77ff&dest_id=900040805&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763624523&srpvid=5d15361cbe52016d&type=total&ucfs=1&" class="card-link"> 
+         <div class="map-card" data-lat="27.147797767118043" data-lng="49.56637406195931" data-name=" ورويك الجبيل" data-zoom="15">
+            <img src="images/فندق ورويك.jpg" alt=" ورويك الجبيل">
+            <span> ورويك الجبيل</span>
+        </div>
+</a> 
+
+        <a href="https://www.boudl.com/brand/braira/hotel/braira-al-jubail" class="card-link"> 
+         <div class="map-card" data-lat="26.989947959164372" data-lng="49.6627107042934" data-name=" بريرا الجبيل" data-zoom="15">
+            <img src="images/فندق بريرا.jpg" alt=" بريرا الجبيل">
+            <span>  بريرا الجبيل </span>
+        </div>
+</a> 
+
+        <a href="https://www.booking.com/hotel/sa/alreem-al-jubail.ar.html?aid=1620663&label=metakayak-linkdsk-coresa-hotel-8242527_los-01_bw-007_curr-SAR_nrm-01_gstadt-02_gstkid-00_lang-en-gb_sat-0_dow-mon_aff-0_mcid-10_clkid-YOcJbv6%24%24rHPQ4%24tdP_r3A&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=222856001_372569764_2_42_0_683280&checkin=2025-12-01&checkout=2025-12-02&dest_id=900040805&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=7&highlighted_blocks=222856001_372569764_2_42_0_683280&hpos=7&matching_block_id=222856001_372569764_2_42_0_683280&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=222856001_372569764_2_42_0_683280_49194&srepoch=1763972203&srpvid=c8263a1e1b350231&type=total&ucfs=1&" class="card-link"> 
+         <div class="map-card" data-lat="26.996767437106392" data-lng="49.636634935284704" data-name=" قرية الريم" data-zoom="15">
+            <img src="images/فندق قرية الريم.jpg" alt=" قرية الريم  ">
+            <span> قرية الريم </span>
+        </div>
+</a> 
+
+        <a href="https://www.booking.com/hotel/sa/durrat-jelmouda.ar.html?aid=1620663&label=metakayak-linkdsk-coresa-hotel-8242527_los-01_bw-007_curr-SAR_nrm-01_gstadt-02_gstkid-00_lang-en-gb_sat-0_dow-mon_aff-0_mcid-10_clkid-YOcJbv6%24%24rHPQ4%24tdP_r3A&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=1332475905_406926810_2_1_0&checkin=2025-12-01&checkout=2025-12-02&dest_id=900040805&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=11&highlighted_blocks=1332475905_406926810_2_1_0&hpos=11&matching_block_id=1332475905_406926810_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1332475905_406926810_2_1_0__57759&srepoch=1763972232&srpvid=c8263a1e1b350231&type=total&ucfs=1&" class="card-link"> 
+        <div class="map-card" data-lat="27.176553765031766" data-lng="49.52802306010686" data-name=" درة جلمودة" data-zoom="15">
+            <img src="images/فندق درة جلمودة.jpg" alt="درة جلمودة">
+            <span> درة جلمودة</span>
+        </div>
+</a>
+
+        <a href="https://www.booking.com/hotel/sa/coral-beach-jubail.ar.html?aid=1620663&label=metakayak-linkdsk-coresa-hotel-8242527_los-01_bw-007_curr-SAR_nrm-01_gstadt-02_gstkid-00_lang-en-gb_sat-0_dow-mon_aff-0_mcid-10_clkid-YOcJbv6%24%24rHPQ4%24tdP_r3A&sid=a8ce1a17506792d12181d99e01ea77ff&all_sr_blocks=29989002_417737407_2_42_0&checkin=2025-12-01&checkout=2025-12-02&dest_id=900040805&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=29989002_417737407_2_42_0&hpos=5&matching_block_id=29989002_417737407_2_42_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=29989002_417737407_2_42_0__29536&srepoch=1763972184&srpvid=c8263a1e1b350231&type=total&ucfs=1&" class="card-link"> 
+         <div class="map-card" data-lat="27.023022454280778" data-lng="49.6420163331282" data-name=" كورال الجبيل" data-zoom="15">
+            <img src="images/فندق كورال الجبيل.jpg" alt=" كورال الجبيل">
+            <span> كورال الجبيل</span>
+        </div>
+</a>
+    </div>
+
+    <!-- صندوق الخريطة -->
+    <div id="map" data-first-zoom="10"></div>
+
+
+</div>
+
+
+<!-- مكتبة Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- ملف JS واحد لكل الصفحات -->
+<script src="js/map.js"></script>
+
+
+</section>
+
+
+
+<footer>
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p>
+    <div>
+        <a href="#">فيسبوك</a> | 
+        <a href="#">تويتر</a> | 
+        <a href="#">إنستجرام</a>
+    </div>
+</footer>
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

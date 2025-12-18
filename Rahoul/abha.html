@@ -1,0 +1,512 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند كـ HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية والاتجاه من اليمين لليسار -->
+<head> <!-- بداية رأس الصفحة (يحتوي إعدادات تعريفية وليس محتوى مرئي) -->
+    <meta charset="UTF-8"> <!-- ترميز الأحرف: يدعم العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- يجعل الصفحة متجاوبة مع الجوال والشاشات المختلفة -->
+    <title>ابها </title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجي الخاص بالموقع -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية رأس الصفحة -->
+<body> <!-- بداية جسم الصفحة (المحتوى الظاهر للمستخدم) -->
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel -->
+<div class="carousel"> <!-- حاوية السلايدر (صورة خلفية مع نص) -->
+    <img src="images/ABHA44.png" class="active" alt="ابها" style="height: 750px; object-fit: cover;"> <!-- صورة رئيسية للسلايدر مضبوطة الارتفاع مع تغطية العنصر -->
+    <div class="carousel-text"><h2 class="titleright title ">ابها </h2><p class="p">لؤلؤة الجنوب وسحر الطبيعة بين الجبال والضباب <br> ملاذ الراحة والجمال، حيث الهواء العليل والمناظر الخلابة</p> </div> <!-- نص فوق الصورة: عنوان ووصف لأبها -->
+</div> <!-- نهاية الكاروسيل -->
+
+<section class="container"> <!-- قسم عن أبها، يستخدم كلاس container للتنسيق العام -->
+  <h1 class="titleright">عن ابها</h1> <!-- عنوان القسم: عن أبها -->
+  <p class="titleright read-more-text"> <!-- نص قابل للتمديد (اقرأ المزيد) -->
+    أبها، عروس الجنوب، مدينة تجمع بين الطبيعة الساحرة والهواء العليل طوال العام
+    <br>تتميز بمرتفعاتها الخضراء مثل السودة والجبل الأخضر التي تجذب الزوار 
+    <span class="dots">...</span> <!-- النقاط التي تظهر قبل إخفاء الجزء الإضافي -->
+    <span class="more">
+         من مختلف المناطق 
+         <br>تنبض أبها بثقافة وتراث عريق يظهر في مهرجاناتها وأسواقها الشعبية.وتعد وجهة مثالية
+      <br>  لمن يبحث عن الهدوء، الجمال، والتجارب السياحية المتنوعة.
+    </span> <!-- الجزء الإضافي من النص الذي يظهر بعد الضغط على "اقرأ المزيد" -->
+  </p> <!-- نهاية الفقرة التعريفية -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر يفعّل دالة JS لعرض/إخفاء المزيد من النص -->
+</section> <!-- نهاية قسم عن أبها -->
+
+<!-- أبرز الفعاليات -->
+<section class="container" id="rh-events-section"> <!-- قسم يحتوي كروت أبرز الفعاليات في أبها -->
+    <h2 class="titleright">أبرز الفعاليات</h2> <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- حاوية للسلايدر الأفقي الخاص بالكروت -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار (سهم) -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- حاوية تشمل جميع الكروت التي تتحرك أفقياً -->
+
+        <div class="card" data-id="رحلة جبل السودة" data-link="#"> <!-- كرت فعالية: رحلة جبل السودة مع بيانات مخصصة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة الكرت للمفضلة -->
+            <img src="images/NFS ABHA.png" alt="السودة"> <!-- صورة تعبر عن الفعالية -->
+            <div class="card-body"> <!-- جسم الكرت (نص وزر) -->
+                <div class="card-title">رحلة جبل السودة</div> <!-- عنوان الفعالية -->
+                <div class="card-text">جولة في أعلى قمة بالسعودية مع إطلالات ساحرة وتجربة مشي ممتعة.</div> <!-- وصف مختصر للفعالية -->
+                <a href="https://soudah.sa/" class="btn">اعرف المزيد </a> <!-- زر يأخذ المستخدم لموقع خارجي لمزيد من التفاصيل -->
+            </div> <!-- نهاية جسم الكرت -->
+        </div> <!-- نهاية كرت فعالية واحدة -->
+
+        <div class="card" data-id="عروض موسمية في منتزه الواجهة" data-link="#"> <!-- كرت فعالية أخرى -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/THE SUMMER ABHA.jpg" alt="حديقة ابها"> <!-- صورة للفعالية -->
+            <div class="card-body">
+                <div class="card-title">عروض موسمية في منتزه الواجهة</div> <!-- عنوان الفعالية -->
+                <div class="card-text">فعاليات عائلية وموسيقية في الهواء الطلق.</div> <!-- وصف الفعالية -->
+                <a href="https://saudi-parks.shababy4us.com/abu-khayal-park/" class="btn">اعرف المزيد </a> <!-- رابط خارجي لمزيد من المعلومات -->
+            </div>
+        </div>
+
+        <div class="card" data-id="قارب بحيرة السد" data-link="#"> <!-- كرت فعالية قارب بحيرة السد -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/HUSAAK ABHA.png" alt="بحيرة السد"> <!-- صورة بحيرة السد -->
+            <div class="card-body">
+                <div class="card-title">قارب بحيرة السد</div> <!-- عنوان الفعالية -->
+                <div class="card-text">إبحار وتجربة تصوير عند البحيرة وسط الجبال.</div> <!-- وصف الفعالية -->
+                <a href="https://discoveraseer.com/places/bhyrh-sd-abha" class="btn">اعرف المزيد</a> <!-- رابط لموقع سياحي يشرح المكان -->
+            </div>
+        </div>
+
+        <div class="card" data-id="مهرجان أبها للتسوق" data-link="https://enjoy.sa/ar/events/abha-shopping-festival/"> <!-- كرت مهرجان أبها للتسوق -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/ABHA.jpeg" alt="مهرجان"> <!-- صورة المهرجان -->
+            <div class="card-body">
+                <div class="card-title">مهرجان أبها للتسوق </div>
+                <div class="card-text"> مهرجان للتسوق والترفيه</div> <!-- وصف مختصر -->
+                <a href="https://enjoy.sa/ar/events/abha-shopping-festival/" class="btn">اعرف المزيد </a> <!-- رابط لمنصة روح السعودية للمهرجان -->
+            </div>
+        </div>
+
+        <div class="card" data-id="شارع الفن" data-link="https://ar.wikipedia.org/wiki/%D8%B4%D8%A7%D8%B1%D8%B9_%D8%A7%D9%84%D9%81%D9%86_(%D8%A3%D8%A8%D9%87%D8%A7)"> <!-- كرت شارع الفن -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/شارع الفن.jpeg" alt="شارع الفن"> <!-- صورة شارع الفن -->
+            <div class="card-body">
+                <div class="card-title">شارع الفن</div>
+                <div class="card-text">مطاعم ومقاهي وعروض ترفيهية يومية.</div> <!-- وصف شارع الفن -->
+                <a href="https://ar.wikipedia.org/wiki/%D8%B4%D8%A7%D8%B1%D8%B9_%D8%A7%D9%84%D9%81%D9%86_(%D8%A3%D8%A8%D9%87%D8%A7)" class="btn">اعرف المزيد</a> <!-- رابط ويكيبيديا عن شارع الفن -->
+            </div>
+        </div>
+
+        <div class="card" data-id="ساوث ويست" data-link="https://www.google.com/search?q=%D8%B3%D8%A7%D9%88%D8%AB+%D9%88%D9%8A%D8%B3%D8%AA+%D8%A7%D8%A8%D9%87%D8%A7&oq=%D8%B3%D8%A7%D9%88%D8%AB+%D9%88%D9%8A&gs_lcrp=EgZjaHJvbWUqCAgGEAAYFhgeMgcIABAAGIAEMgYIARBFGDkyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCTE0OTgxajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8"> <!-- كرت ساوث ويست -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/ساوث ةيست ابها.jpg" alt="ساوث ويست"> <!-- صورة المنطقة الترفيهية -->
+            <div class="card-body">
+                <div class="card-title">ساوث ويست</div>
+                <div class="card-text">هي منطقة ترفيهية جديدة متخصصة في الكوبوي تقدم عدة انشطة وفعاليات و مطاعم.</div> <!-- وصف للمكان -->
+                <a href="https://www.google.com/search?q=%D8%B3%D8%A7%D9%88%D8%AB+%D9%88%D9%8A%D8%B3%D8%AA+%D8%A7%D8%A8%D9%87%D8%A7&oq=%D8%B3%D8%A7%D9%88%D8%AB+%D9%88%D9%8A&gs_lcrp=EgZjaHJvbWUqCAgGEAAYFhgeMgcIABAAGIAEMgYIARBFGDkyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCTE0OTgxajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8" class="btn">اعرف المزيد</a> <!-- رابط بحث جوجل عن ساوث ويست -->
+            </div>
+        </div>
+
+        <div class="card" data-id="تجربة تسلّق الغيثان" data-link="https://abha.platinumlist.net/ar/event-tickets/guided-gaithan-hike"> <!-- كرت تجربة تسلق الغيثان -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/ABHA23.webp" alt="فعالية تسلق"> <!-- صورة تعبر عن التسلق -->
+            <div class="card-body">
+                <div class="card-title">تجربة تسلّق الغيثان</div> <!-- عنوان الفعالية -->
+                <div class="card-text">مغامرة لعشاق الإثارة في جبال أبها.</div> <!-- وصف مغامرة التسلق -->
+                <a href="https://abha.platinumlist.net/ar/event-tickets/guided-gaithan-hike" class="btn">احجز الان </a> <!-- زر للحجز عبر موقع بلاتينيوم ليست -->
+            </div>
+        </div>
+
+        </div> <!-- نهاية مسار الكروت -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك الكروت لليمين -->
+    </div> <!-- نهاية حاوية السلايدر -->
+</section> <!-- نهاية قسم أبرز الفعاليات -->
+
+<!-- الانشطة السياحية-->
+<section class="container" id="rh-activities-section"> <!-- قسم الأنشطة السياحية في أبها -->
+    <h2 class="titleright">الانشطة السياحية </h2>       <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- سلايدر للكروت الخاصة بالأنشطة -->
+
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك الكروت لليسار -->
+
+        <div class="cards-track"> <!-- مسار يحتوي على كروت الأنشطة -->
+
+        <div class="card" data-id="جسر السودة الخشبي" data-link="https://riyadhseason.sa"> <!-- كرت جسر السودة الخشبي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/السودة.jpg" alt="[جسر السودة الخشبي]"> <!-- صورة الجسر -->
+            <div class="card-body">
+                <div class="card-title">– جسر السودة الخشبي</div> <!-- عنوان النشاط -->
+                <div class="card-text">جسر السودة الخشبي يُعدّ أحد أجمل معالم الجنوب، ويمنح زوّاره إطلالة رائعة وسط أجواء باردة وطبيعة ساحرة.</div> <!-- وصف النشاط -->
+                <a href="https://riyadhseason.sa" target="_blank" class="btn">اعرف المزيد</a> <!-- زر يفتح موقع خارجي في تبويب جديد -->
+            </div>
+        </div>
+
+        <div class="card" data-id="ترحاب" data-link="https://riyadhseason.sa"> <!-- كرت نشاط ترحاب -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/نرحاب.jpg" alt="ترحاب"> <!-- صورة ترحاب -->
+            <div class="card-body">
+                <div class="card-title">ترحاب</div>
+                <div class="card-text">ترحاب أبها يجمع بين الأجواء الودّية والخدمة المميزة، ليمنح زوّاره تجربة ضيافة دافئة تعكس جمال المدينة.</div> <!-- وصف النشاط -->
+                <a href="https://abha.platinumlist.net/ar/event-tickets/87727/terhaab" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للحجز أو التفاصيل -->
+            </div>
+        </div>
+
+        <div class="card" data-id="منتزه السحاب" data-link="https://khuruja.arbdar.com/cloud-park/"> <!-- كرت منتزه السحاب -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/منتزه السحاب.jpg" alt="منتزه السحاب "> <!-- صورة المنتزه -->
+            <div class="card-body">
+                <div class="card-title">منتزه السحاب</div>
+                <div class="card-text">منتزه السحاب في أبها يقدم أجواءً رائعة على ارتفاعات شاهقة، ويمنح الزوار إطلالات بانورامية ساحرة وطبيعة.</div> <!-- وصف المنتزه -->
+            <a href="https://khuruja.arbdar.com/cloud-park/" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لموقع عن المنتزه -->
+            </div>
+        </div>
+
+        <div class="card" data-id="مدماك ابها" data-link="https://abha.platinumlist.net/ar/event-tickets/mdmak"> <!-- كرت مدماك -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/مدماك.jpg" alt="مدماك ابها "> <!-- صورة للمكان -->
+            <div class="card-body">
+                <div class="card-title">مدماك ابها</div>
+                <div class="card-text">مدماك أبها يُعدّ من أبرز المعالم السياحية، حيث يجمع بين الأجواء التراثية والمناظر الخلابة.</div> <!-- وصف -->
+                <a href="https://abha.platinumlist.net/ar/event-tickets/mdmak" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط خارجي -->
+            </div>
+        </div>
+
+        <div class="card" data-id="مزرعة الورود" data-link="https://www.alriyadh.com/2146874"> <!-- كرت مزرعة الورود -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/مزرعة الورود.jpg" alt="مزرعة الورود"> <!-- صورة للمزرعة -->
+            <div class="card-body">
+                <div class="card-title">مزرعة الورود</div>
+                <div class="card-text">مزرعة الورود في أبها تتميز بألوانها الزاهية وعطورها الفواحة، وتوفر تجربة ممتعة لعشاق الطبيعة والتصوير.</div> <!-- وصف للمزرعة -->
+                <a href="https://www.alriyadh.com/2146874" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لمقال عن المزرعة -->
+            </div>
+        </div>
+
+        </div> <!-- نهاية مسار الكروت -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك الكروت لليمين -->
+
+    </div> <!-- نهاية السلايدر -->
+
+</section> <!-- نهاية قسم الأنشطة السياحية -->
+
+
+
+<!-- اشهر خيارات الإقامة -->
+<section class="container" id="rh-accommodation-section"> <!-- قسم أشهر خيارات الإقامة -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2> <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- سلايدر كروت الإقامة -->
+
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك لليسار -->
+
+        <div class="cards-track"> <!-- حاوية الكروت -->
+
+            <!-- فندق سيتادينز -->
+            <div class="card" 
+                 data-id="فندق سيتادينز"
+                 data-link="https://www.booking.com/hotel/sa/citadines-abha.ar.html?aid=325251&label=citadines-abha-88u0r1RtsIdHAFx6%2AXofSgS697425243754%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1714174726922%3Alp9196151%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=f0fb13f305c8a3014107342f40f71f3a"> <!-- كرت فندق سيتادينز مع رابط حجز من بوكينغ -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر مفضلة -->
+                <img src="images/فندق سيتادينز.jpeg" alt="فندق سيتادينز"> <!-- صورة الفندق -->
+                <div class="card-body">
+                    <div class="card-title">فندق سيتادينز</div> <!-- اسم الفندق -->
+                    <div class="card-text">إطلالة رائعة على جبال عسير المهيبة من مكانه المرتفع في مدينة أبها</div> <!-- وصف للإطلالة -->
+                    <a class="btn" href="https://www.booking.com/hotel/sa/citadines-abha.ar.html?aid=325251&label=citadines-abha-88u0r1RtsIdHAFx6%2AXofSgS697425243754%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1714174726922%3Alp9196151%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=f0fb13f305c8a3014107342f40f71f3a" target="_blank">احجز الآن</a> <!-- زر حجز يفتح في تبويب جديد -->
+                </div>
+            </div>
+
+            <!-- بلو إن بوتيك -->
+            <div class="card"
+                 data-id="بلو إن بوتيك"
+                 data-link="https://www.booking.com/hotel/sa/blw-n-bwtyk-blue-inn-boutique.ar.html?aid=325251&label=blw-n-bwtyk-blue-inn-boutique-88gb_pTMrlcLNW07v6oZYwS338129647096%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-625257598449%3Alp9196151%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=f0fb13f305c8a3014107342f40f71f3a"> <!-- كرت فندق بلو إن بوتيك -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/BLUE AN.jpeg" alt="بلو ان بوتيك"> <!-- صورة الفندق -->
+                <div class="card-body">
+                    <div class="card-title">بلو إن بوتيك</div>
+                    <div class="card-text">فندق بلو إن بوتيك أبها يجمع بين التصميم العصري والأجواء الهادئة، ليمنح ضيوفه تجربة إقامة أنيقة ومريحة.</div> <!-- وصف للفندق -->
+                    <a class="btn" href="https://www.booking.com/hotel/sa/blw-n-bwtyk-blue-inn-boutique.ar.html?aid=325251&label=blw-n-bwtyk-blue-inn-boutique-88gb_pTMrlcLNW07v6oZYwS338129647096%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-625257598449%3Alp9196151%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=f0fb13f305c8a3014107342f40f71f3a" target="_blank">احجز الآن</a> <!-- زر الحجز -->
+                </div>
+            </div>
+
+            <!-- قصر أبها -->
+            <div class="card"
+                 data-id="قصر أبها"
+                 data-link="https://www.agoda.com/ar-ae/book/?masterRoomTypeId=930377400&roomToken=8b%3A0%3Bc%3A1D96P_96P..."> <!-- كرت قصر أبها -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/قصر ابها.jpg" alt="قصر ابها"> <!-- صورة القصر -->
+                <div class="card-body">
+                    <div class="card-title">قصر أبها</div>
+                    <div class="card-text">قصر أبها يُعدّ من أبرز معالم المدينة، ويتميز بموقعه المرتفع وإطلالاته الجميلة.</div> <!-- وصف القصر -->
+                    <a class="btn" href="https://www.agoda.com/ar-ae/book/?masterRoomTypeId=930377400&roomToken=8b%3A0%3Bc%3A1D96P_96P..." target="_blank">احجز الآن</a> <!-- زر حجز -->
+                </div>
+            </div>
+
+            <!-- فندق سما -->
+            <div class="card"
+                 data-id="فندق سما"
+                 data-link="https://secure.booking.com/book.html?hotel_id=12413104&occupancy_setup_issue_flags=&aid=325250..."> <!-- كرت فندق سما -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/SB HOTEL.jpg" alt="فندق سما"> <!-- صورة الفندق -->
+                <div class="card-body">
+                    <div class="card-title">فندق سما أبها</div>
+                    <div class="card-text">فندق سما أبها يتميز بإطلالاته الجميلة وخدماته الراقية…</div> <!-- وصف للفندق -->
+                    <a class="btn" href="https://secure.booking.com/book.html?hotel_id=12413104&occupancy_setup_issue_flags=&aid=325250..." target="_blank">احجز الآن</a> <!-- زر حجز -->
+                </div>
+            </div>
+
+            <!-- منتجع اطلالة السودة -->
+            <div class="card"
+                 data-id="منتجع اطلالة السودة"
+                 data-link="http://secure.booking.com/book.html?hotel_id=7295605&occupancy_setup_issue_flags=&aid=2443131..."> <!-- كرت منتجع إطلالة السودة -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/متنجع اطلالات السودة.jpeg" alt="منتجع السودة"> <!-- صورة المنتجع -->
+                <div class="card-body">
+                    <div class="card-title">منتجع اطلالة السودة</div>
+                    <div class="card-text">منتجع إطلالة السودة يوفر إقامة هادئة مع إطلالات طبيعية رائعة على جبال السودة</div> <!-- وصف المنتجع -->
+                    <a class="btn" href="http://secure.booking.com/book.html?hotel_id=7295605&occupancy_setup_issue_flags=&aid=2443131..." target="_blank">احجز الآن</a> <!-- زر حجز -->
+                </div>
+            </div>
+
+            <!-- فندق بيات -->
+            <div class="card" 
+                 data-id="فندق بيات"
+                 data-link="https://www.bayathotels.com/ar-SA/booking"> <!-- كرت فندق بيات -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/فندق بيات.jpg" alt="فندق بيات"> <!-- صورة الفندق -->
+                <div class="card-body">
+                    <div class="card-title">فندق بيات</div>
+                    <div class="card-text">فندق بيات في أبها يجمع بين الفخامة والراحة…</div> <!-- وصف للفندق -->
+                    <a class="btn" href="https://www.bayathotels.com/ar-SA/booking" target="_blank">احجز الآن</a> <!-- زر الحجز -->
+                </div>
+            </div>
+
+        </div> <!-- نهاية مسار الكروت -->
+
+        <button class="slide-btn right">&#10095;</button> <!-- زر تحريك الكروت لليمين -->
+    </div> <!-- نهاية السلايدر -->
+</section> <!-- نهاية قسم الإقامة -->
+
+
+
+
+<section class="containerimg"> <!-- قسم خاص بالخريطة التفاعلية مع تصميم مختلف (containerimg) -->
+
+    <h2 >الخريطة التفاعلية</h2> <!-- عنوان قسم الخريطة التفاعلية -->
+
+<div class="map-wrapper"> <!-- حاوية تجمع القائمة الجانبية والخريطة -->
+
+    <!-- القائمة الجانبية -->
+    <div class="map-sidebar"> <!-- شريط جانبي يحتوي على كروت للأماكن المرتبطة بالخريطة -->
+        <a href="https://enjoy.sa/ar/events/abha-shopping-festival/" class="card-link"> <!-- رابط يحيط بالكرت الأول -->
+        <div class="map-card" data-lat="18.237842509756103" data-lng="42.649012636814014" data-name="  مهرجان ابها للتسوق " data-zoom="11"> <!-- كرت خريطة خاص بمهرجان أبها للتسوق مع إحداثيات ودرجة تكبير -->
+            <img src="images/مهرجان ابها.jpg" alt="  مهرجان ابها للتسوق  "> <!-- صورة المكان -->
+            <span> مهرجان ابها للتسوق </span> <!-- اسم المكان -->
+        </div>
+        </a>
+  
+        <a href="https://ar.wikipedia.org/wiki/%D8%B4%D8%A7%D8%B1%D8%B9_%D8%A7%D9%84%D9%81%D9%86_(%D8%A3%D8%A8%D9%87%D8%A7)" class="card-link"> <!-- رابط لكرت شارع الفن -->
+         <div class="map-card" data-lat="18.214941898582147" data-lng="42.49354102147078" data-name="  شارع الفن " data-zoom="13"> <!-- كرت خريطة لشارع الفن -->
+            <img src="images/شارع الفن.jpeg" alt="  شارع الفن  ">
+            <span> شارع الفن </span>
+        </div>
+        </a>
+
+        <a href="https://www.google.com/search?q=%D8%B3%D8%A7%D9%88%D8%AB+%D9%88%D9%8A%D8%B3%D8%AA+%D8%A7%D8%A8%D9%87%D8%A7&oq=%D8%B3%D8%A7%D9%88%D8%AB+%D9%88%D9%8A&gs_lcrp=EgZjaHJvbWUqCAgGEAAYFhgeMgcIABAAGIAEMgYIARBFGDkyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCTE0OTgxajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8" class="card-link"> <!-- رابط لكرت ساوث ويست -->
+         <div class="map-card" data-lat="18.2172956689737" data-lng="42.64969723681342" data-name=" ساوث ويست  " data-zoom="13">
+            <img src="images/ساوث ةيست ابها.jpg" alt=" ساوث ويست   ">
+            <span> ساوث ويست </span>
+        </div>
+        </a>
+ 
+        <a href="https://abha.platinumlist.net/ar/event-tickets/87727/terhaab" class="card-link"> <!-- رابط لكرت ترحاب -->
+          <div class="map-card" data-lat="18.205157543398133" data-lng="42.56724160612783" data-name=" ترحاب  " data-zoom="13">
+            <img src="images/نرحاب.jpg" alt="   ترحاب ">
+            <span> ترحاب </span>
+        </div>
+        </a>
+
+
+        <a href="https://khuruja.arbdar.com/cloud-park/" class="card-link"> <!-- رابط كرت منتزه السحاب -->
+         <div class="map-card" data-lat=" 18.219011204899036" data-lng="42.39652762664649" data-name=" منتزه السحاب  " data-zoom="13">
+            <img src="images/منتزه السحاب.jpg" alt="  منتزه السحاب  ">
+            <span>  منتزه السحاب</span>
+        </div>
+        </a>
+ 
+        <a href="https://abha.platinumlist.net/ar/event-tickets/mdmak" class="card-link"> <!-- رابط كرت مدماك -->
+          <div class="map-card" data-lat="18.1983387722287" data-lng="42.50277156564856" data-name=" مدماك  " data-zoom="13">
+            <img src="images/مدماك.jpg" alt=" مدماك   ">
+            <span> مدماك </span>
+        </div>
+        </a>
+
+
+        <a href="https://www.alriyadh.com/2146874" class="card-link"> <!-- رابط كرت مزرعة الورود -->
+          <div class="map-card" data-lat="18.382000349821723" data-lng="42.600080383844926" data-name=" مزرعة الورود  " data-zoom="13">
+            <img src="images/مزرعة الورود.jpg" alt="  مزرعة الورود  ">
+            <span> مزرعة الورود </span>
+        </div>
+        </a>
+
+        <a href="https://www.booking.com/hotel/sa/citadines-abha.ar.html?aid=325251&label=citadines-abha-88u0r1RtsIdHAFx6%2AXofSgS697425243754%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1714174726922%3Alp9196151%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=f0fb13f305c8a3014107342f40f71f3a" class="card-link"></a> <!-- رابط حول كرت فندق سيتادينز (فيه خطأ إغلاق) -->
+         <div class="map-card" data-lat="18.241109925177437" data-lng="42.60717105215679" data-name="  فندق سيتادينز " data-zoom="13"> <!-- كرت على الخريطة لفندق سيتادينز -->
+            <img src="images/فندق سيتادينز.jpeg" alt="  فندق سيتادينز  ">
+            <span> فندق سيتادينز </span>
+        </div>
+         </a> <!-- إغلاق رابط لكنه في غير مكانه (خطأ بسيط في الـ HTML) -->
+
+        <a href="https://www.booking.com/hotel/sa/blw-n-bwtyk-blue-inn-boutique.ar.html?aid=325251&label=blw-n-bwtyk-blue-inn-boutique-88gb_pTMrlcLNW07v6oZYwS338129647096%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-625257598449%3Alp9196151%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=f0fb13f305c8a3014107342f40f71f3a" class="card-link"> <!-- رابط كرت بلو إن بوتيك -->
+          <div class="map-card" data-lat=" 18.214616290234428" data-lng="42.50106016379944" data-name="  بلو إن بوتيك " data-zoom="13">
+            <img src="images/بلو ان بوتيك.jpeg" alt=" بلو إن بوتيك   ">
+            <span> بلو إن بوتيك </span>
+        </div>
+        </a>
+
+        <a href="https://www.agoda.com/ar-ae/book/?masterRoomTypeId=930377400&roomToken=8b%3A0%3Bc%3A1D96P_96P..." class="card-link"> <!-- رابط كرت قصر أبها -->
+          <div class="map-card" data-lat="18.2104431956109" data-lng="42.48309689448459" data-name=" قصر ابها  " data-zoom="13">
+            <img src="images/قصر ابها.jpg" alt=" قصر ابها   ">
+            <span>قصر ابها  </span>
+        </div>
+       </a>
+
+        <a href="http://secure.booking.com/book.html?hotel_id=7295605&occupancy_setup_issue_flags=&aid=2443131..." class="card-link">  <!-- رابط كرت منتجع إطلالة السودة -->
+          <div class="map-card" data-lat=" 18.265378283362374" data-lng="42.39791582517128" data-name=" منتجع اطلالة السودة  " data-zoom="13">
+            <img src="images/متنجع اطلالات السودة.jpeg" alt=" منتجع اطلالة السودة   ">
+            <span> منتجع اطلالة السودة </span>
+        </div>
+       </a>
+
+        <a href="https://www.bayathotels.com/ar-SA/booking" class="card-link"> <!-- رابط كرت فندق بيات -->
+          <div class="map-card" data-lat="18.28821038668515" data-lng="42.72523088099359" data-name=" فندق بيات  " data-zoom="13">
+            <img src="images/فندق بيات.jpg" alt=" فندق بيات   ">
+            <span> فندق بيات </span>
+        </div>
+        </a>
+ 
+
+     <!-- هنا تنتهي الكروت في الشريط الجانبي -->
+
+    </div> <!-- نهاية القائمة الجانبية map-sidebar -->
+
+    <!-- صندوق الخريطة -->
+    <div id="map" data-first-zoom="10"></div> <!-- عنصر div الذي تُرسم بداخله خريطة Leaflet مع قيمة تكبير ابتدائية -->
+
+</div> <!-- نهاية حاوية الخريطة map-wrapper -->
+
+
+<!-- مكتبة Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- استدعاء ملف تنسيق مكتبة Leaflet من CDN -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- استدعاء ملف JavaScript لمكتبة Leaflet من CDN -->
+
+<!-- ملف JS واحد لكل الصفحات -->
+<script src="js/map.js"></script> <!-- ربط ملف جافاسكربت المسؤول عن تشغيل الخريطة -->
+
+</section> <!-- نهاية قسم الخريطة التفاعلية -->
+
+
+<!-- مكتبة Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- (مكرر) استدعاء CSS الخاص بـ Leaflet مرة أخرى -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- (مكرر) استدعاء JS الخاص بـ Leaflet مرة أخرى -->
+
+
+
+</section> <!-- وسم إغلاق قسم زائد، يفضل حذفه لأنه لا يقابل Section مفتوح -->
+
+
+
+<footer> <!-- قسم الفوتر في أسفل الصفحة -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق النشر -->
+    <div>
+        <a href="#">فيسبوك</a> |  <!-- رابط لموقع فيسبوك (حاليًا لا يشير لصفحة حقيقية) -->
+        <a href="#">تويتر</a> |  <!-- رابط لتويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط لإنستجرام -->
+    </div>
+</footer> <!-- نهاية الفوتر -->
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف JavaScript العام للموقع (السلايدر، المفضلة، اقرأ المزيد، إلخ) -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML -->

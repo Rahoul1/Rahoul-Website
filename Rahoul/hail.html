@@ -1,0 +1,472 @@
+<!DOCTYPE html> <!-- تحديد نوع المستند HTML5 -->
+<html lang="ar" dir="rtl"> <!-- لغة الصفحة عربية والاتجاه من اليمين لليسار -->
+<head> <!-- بداية رأس الصفحة -->
+    <meta charset="UTF-8"> <!-- تحديد ترميز النصوص UTF-8 لدعم العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل الصفحة متجاوبة مع الشاشات المختلفة -->
+    <title>حائل | عاصمة الطبيعة والتراث، مدينة التاريخ والجمال الفريد</title> <!-- عنوان الصفحة في المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات CSS -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية رأس الصفحة -->
+
+<body> <!-- بداية جسم الصفحة -->
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel -->
+<div class="carousel"> <!-- قسم السلايدر الرئيسي -->
+    <img src="images/صورة حائل الرئيسية.jpeg" class="active" alt="حائل" style="height: 750px; object-fit: cover;"> <!-- صورة خلفية السلايدر لمدينة حائل -->
+    <div class="carousel-text"><h2 class="titleright title">حائل </h2><p class="p">حائل مدينةٌ عذبةٌ تعانقها جبالُ أجأ وسلمى، تجمع بين أصالة التاريخ وروح الطبيعة الهادئة</p> </div> <!-- نص فوق السلايدر: عنوان ووصف قصير -->
+</div>
+
+<section class="container"> <!-- قسم محتوى عام داخل حاوية -->
+  <h1 class="titleright"> عن حائل</h1> <!-- عنوان القسم: عن حائل -->
+  <p class="titleright read-more-text"> <!-- فقرة نصية مع كلاس للقراءة المزيد -->
+     تقع مدينة حائل في شمال المملكة العربية السعودية، عند حافة صحراء النفود الكبرى، محاطة بسلسلة من الجبال والسهول
+    <br> التي تمنحها تضاريسًا متنوعة وطبيعة مميزة. يتميز موقعها الاستراتيجي بكونه نقطة عبور مهمة تربط شمال الجزيرة  
+   <br>      العربية بجنوبها، ما أعطاها عبر التاريخ أهمية تجارية وثقافية. المدينة تجمع بين البيئة الطبيعية الخلابة والمعالم الحضارية،
+   <br> حيث يمكن استكشاف الجبال والوديان والتكوينات الرملية،
+    <span class="dots">...</span> <!-- نقاط توضح وجود نص مخفي (قبل اقرأ المزيد) -->
+    <span class="more"> <!-- جزء النص المخفي الذي يظهر عند الضغط على "اقرأ المزيد" -->
+        إلى جانب زيارة المتاحف والمراكز الثقافية التي تسلّط الضوء
+        <br>على تاريخ المنطقة وتراثها. كما تحتضن حائل مرافق ترفيهية وأسواقًا شعبية تعكس الهوية المحلية، ما يجعلها وجهة
+         <br>متكاملة تجمع بين الطبيعة والتاريخ والحداثة.
+    </span>
+  </p>
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر تفعيل/إخفاء النص الإضافي -->
+</section>
+
+
+
+<!-- أبرز الفعاليات -->
+<section class="container" id="rh-events-section"> <!-- قسم للكروت: أبرز الفعاليات -->
+    <h2 style="text-align: right;  margin-right: 130px" >أبرز الفعاليات</h2>      <!-- عنوان القسم بأبرز الفعاليات -->
+    <div class="cards"> <!-- حاوية لجميع الكروت -->
+
+        
+        <div class="card" data-id="مهرجان بيت حائل" data-link="Beit Hail Festival.html"> <!-- كرت لمهرجان بيت حائل مع بيانات للتخزين/المفضلة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة/إزالة من المفضلة -->
+            <img src="images/مهرجان بيت حائل.jpeg" alt="مهرجان بيت حائل"> <!-- صورة الكرت -->
+            <div class="card-body"> <!-- جسم الكرت (المحتوى النصي) -->
+                <div style="text-align: center;font-weight: bold; ">مهرجان بيت حائل  </div> <!-- عنوان الفعالية -->
+                <div class="card-text">فعالية تراثية كبيرة تقام في منتزه أجا، تضم أكثر من 40 حرفة يدوية وتراثية</div> <!-- وصف مختصر -->
+               <a href="Beit Hail Festival.html" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط التفاصيل في صفحة جديدة -->
+            </div>
+        </div>
+       
+        
+        <div class="card" data-id="رالي تيوتا حائل" data-link="Hail Toyota International Baja.html"> <!-- كرت رالي حائل تويوتا -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/رالي تيوتا حائل.jpeg" alt="رالي حائل "> <!-- صورة الرالي -->
+            <div class="card-body">
+                <div style="text-align: center;font-weight: bold; ">رالي حائل تويوتا الدولي</div> <!-- عنوان الفعالية -->
+                <div class="card-text">سباق رالي صحراوي (تحدي النفود الكبير) يُقام في صحراء النفود الكبرى</div> <!-- وصف مختصر -->
+                <a href="Hail Toyota International Baja.html" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط التفاصيل -->
+            </div>
+        </div>
+       
+        
+        <div class="card" data-id="مهرجان صيف حائل" data-link="Hail Summer Festival.html"> <!-- كرت مهرجان صيف حائل -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/مهرجان صيف حائل.jpeg" alt="مهرجان صيف حائل  "> <!-- صورة المهرجان -->
+            <div class="card-body">
+                <div style="text-align: center;font-weight: bold; ">مهرجان صيف حائل </div> <!-- عنوان المهرجان -->
+                <div class="card-text">مهرجان صيف حائل فعالية صيفية تجمع بين الترفيه والثقافة والفنون في قلب المدينة.</div> <!-- وصف مختصر -->
+                <a href="Hail Summer Festival.html " target="_blank" class="btn">اعرف المزيد</a> <!-- رابط التفاصيل -->
+            </div>
+        </div>
+        
+
+    </div>
+</section>
+
+<!-- الانشطة السياحية-->
+<section class="container" id="rh-activities-section"> <!-- قسم الأنشطة السياحية -->
+    <h2 class="titleright">الانشطة السياحية </h2>      <!-- عنوان القسم: الأنشطة السياحية -->
+    <div class="slider-wrapper"> <!-- غلاف للسلايدر الجانبي للكروت -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر السهم لتمرير الكروت لليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- مسار أفقي للكروت -->
+
+        <a href="https://riyadhseason.sa"></a> <!-- رابط فارغ (لا يحتوي محتوى) - يمكن إزالته لاحقًا -->
+        <div class="card" data-id="مزرعة العزيزية حائل" data-link="http://alaziziahfarm.com/"> <!-- كرت مزرعة العزيزية -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+            <img src="images/مزرعة العزيزية حائل.jpeg" alt="مزرعة العزيزية"> <!-- صورة المزرعة -->
+            <div class="card-body">
+                <div class="card-title"> مزرعة العزيزية </div> <!-- اسم المكان -->
+                <div class="card-text"> مزرعة العزيزية وجهة سياحية متكاملة تقدم الترفيه بأنشطة مثل الطيران، الصيد، الفروسية وركوب الهجن ومناطق تنزه للعائلات. </div> <!-- وصف النشاط -->
+                <a href="http://alaziziahfarm.com/ " target="_blank" class="btn">اعرف المزيد</a> <!-- رابط خارجي للموقع الرسمي -->
+            </div>
+        </div>
+        
+        <div class="card" data-id="جبل ام سنمان حائل" data-link="https://www.spa.gov.sa/2123461"> <!-- كرت جبل أم سنمان -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/جبل ام سنمان حائل.jpeg" alt="جبل أم سنمان"> <!-- صورة الجبل -->
+            <div class="card-body">
+                <div class="card-title">جبل أم سنمان</div> <!-- عنوان الكرت -->
+                <div class="card-text"> جبل أم سنمان في حائل موقع أثري وتراثي يضم آلاف النقوش الصخرية ويعد جزءًا من مواقع الفن الصخري المدرجة لدى اليونسكو. </div> <!-- وصف -->
+                <a href="https://www.spa.gov.sa/2123461" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط للمزيد -->
+            </div>
+        </div>
+
+        <div class="card" data-id="جبل السمراء حائل" data-link="https://www.spa.gov.sa/N2371353"> <!-- كرت جبل السمراء -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/جبل السمراء حائل.jpeg" alt="جبل السمراء حائل"> <!-- صورة الجبل -->
+            <div class="card-body">
+                <div class="card-title">جبل السمراء</div> <!-- عنوان -->
+                <div class="card-text"> جبل السمراء من أبرز المعالم الطبيعية والتراثية، يطل على المدينة ويضم منتزهًا بمرافق متنوعة ويعد وجهة سياحية مميزة.</div> <!-- وصف -->
+                <a href="https://www.spa.gov.sa/N2371353" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط -->
+            </div>
+        </div>
+
+        <div class="card" data-id="قلعة عيرف حائل" data-link="https://www.spa.gov.sa/2226079"> <!-- كرت قلعة عيرف -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/قلعة عيرف حائل.jpeg" alt="قلعة عيرف"> <!-- صورة القلعة -->
+            <div class="card-body">
+                <div class="card-title">قلعة عيرف</div> <!-- عنوان الكرت -->
+                <div class="card-text"> قلعة الأثرية بُنيت عام 1840م على قمة جبل، تطل على المدينة وتُعد موقعًا سياحيًا وتراثيًا مهمًا يروي تاريخ المنطقة و  فنون العمارة </div> <!-- وصف -->
+                <a href="https://www.spa.gov.sa/2226079" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط -->
+            </div>
+        </div>
+
+        <div class="card" data-id="منازل حاتم الطائي حائل" data-link="https://waditrip.sa/ar/tour/%D9%85%D9%86%D8%A7%D8%B2%D9%84-%D8%AD%D8%A7%D8%AA%D9%85-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D9%8A/"> <!-- كرت منازل حاتم الطائي -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/منازل حاتم الطائي حائل.jpeg" alt="بوليفارد رياض سيتي"> <!-- صورة منازل حاتم (alt يحتاج تعديل لكن تركناه كما هو) -->
+            <div class="card-body">
+                <div class="card-title">منازل حاتم الطائي</div> <!-- عنوان -->
+                <div class="card-text">منازل حاتم الطائي  مواقع تاريخية تراثية تُظهر نمط الحياة التقليدية للبدو وتروي قصص الكرم والشجاعة المرتبطة بالشافعي الشهير.</div> <!-- وصف -->
+                <a href="https://waditrip.sa/ar/tour/%D9%85%D9%86%D8%A7%D8%B2%D9%84-%D8%AD%D8%A7%D8%AA%D9%85-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D9%8A/" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط -->
+            </div>
+        </div>
+
+        <div class="card" data-id="إرث كافية حائل" data-link="https://share.google/543RPPdFHs8w8mqGD"> <!-- كرت إرث كافيه -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/إرث كافية حائل.jpeg" alt=" إرث كافيه"> <!-- صورة الكافيه -->
+            <div class="card-body">
+                <div class="card-title">إرث كافيه</div> <!-- عنوان -->
+                <div class="card-text"> إرث كافيه هو مقهى يجمع بين الأجواء العصرية واللمسة التراثية، ويقدّم تشكيلة  من المشروبات والقهوة، مع مساحة مريحة للاستمتاع </div> <!-- وصف -->
+                <a href="https://share.google/543RPPdFHs8w8mqGD" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط -->
+            </div>
+        </div>
+
+        <div class="card" data-id="قلعة القشلة حائل" data-link="https://heritage.moc.gov.sa/Cultural-Location/Detail?id=8BF978A84BEF4DA38752B0B6AFD1AB7F"> <!-- كرت قلعة القشلة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/قلعة القشلة حائل.jpeg" alt="قلعة القشلة حائل"> <!-- صورة القلعة -->
+            <div class="card-body">
+                <div class="card-title">قلعة القشلة حائل</div> <!-- عنوان -->
+                <div class="card-text">قلعة القشلة الأثرية بُنيت عام 1941م وفق الطراز النجدي، تضم أبراج وغرف متعددة، وتُعد اليوم موقعًا تراثيًا وسياحيًا يعكس تاريخ المنطقة.</div> <!-- وصف -->
+                <a href="https://heritage.moc.gov.sa/Cultural-Location/Detail?id=8BF978A84BEF4DA38752B0B6AFD1AB7F" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط -->
+            </div>
+        </div>
+
+        </div>
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر السهم لتمرير الكروت لليمين -->
+    </div>
+</section>
+
+
+<!-- اشهر خيارات الإقامة -->
+<section class="container" id="rh-accommodation-section"> <!-- قسم أشهر خيارات الإقامة -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      <!-- عنوان القسم -->
+    <div class="slider-wrapper"> <!-- غلاف للسلايدر الخاص بالفنادق -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر السهم لليسار -->
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- مسار الفنادق -->
+
+        <div class="card" data-id="فندق ميلينيوم حائل" data-link="https://www.booking.com/hotel/sa/millennium-hail.html?aid=356980&label=gog235jc-10CAsoxAFCD21pbGxlbm5pdW0taGFpbEgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AvTwg8kGwAIB0gIkMTBlZDA4NDQtODMwYy00ZDc1LWI2MTMtYmI5MDFkM2M3NzA32AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763768450&srpvid=97a9a67c6489015c&type=total&ucfs=1&"> <!-- كرت فندق ميلينيوم حائل -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق ميلينيوم حائل.jpeg" alt="فندق الماندرين أورينتال الفيصلية"> <!-- صورة الفندق (alt لا يطابق الاسم لكن تركناه كما هو) -->
+            <div class="card-body">
+                <div class="card-title">فندق ميلينيوم حائل</div> <!-- عنوان الفندق -->
+                <div class="card-text">فندق ميلينيوم حائل فندق 5 نجوم يوفر غرفًا مريحة ومرافق مثل المسبح والسبا، ويعد من أبرز خيارات الإقامة في حائل.</div> <!-- وصف -->
+                <a href="https://www.booking.com/hotel/sa/millennium-hail.html?aid=356980&label=gog235jc-10CAsoxAFCD21pbGxlbm5pdW0taGFpbEgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AvTwg8kGwAIB0gIkMTBlZDA4NDQtODMwYy00ZDc1LWI2MTMtYmI5MDFkM2M3NzA32AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763768450&srpvid=97a9a67c6489015c&type=total&ucfs=1&" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق هوليدي فيلا حائل" data-link="https://www.booking.com/hotel/sa/holiday-villa-hail.html?aid=325251&label=holiday-villa-hail-MIYUA3ErAbUg2vG5YGvi2wS507274923721%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-996221189437%3Alp9076735%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763768828&srpvid=694aa73a5aeb0161&type=total&ucfs=1&"> <!-- كرت فندق هوليدي فيلا حائل -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق هوليدي فيلا حائل.jpeg" alt="فندق نارسيس الرياض"> <!-- صورة الفندق (alt لا يطابق الاسم) -->
+            <div class="card-body">
+                <div class="card-title">فندق هوليدي فيلا حائل</div> <!-- اسم الفندق -->
+                <div class="card-text">فندق هوليدي فيلا حائل فندق 4 نجوم يوفر غرفًا مريحة ومرافق متنوعة ويعد من خيارات الإقامة المناسبة في حائل.</div> <!-- وصف -->
+                <a href="https://www.booking.com/hotel/sa/holiday-villa-hail.html?aid=325251&label=holiday-villa-hail-MIYUA3ErAbUg2vG5YGvi2wS507274923721%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-996221189437%3Alp9076735%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763768828&srpvid=694aa73a5aeb0161&type=total&ucfs=1&" target="_blank" class="btn">احجز الآن</a> <!-- رابط الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="الراحة للأجنة الفندقية حائل" data-link="https://www.almosafer.com/ar/hotel/details/atg/%D8%A7%D9%84%D8%B1%D8%A7%D8%AD%D8%A9-%D9%84%D9%84%D8%A3%D8%AC%D9%86%D8%AD%D8%A9-%D8%A7%D9%84%D9%81%D9%86%D8%AF%D9%82%D9%8A%D8%A9-1599412"> <!-- كرت الراحة للأجنحة الفندقية -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/الراحة للأجنة الفندقية حائل.jpeg" alt="الراحة للأجنحة الفندقية"> <!-- صورة الشقق -->
+            <div class="card-body">
+                <div class="card-title">الراحة للأجنحة الفندقية</div> <!-- عنوان -->
+                <div class="card-text"> راحة للأجنحة الفندقية في حائل شقق مريحة ومجهزة بالكامل، توفر موقف سيارات مجاني وواي فاي،تعد خيارًا مناسبًا الطويلة </div> <!-- وصف (فيه خطأ بسيط لغوي لكنه كما هو) -->
+                <a href="https://www.almosafer.com/ar/hotel/details/atg/%D8%A7%D9%84%D8%B1%D8%A7%D8%AD%D8%A9-%D9%84%D9%84%D8%A3%D8%AC%D9%86%D8%AD%D8%A9-%D8%A7%D9%84%D9%81%D9%86%D8%AF%D9%82%D9%8A%D8%A9-1599412" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق سكناي رويال حائل" data-link="https://www.booking.com/hotel/sa/fndq-skny-rwylsuknai-royal.html?aid=325251&label=fndq-skny-rwylsuknai-royal-qtqDof0NNKHqbEEmHW3KQwS647568860057%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1042907685117%3Alp9076735%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763770607&srpvid=35c901f0294001a2&type=total&ucfs=1&"> <!-- كرت فندق سكناي رويال -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق سكناي رويال حائل.jpeg" alt="الريتز كارلتون الرياض"> <!-- صورة الفندق (alt غير مطابق) -->
+            <div class="card-body">
+                <div class="card-title"> فندق سكناي رويال </div> <!-- عنوان الفندق -->
+                <div class="card-text"> فندق سكناي رويال حائل فندق حديث يوفر غرفًا مريحة ومرافق مناسبة للأعمال والعائلات ويعد من خيارات الإقامة المميزة. </div> <!-- وصف -->
+                <a href="https://www.booking.com/hotel/sa/fndq-skny-rwylsuknai-royal.html?aid=325251&label=fndq-skny-rwylsuknai-royal-qtqDof0NNKHqbEEmHW3KQwS647568860057%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1042907685117%3Alp9076735%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763770607&srpvid=35c901f0294001a2&type=total&ucfs=1&" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="فندق اياس حائل" data-link="https://www.booking.com/hotel/sa/suknai-ayas.html?aid=356980&label=gog235jc-10CAsoxAFCC3N1a25haS1heWFzSAFYA2jEAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgCy4aEyQbAAgHSAiQzMmFlNGNmYS05MzllLTQ3MGItODE5NS04YjdiNjRjODExNWLYAgHgAgE&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763771220&srpvid=7219032604b40248&type=total&ucfs=1&"> <!-- كرت فندق إياس -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/فندق اياس حائل.jpeg" alt="الريتز كارلتون الرياض"> <!-- صورة الفندق -->
+            <div class="card-body">
+                <div class="card-title">فندق اياس</div> <!-- اسم الفندق -->
+                <div class="card-text"> فندق إياس فندق عصري بموقع مميز يقدم غرفًا مريحة ومرافق تشمل مطاعم، قاعات اجتماعات وخدمات ترفيهية.</div> <!-- وصف -->
+                <a href="https://www.booking.com/hotel/sa/suknai-ayas.html?aid=356980&label=gog235jc-10CAsoxAFCC3N1a25haS1heWFzSAFYA2jEAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgCy4aEyQbAAgHSAiQzMmFlNGNmYS05MzllLTQ3MGItODE5NS04YjdiNjRjODExNWLYAgHgAgE&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763771220&srpvid=7219032604b40248&type=total&ucfs=1&" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        <div class="card" data-id="شقق الماسة التاج للشقق الفندقية حائل" data-link="https://www.booking.com/hotel/sa/lms-ltj-llshqq-lfndqy.html?aid=356980&label=gog235jc-10CAsoxAFCC3N1a25haS1heWFzSAFYA2jEAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgCy4aEyQbAAgHSAiQzMmFlNGNmYS05MzllLTQ3MGItODE5NS04YjdiNjRjODExNWLYAgHgAgE&sid=8fd5146c37220650f7a8c16d5032c65a&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1763771622&srpvid=170203ef26e1030d&type=total&ucfs=1&"> <!-- كرت شقق الماسة التاج -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+            <img src="images/شقق الماسة التاج للشقق الفندقية حائل.jpeg" alt="شقق الماسة التاج للشقق الفندقية"> <!-- صورة الشقق -->
+            <div class="card-body">
+                <div class="card-title">شقق الماسة التاج للشقق الفندقية</div> <!-- عنوان -->
+                <div class="card-text">الماسة التاج للشقق الفندقية في حائل شقق مريحة مجهزة بالكامل وخدمات أساسية للإقامة القصيرة أو العائلية.</div> <!-- وصف -->
+                <a href="https://www.booking.com/hotel/sa/lms-ltj-llshqq-lfndqy.html?aid=356980&label=gog235jc-10CAsoxAFCC3N1a25haS1heWFzSAFYA2jEAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgCy4aEyQbAAgHSAiQzMmFlNGNmYS05MzllLTQ3MGItODE5NS04YjdiNjRjODExNWLYAgHgAgE&sid=8fd5146c37220650f7a8c16d5032c65a&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1763771622&srpvid=170203ef26e1030d&type=total&ucfs=1&" target="_blank" class="btn">احجز الآن</a> <!-- زر الحجز -->
+            </div>
+        </div>
+
+        </div>
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر السهم لتحريك الكروت يميناً -->
+    </div>
+</section>
+
+
+
+
+<section class="containerimg"> <!-- قسم الخريطة التفاعلية -->
+
+    <h2>الخريطة التفاعلية</h2> <!-- عنوان القسم -->
+
+    <div class="map-wrapper"> <!-- غلاف يحتوي على القائمة الجانبية + الخريطة -->
+
+        <!-- القائمة الجانبية -->
+        <div class="map-sidebar"> <!-- عمود الكروت الجانبية التي تمثل نقاط على الخريطة -->
+
+            <!-- منازل حاتم الطائي -->
+            <a href="https://waditrip.sa/ar/tour/%D9%85%D9%86%D8%A7%D8%B2%D9%84-%D8%AD%D8%A7%D8%AA%D9%85-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D9%8A/" class="card-link" target="_blank"> <!-- رابط خارجي للموقع -->
+                <div class="map-card" data-lat="27.58660817912702" data-lng="41.44441376782372" data-name="منازل حاتم الطائي" data-zoom="12"> <!-- كرت على الخريطة مع إحداثيات -->
+                    <img src="images/منازل حاتم الطائي حائل.jpeg" alt="منازل حاتم الطائي"> <!-- صورة النقطة -->
+                    <span>منازل حاتم الطائي</span> <!-- اسم النقطة -->
+                </div>
+            </a>
+
+            <!-- قلعة عيرف -->
+            <a href="https://www.spa.gov.sa/2226079" class="card-link" target="_blank"> <!-- رابط لمصدر خارجي -->
+                <div class="map-card" data-lat="27.517153584955235" data-lng="41.703470505280585" data-name="قلعة عيرف" data-zoom="12"> <!-- بيانات القلعة -->
+                    <img src="images/قلعة عيرف حائل.jpeg" alt="قلعة عيرف"> <!-- صورة القلعة -->
+                    <span>قلعة عيرف</span> <!-- اسم القلعة -->
+                </div>
+            </a>
+    
+            <!-- مزرعة العزيزية -->
+            <a href="http://alaziziahfarm.com/" class="card-link" target="_blank"> <!-- رابط الموقع الرسمي -->
+                <div class="map-card" data-lat="28.015809826217986" data-lng="41.86286768848788" data-name="مزرعة العزيزية" data-zoom="12"> <!-- إحداثيات المزرعة -->
+                    <img src="images/مزرعة العزيزية حائل.jpeg" alt="مزرعة العزيزية"> <!-- صورة -->
+                    <span>مزرعة العزيزية</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- جبل أم سنمان -->
+            <a href="https://www.spa.gov.sa/2123461" class="card-link" target="_blank"> <!-- رابط عن الجبل -->
+                <div class="map-card" data-lat="28.030852519232674" data-lng="40.9158335703828" data-name="جبل أم سنمان" data-zoom="12"> <!-- إحداثيات الجبل -->
+                    <img src="images/جبل ام سنمان حائل.jpeg" alt="جبل أم سنمان"> <!-- صورة -->
+                    <span>جبل أم سنمان</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- جبل السمراء -->
+            <a href="https://www.spa.gov.sa/N2371353" class="card-link" target="_blank"> <!-- رابط عن الجبل -->
+                <div class="map-card" data-lat="27.524048749483" data-lng="41.7331615434293" data-name="جبل السمراء" data-zoom="12"> <!-- بيانات الجبل -->
+                    <img src="images/جبل السمراء حائل.jpeg" alt="جبل السمراء"> <!-- صورة -->
+                    <span>جبل السمراء</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- قلعة القشلة حائل -->
+            <a href="https://heritage.moc.gov.sa/Cultural-Location/Detail?id=8BF978A84BEF4DA38752B0B6AFD1AB7F" class="card-link" target="_blank"> <!-- رابط وزارة الثقافة -->
+                <div class="map-card" data-lat="27.519120596427" data-lng="41.69439720816292" data-name="قلعة القشلة حائل" data-zoom="12"> <!-- إحداثيات القلعة -->
+                    <img src="images/قلعة القشلة حائل.jpeg" alt="قلعة القشلة حائل"> <!-- صورة -->
+                    <span>قلعة القشلة حائل</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- فندق ميلينيوم حائل -->
+            <a href="https://www.booking.com/hotel/sa/millennium-hail.html?aid=356980&label=gog235jc-10CAsoxAFCD21pbGxlbm5pdW0taGFpbEgBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AvTwg8kGwAIB0gIkMTBlZDA4NDQtODMwYy00ZDc1LWI2MTMtYmI5MDFkM2M3NzA32AIB4AIB&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763768450&srpvid=97a9a67c6489015c&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط الفندق -->
+                <div class="map-card" data-lat="27.65304183957733" data-lng="41.724154478286145" data-name="فندق ميلينيوم حائل" data-zoom="12"> <!-- إحداثيات الفندق -->
+                    <img src="images/فندق ميلينيوم حائل.jpeg" alt="فندق ميلينيوم حائل"> <!-- صورة الفندق -->
+                    <span>فندق ميلينيوم حائل</span> <!-- اسم الفندق -->
+                </div>
+            </a>
+    
+            <!-- فندق هوليدي فيلا حائل -->
+            <a href="https://www.booking.com/hotel/sa/holiday-villa-hail.html?aid=325251&label=holiday-villa-hail-MIYUA3ErAbUg2vG5YGvi2wS507274923721%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-996221189437%3Alp9076735%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763768828&srpvid=694aa73a5aeb0161&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط فندق هوليدي فيلا -->
+                <div class="map-card" data-lat="27.487220427288612" data-lng="41.694213528016334" data-name="فندق هوليدي فيلا حائل" data-zoom="12"> <!-- بيانات الفندق -->
+                    <img src="images/فندق هوليدي فيلا حائل.jpeg" alt="فندق هوليدي فيلا حائل"> <!-- صورة الفندق -->
+                    <span>فندق هوليدي فيلا حائل</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- الراحة للأجنحة الفندقية -->
+            <a href="https://www.almosafer.com/ar/hotel/details/atg/%D8%A7%D9%84%D8%B1%D8%A7%D8%AD%D8%A9-%D9%84%D9%84%D8%A3%D8%AC%D9%86%D8%AD%D8%A9-%D8%A7%D9%84%D9%81%D9%86%D8%AF%D9%82%D9%8A%D8%A9-1599412" class="card-link" target="_blank"> <!-- رابط الشقق -->
+                <div class="map-card" data-lat="27.48615557116552" data-lng="41.67598895053329" data-name="الراحة للأجنحة الفندقية" data-zoom="13"> <!-- بيانات الشقق -->
+                    <img src="images/الراحة للأجنة الفندقية حائل.jpeg" alt="الراحة للأجنحة الفندقية"> <!-- صورة -->
+                    <span>الراحة للأجنحة الفندقية</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- فندق سكناي رويال -->
+            <a href="https://www.booking.com/hotel/sa/fndq-skny-rwylsuknai-royal.html?aid=325251&label=fndq-skny-rwylsuknai-royal-qtqDof0NNKHqbEEmHW3KQwS647568860057%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1042907685117%3Alp9076735%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763770607&srpvid=35c901f0294001a2&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط الفندق -->
+                <div class="map-card" data-lat="27.50919970116741" data-lng="41.665349564574846" data-name="فندق سكناي رويال" data-zoom="13"> <!-- بيانات الفندق -->
+                    <img src="images/فندق سكناي رويال حائل.jpeg" alt="فندق سكناي رويال"> <!-- صورة الفندق -->
+                    <span>فندق سكناي رويال</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- فندق إياس (AYAS Hotel) -->
+            <a href="https://www.booking.com/hotel/sa/suknai-ayas.html?aid=356980&label=gog235jc-10CAsoxAFCC3N1a25haS1heWFzSAFYA2jEAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgCy4aEyQbAAgHSAiQzMmFlNGNmYS05MzllLTQ3MGItODE5NS04YjdiNjRjODExNWLYAgHgAgE&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3095159&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1763771220&srpvid=7219032604b40248&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط الفندق -->
+                <div class="map-card" data-lat="27.497366627728685" data-lng="41.67606192062274" data-name="AYAS Hotel" data-zoom="14"> <!-- بيانات الفندق -->
+                    <img src="images/فندق اياس حائل.jpeg" alt="AYAS Hotel"> <!-- صورة الفندق -->
+                    <span>AYAS Hotel</span> <!-- الاسم -->
+                </div>
+            </a>
+    
+            <!-- شقق الماسة التاج للشقق الفندقية -->
+            <a href="https://www.booking.com/hotel/sa/lms-ltj-llshqq-lfndqy.html?aid=356980&label=gog235jc-10CAsoxAFCC3N1a25haS1heWFzSAFYA2jEAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgCy4aEyQbAAgHSAiQzMmFlNGNmYS05MzllLTQ3MGItODE5NS04YjdiNjRjODExNWLYAgHgAgE&sid=8fd5146c37220650f7a8c16d5032c65a&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=distance_from_search&srepoch=1763771622&srpvid=170203ef26e1030d&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط الشقق -->
+                <div class="map-card" data-lat="27.523752277345125" data-lng="41.667417941815906" data-name="شقق الماسة التاج للشقق الفندقية" data-zoom="13"> <!-- بيانات الشقق -->
+                    <img src="images/شقق الماسة التاج للشقق الفندقية حائل.jpeg" alt="شقق الماسة التاج للشقق الفندقية"> <!-- صورة -->
+                    <span>شقق الماسة التاج للشقق الفندقية</span> <!-- الاسم -->
+                </div>
+            </a>
+
+        </div>
+
+        <!-- صندوق الخريطة -->
+        <div id="map" data-first-zoom="9"></div> <!-- عنصر الخريطة نفسه مع زوم ابتدائي -->
+
+    </div>
+
+    <!-- مكتبة Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- استدعاء ملف CSS الخاص بمكتبة Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- استدعاء مكتبة Leaflet JS -->
+
+    <!-- ملف JS واحد لكل الصفحات -->
+    <script src="js/map.js"></script> <!-- ملف جافاسكربت مخصص للتحكم بالخريطة -->
+
+</section>
+
+
+<footer> <!-- تذييل الصفحة -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق الملكية -->
+    <div> <!-- روابط مواقع التواصل الاجتماعي -->
+        <a href="#">فيسبوك</a> | 
+        <a href="#">تويتر</a> | 
+        <a href="#">إنستجرام</a>
+    </div>
+</footer>
+
+<!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- استدعاء ملف جافاسكربت العام للموقع -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML -->

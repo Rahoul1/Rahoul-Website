@@ -1,0 +1,576 @@
+<!-- يحدد أن المستند يستخدم HTML5 -->
+<!DOCTYPE html>
+
+<!-- يحدد أن لغة الصفحة هي العربية واتجاه النص من اليمين لليسار -->
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- يحدد ترميز الأحرف ليكون UTF-8 لدعم العربية -->
+    <meta charset="UTF-8">
+    <!-- يجعل الصفحة متجاوبة مع شاشات الجوال عبر إعداد عرض الشاشة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <title>الباحة - </title>
+    <!-- ربط ملف التنسيقات الخارجية CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- بداية السلايدر (صورة الغلاف الرئيسية) -->
+<div class="carousel">
+    <!-- صورة رئيسية للباحة في السلايدر مع ضبط الارتفاع وطريقة الملء -->
+    <img src="images/صورت كرت الباحة.jpeg" class="active" alt="الباحه " style="height: 750px; object-fit: cover;">
+    <!-- نص فوق الصورة يحتوي على عنوان ووصف عن الباحة -->
+    <div class="carousel-text">
+        <!-- عنوان على يمين الصورة -->
+        <h2 class="titleright title">  الباحه  </h2>
+        <!-- وصف قصير عن مدينة الباحة -->
+        <p class="p">  الباحة مدينة جبلية ساحرة تتميز بطقس معتدل وغابات خضراء وقرى تراثية تجعلها من أجمل وجهات الجنوب </p>
+    </div>
+</div>
+
+<!-- مقطع تعريفي عن الباحة -->
+<section class="container">
+  <!-- عنوان القسم -->
+  <h1 class="titleright">عن الباحة</h1>
+  <!-- فقرة نصية مع نص يمكن إخفاء جزء منه وإظهاره عبر زر "اقرأ المزيد" -->
+  <p class="titleright read-more-text">
+    <!-- بداية النص الظاهر -->
+    الباحة مدينة جبلية خلابة في جنوب المملكة تتميز بطقس معتدل على مدار الصيف ومناظر طبيعية ساحرة.
+    <!-- سطر جديد لتنسيق أفضل -->
+    <br> تضم غابات كثيفة مثل غابة رغدان وشلالات ومتنزهات تجعلها وجهة مثالية للعائلات ومحبي الطبيعة.
+    <!-- ثلاث نقاط تظهر قبل توسعة النص -->
+    <span class="dots">...</span>
+    <!-- النص الإضافي الذي يظهر عند الضغط على "اقرأ المزيد" -->
+    <span class="more">
+      <br> تشتهر بقراها التراثية القديمة مثل ذي عين التي تعكس جمال العمارة الحجرية وتاريخ المنطقة. وتجمع الباحة
+      <br>بين الطبيعة الخضراء والضباب والمرتفعات العالية لتقدّم تجربة هادئة وممتعة للزوار.
+    </span>
+  </p>
+  <!-- زر يستخدم دالة JavaScript toggleText لإظهار/إخفاء المزيد من النص -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button>
+</section>
+
+<!-- قسم أبرز الفعاليات في الباحة -->
+<section class="container" id="rh-events-section">
+    <!-- عنوان القسم -->
+    <h2 class="titleright">أبرزالفعاليات</h2>      
+    <!-- غلاف السلايدر للكروت -->
+    <div class="slider-wrapper">
+
+        <!-- زر السهم للتحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button>
+
+        <!-- المسار الذي يحتوي على كروت الفعاليات -->
+        <div class="cards-track">
+
+            <!-- بطاقة لمنتزه الأمير حسام مع بيانات للمفضلة والخريطة -->
+            <div class="card" data-id="منزه الامير حسام" data-link="https://baha.gov.sa/ar/Albums/ImageDetails/304">
+                <!-- أيقونة قلب لإضافة الفعالية للمفضلة، تستدعي toggleFavorite -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <!-- صورة للفعالية -->
+                <img src="images/منتزه الامير حسام.jpg" alt="منزه الامير حسام ">
+                <!-- جسم البطاقة النصي -->
+                <div class="card-body">
+                    <!-- عنوان البطاقة -->
+                    <div class="card-title">منزه الامير حسام</div>
+                    <!-- وصف مختصر عن الفعالية -->
+                    <div class="card-text">يُعد منتزه الأمير حسام وجهة طبيعية راقية تجمع بين جمال الجبال وهدوء الأجواء</div>
+                    <!-- زر رابط خارجي لمعرفة المزيد -->
+                    <a href="https://baha.gov.sa/ar/Albums/ImageDetails/304" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة غابة رغدان -->
+            <div class="card" data-id="غابة رغدان" data-link="https://ar.wikipedia.org/wiki/%D8%BA%D8%A7%D8%A8%D8%A9_%D8%B1%D8%BA%D8%AF%D8%A7%D9%86">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/غابة رغدان.jpg" alt="غابةرغدان">
+                <div class="card-body">
+                    <div class="card-title">غابة رغدان</div>
+                    <div class="card-text">رغدان تُعدّ من أبرز وجهات الجمال في الباحة، حيث تجمع بين الطبيعة الخلابة.</div>
+                    <a href="https://ar.wikipedia.org/wiki/%D8%BA%D8%A7%D8%A8%D8%A9_%D8%B1%D8%BA%D8%AF%D8%A7%D9%86" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة بوليفارد الباحة -->
+            <div class="card" data-id="بوليفارد الباحة" data-link="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D8%A8%D9%88%D9%84%D9%8A%D9%81%D8%A7%D8%B1%D8%AF-%D8%A7%D9%84%D8%A8%D8%A7%D8%AD%D8%A9/">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/بولي الباحه.jpg" alt="بوليفارد الباحه">
+                <div class="card-body">
+                    <div class="card-title">بوليفارد الباحه</div>
+                    <div class="card-text">يُعد بوليفارد الباحة وجهة حديثة تجمع بين الترفيه والمطاعم المميزه.</div>
+                    <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D8%A8%D9%88%D9%84%D9%8A%D9%81%D8%A7%D8%B1%D8%AF-%D8%A7%D9%84%D8%A8%D8%A7%D8%AD%D8%A9/" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة فعالية ستي هوب -->
+            <div class="card" data-id="ستي هوب الباحه" data-link="https://enjoy.sa/ar/events/city-hub-albaha/">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/ستي هوب الباحه.jpg" alt="ستي هوب">
+                <div class="card-body">
+                    <div class="card-title">ستي هوب</div>
+                    <div class="card-text">فعالية سيتي هوب الباحة تجمع بين الحماس والترفيه بتجارب عائلية وشبابية مبتكرة</div>
+                    <a href="https://enjoy.sa/ar/events/city-hub-albaha/" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة منتزه الخلب -->
+            <div class="card" data-id="منتزه الخلب" data-link="https://waditrip.sa/ar/tour/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%A7%D9%84%D8%AE%D9%84%D8%A8/">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/منتزه الخلب الباحه.jpeg" alt="منتزه الخلب">
+                <div class="card-body">
+                    <div class="card-title">منتزه الخلب</div>
+                    <div class="card-text">منتزه الخلب يُعدّ من أجمل وجهات الباحة، بإطلالاته الساحرة وأجوائه الهادئة</div>
+                    <a href="https://waditrip.sa/ar/tour/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%A7%D9%84%D8%AE%D9%84%D8%A8/" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة حديقة الأمير محمد بن سعود -->
+            <div class="card" data-id="حديقة الامير محمد بن سعود" data-link="https://baha.gov.sa/ar/Albums/ImageDetails/183">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/حديقة الامير محمد بن سعود.jpg" alt="حديقة الاميرمحمد بن سعود">
+                <div class="card-body">
+                    <div class="card-title">حديقة الامير محمد بن سعود</div>
+                    <div class="card-text">تمنح حديقة الأمير محمد بن سعود زوارها أجواءً هادئة ومساحات خضراء واسعة.</div>
+                    <a href="https://baha.gov.sa/ar/Albums/ImageDetails/183" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- زر السهم للتحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button>
+
+    </div>
+</section>
+
+<!-- قسم الأنشطة السياحية -->
+<section class="container" id="rh-activities-section">
+    <!-- عنوان القسم -->
+    <h2 class="titleright">الانشطة السياحية </h2>      
+    <!-- غلاف السلايدر للأنشطة -->
+    <div class="slider-wrapper">
+
+        <!-- زر السهم لليسار -->
+        <button class="slide-btn left">&#10094;</button>
+
+        <!-- مسار كروت الأنشطة -->
+        <div class="cards-track">
+
+            <!-- بطاقة قرية ذي عين الأثرية -->
+            <div class="card" data-id="قرية ذي عين الاثريه" data-link="https://baha.gov.sa/ar/Departments/ImageAlbum/123?deptId=113">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/قرية ذي عين الاثريه.jpg" alt="قرية ذي عين الاثريه">
+                <div class="card-body">
+                    <div class="card-title"> قرية ذي عين الاثريه</div>
+                    <div class="card-text">قرية ذي عين الأثرية جمالٌ حجريّ عريق تتدفق بين جنباته عيون الماء في لوحة تاريخية فريدة.</div>
+                    <a href="https://baha.gov.sa/ar/Departments/ImageAlbum/123?deptId=113" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة قرية الأطاولة -->
+            <div class="card" data-id="قرية الاطاولة" data-link="https://baha.gov.sa/ar/Albums/ImageDetails/243">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/قرية الاطاولة.jpg" alt="قرية الاطاوله">
+                <div class="card-body">
+                    <div class="card-title">قرية الاطاولة</div>
+                    <div class="card-text">تتميز قرية الأطاولة بتراثها العريق ومبانيها الحجرية التي تعكس أصالة تاريخ الباحة وجمال طبيعتها.</div>
+                    <a href="https://baha.gov.sa/ar/Albums/ImageDetails/243" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة سوق السبت التاريخي -->
+            <div class="card" data-id="سوق السبت التاريخي" data-link="https://baha.gov.sa/ar/News/Details/1193">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/سوق السبت التاريخي.jpg" alt="سوق السبت التاريخي">
+                <div class="card-body">
+                    <div class="card-title">سوق السبت التاريخي</div>
+                    <div class="card-text">سوق السبت التاريخي يجسّد أصالة التراث ويعرض منتجات محلية تعكس جمال الباحة دوماً.</div>
+                    <a href="https://baha.gov.sa/ar/News/Details/1193" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة مزرعة وأكواخ بساتين اللوز -->
+            <div class="card" data-id="مزرعة واكواخ بساتين اللوز" data-link="https://baha.gov.sa/ar/Albums/ImageDetails/2466">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/ا مزرعة واكواخ بساتين اللوز.webp" alt="مزرعة واكواخ بساتين اللوز">
+                <div class="card-body">
+                    <div class="card-title">مزرعة واكواخ بساتين اللوز</div>
+                    <div class="card-text">مزرعة وأكواخ بساتين اللوز بالباحة توفر إقامة ريفية هادئة بإطلالات طبيعية خلابة دائماً.</div>
+                    <a href="https://baha.gov.sa/ar/Albums/ImageDetails/2466" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة منتزه شدا الأعلى -->
+            <div class="card" data-id="منتزه شدا الاعلى" data-link="https://mallsruh.com/blog/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%AC%D8%A8%D9%84-%D8%B4%D8%AF%D8%A7-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89/">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/منتزه شدا الاعلى.jpg" alt="منتزه شدا الاعلى ">
+                <div class="card-body">
+                    <div class="card-title">منتزه شدا الاعلى</div>
+                    <div class="card-text">يمنح منتزه شدا الأعلى زواره إطلالات جبليّة خلابة وأجواءً طبيعية تنتعش بها الروح.</div>
+                    <a href="https://mallsruh.com/blog/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%AC%D8%A8%D9%84-%D8%B4%D8%AF%D8%A7-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89/" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <!-- بطاقة نشاط الانزلاق الحر -->
+            <div class="card" data-id="الانزلاق الحر" data-link="https://www.spa.gov.sa/2375878">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/zipline.jpg" alt="الانزلاق الحر">
+                <div class="card-body">
+                    <div class="card-title">الانزلاق الحر</div>
+                    <div class="card-text">الانزلاق الحر الباحة تجربة معلّقة في قلب الطبيعة، تجمع بين الإثارة وروعة الإطلالات الجبلية الساحرة</div>
+                    <a href="https://www.spa.gov.sa/2375878" target="_blank" class="btn">اعرف المزيد</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- زر السهم لليمين -->
+        <button class="slide-btn right">&#10095;</button>
+
+    </div>
+</section>
+
+<!-- قسم أشهر خيارات الإقامة -->
+<section class="container" id="rh-accommodation-section">
+    <!-- عنوان القسم -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      
+    <!-- غلاف السلايدر -->
+    <div class="slider-wrapper">
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button>
+        <!-- مسار كروت الفنادق والإقامات -->
+        <div class="cards-track">
+
+            <!-- بطاقة منتجع غدران -->
+            <div class="card" data-id="منتجع غدران" data-link="https://www.tiket.com/hotel/saudi-arabia/69704244573258474939703239685174394574-509001662901278323?checkin=2025-11-27&checkout=2025-11-28&adult=1&room=1&night=1">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/فندق ومنتجع غدران.jpg" alt="منتجع غدران">
+                <div class="card-body">
+                    <div class="card-title">منتجع غدران</div>
+                    <div class="card-text">منتجع غدران يُقدّم مزيجًا من الهدوء والفخامة، بإطلالات طبيعية تبعث على الاسترخاء وتجربة إقامة لا تُنسى.</div>
+                    <!-- رابط خارجي للحجز -->
+                    <a href="https://www.tiket.com/hotel/saudi-arabia/69704244573258474939703239685174394574-509001662901278323?checkin=2025-11-27&checkout=2025-11-28&adult=1&room=1&night=1" target="_blank" class="btn">احجز الان</a>
+                </div>
+            </div>
+
+            <!-- بطاقة منتجع ماكامايا -->
+            <div class="card" data-id="منتجع ماكامايا" data-link="https://www.booking.com/hotel/sa/mntj-mkmy-makamaya-resort.ar.html?aid=356980&label=gog235jc-10CAsoxAFCGW1udGotbWtteS1tYWthbWF5YS1yZXNvcnRIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALE5J3JBsACAdICJGEyZTBmOWE0LTlkZWMtNDhkMi04MDcyLTQ1N2YyYzBhYmMwZNgCAeACAQ&sid=f0fb13f305c8a3014107342f40f71f3a&all_sr_blocks=1489102503_420584291_3_0_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3091453&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1489102503_420584291_3_0_0&hpos=1&matching_block_id=1489102503_420584291_3_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1489102503_420584291_3_0_0__355550&srepoch=1764192850&srpvid=e86a97a250a8047f&type=total&ucfs=1&#tab-main">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/منتجع ماكامايا.jpg" alt="منتحع ماكامايا">
+                <div class="card-body">
+                    <div class="card-title">منتجع ماكامايا</div>
+                    <div class="card-text">منتجع ماكامايا الباحة يجمع بين الفخامة والهدوء، ويمنح زواره تجربة إقامة مميزة.</div>
+                    <a href="https://www.booking.com/hotel/sa/mntj-mkmy-makamaya-resort.ar.html?aid=356980&label=gog235jc-10CAsoxAFCGW1udGotbWtteS1tYWthbWF5YS1yZXNvcnRIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALE5J3JBsACAdICJGEyZTBmOWE0LTlkZWMtNDhkMi04MDcyLTQ1N2YyYzBhYmMwZNgCAeACAQ&sid=f0fb13f305c8a3014107342f40f71f3a&all_sr_blocks=1489102503_420584291_3_0_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3091453&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1489102503_420584291_3_0_0&hpos=1&matching_block_id=1489102503_420584291_3_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1489102503_420584291_3_0_0__355550&srepoch=1764192850&srpvid=e86a97a250a8047f&type=total&ucfs=1&#tab-main" target="_blank" class="btn">احجز الان</a>
+                </div>
+            </div>
+
+            <!-- بطاقة أبات بارك -->
+            <div class="card" data-id="ابات بارك" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325250&label=al-bahah-o1xuzyu6ooS2VztYhkuWfgSM394107319613%3Apl%3Ata%3Ap12%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-57262883598%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325250&hotel_id=8832895&maxrooms=10&stage=1&interval=1&checkin=2025-11-28&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=10&rt_num_rooms=10&rt_num_blocks_per_room=%7B%22883289507%22%3A1%2C%22883289511%22%3A1%2C%22883289506%22%3A1%2C%22883289501%22%3A1%2C%22883289505%22%3A1%2C%22883289509%22%3A1">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/ابات بارك.jpg" alt="ابات بارك">
+                <div class="card-body">
+                    <div class="card-title">ابات بارك</div>
+                    <div class="card-text">فندق أبات بارك الباحة يجمع الراحة والإطلالة الجميلة ليمنح ضيوفه تجربة مميزة دائماً.</div>
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325250&label=al-bahah-o1xuzyu6ooS2VztYhkuWfgSM394107319613%3Apl%3Ata%3Ap12%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-57262883598%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325250&hotel_id=8832895&maxrooms=10&stage=1&interval=1&checkin=2025-11-28&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=10&rt_num_rooms=10&rt_num_blocks_per_room=%7B%22883289507%22%3A1%2C%22883289511%22%3A1%2C%22883289506%22%3A1%2C%22883289501%22%3A1%2C%22883289505%22%3A1%2C%22883289509%22%3A1" target="_blank" class="btn">احجز الان</a>
+                </div>
+            </div>
+
+            <!-- بطاقة أكواخ ريف الأزهر -->
+            <div class="card" data-id="اكواخ ريف الازهر" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=340708&label=al-baha-I3nyh6r*hZtv_ZDjgD*ORwSM393934516729%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2437590326046%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YWiN3YY6TdisilnnCe5anAE&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=340708&hotel_id=14196139&maxrooms=10&stage=1&interval=1&checkin=2025-11-30&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=1&rt_num_rooms=1&rt_num_blocks_per_room=%7B%221419613901%22%3A1%7D&rt_selected_blocks_info=%7B%221419613901_413623558_0_0_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=495&rt_selected_total_price=495&rt_with_no_dimensions=1&rt_relevance_metric_id=be14c539-fae8-4547-9f7b-81d9fa1fbd7c&rt_pageview_id=196f05beb1cc0f45&from_source=hotel&srpvid=cf4e05ba053100c6&selected_rate_1419613901=1419613901_413623558_0_0_0&nr_rooms_1419613901_413623558_0_0_0=1&nr_guests_1419613901_413623558_0_0_0=5&rt_mf_ux_type=0&basket_id=ba33d9cc-ce9b-4b76-b0d3-a45ba01c6ad2">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/اكواخ ريف الازهر.jpg" alt="اكواخ ريف الازهر ">
+                <div class="card-body">
+                    <div class="card-title">اكواخ ريف الازهر</div>
+                    <div class="card-text">أكواخ الريف الأزهر تمنحك هدوء الطبيعة وجمال الإقامة الريفية بلمسة فاخرة.</div>
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=340708&label=al-baha-I3nyh6r*hZtv_ZDjgD*ORwSM393934516729%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2437590326046%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YWiN3YY6TdisilnnCe5anAE&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=340708&hotel_id=14196139&maxrooms=10&stage=1&interval=1&checkin=2025-11-30&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=1&rt_num_rooms=1&rt_num_blocks_per_room=%7B%221419613901%22%3A1%7D&rt_selected_blocks_info=%7B%221419613901_413623558_0_0_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=495&rt_selected_total_price=495&rt_with_no_dimensions=1&rt_relevance_metric_id=be14c539-fae8-4547-9f7b-81d9fa1fbd7c&rt_pageview_id=196f05beb1cc0f45&from_source=hotel&srpvid=cf4e05ba053100c6&selected_rate_1419613901=1419613901_413623558_0_0_0&nr_rooms_1419613901_413623558_0_0_0=1&nr_guests_1419613901_413623558_0_0_0=5&rt_mf_ux_type=0&basket_id=ba33d9cc-ce9b-4b76-b0d3-a45ba01c6ad2" target="_blank" class="btn">احجز الان</a>
+                </div>
+            </div>
+
+            <!-- بطاقة فندق مدينة السحاب -->
+            <div class="card" data-id="فندق مدينة السحاب" data-link="https://secure.booking.com/book.html?hotel_id=10445678&occupancy_setup_issue_flags=&aid=356980&label=gog235jc-10CAsoxAFCGWNsb3VkLWNpdHktZm5kcS1tZHluLWxzaGJIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKV7J3JBsACAdICJDE3ZGJmN2Q3LWNmZjUtNDE3ZS1iZWIxLTRjMGVhZDJmNWJiNNgCAeACAQ&sid=f0fb13f305c8a3014107342f40f71f3a&room1=A%2CA&error_url=%2Fhotel%2Fsa%2Fcloud-city-fndq-mdyn-lshb.ar.html%3Faid%3D356980%26label%3Dgog235jc-10CAsoxAFCGWNsb3VkLWNpdHktZm5kcS1tZHluLWxzaGJIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKV7J3JBsACAdICJDE3ZGJmN2Q3LWNmZjUtNDE3ZS1iZWIxLTRjMGVhZDJmNWJiNNgCAeACAQ%26sid%3Df0fb13f305c8a3014107342f40f71f3a%26srpvid%3Df9b9998b48290180%26%26&hostname=www.booking.com&stage=1&checkin=2025-12-07&interval=9&children_extrabeds=&srpvid=f9b9998b48290180&hp_visits_num=1&rt_pos_selected=1&rt_pos_selected_within_room=1&rt_selected_block_position=1&rt_num_blocks=5&rt_num_rooms=5&rt_num_blocks_per_room=%7B%221044567805%22%3A1%2C%221044567802%22%3A1%2C%221044567804%22%3A1%2C%221044567801%22%3A1%2C%221044567803%22%3A1%7D&rt_selected_blocks_info=&rt_relevance_metric_id=a54c4c93-cb26-4c01-b565-eb130f4d4768&rt_pageview_id=440f9993bb97015c&rt_pos_final=1.1&rt_selected_total_price=3915&rt_cheapest_search_price=3915&rt_with_no_dimensions=1&from_source=hotel&nr_rooms_1044567801_380778347_2_1_0=1&basket_id=2af04075-287b-4781-968a-288fcf9db720">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/فندق مدينة السحاب.jpg" alt="فنق مدينة السحاب">
+                <div class="card-body">
+                    <div class="card-title">فندق مدينة السحاب</div>
+                    <div class="card-text">فندق السحاب الباحة يوفّر إقامة راقية بإطلالات آسرة على جبال السراة</div>
+                    <a href="https://secure.booking.com/book.html?hotel_id=10445678&occupancy_setup_issue_flags=&aid=356980&label=gog235jc-10CAsoxAFCGWNsb3VkLWNpdHktZm5kcS1tZHluLWxzaGJIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKV7J3JBsACAdICJDE3ZGJmN2Q3LWNmZjUtNDE3ZS1iZWIxLTRjMGVhZDJmNWJiNNgCAeACAQ&sid=f0fb13f305c8a3014107342f40f71f3a&room1=A%2CA&error_url=%2Fhotel%2Fsa%2Fcloud-city-fndq-mdyn-lshb.ar.html%3Faid%3D356980%26label%3Dgog235jc-10CAsoxAFCGWNsb3VkLWNpdHktZm5kcS1tZHluLWxzaGJIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKV7J3JBsACAdICJDE3ZGJmN2Q3LWNmZjUtNDE3ZS1iZWIxLTRjMGVhZDJmNWJiNNgCAeACAQ%26sid%3Df0fb13f305c8a3014107342f40f71f3a%26srpvid%3Df9b9998b48290180%26%26&hostname=www.booking.com&stage=1&checkin=2025-12-07&interval=9&children_extrabeds=&srpvid=f9b9998b48290180&hp_visits_num=1&rt_pos_selected=1&rt_pos_selected_within_room=1&rt_selected_block_position=1&rt_num_blocks=5&rt_num_rooms=5&rt_num_blocks_per_room=%7B%221044567805%22%3A1%2C%221044567802%22%3A1%2C%221044567804%22%3A1%2C%221044567801%22%3A1%2C%221044567803%22%3A1%7D&rt_selected_blocks_info=&rt_relevance_metric_id=a54c4c93-cb26-4c01-b565-eb130f4d4768&rt_pageview_id=440f9993bb97015c&rt_pos_final=1.1&rt_selected_total_price=3915&rt_cheapest_search_price=3915&rt_with_no_dimensions=1&from_source=hotel&nr_rooms_1044567801_380778347_2_1_0=1&basket_id=2af04075-287b-4781-968a-288fcf9db720" target="_blank" class="btn">احجز الان</a>
+                </div>
+            </div>
+
+            <!-- بطاقة فندق المنتزه الوطني -->
+            <div class="card" data-id="فندق منتزه الوطني" data-link="https://www.booking.com/hotel/sa/swiss-international-park.ar.html?aid=356980&label=gog235jc-10CAsoxAFCGHN3aXNzLWludGVybmF0aW9uYWwtcGFya0gBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Ao7wnckGwAIB0gIkNzYwYjAwNDAtYjc0Ny00NTk0LWIzOTMtMDg2ZDNlNmNjZTkw2AIB4AIB&sid=f0fb13f305c8a3014107342f40f71f3a&age=0&all_sr_blocks=156786004_88433996_0_1_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3093735&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=156786004_88433996_0_1_0&hpos=1&matching_block_id=156786004_88433996_0_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=156786004_88433996_0_1_0__385664&srepoch=1764194331&srpvid=d3499a8821cf03c2&type=total&ucfs=1&#tab-main">
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span>
+                <img src="images/فندق منتزه الوطني.jpg" alt="فندق منتزه الوطني">
+                <div class="card-body">
+                    <div class="card-title">فندق منتزه الوطني </div>
+                    <div class="card-text">فندق المنتزه الوطني يجمع بين الراحة والطبيعة، ويمنح ضيوفه إقامة هادئة.</div>
+                    <a href="https://www.booking.com/hotel/sa/swiss-international-park.ar.html?aid=356980&label=gog235jc-10CAsoxAFCGHN3aXNzLWludGVybmF0aW9uYWwtcGFya0gBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Ao7wnckGwAIB0gIkNzYwYjAwNDAtYjc0Ny00NTk0LWIzOTMtMDg2ZDNlNmNjZTkw2AIB4AIB&sid=f0fb13f305c8a3014107342f40f71f3a&age=0&all_sr_blocks=156786004_88433996_0_1_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3093735&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=156786004_88433996_0_1_0&hpos=1&matching_block_id=156786004_88433996_0_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=156786004_88433996_0_1_0__385664&srepoch=1764194331&srpvid=d3499a8821cf03c2&type=total&ucfs=1&#tab-main" target="_blank" class="btn">احجز الان</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button>
+    </div>
+</section>
+
+<!-- قسم الخريطة التفاعلية -->
+<section class="containerimg">
+
+    <!-- عنوان القسم -->
+    <h2>الخريطة التفاعلية</h2>
+
+    <!-- غلاف الخريطة مع القائمة الجانبية -->
+    <div class="map-wrapper">
+
+        <!-- القائمة الجانبية التي تحتوي على الكروت المرتبطة بالخريطة -->
+        <div class="map-sidebar">
+
+            <!-- بطاقة منتزه الأمير حسام مع رابط خارجي وصورة وبيانات إحداثيات للخريطة -->
+            <a href="https://baha.gov.sa/ar/Albums/ImageDetails/304" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.01173791794691" data-lng="41.4502218363181" data-name="منزه الامير حسام" data-zoom="11">
+                    <img src="images/منتزه الامير حسام.jpg" alt="منزه الامير حسام">
+                    <span>منزه الامير حسام</span>
+                </div>
+            </a>
+
+            <!-- بطاقة غابة رغدان -->
+            <a href="https://ar.wikipedia.org/wiki/%D8%BA%D8%A7%D8%A8%D8%A9_%D8%B1%D8%BA%D8%AF%D8%A7%D9%86" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.02072724720234" data-lng="41.43273405035742" data-name="غابة رغدان" data-zoom="13">
+                    <img src="images/غابة رغدان.jpg" alt="غابة رغدان">
+                    <span>غابة رغدان</span>
+                </div>
+            </a>
+
+            <!-- بطاقة بوليفارد الباحة -->
+            <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D8%A8%D9%88%D9%84%D9%8A%D9%81%D8%A7%D8%B1%D8%AF-%D8%A7%D9%84%D8%A8%D8%A7%D8%AD%D8%A9/" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.008096451685716" data-lng="41.45152085008395" data-name="بوليفارد الباحه" data-zoom="13">
+                    <img src="images/بولي الباحه.jpg" alt="بوليفارد الباحه">
+                    <span>بوليفارد الباحه</span>
+                </div>
+            </a>
+
+            <!-- بطاقة منتزه الخلب -->
+            <a href="https://waditrip.sa/ar/tour/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%A7%D9%84%D8%AE%D9%84%D8%A8/" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.18010180235809" data-lng="41.26453132395698" data-name="منتزه الخلب" data-zoom="13">
+                    <img src="images/منتزه الخلب الباحه.jpeg" alt="منتزه الخلب">
+                    <span>منتزه الخلب</span>
+                </div>
+            </a>
+
+            <!-- بطاقة حديقة الأمير محمد بن سعود -->
+            <a href="https://baha.gov.sa/ar/Albums/ImageDetails/183" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.019230279557906" data-lng="41.44283064056348" data-name="حديقة الامير محمد بن سعود" data-zoom="13">
+                    <img src="images/حديقة الامير محمد بن سعود.jpg" alt="حديقة الامير محمد بن سعود">
+                    <span>حديقة الامير محمد بن سعود</span>
+                </div>
+            </a>
+
+            <!-- بطاقة قرية ذي عين الأثرية -->
+            <a href="https://baha.gov.sa/ar/Departments/ImageAlbum/123?deptId=113" class="card-link" target="_blank">
+                <div class="map-card" data-lat="19.93135683659075" data-lng="41.44234457734081" data-name="قرية ذي عين الاثريه" data-zoom="13">
+                    <img src="images/قرية ذي عين الاثريه.jpg" alt="قرية ذي عين الاثريه">
+                    <span>قرية ذي عين الاثريه</span>
+                </div>
+            </a>
+
+            <!-- بطاقة فندق سيتادينز (بدون رابط خارجي، فقط للخريطة) -->
+            <div class="map-card" data-lat="18.241109925177437" data-lng="42.60717105215679" data-name="فندق سيتادينز" data-zoom="13">
+                <img src="images/فندق سيتادينز.jpeg" alt="فندق سيتادينز">
+                <span>فندق سيتادينز</span>
+            </div>
+
+            <!-- بطاقة سوق السبت التاريخي -->
+            <a href="https://baha.gov.sa/ar/News/Details/1193" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.037983988571725" data-lng="41.463450471146636" data-name="سوق السبت التاريخي" data-zoom="13">
+                    <img src="images/سوق السبت التاريخي.jpg" alt="سوق السبت التاريخي">
+                    <span>سوق السبت التاريخي</span>
+                </div>
+            </a>
+
+            <!-- بطاقة مزرعة وأكواخ بساتين اللوز -->
+            <a href="https://baha.gov.sa/ar/Albums/ImageDetails/2466" class="card-link" target="_blank">
+                <div class="map-card" data-lat="19.996247101511383" data-lng="41.518741464022675" data-name="مزرعة واكواخ بساتين اللوز" data-zoom="13">
+                    <img src="images/ا مزرعة واكواخ بساتين اللوز.webp" alt="مزرعة واكواخ بساتين اللوز">
+                    <span>مزرعة واكواخ بساتين اللوز</span>
+                </div>
+            </a>
+
+            <!-- بطاقة منتزه شدا الأعلى -->
+            <a href="https://mallsruh.com/blog/%D9%85%D9%86%D8%AA%D8%B2%D9%87-%D8%AC%D8%A8%D9%84-%D8%B4%D8%AF%D8%A7-%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89/" class="card-link" target="_blank">
+                <div class="map-card" data-lat="19.886871493038242" data-lng="41.31122065180132" data-name="منتزه شدا الاعلى" data-zoom="13">
+                    <img src="images/منتزه شدا الاعلى.jpg" alt="منتزه شدا الاعلى">
+                    <span>منتزه شدا الاعلى</span>
+                </div>
+            </a>
+
+            <!-- بطاقة منتجع ماكامايا -->
+            <a href="https://www.booking.com/hotel/sa/mntj-mkmy-makamaya-resort.ar.html?aid=356980&label=gog235jc-10CAsoxAFCGW1udGotbWtteS1tYWthbWF5YS1yZXNvcnRIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALE5J3JBsACAdICJGEyZTBmOWE0LTlkZWMtNDhkMi04MDcyLTQ1N2YyYzBhYmMwZNgCAeACAQ&sid=f0fb13f305c8a3014107342f40f71f3a&all_sr_blocks=1489102503_420584291_3_0_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3091453&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1489102503_420584291_3_0_0&hpos=1&matching_block_id=1489102503_420584291_3_0_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1489102503_420584291_3_0_0__355550&srepoch=1764192850&srpvid=e86a97a250a8047f&type=total&ucfs=1&#tab-main" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.020408652559418" data-lng="41.42911410987838" data-name="منتجع ماكامايا" data-zoom="13">
+                    <img src="images/منتجع ماكامايا.jpg" alt="منتجع ماكامايا">
+                    <span>منتجع ماكامايا</span>
+                </div>
+            </a>
+
+            <!-- بطاقة أبات بارك -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325250&label=al-bahah-o1xuzyu6ooS2VztYhkuWfgSM394107319613%3Apl%3Ata%3Ap12%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-57262883598%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325250&hotel_id=8832895&maxrooms=10&stage=1&interval=1&checkin=2025-11-28&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=10&rt_num_rooms=10&rt_num_blocks_per_room=%7B%22883289507%22%3A1%2C%22883289511%22%3A1%2C%22883289506%22%3A1%2C%22883289501%22%3A1%2C%22883289505%22%3A1%2C%22883289509%22%3A1" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.012745544376923" data-lng="41.465932881042356" data-name="ابات بارك" data-zoom="13">
+                    <img src="images/ابات بارك.jpg" alt="ابات بارك">
+                    <span>ابات بارك</span>
+                </div>
+            </a>
+
+            <!-- بطاقة أكواخ ريف الأزهر -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=340708&label=al-baha-I3nyh6r*hZtv_ZDjgD*ORwSM393934516729%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2437590326046%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YWiN3YY6TdisilnnCe5anAE&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=340708&hotel_id=14196139&maxrooms=10&stage=1&interval=1&checkin=2025-11-30&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=1&rt_num_rooms=1&rt_num_blocks_per_room=%7B%221419613901%22%3A1%7D&rt_selected_blocks_info=%7B%221419613901_413623558_0_0_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=495&rt_selected_total_price=495&rt_with_no_dimensions=1&rt_relevance_metric_id=be14c539-fae8-4547-9f7b-81d9fa1fbd7c&rt_pageview_id=196f05beb1cc0f45&from_source=hotel&srpvid=cf4e05ba053100c6&selected_rate_1419613901=1419613901_413623558_0_0_0&nr_rooms_1419613901_413623558_0_0_0=1&nr_guests_1419613901_413623558_0_0_0=5&rt_mf_ux_type=0&basket_id=ba33d9cc-ce9b-4b76-b0d3-a45ba01c6ad2" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.086667814207022" data-lng="41.44931245180132" data-name="اكواخ ريف الازهر" data-zoom="13">
+                    <img src="images/اكواخ ريف الازهر.jpg" alt="اكواخ ريف الازهر">
+                    <span>اكواخ ريف الازهر</span>
+                </div>
+            </a>
+
+            <!-- بطاقة فندق مدينة السحاب -->
+            <a href="https://secure.booking.com/book.html?hotel_id=10445678&occupancy_setup_issue_flags=&aid=356980&label=gog235jc-10CAsoxAFCGWNsb3VkLWNpdHktZm5kcS1tZHluLWxzaGJIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKV7J3JBsACAdICJDE3ZGJmN2Q3LWNmZjUtNDE3ZS1iZWIxLTRjMGVhZDJmNWJiNNgCAeACAQ&sid=f0fb13f305c8a3014107342f40f71f3a&room1=A%2CA&error_url=%2Fhotel%2Fsa%2Fcloud-city-fndq-mdyn-lshb.ar.html%3Faid%3D356980%26label%3Dgog235jc-10CAsoxAFCGWNsb3VkLWNpdHktZm5kcS1tZHluLWxzaGJIAVgDaMQBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKV7J3JBsACAdICJDE3ZGJmN2Q3LWNmZjUtNDE3ZS1iZWIxLTRjMGVhZDJmNWJiNNgCAeACAQ%26sid%3Df0fb13f305c8a3014107342f40f71f3a%26srpvid%3Df9b9998b48290180%26%26&hostname=www.booking.com&stage=1&checkin=2025-12-07&interval=9&children_extrabeds=&srpvid=f9b9998b48290180&hp_visits_num=1&rt_pos_selected=1&rt_pos_selected_within_room=1&rt_selected_block_position=1&rt_num_blocks=5&rt_num_rooms=5&rt_num_blocks_per_room=%7B%221044567805%22%3A1%2C%221044567802%22%3A1%2C%221044567804%22%3A1%2C%221044567801%22%3A1%2C%221044567803%22%3A1%7D&rt_selected_blocks_info=&rt_relevance_metric_id=a54c4c93-cb26-4c01-b565-eb130f4d4768&rt_pageview_id=440f9993bb97015c&rt_pos_final=1.1&rt_selected_total_price=3915&rt_cheapest_search_price=3915&rt_with_no_dimensions=1&from_source=hotel&nr_rooms_1044567801_380778347_2_1_0=1&basket_id=2af04075-287b-4781-968a-288fcf9db720" class="card-link" target="_blank">
+                <div class="map-card" data-lat="20.013721238227713" data-lng="41.45767993871366" data-name="فندق مدينة السحاب" data-zoom="13">
+                    <img src="images/فندق مدينة السحاب.jpg" alt="فندق مدينة السحاب">
+                    <span>فندق مدينة السحاب</span>
+                </div>
+            </a>
+
+            <!-- بطاقة فندق المنتزه الوطني -->
+            <a href="https://www.booking.com/hotel/sa/swiss-international-park.ar.html?aid=356980&label=gog235jc-10CAsoxAFCGHN3aXNzLWludGVybmF0aW9uYWwtcGFya0gBWANoxAGIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Ao7wnckGwAIB0gIkNzYwYjAwNDAtYjc0Ny00NTk0LWIzOTMtMDg2ZDNlNmNjZTkw2AIB4AIB&sid=f0fb13f305c8a3014107342f40f71f3a&age=0&all_sr_blocks=156786004_88433996_0_1_0&checkin=2025-12-07&checkout=2025-12-16&dest_id=-3093735&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=156786004_88433996_0_1_0&hpos=1&matching_block_id=156786004_88433996_0_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=156786004_88433996_0_1_0__385664&srepoch=1764194331&srpvid=d3499a8821cf03c2&type=total&ucfs=1&#tab-main" class="card-link" target="_blank">
+                <div class="map-card" data-lat="19.84300622631984" data-lng="41.59016599268076" data-name="فندق منتزه الوطني" data-zoom="13">
+                    <img src="images/فندق منتزه الوطني.jpg" alt="فندق منتزه الوطني">
+                    <span>فندق منتزه الوطني</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- صندوق الخريطة الفعلي الذي ستعرض فيه خريطة Leaflet -->
+        <div id="map" data-first-zoom="10"></div>
+
+    </div>
+
+    <!-- ربط ملف تنسيقات مكتبة Leaflet للخرائط -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- ربط ملف JavaScript الخاص بمكتبة Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- ربط ملف JavaScript الخاص بالخريطة (مشترك بين الصفحات) -->
+    <script src="js/map.js"></script>
+
+</section>
+
+<!-- تذييل الصفحة (الفوتر) -->
+<footer>
+    <!-- نص حقوق النشر -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p>
+    <!-- روابط شبكات التواصل الاجتماعي -->
+    <div>
+        <a href="#">فيسبوك</a> | 
+        <a href="#">تويتر</a> | 
+        <a href="#">إنستجرام</a>
+    </div>
+</footer>
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<!-- ربط ملف JavaScript الرئيسي للموقع -->
+<script src="script.js"></script>
+
+</body>
+</html>

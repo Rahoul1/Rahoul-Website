@@ -1,0 +1,571 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند بأنه HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية والاتجاه من اليمين لليسار -->
+<head> <!-- بداية قسم الرأس الخاص بالمعلومات التعريفية -->
+    <meta charset="UTF-8"> <!-- تحديد ترميز الحروف ليكون UTF-8 لدعم العربية -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ضبط عرض الصفحة لتكون متجاوبة مع الشاشات المختلفة -->
+    <title> تبوك </title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجية CSS -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية قسم الرأس -->
+<body> <!-- بداية جسم الصفحة الذي يحتوي على المحتوى الظاهر للمستخدم -->
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+
+     <ul class="nav-links"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel --> <!-- تعليق يوضح أن الجزء التالي خاص بالسلايدر الرئيسي -->
+<div class="carousel"> <!-- حاوية السلايدر الرئيسية مع كلاس carousel -->
+    <img src="images/صورة تبوك الرئيسية.jpeg" class="active" alt="العلا " style="height: 750px; object-fit: cover;"> <!-- صورة في السلايدر مفعّلة افتراضياً مع ضبط ارتفاع وطريقة عرض -->
+<div class="carousel-text"><h2 class="titleright title">تبوك </h2><p class="p"> تبوك مدينة سعودية تقع في الشمال الغربي
+    <br> تتميز بتاريخها العريق وموقعها الإستراتيجي وطبيعتها الجميلة بين الجبال والوديان </p>  </div> <!-- نص فوق السلايدر يصف مدينة تبوك مع عنوان وفقرة -->
+</div> <!-- نهاية حاوية السلايدر -->
+
+<section class="container"> <!-- قسم عن مدينة تبوك داخل حاوية عامة -->
+  <h1 class="titleright">عن تبوك</h1> <!-- عنوان القسم: عن تبوك، بمحاذاة لليمين -->
+  <p class="titleright read-more-text"> <!-- فقرة نصية عن تبوك مع كلاس لميزة "اقرأ المزيد" -->
+     تُعدّ تبوك من أبرز مدن شمال غرب المملكة العربية السعودية، وتمتاز بمزيج فريد من التاريخ والطبيعة. تجمع المدينة بين
+    <br> آثار قديمة مرّت بها قوافل التجارة والحج، وبين مشروعات حضارية حديثة تعكس تطورها المستمر. تشتهر تبوك بمناخها 
+    <!-- وصف أولي عن تبوك مع سطر جديد باستخدام br -->
+    
+    <span class="dots">...</span> <!-- نقاط الحذف التي تظهر قبل فتح النص الإضافي -->
+    <span class="more"> <!-- جزء النص الإضافي الذي يتم إظهاره عند الضغط على زر "اقرأ المزيد" -->
+     <br>المعتدل نسبيًا وطبيعتها المتنوعة من جبال وسهول خضراء في الربيع، إضافة إلى قربها من مواقع سياحية بارزة
+    <br> مثل نيوم والبحر الأحمر، مما يجعلها وجهة مميزة للسياحة والاستكشاف. 
+  </span> <!-- نهاية النص الإضافي -->
+  </p> <!-- نهاية الفقرة النصية الكاملة -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر لفتح/إغلاق النص الإضافي مع استدعاء دالة جافاسكربت -->
+</section> <!-- نهاية قسم عن تبوك -->
+
+
+<!-- الأنشطة و الفعاليات السياحية --> <!-- تعليق يوضح بداية قسم الأنشطة -->
+<section class="container" id="rh-events-section"> <!-- قسم جديد ضمن الحاوية العامة -->
+    <h2 class="titleright" >الأنشطة و الفعاليات السياحية</h2>      <!-- عنوان القسم: الأنشطة والفعاليات السياحية -->
+    <div class="slider-wrapper"> <!-- حاوية لسلايدر الكروت الخاصة بالأنشطة -->
+        <!-- زر التحريك لليسار --> <!-- تعليق يوضح وظيفة الزر -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر سهم للتحريك باتجاه اليسار في السلايدر -->
+        <!-- مسار الكروت --> <!-- تعليق يوضح أن div التالي يحوي الكروت -->
+        <div class="cards-track"> <!-- حاوية أفقية للكروت يمكن تمريرها أفقياً -->
+
+        <div class="card" data-id="مهرحان شتاء تبوك" data-link="https://www.sada-tabuk.com/?p=260795"> <!-- كرت فعالية "مهرجان شتاء تبوك" مع بيانات للمفضلة والرابط -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة الكرت للمفضلة -->
+            <img src="images/مهرحان شتاء تبوك.jpeg" alt="مهرحان شتاء تبوك"> <!-- صورة للفعالية -->
+            <div class="card-body"> <!-- جسم الكرت الذي يحتوي النص والزر -->
+                <div class="card-title"> مهرجان شتاء تبوك </div> <!-- عنوان الكرت -->
+                <div class="card-text">مهرجان شتاء تبوك فعالية موسمية تقدّم أجواء شتوية مميزة مع أنشطة ترفيهية وثقافية تناسب جميع أفراد العائلة.</div> <!-- وصف مختصر للفعالية -->
+                <a href="https://www.sada-tabuk.com/?p=260795" class="btn">اعرف المزيد </a> <!-- زر يأخذ المستخدم لمصدر خارجي لمزيد من التفاصيل -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت مهرجان شتاء تبوك -->
+
+        <div class="card" data-id="سيتي هب تبوك" data-link="https://www.gea.gov.sa/ar/media-center/news/city-hub-tabuk/"> <!-- كرت لفعالية/مكان سيتي هب -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة للكرت -->
+            <img src="images/سيتي هب تبوك.jpeg" alt="سيتي هب تبوك"> <!-- صورة سيتي هب -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> سيتي هب </div> <!-- عنوان سيتي هب -->
+                <div class="card-text"> سيتي هب وجهة ترفيهية حديثة تجمع المطاعم والأنشطة والفعاليات في مكان واحد يناسب جميع الزوّار </div> <!-- وصف مختصر عن سيتي هب -->
+                <a href="https://www.gea.gov.sa/ar/media-center/news/city-hub-tabuk/" class="btn"> اعرف المزيد </a> <!-- زر ينتقل لمصدر خارجي للمزيد -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت سيتي هب -->
+
+        <div class="card" data-id="مهرجان الورد والفاكهة بتبوك" data-link="https://www.spa.gov.sa/1955482"> <!-- كرت مهرجان الورد والفاكهة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب للمفضلة -->
+            <img src="images/مهرجان الورد والفاكهة بتبوك.jpeg" alt="مهرجان الورد والفاكهة بتبوك"> <!-- صورة من المهرجان -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> مهرجان الورد والفاكهة </div> <!-- عنوان الكرت -->
+                <div class="card-text"> مهرجان الورد والفاكهة احتفالية موسمية تعرض أجمل أنواع الزهور وأجود الفواكه مع فعاليات ترفيهية للعائلات والزوار. </div> <!-- وصف للمهرجان -->
+                <a href="https://www.spa.gov.sa/1955482" class="btn"> اعرف المزيد </a> <!-- رابط خارجي لمزيد من التفاصيل -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت مهرجان الورد والفاكهة -->
+
+        <div class="card" data-id="اسبوع الثراث تبوك" data-link="https://saudistandard.com/2025/06/16/heritage-week-in-tabuk-celebrates-saudi-handicrafts-2025/?utm_source=chatgpt.com"> <!-- كرت أسبوع التراث -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة للـ favorites -->
+            <img src="images/اسبوع الثراث تبوك.jpeg" alt="اسبوع الثراث تبوك"> <!-- صورة لأسبوع التراث -->
+            <div class="card-body"> <!-- جسم كرت أسبوع التراث -->
+                <div class="card-title"> اسبوع التراث</div> <!-- عنوان الكرت -->
+                <div class="card-text"> أسبوع التراث في تبوك يحتفي بالحرف التقليدية والعادات المحلية والمنتجات التراثية. </div> <!-- وصف الفعالية -->
+                <a href="https://saudistandard.com/2025/06/16/heritage-week-in-tabuk-celebrates-saudi-handicrafts-2025/?utm_source=chatgpt.com" class="btn"> اعرف المزيد </a> <!-- رابط لمزيد من المعلومات -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت أسبوع التراث -->
+
+        <div class="card" data-id="قلعة تبوك الاثرية الاسلامية" data-link="https://www.spa.gov.sa/2372202"> <!-- كرت قلعة تبوك الإسلامية -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب للمفضلة -->
+            <img src="images/قلعة تبوك الاثرية الاسلامية.jpeg" alt="قلعة تبوك الاثرية الاسلامية"> <!-- صورة القلعة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> قلعة تبوك الاسلامية الاثريه </div> <!-- عنوان الكرت -->
+                <div class="card-text"> قلعة تاريخية ، بنيت عام 976هـ لتكون محطة على طريق الحج الشامي. تعرضت لعدة تجديدات وترميمات عبر التاريخ، </div> <!-- وصف مختصر عن القلعة -->
+                <a href="https://www.spa.gov.sa/2372202" class="btn"> اعرف المزيد </a> <!-- رابط خارجي لمزيد من المعلومات -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت قلعة تبوك -->
+
+        <div class="card" data-id="متحف البيت الطيني تبوك" data-link="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%85%D8%AA%D8%AD%D9%81-%D8%A7%D9%84%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%B7%D9%8A%D9%86%D9%8A-%D8%AA%D8%A8%D9%88%D9%83/"> <!-- كرت متحف البيت الطيني -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- قلب المفضلة -->
+            <img src="images/متحف البيت الطيني تبوك.jpeg" alt=""> <!-- صورة المتحف (alt فارغ في الكود الأصلي) -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> متحف البيت الطيني </div> <!-- عنوان المتحف -->
+                <div class="card-text"> متحف البيت الطيني في تبوك يعرض الحياة التقليدية للمنطقة من خلال البيوت الطينية والأدوات القديمة والتراث المحلي. </div> <!-- وصف المتحف -->
+                <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%85%D8%AA%D8%AD%D9%81-%D8%A7%D9%84%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%B7%D9%8A%D9%86%D9%8A-%D8%AA%D8%A8%D9%88%D9%83/" class="btn">اعرف المزيد  </a> <!-- زر لمصدر خارجي -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت متحف البيت الطيني -->
+
+        <div class="card" data-id="سكة حديد قطار الحجاز تبوك" data-link="https://www.sada-tabuk.com/?p=178625"> <!-- كرت محطة تبوك - سكة الحجاز -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب للفيفوريت -->
+            <img src="images/محطة تبوك - سكة حديد قطار الحجاز تبوك.jpeg" alt="سكة حديد قطار الحجاز تبوك"> <!-- صورة لمحطة سكة الحجاز -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> محطة تبوك - سكة حديد قطار الحجاز </div> <!-- عنوان المحطة -->
+                <div class="card-text">سكة حديد الحجاز تاريخية وتعد جزءًا من القطار الذي ربط الحجاز بالمناطق الأخرى ونقل الحجاج والبضائع في الماضي</div> <!-- وصف المحطة التاريخية -->
+                <a href="https://www.sada-tabuk.com/?p=178625" class="btn"> اعرف المزيد </a> <!-- رابط خارجي للتفاصيل -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت سكة الحجاز -->
+
+        <div class="card" data-id="مسجد التوبة تبوك" data-link="https://www.spa.gov.sa/2086212"> <!-- كرت مسجد التوبة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- قلب المفضلة -->
+            <img src="images/مسجد التوبة تبوك.jpeg" alt="مسجد التوبة تبوك"> <!-- صورة مسجد التوبة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> مسجد التوبة تبوك </div> <!-- عنوان الكرت -->
+                <div class="card-text"> مسجد التوبة في تبوك من المعالم الدينية المهمة، ويشتهر بتاريخه وروحانيته ويعد مقصدًا للمصلين والزوار. </div> <!-- وصف المسجد -->
+                <a href="https://www.spa.gov.sa/2086212" class="btn"> اعرف المزيد </a> <!-- رابط لمصدر خارجي -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت مسجد التوبة -->
+
+        <div class="card" data-id="وادي الديسة تبوك" data-link="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%88%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%AF%D9%8A%D8%B3%D8%A9/"> <!-- كرت وادي الديسة -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب للمفضلة -->
+            <img src="images/وادي الديسة تبوك.jpeg" alt="وادي الديسة تبوك"> <!-- صورة وادي الديسة -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> وادي الديسة  </div> <!-- عنوان الكرت -->
+                <div class="card-text"> وادي الديسة في تبوك واحة طبيعية تشتهر بالجبال والينابيع والأنشطة البرية </div> <!-- وصف للوادي -->
+                <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%88%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%AF%D9%8A%D8%B3%D8%A9/" class="btn"> اعرف المزيد </a> <!-- رابط خارجي للمزيد -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت وادي الديسة -->
+
+        </div> <!-- نهاية حاوية cards-track -->
+
+        <!-- زر التحريك لليمين --> <!-- تعليق يوضح وظيفة الزر التالي -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر للتحريك باتجاه اليمين في السلايدر -->
+    </div> <!-- نهاية حاوية slider-wrapper -->
+</section> <!-- نهاية قسم الأنشطة والفعاليات -->
+
+<!-- اشهر خيارات الإقامة   --> <!-- تعليق يوضح بداية قسم الفنادق والإقامة -->
+<section class="container" id="rh-accommodation-section"> <!-- قسم جديد خاص بخيارات الإقامة -->
+    <h2 class="titleright"> اشهر خيارات الإقامة</h2>      <!-- عنوان القسم: أشهر خيارات الإقامة -->
+    <div class="slider-wrapper"> <!-- سلايدر كروت الفنادق -->
+        <!-- زر التحريك لليسار --> <!-- تعليق يوضح أن الزر يحرك الكروت -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر تحريك يسار -->
+        <!-- مسار الكروت --> <!-- تعليق لحاوية الكروت -->
+        <div class="cards-track"> <!-- مسار تمرير الكروت أفقياً -->
+
+        <div class="card" data-id="Sunway Tabuk Hotel" data-link="https://www.booking.com/hotel/sa/sunway-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764022168&srpvid=40749bc8bda800ff&type=total&ucfs=1&"> <!-- كرت فندق Sunway Tabuk مع بيانات الرابط للموقع -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة لتفعيل المفضلة -->
+            <img src="images/Sunway Tabuk Hotel تبوك.jpeg" alt="فندق Sunway Tabuk Hotel"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم كرت الفندق -->
+                <div class="card-title"> Sunway Tabuk Hotel </div> <!-- اسم الفندق -->
+                <div class="card-text">فندق Sunway Tabuk يوفر إقامة مريحة وعصرية مع خدمات فندقية متكاملة وموقع مناسب في مدينة تبوك.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/sunway-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764022168&srpvid=40749bc8bda800ff&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر للحجز في الموقع الخارجي -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت فندق Sunway -->
+
+        <div class="card" data-id="Lilac Park Hotel " data-link="https://www.booking.com/hotel/sa/lilac-park.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&hpos=2&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764022758&srpvid=accc9c06e612024b&type=total&ucfs=1&"> <!-- كرت فندق Lilac Park -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر قلب للمفضلة -->
+            <img src="images/Lilac Park Hotel تبوك.jpeg" alt="فندقLilac Park Hotel "> <!-- صورة فندق Lilac Park -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Lilac Park Hotel </div> <!-- اسم الفندق -->
+                <div class="card-text"> فندق Lilac Park في تبوك يقدم إقامة مريحة ومرافق عصرية تشمل غرفاً مجهزة وخدمات ضيافة مميزة. </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/lilac-park.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&hpos=2&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764022758&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر للحجز الآن -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت Lilac Park -->
+
+        <div class="card" data-id="House Express" data-link="https://www.booking.com/hotel/sa/house-express.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&hpos=4&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023018&srpvid=accc9c06e612024b&type=total&ucfs=1&"> <!-- كرت فندق House Express -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- قلب للمفضلة -->
+            <img src="images/House Express تبوك.jpeg" alt="فندقHouse Express"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم كرت الفندق -->
+                <div class="card-title"> House Express </div> <!-- اسم الفندق -->
+                <div class="card-text"> فندق House Express في تبوك يقدم إقامة مريحة وغرف مجهزة بمرافق عصرية للزوار. </div> <!-- وصف بسيط للفندق -->
+                <a href="https://www.booking.com/hotel/sa/house-express.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&hpos=4&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023018&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر حجز -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت House Express -->
+
+        <div class="card" data-id="Atarheeb hotel" data-link="https://www.booking.com/hotel/sa/fndq-ltrhyb-atarheeb.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&hpos=5&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023307&srpvid=accc9c06e612024b&type=total&ucfs=1&"> <!-- كرت فندق Atarheeb -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/Atarheeb hotel تبوك.jpeg" alt="فندق Atarheeb hotel"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Atarheeb Hotel </div> <!-- اسم الفندق -->
+                <div class="card-text">فندق Atarheeb Hotel في تبوك يوفر إقامة مريحة وغرف مجهزة مع خدمات فندقية أساسية للزوار.</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/fndq-ltrhyb-atarheeb.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&hpos=5&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023307&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر الحجز -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت Atarheeb Hotel -->
+
+        <div class="card" data-id="Skyline Tabuk Hotel" data-link="https://www.booking.com/hotel/sa/skyline-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=7&hpos=7&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023547&srpvid=accc9c06e612024b&type=total&ucfs=1&"> <!-- كرت فندق Skyline Tabuk -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر المفضلة -->
+            <img src="images/Skyline Tabuk Hotel تبوك.jpeg" alt="فندقSkyline Tabuk Hotel"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Skyline Tabuk Hotel </div> <!-- عنوان الفندق -->
+                <div class="card-text"> فندق Skyline Tabuk يقدم إقامة عصرية ومريحة في تبوك مع خدمات متكاملة وموقع مناسب للزوار</div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/skyline-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=7&hpos=7&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023547&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر الحجز -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت Skyline Tabuk -->
+
+        <div class="card" data-id="Grand Millennium tabuk" data-link="https://www.booking.com/hotel/sa/grand-millennium-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=12&hpos=12&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023805&srpvid=accc9c06e612024b&type=total&ucfs=1&"> <!-- كرت فندق Grand Millennium -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- القلب للمفضلة -->
+            <img src="images/Grand Millennium tabuk تبوك.jpeg" alt="فندق Grand Millennium tabuk"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Grand Millennium Tabuk </div> <!-- اسم الفندق -->
+                <div class="card-text"> فندق Grand Millennium Tabuk يقدم إقامة فاخرة ومرافق متكاملة في موقع مميز بالمدينة </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/grand-millennium-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=12&hpos=12&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023805&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر الحجز -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت Grand Millennium Tabuk -->
+
+        <div class="card" data-id="Best Western plus tabuk City Cente" data-link="https://www.booking.com/hotel/sa/best-western-plus-tabuk-city-center.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=11&hpos=11&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764024388&srpvid=accc9c06e612024b&type=total&ucfs=1&"> <!-- كرت فندق Best Western Plus -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- زر القلب للمفضلة -->
+            <img src="images/Best Western plus tabuk City Center تبوك.jpeg" alt="Best Western plus tabuk City Cente"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Best Western Plus Tabuk City Center </div> <!-- اسم الفندق -->
+                <div class="card-text"> فندق Best Western Plus Tabuk City Center يوفر إقامة مريحة مع خدمات عصرية وموقع مركزي في تبوك. </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/best-western-plus-tabuk-city-center.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=11&hpos=11&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764024388&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر الحجز -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت Best Western Plus -->
+
+        <div class="card" data-id="Skyline Hotel & Suites" data-link="https://www.booking.com/hotel/sa/skyline-amp-suites.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=12&hpos=12&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764026160&srpvid=a3d4a37370860367&type=total&ucfs=1&"> <!-- كرت فندق Skyline Hotel & Suites -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+            <img src="images/Skyline Hotel & Suites تبوك.jpeg" alt=""> <!-- صورة الفندق (alt فارغ في الأصل) -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Skyline Hotel & Suites </div> <!-- اسم الفندق -->
+                <div class="card-text"> فندق Skyline Hotel & Suites في تبوك يقدم إقامة عصرية ومريحة مع غرف مجهزة ومرافق متكاملة للزوار. </div> <!-- وصف للفندق -->
+                <a href="https://www.booking.com/hotel/sa/skyline-amp-suites.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=12&hpos=12&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764026160&srpvid=a3d4a37370860367&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر الحجز -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت Skyline Hotel & Suites -->
+
+        <div class="card" data-id="Swiss In Tabuk Hotel" data-link="https://www.booking.com/hotel/sa/swiss-international-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=15&hpos=15&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764026432&srpvid=ed21a416e172016b&type=total&ucfs=1&"> <!-- كرت فندق Swiss In Tabuk -->
+            <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة القلب -->
+            <img src="images/Swiss In Tabuk Hotel تبوك.jpeg" alt="Swiss In Tabuk Hotel"> <!-- صورة الفندق -->
+            <div class="card-body"> <!-- جسم الكرت -->
+                <div class="card-title"> Swiss In Tabuk Hotel </div> <!-- اسم الفندق -->
+                <div class="card-text"> فندق Swiss In Tabuk يوفر إقامة مريحة وعصرية في تبوك مع غرف مجهزة وخدمات ضيافة مميزة. </div> <!-- وصف الفندق -->
+                <a href="https://www.booking.com/hotel/sa/swiss-international-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=15&hpos=15&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764026432&srpvid=ed21a416e172016b&type=total&ucfs=1&" class="btn"> احجزالآن </a> <!-- زر حجز الفندق -->
+            </div> <!-- نهاية card-body -->
+        </div> <!-- نهاية كرت Swiss In Tabuk Hotel -->
+
+        </div> <!-- نهاية cards-track -->
+
+        <!-- زر التحريك لليمين --> <!-- تعليق يوضح أن الزر يحرك السلايدر يميناً -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر سهم يمين -->
+    </div> <!-- نهاية slider-wrapper -->
+</section> <!-- نهاية قسم خيارات الإقامة -->
+
+
+
+<section class="containerimg"> <!-- قسم جديد لعرض الخريطة التفاعلية داخل حاوية containerimg -->
+
+    <h2 >الخريطة التفاعلية</h2> <!-- عنوان القسم: الخريطة التفاعلية -->
+
+    <div class="map-wrapper"> <!-- حاوية تجمع القائمة الجانبية مع الخريطة -->
+
+        <!-- القائمة الجانبية --> <!-- تعليق يشرح أن الجزء التالي عبارة عن قائمة كروت جانبية -->
+        <div class="map-sidebar"> <!-- حاوية الكروت الجانبية بجوار الخريطة -->
+
+            <!-- سيتي هب --> <!-- تعليق يوضح أن الكرت التالي خاص بسيتي هب -->
+            <a href="https://www.gea.gov.sa/ar/media-center/news/city-hub-tabuk/" class="card-link" target="_blank"> <!-- رابط خارجي لسيتي هب يفتح في تبويب جديد -->
+                <div class="map-card"
+                     data-lat="28.388000748498758"
+                     data-lng="36.51843542618056"
+                     data-name="سيتي هب"
+                     data-zoom="13"> <!-- كرت في القائمة يحمل بيانات إحداثيات ومعلومات سيتي هب للخريطة -->
+                    <img src="images/سيتي هب تبوك.jpeg" alt="سيتي هب"> <!-- صورة لمكان سيتي هب -->
+                    <span>سيتي هب</span> <!-- اسم المكان يظهر على الكرت -->
+                </div> <!-- نهاية كرت سيتي هب في القائمة -->
+            </a> <!-- نهاية الرابط الخاص بسيتي هب -->
+
+            <!-- مهرجان الورد والفاكهة --> <!-- تعليق يوضح الكرت التالي للمهرجان -->
+            <a href="https://www.spa.gov.sa/1955482" class="card-link" target="_blank"> <!-- رابط خارجي لمهرجان الورد والفاكهة -->
+                <div class="map-card"
+                     data-lat="28.432459778729978"
+                     data-lng="36.57473162182126"
+                     data-name="مهرجان الورد والفاكهة"
+                     data-zoom="12"> <!-- كرت يحمل إحداثيات المهرجان ومعلوماته -->
+                    <img src="images/مهرجان الورد والفاكهة بتبوك.jpeg" alt="مهرجان الورد والفاكهة"> <!-- صورة للمهرجان -->
+                    <span>مهرجان الورد والفاكهة</span> <!-- نص اسم المهرجان -->
+                </div> <!-- نهاية كرت المهرجان -->
+            </a> <!-- نهاية رابط مهرجان الورد والفاكهة -->
+
+            <!-- قلعة تبوك الإسلامية الأثرية --> <!-- تعليق يوضح الكرت التالي للقلعة -->
+            <a href="https://www.spa.gov.sa/2372202" class="card-link" target="_blank"> <!-- رابط خارجي لمعلومات قلعة تبوك -->
+                <div class="map-card"
+                     data-lat="28.38287055518487"
+                     data-lng="36.55666009495028"
+                     data-name="قلعة تبوك الإسلامية الأثرية"
+                     data-zoom="18"> <!-- كرت الخرائط يحمل بيانات القلعة وإحداثياتها -->
+                    <img src="images/قلعة تبوك الاثرية الاسلامية.jpeg" alt="قلعة تبوك الإسلامية الأثرية"> <!-- صورة القلعة -->
+                    <span>قلعة تبوك الإسلامية الأثرية</span> <!-- اسم القلعة في الكرت -->
+                </div> <!-- نهاية كرت القلعة -->
+            </a> <!-- نهاية رابط القلعة -->
+
+            <!-- متحف البيت الطيني --> <!-- تعليق يوضح بداية كرت متحف البيت الطيني -->
+            <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%85%D8%AA%D8%AD%D9%81-%D8%A7%D9%84%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%B7%D9%8A%D9%86%D9%8A-%D8%AA%D8%A8%D9%88%D9%83/" class="card-link" target="_blank"> <!-- رابط خارجي للمتحف -->
+                <div class="map-card"
+                     data-lat="28.383128482293838"
+                     data-lng="36.55657409789102"
+                     data-name="متحف البيت الطيني"
+                     data-zoom="18"> <!-- كرت الخريطة مع بيانات متحف البيت الطيني -->
+                    <img src="images/متحف البيت الطيني تبوك.jpeg" alt="متحف البيت الطيني"> <!-- صورة المتحف -->
+                    <span>متحف البيت الطيني</span> <!-- اسم المتحف -->
+                </div> <!-- نهاية كرت المتحف -->
+            </a> <!-- نهاية رابط متحف البيت الطيني -->
+
+            <!-- محطة تبوك - سكة حديد قطار الحجاز --> <!-- تعليق يوضح الكرت الخاص بمحطة سكة الحجاز -->
+            <a href="https://www.sada-tabuk.com/?p=178625" class="card-link" target="_blank"> <!-- رابط خارجي لمحطة قطار الحجاز -->
+                <div class="map-card"
+                     data-lat="28.38748790028038"
+                     data-lng="36.561729358655455"
+                     data-name="محطة تبوك - سكة حديد قطار الحجاز"
+                     data-zoom="16"> <!-- كرت يحتوي إحداثيات ومعلومات المحطة -->
+                    <img src="images/محطة تبوك - سكة حديد قطار الحجاز تبوك.jpeg" alt="محطة تبوك - سكة حديد قطار الحجاز"> <!-- صورة للمحطة -->
+                    <span>محطة تبوك - سكة حديد قطار الحجاز</span> <!-- نص اسم المحطة -->
+                </div> <!-- نهاية كرت المحطة -->
+            </a> <!-- نهاية الرابط الخاص بالمحطة -->
+
+            <!-- مسجد التوبة تبوك --> <!-- تعليق يوضح أن الكرت التالي لمسجد التوبة -->
+            <a href="https://www.spa.gov.sa/2086212" class="card-link" target="_blank"> <!-- رابط خارجي لمسجد التوبة -->
+                <div class="map-card"
+                     data-lat="28.38407624328465"
+                     data-lng="36.55750934707009"
+                     data-name="مسجد التوبة تبوك"
+                     data-zoom="16"> <!-- كرت يحمل بيانات مسجد التوبة وإحداثياته -->
+                    <img src="images/مسجد التوبة تبوك.jpeg" alt="مسجد التوبة تبوك"> <!-- صورة المسجد -->
+                    <span>مسجد التوبة تبوك</span> <!-- اسم المسجد -->
+                </div> <!-- نهاية كرت مسجد التوبة -->
+            </a> <!-- نهاية رابط مسجد التوبة -->
+
+            <!-- وادي الديسة --> <!-- تعليق يوضح كرت وادي الديسة -->
+            <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%88%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%AF%D9%8A%D8%B3%D8%A9/" class="card-link" target="_blank"> <!-- رابط خارجي لوادي الديسة -->
+                <div class="map-card"
+                     data-lat="27.60275994302584"
+                     data-lng="36.431629605951656"
+                     data-name="وادي الديسة"
+                     data-zoom="13"> <!-- كرت يحمل إحداثيات الوادي ومعلوماته -->
+                    <img src="images/وادي الديسة تبوك.jpeg" alt="وادي الديسة"> <!-- صورة لوادي الديسة -->
+                    <span>وادي الديسة</span> <!-- اسم الوادي في الكرت -->
+                </div> <!-- نهاية كرت الوادي -->
+            </a> <!-- نهاية رابط وادي الديسة -->
+
+            <!-- Sunway Tabuk Hotel --> <!-- تعليق يوضح بداية كرت الفندق Sunway ضمن القائمة -->
+            <a href="https://www.booking.com/hotel/sa/sunway-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764022168&srpvid=40749bc8bda800ff&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط خارجي للفندق -->
+                <div class="map-card"
+                     data-lat="28.397977855967042"
+                     data-lng="36.57970250991406"
+                     data-name="Sunway Tabuk Hotel"
+                     data-zoom="12"> <!-- كرت يعرض Sunway Tabuk مع إحداثيات -->
+                    <img src="images/Sunway Tabuk Hotel تبوك.jpeg" alt="Sunway Tabuk Hotel"> <!-- صورة للفندق -->
+                    <span>Sunway Tabuk Hotel</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Sunway في القائمة -->
+            </a> <!-- نهاية رابط Sunway Tabuk Hotel -->
+
+            <!-- Lilac Park Hotel --> <!-- تعليق للكرت الخاص بفندق Lilac Park -->
+            <a href="https://www.booking.com/hotel/sa/lilac-park.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&hpos=2&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764022758&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط لفندق Lilac Park -->
+                <div class="map-card"
+                     data-lat="28.36829365415469"
+                     data-lng="36.57812034906168"
+                     data-name="Lilac Park Hotel"
+                     data-zoom="13"> <!-- كرت في القائمة مع إحداثيات الفندق -->
+                    <img src="images/Lilac Park Hotel تبوك.jpeg" alt="Lilac Park Hotel"> <!-- صورة الفندق -->
+                    <span>Lilac Park Hotel</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Lilac Park -->
+            </a> <!-- نهاية الرابط الخاص به -->
+
+            <!-- House Express --> <!-- تعليق كرت House Express في القائمة الجانبية -->
+            <a href="https://www.booking.com/hotel/sa/house-express.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=4&hpos=4&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023018&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط للفندق -->
+                <div class="map-card"
+                     data-lat="28.398753497693065"
+                     data-lng="36.56460700119118"
+                     data-name="House Express"
+                     data-zoom="16"> <!-- كرت ذو إحداثيات للفندق -->
+                    <img src="images/House Express تبوك.jpeg" alt="House Express"> <!-- صورة الفندق -->
+                    <span>House Express</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت House Express -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- Atarheeb Hotel --> <!-- تعليق كرت فندق Atarheeb في القائمة -->
+            <a href="https://www.booking.com/hotel/sa/fndq-ltrhyb-atarheeb.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&hpos=5&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023307&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط للفندق -->
+                <div class="map-card"
+                     data-lat="28.413162870005262"
+                     data-lng="36.56951437459954"
+                     data-name="Atarheeb Hotel"
+                     data-zoom="14"> <!-- كرت يحتوي بيانات موقع الفندق -->
+                    <img src="images/Atarheeb hotel تبوك.jpeg" alt="Atarheeb Hotel"> <!-- صورة الفندق -->
+                    <span>Atarheeb Hotel</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Atarheeb -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- Skyline Tabuk Hotel --> <!-- تعليق كرت Skyline Tabuk Hotel -->
+            <a href="https://www.booking.com/hotel/sa/skyline-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=7&hpos=7&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023547&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط خارجي للفندق -->
+                <div class="map-card"
+                     data-lat="28.39008541202793"
+                     data-lng="36.59412060309714"
+                     data-name="Skyline Tabuk Hotel"
+                     data-zoom="13"> <!-- كرت يحمل بيانات الفندق للخريطة -->
+                    <img src="images/Skyline Tabuk Hotel تبوك.jpeg" alt="Skyline Tabuk Hotel"> <!-- صورة الفندق -->
+                    <span>Skyline Tabuk Hotel</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Skyline Tabuk Hotel -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- Grand Millennium Tabuk --> <!-- تعليق كرت Grand Millennium في القائمة -->
+            <a href="https://www.booking.com/hotel/sa/grand-millennium-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=12&hpos=12&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764023805&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط للفندق -->
+                <div class="map-card"
+                     data-lat="28.368556705063003"
+                     data-lng="36.46758217944323"
+                     data-name="Grand Millennium Tabuk"
+                     data-zoom="12"> <!-- كرت يحمل اسم وإحداثيات الفندق -->
+                    <img src="images/Grand Millennium tabuk تبوك.jpeg" alt="Grand Millennium Tabuk"> <!-- صورة الفندق -->
+                    <span>Grand Millennium Tabuk</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Grand Millennium -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- Best Western Plus Tabuk City Center --> <!-- تعليق الكرت الخاص بفندق Best Western Plus -->
+            <a href="https://www.booking.com/hotel/sa/best-western-plus-tabuk-city-center.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=11&hpos=11&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764024388&srpvid=accc9c06e612024b&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط الفندق -->
+                <div class="map-card"
+                     data-lat="28.383104003615095"
+                     data-lng="36.57965023885188"
+                     data-name="Best Western Plus Tabuk City Center"
+                     data-zoom="13"> <!-- كرت يعرض الفندق في الخريطة -->
+                    <img src="images/Best Western plus tabuk City Center تبوك.jpeg" alt="Best Western Plus Tabuk City Center"> <!-- صورة الفندق -->
+                    <span>Best Western Plus Tabuk City Center</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Best Western Plus -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- Skyline Hotel & Suites --> <!-- تعليق يوضح أن الكرت التالي لSkyline Hotel & Suites -->
+            <a href="https://www.booking.com/hotel/sa/skyline-amp-suites.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=12&hpos=12&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764026160&srpvid=a3d4a37370860367&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط الفندق -->
+                <div class="map-card"
+                     data-lat="28.4093877661381"
+                     data-lng="36.59731819160007"
+                     data-name="Skyline Hotel & Suites"
+                     data-zoom="17"> <!-- كرت يعرض موقع الفندق وإسمه -->
+                    <img src="images/Skyline Hotel & Suitesتبوك.jpeg" alt="Skyline Hotel & Suites"> <!-- صورة الفندق -->
+                    <span>Skyline Hotel & Suites</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Skyline Hotel & Suites -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- Swiss In Tabuk Hotel --> <!-- تعليق كرت Swiss In Tabuk Hotel -->
+            <a href="https://www.booking.com/hotel/sa/swiss-international-tabuk.html?aid=318615&label=New_Arabic_AR_SA_20153462305-%2AzytRtGa3CC9mwRy77VlwQS217246314918%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=8fd5146c37220650f7a8c16d5032c65a&dest_id=-3099858&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=15&hpos=15&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1764026432&srpvid=ed21a416e172016b&type=total&ucfs=1&" class="card-link" target="_blank"> <!-- رابط للفندق -->
+                <div class="map-card"
+                     data-lat="28.408488883908856"
+                     data-lng="36.59745166005454"
+                     data-name="Swiss In Tabuk Hotel"
+                     data-zoom="17"> <!-- كرت يعرض Swiss In Tabuk بالخريطة -->
+                    <img src="images/Swiss In Tabuk Hotel تبوك.jpeg" alt="Swiss In Tabuk Hotel"> <!-- صورة الفندق -->
+                    <span>Swiss In Tabuk Hotel</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت Swiss In Tabuk Hotel -->
+            </a> <!-- نهاية الرابط -->
+
+        </div> <!-- نهاية القائمة الجانبية map-sidebar -->
+
+        <!-- صندوق الخريطة --> <!-- تعليق يوضح أن العنصر التالي هو خريطة ليفلت -->
+        <div id="map" data-first-zoom="10"></div> <!-- عنصر الخريطة مع مستوى تكبير أولي -->
+
+    </div> <!-- نهاية حاوية map-wrapper -->
+
+    <!-- مكتبة Leaflet --> <!-- تعليق يوضح تحميل مكتبة الخريطة -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- ربط ملف CSS الخاص بمكتبة Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- ربط ملف JS الخاص بمكتبة Leaflet -->
+
+    <!-- ملف JS واحد لكل الصفحات --> <!-- تعليق بأن الملف التالي يستعمل ليشغل الخريطة في كل الصفحات -->
+    <script src="js/map.js"></script> <!-- ربط ملف الجافاسكربت الذي يحتوي على كود الخريطة -->
+
+</section> <!-- نهاية قسم الخريطة التفاعلية -->
+
+
+<footer> <!-- بداية الفوتر في أسفل الصفحة -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق النشر لسنة 2025 -->
+    <div> <!-- حاوية الروابط الاجتماعية -->
+        <a href="#">فيسبوك</a> |  <!-- رابط افتراضي لفيسبوك -->
+        <a href="#">تويتر</a> |  <!-- رابط افتراضي لتويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط افتراضي لإنستجرام -->
+    </div> <!-- نهاية حاوية الروابط الاجتماعية -->
+</footer> <!-- نهاية الفوتر -->
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- استدعاء ملف الجافاسكربت الرئيسي للموقع -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML -->

@@ -1,0 +1,535 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند كصفحة HTML5 -->
+<html lang="ar" dir="rtl"> <!-- بداية صفحة HTML، اللغة عربية واتجاه الكتابة من اليمين لليسار -->
+<head> <!-- بداية قسم الرأس الذي يحتوي على معلومات وإعدادات الصفحة -->
+    <meta charset="UTF-8"> <!-- تعيين ترميز الأحرف إلى UTF-8 (يدعم العربية) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- جعل الصفحة متجاوبة مع أحجام الشاشات المختلفة -->
+    <title>نجران</title> <!-- عنوان الصفحة الذي يظهر في تبويب المتصفح -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيقات الخارجي CSS -->
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+</head> <!-- نهاية قسم الرأس -->
+<body> <!-- بداية جسم الصفحة المرئي للمستخدم -->
+
+<!-- Navbar -->
+<nav class="navbar"> <!-- شريط التنقل العلوي للموقع -->
+
+    <div class="navbar-left"> <!-- القسم الأيسر من شريط التنقل -->
+       <a href="index.html" class="brand"> <!-- رابط الشعار المؤدي للصفحة الرئيسية -->
+    <img src="images/logo.png" alt="شعار موقع رحول" style="height: 60px; margin-left: 5px; vertical-align: middle;"> <!-- صورة شعار موقع رحول -->
+    </a>
+    
+</div>
+<button class="nav-toggle" id="navToggle" type="button">☰</button>
+<ul class="nav-links" id="navLinks"> <!-- قائمة روابط التنقل الرئيسية -->
+        <li class="dropdown-dest"> <!-- عنصر قائمة يحتوي على قائمة منسدلة للوجهات -->
+    <a href="#" id="destBtn">الوجهات</a> <!-- زر النص "الوجهات" لفتح القائمة المنسدلة -->
+    <ul class="dropdown-menu" id="destMenu"> <!-- القائمة المنسدلة التي تعرض أسماء المدن -->
+        <li><a href="riyadh.html">الرياض</a></li> <!-- رابط صفحة الرياض -->
+        <li><a href="jeddah.html">جدة</a></li> <!-- رابط صفحة جدة -->
+        <li><a href="alula.html">العلا</a></li> <!-- رابط صفحة العلا -->
+        <li><a href="diriyah.html">الدرعية</a></li> <!-- رابط صفحة الدرعية -->
+        <li><a href="abha.html">أبها</a> <a href="View all.html">عرض الكل </a></li> <!-- رابط أبها + رابط عرض جميع الوجهات -->
+    </li> <!-- إغلاق عنصر القائمة (فيه إغلاق زائد لكنه لا يؤثر كثيراً) -->
+    </ul> <!-- نهاية قائمة الوجهات المنسدلة -->
+        <li><a href="Trip planner.html">مخطط الرحلات</a></li> <!-- رابط صفحة مخطط الرحلات -->
+        <li><a href="Interactive map.html">الخريطة التفاعلية</a></li> <!-- رابط صفحة الخريطة التفاعلية -->
+        <li ><a href="religious.html">السياحة الدينية</a> <!-- رابط صفحة السياحة الدينية -->
+        <li><a href="contact.html">اتصل بنا</a></li> <!-- رابط صفحة المراجعات (حاليًا لا يحيل لصفحة حقيقية) -->
+    </ul> <!-- نهاية قائمة روابط التنقل -->
+
+    <!-- زر اللغة وتسجيل الدخول -->
+    <div class="nav-actions"> <!-- قسم أزرار المفضلة + اللغة + تسجيل الدخول -->
+    <button class="circle-btn" onclick="location.href='favorites.html'"><svg class="fav-icon" viewBox="0 0 24 24" fill="none"> <!-- زر دائرة يفتح صفحة المفضلة مع أيقونة SVG -->
+        <path 
+            d="M12 20.3c-.3-.2-5.9-3.9-8.4-7.4C1.2 9.1 2 5 5.2 3.4c1.7-.9 4-.5 5.5 1.3.3.4.6.7.8 1 .2-.3.5-.6.8-1 1.5-1.9 3.8-2.3 5.5-1.3C22 5 22.8 9.1 20.4 12.9c-2.4 3.5-8.1 7.2-8.4 7.4z"
+            stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <!-- شكل قلب مرسوم داخل الأيقونة -->
+    </button>
+        <div class="dropdown"> <!-- قائمة منسدلة لاختيار اللغة -->
+            <button class="dropbtn" id="langBtn">🌐 اللغة</button> <!-- زر فتح قائمة اللغات -->
+            <div class="dropdown-content" id="langMenu"> <!-- محتوى قائمة اللغات -->
+                <a href="#"> العربية</a> <!-- خيار اللغة العربية -->
+                <a href="#"> English</a> <!-- خيار اللغة الإنجليزية -->
+                <a href="#"> Türkçe</a> <!-- خيار اللغة التركية -->
+            </div>
+        </div>
+        <button class="login-btn" id="loginLogoutBtn">تسجيل الدخول</button>
+    </div> <!-- نهاية قسم أزرار الناف بار -->
+</nav> <!-- نهاية شريط التنقل -->
+
+<!-- Carousel -->
+<div class="carousel"> <!-- حاوية السلايدر الرئيسي في أعلى الصفحة -->
+    <img src="images/صورت كرت نجران.jpeg" class="active" alt="نجران " style="height: 750px; object-fit: cover;"> <!-- صورة خلفية للسلايدر مع ارتفاع ثابت وملء كامل -->
+    <div class="carousel-text"><h2 class="titleright title">  نجران     </h2><p class="p">  نجران مدينة جنوبية أصيلة تتميز بواحاتها الخضراء وتراثها العريق وعمارتها الطينية الفريدة </p> </div> <!-- نص فوق الصورة يصف نجران (عنوان + فقرة وصفية) -->
+
+</div> <!-- نهاية السلايدر -->
+
+<section class="container"> <!-- قسم يحتوي وصف عن نجران ضمن حاوية ذات عرض محدد -->
+  <h1 class="titleright">عن نجران</h1> <!-- عنوان القسم "عن نجران" -->
+  <p class="titleright read-more-text"> <!-- فقرة نصية مع كلاس للتحكم بالقراءة المزيد -->
+    نجران مدينة جنوبية تتميز بتاريخٍ عريق وحضارة قديمة تعود لآلاف السنين. <!-- وصف أولي عن نجران -->
+    <br>  تجمع بين الواحات الخضراء والجبال والقصور الطينية التي تعكس تراث المنطقة. <!-- سطر ثانٍ في الوصف -->
+    <span class="dots">...</span> <!-- نقاط تظهر قبل إظهار النص الإضافي (قبل التوسعة) -->
+    <span class="more"> <!-- نص إضافي يُعرض عند الضغط على "اقرأ المزيد" -->
+      <br> تشتهر بكرم أهلها وأسواقها التقليدية وحرفها اليدوية المميزة. <!-- سطر إضافي في الوصف الموسع -->
+      <br>وتُعد اليوم وجهة سياحية متنامية تجمع بين الأصالة والتطور الحديث. <!-- سطر يكمل وصف المدينة كوجهة سياحية -->
+    </span> <!-- نهاية النص الإضافي المخفي -->
+  </p> <!-- نهاية الفقرة الخاصة بوصف نجران -->
+  <button class="read-more-btn titleright" onclick="toggleText(this)">اقرأ المزيد</button> <!-- زر لعرض/إخفاء النص الإضافي (يشغل دالة toggleText في JS) -->
+</section> <!-- نهاية قسم "عن نجران" -->
+
+
+<!-- أبرزالفعاليات -->
+<section class="container" id="rh-events-section"> <!-- قسم يعرض أبرز الفعاليات في نجران -->
+    <h2 class="titleright">أبرزالفعاليات</h2>      <!-- عنوان القسم لأبرز الفعاليات -->
+    <div class="slider-wrapper"> <!-- حاوية لسلايدر كروت الفعاليات -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر سهم لليسار للتنقل بين الكروت -->
+
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- مسار أفقي يحتوي جميع الكروت التي تتحرك داخل السلايدر -->
+
+            <div class="card" data-id="مهرجان نجران الشتوي" data-link="https://www.najran.gov.sa/ar/News/NewsDetails/1144/%D8%A7%D9%86%D8%B7%D9%84%D8%A7%D9%82-%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A7%D8%AA-%D9%85%D9%87%D8%B1%D8%AC%D8%A7%D9%86-%D9%86%D8%AC%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A"> <!-- كرت فعالية: مهرجان نجران الشتوي مع بيانات خاصة للمفضلة والروابط -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب لإضافة الكرت للمفضلة -->
+                <img src="images/ا مهرجان نجران الشتوي.jpg" alt="مهرجان نجران الشتوي "> <!-- صورة للفعالية -->
+                <div class="card-body"> <!-- جسم الكرت: نص العنوان والوصف والزر -->
+                    <div class="card-title">مهرجان نجران الشتوي</div> <!-- عنوان الكرت -->
+                    <div class="card-text">مهرجان نجران الشتوي يحتفل بالتراث والثقافة ويقدم فعاليات ممتعة.</div> <!-- وصف مختصر للفعالية -->
+                    <a href="https://www.najran.gov.sa/ar/News/NewsDetails/1144/%D8%A7%D9%86%D8%B7%D9%84%D8%A7%D9%82-%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A7%D8%AA-%D9%85%D9%87%D8%B1%D8%AC%D8%A7%D9%86-%D9%86%D8%AC%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A" target="_blank" class="btn">اعرف المزيد</a> <!-- زر يفتح رابط تفاصيل الفعالية في تبويب جديد -->
+                </div> <!-- نهاية card-body -->
+            </div> <!-- نهاية كرت مهرجان نجران الشتوي -->
+
+            <div class="card" data-id="السوق الشعبي البلد" data-link="https://saudipedia.com/article/15985/%D9%85%D8%AC%D8%AA%D9%85%D8%B9/%D8%A3%D8%B3%D9%88%D8%A7%D9%82/%D8%A7%D9%84%D8%A3%D8%B3%D9%88%D8%A7%D9%82-%D8%A7%D9%84%D8%B4%D8%B9%D8%A8%D9%8A%D8%A9-%D9%81%D9%8A-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D9%86%D8%AC%D8%B1%D8%A7%D9%86"> <!-- كرت فعالية/مكان: السوق الشعبي -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة للكرت -->
+                <img src="images/ا السوق الشعبي البلد.jpg" alt="السوق الشعبي البلد "> <!-- صورة للسوق الشعبي -->
+                <div class="card-body"> <!-- بداية جسم الكرت -->
+                    <div class="card-title">السةق الشعبي البلد</div> <!-- عنوان الكرت (توجد هنا خطأ إملائي بسيط في كلمة السوق) -->
+                    <div class="card-text">السوق الشعبي في البلد ينبض بالحياة ويعرض منتجات تراثية وحرفية مميزة.</div> <!-- وصف مختصر للسوق -->
+                    <a href="https://saudipedia.com/article/15985/%D9%85%D8%AC%D8%AA%D9%85%D8%B9/%D8%A3%D8%B3%D9%88%D8%A7%D9%82/%D8%A7%D9%84%D8%A3%D8%B3%D9%88%D8%A7%D9%82-%D8%A7%D9%84%D8%B4%D8%B9%D8%A8%D9%8A%D8%A9-%D9%81%D9%8A-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D9%86%D8%AC%D8%B1%D8%A7%D9%86" target="_blank" class="btn">اعرف المزيد</a> <!-- زر لمعرفة المزيد عن السوق الشعبي -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية كرت السوق الشعبي -->
+
+            <div class="card" data-id="بيت الثقافه" data-link="https://ksaevent.com/event-location/%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D9%86%D8%AC%D8%B1%D8%A7%D9%86/"> <!-- كرت بيت الثقافة -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/ا بيت الثقافه.jpg" alt="بيت الثقافه "> <!-- صورة بيت الثقافة -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">بيت الثقافه</div> <!-- عنوان الكرت -->
+                    <div class="card-text">بيت الثقافة مركز مميز يثري المجتمع بالمعرفة والفنون والفعاليات الثقافية.</div> <!-- وصف مختصر عن بيت الثقافة -->
+                    <a href="https://ksaevent.com/event-location/%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D9%86%D8%AC%D8%B1%D8%A7%D9%86/" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط تفاصيل بيت الثقافة -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="مدينة الاخدود الاثريه" data-link="https://saudipedia.com/article/6892/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D8%A3%D8%AE%D8%AF%D9%88%D8%AF-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9"> <!-- كرت مدينة الأخدود الأثرية -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة قلب للمفضلة -->
+                <img src="images/ا مدينة الاخدود الاثريه.jpg" alt="مدينة الاخدود الاثريه "> <!-- صورة للمدينة الأثرية -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">مدينة الاخدود الاثريه</div> <!-- عنوان الكرت -->
+                    <div class="card-text">مدينة الأخدود الأثرية في نجران تحكي تاريخًا عريقًا وحضارة تمتد لآلاف السنين.</div> <!-- وصف مختصر عن المدينة -->
+                    <a href="https://saudipedia.com/article/6892/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D8%A3%D8%AE%D8%AF%D9%88%D8%AF-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9" target="_blank" class="btn">اعرف المزيد</a> <!-- زر لمعرفة المزيد عن مدينة الأخدود -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="عالم التحدي والترفيه" data-link="https://sa.maptons.com/p/12106467917"> <!-- كرت عالم التحدي والترفيه -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/العالم التحدي والترفيه.jpg" alt="عالم التحدي والترفيه"> <!-- صورة للمكان -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">عالم التحدي والترفبه</div> <!-- عنوان الكرت (به خطأ إملائي بسيط في "الترفيه") -->
+                    <div class="card-text">عالم التحدي والترفيه بنجران يوفر مغامرات ممتعة لجميع الأعمار وسط أجواء ترفيهية.</div> <!-- وصف للمكان -->
+                    <a href="https://sa.maptons.com/p/12106467917" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لموقع المكان على الخريطة -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="الارض السعيده" data-link="https://www.urtrips.com/happy-land-amusement-park-najran/"> <!-- كرت الأرض السعيدة -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة للمفضلة -->
+                <img src="images/الارض السعيده.jpg" alt="الارض السعيده "> <!-- صورة للمكان -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">الارض السعيده</div> <!-- عنوان الكرت -->
+                    <div class="card-text">الأرض السعيدة بنجران وجهة رائعة للاستمتاع بالطبيعة الخلابة والأنشطة الترفيهية.</div> <!-- وصف للمكان -->
+                    <a href="https://www.urtrips.com/happy-land-amusement-park-najran/" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لمعرفة المزيد عن المكان -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="منتزه خيال رفيف" data-link="https://saudipedia.com/article/13742/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A9-%D9%81%D9%8A-%D9%86%D8%AC%D8%B1%D8%A7%D9%86"> <!-- كرت منتزه خيال رفيف -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/ا منتزه خيال رفيف الحرشف.jpg" alt="منتزه خيال رفيف الحرشف"> <!-- صورة للمنتزه -->
+                <div class="card-body"> <!-- بداية جسم الكرت -->
+                    <div class="card-title">منتزه خيال رفيف </div> <!-- عنوان الكرت -->
+                    <div class="card-text">منتزه خيال رفيف  بجازان يقدم مناظر طبيعية ساحرة وتجارب ممتعة للجميع. </div> <!-- وصف للمنتزه (مذكور جازان هنا ربما بالخطأ لأن الصفحة عن نجران) -->
+                    <a href="https://saudipedia.com/article/13742/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A9-%D9%81%D9%8A-%D9%86%D8%AC%D8%B1%D8%A7%D9%86" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لمزيد من المعلومات -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="حديقة الشلال" data-link="https://www.najran.gov.sa/ar/MediaCenter/Details/32/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9-%D8%B4%D9%84%D8%A7%D9%84-%D8%A7%D9%84%D8%B9%D8%B1%D9%8A%D8%B3%D8%A9"> <!-- كرت حديقة الشلال -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/ا حديقة الشلال.jpg" alt="حديقة الشلال"> <!-- صورة للحديقة -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">حديقة الشلال</div> <!-- عنوان الكرت -->
+                    <div class="card-text">حديقة الشلال مكان هادئ وجميل للاستمتاع بالطبيعة والهواء الطلق.</div> <!-- وصف للحديقة -->
+                    <a href="https://www.najran.gov.sa/ar/MediaCenter/Details/32/%D8%AD%D8%AF%D9%8A%D9%82%D8%A9-%D8%B4%D9%84%D8%A7%D9%84-%D8%A7%D9%84%D8%B9%D8%B1%D9%8A%D8%B3%D8%A9" target="_blank" class="btn">اعرف المزيد</a> <!-- زر لمعرفة المزيد -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="منتزه الامير جلوي" data-link="https://www.najran.gov.sa/ar/News/NewsDetails/102/%D9%85%D8%AA%D9%86%D8%B2%D9%87-%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D8%B1-%D8%AC%D9%84%D9%88%D9%8A-%D8%A8%D9%86%D8%AC%D8%B1%D8%A7%D9%86-%D9%88%D8%AC%D9%87%D8%A9-%D8%AF%D8%A7%D8%A6%D9%85%D8%A9-%D9%84%D9%85%D8%AD%D8%A8%D9%8A-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%85%D8%AA%D8%A7%D8%B9-%D8%A8%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D8%A9"> <!-- كرت منتزه الأمير جلوي -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة المفضلة -->
+                <img src="images/ا منتزه الامير جلوي.jpg" alt="منزه الامير جلوي"> <!-- صورة للمنتزه -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">منزه الامير جلوي</div> <!-- عنوان الكرت (يوجد خطأ بسيط في كلمة متنزه) -->
+                    <div class="card-text">منتزه الأمير جلوي يوفر مساحات واسعة خضراء وأنشطة ممتعة</div> <!-- وصف مختصر للمنتزه -->
+                    <a href="https://www.najran.gov.sa/ar/News/NewsDetails/102/%D9%85%D8%AA%D9%86%D8%B2%D9%87-%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D8%B1-%D8%AC%D9%84%D9%88%D9%8A-%D8%A8%D9%86%D8%AC%D8%B1%D8%A7%D9%86-%D9%88%D8%AC%D9%87%D8%A9-%D8%AF%D8%A7%D8%A6%D9%85%D8%A9-%D9%84%D9%85%D8%AD%D8%A8%D9%8A-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%85%D8%AA%D8%A7%D8%B9-%D8%A8%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D8%A9" target="_blank" class="btn">اعرف المزيد</a> <!-- زر لفتح رابط تفاصيل المنتزه -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+        </div> <!-- نهاية cards-track الذي يحتوي كل الكروت -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر سهم لليمين للتنقل في السلايدر -->
+    </div> <!-- نهاية slider-wrapper -->
+</section> <!-- نهاية قسم أبرز الفعاليات -->
+
+<!-- الانشطة السياحية-->
+<section class="container" id="rh-activities-section"> <!-- قسم يعرض الأنشطة السياحية في نجران -->
+    <h2 class="titleright">الانشطة السياحية </h2>      <!-- عنوان القسم للأنشطة السياحية -->
+    <div class="slider-wrapper"> <!-- سلايدر للأنشطة السياحية -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر التنقل لليسار -->
+
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- مسار يحتوي كروت الأنشطة -->
+            <div class="card" data-id="قصر ال منجم" data-link="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%82%D8%B5%D8%B1-%D8%A2%D9%84-%D9%85%D9%86%D8%AC%D9%85/"> <!-- كرت قصر آل منجم -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة القلب للمفضلة -->
+                <img src="images/ا قصر ال منجم.webp" alt="قصر ال منجم"> <!-- صورة للقصر -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">قصر ال منجم</div> <!-- عنوان الكرت -->
+                    <div class="card-text">قصر آل منجم تحفة تاريخية تجمع بين العراقة والفخامة في التصميم المعماري.</div> <!-- وصف مختصر عن القصر -->
+                    <a href="https://www.bayut.sa/blog/%D8%A7%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9/%D9%82%D8%B5%D8%B1-%D8%A2%D9%84-%D9%85%D9%86%D8%AC%D9%85/" target="_blank" class="btn">اعرف المزيد</a> <!-- زر لمعرفة المزيد عن القصر -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="قصر الإمارة" data-link="https://saudipedia.com/article/13742/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A9-%D9%81%D9%8A-%D9%86%D8%AC%D8%B1%D8%A7%D9%86"> <!-- كرت قصر الإمارة -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/ا قصر الإمارة.webp" alt="قصر الإمارة"> <!-- صورة قصر الإمارة -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">صر الإمارة</div> <!-- عنوان الكرت (به نقص حرف القاف في "قصر") -->
+                    <div class="card-text">قصر الإمارة رمز للفخامة والتاريخ، يجمع بين الأصالة والمعمار المميز.</div> <!-- وصف للقصر -->
+                    <a href="https://saudipedia.com/article/13742/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A9-%D9%81%D9%8A-%D9%86%D8%AC%D8%B1%D8%A7%D9%86" target="_blank" class="btn">اعرف المزيد</a> <!-- زر لمعرفة المزيد عن قصر الإمارة -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="متحف نجران الإقليمي" data-link="https://riyadhseason.sa"> <!-- كرت متحف نجران الإقليمي (الرابط عام) -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا متحف نجران الإقليمي.webp" alt="متحف نجران الإقليمي"> <!-- صورة المتحف -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">متحف نجران الإقليمي</div> <!-- عنوان المتحف -->
+                    <div class="card-text">متحف نجران الإقليمي يعرض تاريخ المنطقة وتراثها الغني بطريقة مبتكرة.</div> <!-- وصف للمتحف -->
+                    <a href="https://riyadhseason.sa" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط عام (يفضل لاحقاً تحديثه لرابط أدق إن توفر) -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="قصر العان التاريخي" data-link="https://saudipedia.com/article/5187/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D8%B9%D8%A7%D9%86"> <!-- كرت قصر العان التاريخي -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا قصر العان التاريخي.webp" alt="قصر العان التاريخي"> <!-- صورة للقصر -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">قصر العان التاريخي</div> <!-- عنوان القصر -->
+                    <div class="card-text">قصر العان التاريخي شاهد على تراث نجران العريق وعمارة الماضي الأصلية.</div> <!-- وصف عن القصر -->
+                    <a href="https://saudipedia.com/article/5187/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D8%B9%D8%A7%D9%86" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط لمزيد من المعلومات -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="محمية عروق بني معارض" data-link="https://saudipedia.com/article/10500/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7/%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA/%D9%85%D8%AD%D9%85%D9%8A%D8%A9-%D8%B9%D8%B1%D9%88%D9%82-%D8%A8%D9%86%D9%8A-%D9%85%D8%B9%D8%A7%D8%B1%D8%B6"> <!-- كرت محمية عروق بني معارض -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا محمية عروق بني معارض.webp" alt="محمية عروق بني معارض"> <!-- صورة للمحمية -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">محمية عروق بني معارض</div> <!-- عنوان المحمية -->
+                    <div class="card-text">محمية عروق بني معارض تحتضن طبيعة خلابة وتنوعًا بيئيًا فريداً.</div> <!-- وصف للمحمية -->
+                    <a href="https://saudipedia.com/article/10500/%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A7/%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA/%D9%85%D8%AD%D9%85%D9%8A%D8%A9-%D8%B9%D8%B1%D9%88%D9%82-%D8%A8%D9%86%D9%8A-%D9%85%D8%B9%D8%A7%D8%B1%D8%B6" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط تفاصيل المحمية -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="منتزه الملك فهد" data-link="https://www.najran.gov.sa/ar/MediaCenter/Details/19/%D9%85%D9%86%D8%AA%D8%B2%D8%A9-%D8%A7%D9%84%D9%85%D9%84%D9%83-%D9%81%D9%87%D8%AF"> <!-- كرت منتزه الملك فهد -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا منتزه الملك فهد.webp" alt="منتزه الملك فهد"> <!-- صورة للمنتزه -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">منتزه الملك فهد</div> <!-- عنوان الكرت -->
+                    <div class="card-text">منتزه الملك فهد واحة خضراء توفر أجواءً ممتعة للعائلات والزوار.</div> <!-- وصف للمنتزه -->
+                    <a href="https://www.najran.gov.sa/ar/MediaCenter/Details/19/%D9%85%D9%86%D8%AA%D8%B2%D8%A9-%D8%A7%D9%84%D9%85%D9%84%D9%83-%D9%81%D9%87%D8%AF" target="_blank" class="btn">اعرف المزيد</a> <!-- رابط تفاصيل المنتزه -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+        
+        </div> <!-- نهاية cards-track للأنشطة السياحية -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تنقل لليمين -->
+    </div> <!-- نهاية slider-wrapper -->
+</section> <!-- نهاية قسم الأنشطة السياحية -->
+
+
+<!-- اشهر خيارات الإقامة -->
+<section class="container" id="rh-accommodation-section"> <!-- قسم لعرض أشهر خيارات الإقامة في نجران -->
+    <h2 class="titleright">اشهر خيارات الإقامة </h2>      <!-- عنوان القسم للإقامة -->
+    <div class="slider-wrapper"> <!-- سلايدر كروت الفنادق -->
+        <!-- زر التحريك لليسار -->
+        <button class="slide-btn left">&#10094;</button> <!-- زر السهم لليسار -->
+
+        <!-- مسار الكروت -->
+        <div class="cards-track"> <!-- يحتوي كروت الفنادق -->
+            <div class="card" data-id="نوفا ليس" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM640938762626%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9207286%3Ali%3Adem%3Adm%3Aag20153462185%3Acmp313748545&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=13313469&maxrooms=10&stage=1&interval=1&checkin=2025-11-28&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=4&rt_num_blocks_per_room=%7B%221331346905%22%3A1%2C%221331346901%22%3A1%2C%221331346906%22%3A1%2C%221331346904%22%3A1%7D&rt_selected_blocks_info=%7B%221331346901_405663331_1_0_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=&rt_selected_total_price=230&rt_with_no_dimensions=1&rt_relevance_metric_id=6039d91a-5754-4eae-b2c6-31ccd67d94ab&rt_pageview_id=6b5a7ac930c907eb&from_source=hotel&srpvid=776b7ac46a68085a&selected_rate_1331346901=1331346901_405663331_1_0_0&nr_rooms_1331346901_405663331_1_0_0=1&rt_mf_ux_type=0&basket_id=c0d2c0f5-de0a-4ee0-a53b-fdb58eb8e206"> <!-- كرت فندق نوفا ليس مع رابط حجز مفصل من Booking -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة للفندق -->
+                <img src="images/ا نوفا ليس.jpg" alt="نوفا ليس"> <!-- صورة للفندق -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">نوفا ليس</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق نوفا نجران يقدّم إقامة مريحة بأجواء عصرية وخدمات متكاملة.</div> <!-- وصف مختصر للفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM640938762626%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9207286%3Ali%3Adem%3Adm%3Aag20153462185%3Acmp313748545&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=13313469&maxrooms=10&stage=1&interval=1&checkin=2025-11-28&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=4&rt_num_blocks_per_room=%7B%221331346905%22%3A1%2C%221331346901%22%3A1%2C%221331346906%22%3A1%2C%221331346904%22%3A1%7D&rt_selected_blocks_info=%7B%221331346901_405663331_1_0_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=&rt_selected_total_price=230&rt_with_no_dimensions=1&rt_relevance_metric_id=6039d91a-5754-4eae-b2c6-31ccd67d94ab&rt_pageview_id=6b5a7ac930c907eb&from_source=hotel&srpvid=776b7ac46a68085a&selected_rate_1331346901=1331346901_405663331_1_0_0&nr_rooms_1331346901_405663331_1_0_0=1&rt_mf_ux_type=0&basket_id=c0d2c0f5-de0a-4ee0-a53b-fdb58eb8e206" target="_blank" class="btn">احجزالان</a> <!-- زر الحجز من Booking يفتح في تبويب جديد -->
+                </div> <!-- نهاية card-body -->
+            </div> <!-- نهاية كرت نوفا ليس -->
+
+            <div class="card" data-id="بارك ان نجران" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=holiday-inn-najran-MDr_1qlCHs*UoeegyTdnJASM438051828448%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-474467463798%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=3064298&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=2&rt_num_blocks_per_room=%7B%22306429801%22%3A2%2C%22306429803%22%3A2%7D&rt_selected_blocks_info=%7B%22306429801_116162729_2_2_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=400&rt_selected_total_price=400&rt_with_no_dimensions=&rt_relevance_metric_id=19059611-2904-409f-ba8b-3c86ae01db4f&rt_pageview_id=90537b34df8404ba&from_source=hotel&srpvid=8b117b2806c11687&selected_rate_306429801=306429801_116162729_2_2_0&nr_rooms_306429801_116162729_2_2_0=1&nr_guests_306429801_116162729_2_2_0=2&nr_guests_306429801_116162729_2_2_0=2&rt_mf_ux_type=0&basket_id=a49a3655-b247-47e6-99bb-9ba5a8bc410f"> <!-- كرت فندق بارك إن نجران -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا بارك ان.jpg" alt="بارك ان"> <!-- صورة للفندق -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">بارك ان</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق بارك إن نجران يوفر إقامة عصرية ومريحة بموقع مركزي.</div> <!-- وصف للفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=holiday-inn-najran-MDr_1qlCHs*UoeegyTdnJASM438051828448%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-474467463798%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=3064298&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=2&rt_num_blocks_per_room=%7B%22306429801%22%3A2%2C%22306429803%22%3A2%7D&rt_selected_blocks_info=%7B%22306429801_116162729_2_2_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=400&rt_selected_total_price=400&rt_with_no_dimensions=&rt_relevance_metric_id=19059611-2904-409f-ba8b-3c86ae01db4f&rt_pageview_id=90537b34df8404ba&from_source=hotel&srpvid=8b117b2806c11687&selected_rate_306429801=306429801_116162729_2_2_0&nr_rooms_306429801_116162729_2_2_0=1&nr_guests_306429801_116162729_2_2_0=2&nr_guests_306429801_116162729_2_2_0=2&rt_mf_ux_type=0&basket_id=a49a3655-b247-47e6-99bb-9ba5a8bc410f" target="_blank" class="btn">احجزالان</a> <!-- زر الحجز -->
+                </div> <!-- نهاية card-body -->
+            </div> <!-- نهاية كرت بارك إن -->
+
+            <div class="card" data-id="ذا دستركت نجران" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=the-district-najran-x0qMPgmoj5xPh_ByvdukJQSM546026528816%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-901461185727%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=5134024&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=14&rt_num_rooms=5&rt_num_blocks_per_room=%7B%22513402403%22%3A3%2C%22513402408%22%3A3%2C%22513402402%22%3A3%2C%22513402409%22%3A2%2C%22513402404%22%3A3%7D&rt_selected_blocks_info=%7B%22513402403_177106568_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=248&rt_selected_total_price=248&rt_with_no_dimensions=&rt_relevance_metric_id=816bf670-4b5f-4114-a485-ad19cd2eb435&rt_pageview_id=6b5a7bd1e4e50195&from_source=hotel&srpvid=60727bcd04fc0954&selected_rate_513402403=513402403_177106568_2_42_0&nr_rooms_513402403_177106568_2_42_0=1&nr_guests_513402403_177106568_2_42_0=2&nr_guests_513402403_177106568_2_42_0=2&nr_guests_513402403_177106568_2_42_0=2&rt_mf_ux_type=0&basket_id=527c4be2-9011-4c6f-b061-f920083e6f5e"> <!-- كرت ذا دستركت نجران -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا ذا دستركت.jpg" alt="ذا دستركت"> <!-- صورة الفندق -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">ذا دستركت</div> <!-- اسم الفندق -->
+                    <div class="card-text">ذا دستركت نجران يقدم إقامة عصرية مريحة مع خدمات ممتازة وموقع مركزي.</div> <!-- وصف الفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=the-district-najran-x0qMPgmoj5xPh_ByvdukJQSM546026528816%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-901461185727%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=5134024&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=14&rt_num_rooms=5&rt_num_blocks_per_room=%7B%22513402403%22%3A3%2C%22513402408%22%3A3%2C%22513402402%22%3A3%2C%22513402409%22%3A2%2C%22513402404%22%3A3%7D&rt_selected_blocks_info=%7B%22513402403_177106568_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=248&rt_selected_total_price=248&rt_with_no_dimensions=&rt_relevance_metric_id=816bf670-4b5f-4114-a485-ad19cd2eb435&rt_pageview_id=6b5a7bd1e4e50195&from_source=hotel&srpvid=60727bcd04fc0954&selected_rate_513402403=513402403_177106568_2_42_0&nr_rooms_513402403_177106568_2_42_0=1&nr_guests_513402403_177106568_2_42_0=2&nr_guests_513402403_177106568_2_42_0=2&nr_guests_513402403_177106568_2_42_0=2&rt_mf_ux_type=0&basket_id=527c4be2-9011-4c6f-b061-f920083e6f5e" target="_blank" class="btn">احجزالان</a> <!-- زر حجز ذا دستركت -->
+                </div> <!-- نهاية card-body -->
+            </div> <!-- نهاية كرت ذا دستركت -->
+
+            <div class="card" data-id="سن ست نجران" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325250&label=najran-KbCQSN9cRGf2nH8JQ25gNwSM650650103444%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2328873635903%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325250&hotel_id=11434522&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=8&rt_num_rooms=8&rt_num_blocks_per_room=%7B%221143452205%22%3A1%2C%221143452202%22%3A1%2C%221143452208%22%3A1%2C%221143452209%22%3A1%2C%221143452211%22%3A1%2C%221143452218%22"> <!-- كرت سن ست نجران -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا سن سيت.jpg" alt="سن ست"> <!-- صورة الفندق -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">سن ست</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق سن ست نجران يوفر إقامة مريحة بخدمات مميزة وموقع مناسب في المدينة</div> <!-- وصف الفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325250&label=najran-KbCQSN9cRGf2nH8JQ25gNwSM650650103444%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2328873635903%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325250&hotel_id=11434522&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=8&rt_num_rooms=8&rt_num_blocks_per_room=%7B%221143452205%22%3A1%2C%221143452202%22%3A1%2C%221143452208%22%3A1%2C%221143452209%22%3A1%2C%221143452211%22%3A1%2C%221143452218%22" target="_blank" class="btn">احجزالان</a> <!-- زر حجز سن ست -->
+                </div> <!-- نهاية الكرت -->
+            </div> <!-- نهاية كرت سن ست -->
+
+            <div class="card" data-id="سمو ان نجران" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM217286726536%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=11878590&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=3&rt_num_rooms=3&rt_num_blocks_per_room=%7B%221187859002%22%3A1%2C%221187859004%22%3A1%2C%221187859001%22%3A1%7D&rt_selected_blocks_info=%7B%221187859002_393643842_2_2_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=200&rt_selected_total_price=200&rt_with_no_dimensions=1&rt_relevance_metric_id=3c3729ee-a791-4dfc-b346-82d9b2d0ed5e&rt_pageview_id=cf4e7ca510290385&from_source=hotel&srpvid=ff8f7ca222300f8c&selected_rate_1187859002=1187859002_393643842_2_2_0&nr_rooms_1187859002_393643842_2_2_0=1&nr_guests_1187859002_393643842_2_2_0=2&rt_mf_ux_type=0&basket_id=892f4acf-372d-4c3a-bf27-8140e789db68"> <!-- كرت فندق سمو إن نجران -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- مفضلة -->
+                <img src="images/ا سمو ان.jpg" alt="سمو ان"> <!-- صورة الفندق -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">سمو ان</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق سمو إن نجران يقدم إقامة راقية مع خدمات مريحة وموقع متميز بالمدينة</div> <!-- وصف الفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM217286726536%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=11878590&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=3&rt_num_rooms=3&rt_num_blocks_per_room=%7B%221187859002%22%3A1%2C%221187859004%22%3A1%2C%221187859001%22%3A1%7D&rt_selected_blocks_info=%7B%221187859002_393643842_2_2_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=200&rt_selected_total_price=200&rt_with_no_dimensions=1&rt_relevance_metric_id=3c3729ee-a791-4dfc-b346-82d9b2d0ed5e&rt_pageview_id=cf4e7ca510290385&from_source=hotel&srpvid=ff8f7ca222300f8c&selected_rate_1187859002=1187859002_393643842_2_2_0&nr_rooms_1187859002_393643842_2_2_0=1&nr_guests_1187859002_393643842_2_2_0=2&rt_mf_ux_type=0&basket_id=892f4acf-372d-4c3a-bf27-8140e789db68" target="_blank" class="btn">احجزالان</a> <!-- زر حجز سمو إن -->
+                </div> <!-- نهاية جسم الكرت -->
+            </div> <!-- نهاية الكرت -->
+
+            <div class="card" data-id="لو بارك كونكورد نجران" data-link="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=le-park-concord-najran-*x4TViMKfgcryHv1sp6RHgSM589153837096%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1824303662520%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=8084234&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=4&rt_num_blocks_per_room=%7B%22808423404%22%3A1%2C%22808423402%22%3A1%2C%22808423410%22%3A1%2C%22808423403%22%3A1%7D&rt_selected_blocks_info=%7B%22808423410_344795130_2_1_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=390&rt_selected_total_price=390&rt_with_no_dimensions=1&rt_relevance_metric_id=b8cdacaf-5714-4c3b-8950-516027950f10&rt_pageview_id=945d7d339e660b43&from_source=hotel&srpvid=4dab7d30c88a080a&selected_rate_808423410=808423410_344795130_2_1_0&nr_rooms_808423410_344795130_2_1_0=1&nr_guests_808423410_344795130_2_1_0=2&rt_mf_ux_type=0&basket_id=ceb6193e-c333-42cf-98bd-10b23f1e0cdc"> <!-- كرت لو بارك كونكورد -->
+                <span class="heart-icon" onclick="toggleFavorite(this, event)">❤</span> <!-- أيقونة مفضلة -->
+                <img src="images/ا لو بارك كونكورد.jpg" alt="لو بارك كونكورد"> <!-- صورة الفندق -->
+                <div class="card-body"> <!-- جسم الكرت -->
+                    <div class="card-title">لو بارك كونكورد</div> <!-- اسم الفندق -->
+                    <div class="card-text">فندق لو بارك كونكورد نجران يقدم إقامة فاخرة مع خدمات متميزة.</div> <!-- وصف الفندق -->
+                    <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=le-park-concord-najran-*x4TViMKfgcryHv1sp6RHgSM589153837096%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-1824303662520%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=8084234&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=4&rt_num_blocks_per_room=%7B%22808423404%22%3A1%2C%22808423402%22%3A1%2C%22808423410%22%3A1%2C%22808423403%22%3A1%7D&rt_selected_blocks_info=%7B%22808423410_344795130_2_1_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=390&rt_selected_total_price=390&rt_with_no_dimensions=1&rt_relevance_metric_id=b8cdacaf-5714-4c3b-8950-516027950f10&rt_pageview_id=945d7d339e660b43&from_source=hotel&srpvid=4dab7d30c88a080a&selected_rate_808423410=808423410_344795130_2_1_0&nr_rooms_808423410_344795130_2_1_0=1&nr_guests_808423410_344795130_2_1_0=2&rt_mf_ux_type=0&basket_id=ceb6193e-c333-42cf-98bd-10b23f1e0cdc" target="_blank" class="btn">احجزالان</a> <!-- زر حجز لو بارك كونكورد -->
+                </div> <!-- نهاية card-body -->
+            </div> <!-- نهاية كرت لو بارك كونكورد -->
+        </div> <!-- نهاية cards-track لخيار الإقامة -->
+
+        <!-- زر التحريك لليمين -->
+        <button class="slide-btn right">&#10095;</button> <!-- زر تنقل لليمين -->
+    </div> <!-- نهاية slider-wrapper -->
+</section> <!-- نهاية قسم أشهر خيارات الإقامة -->
+
+
+<section class="containerimg"> <!-- قسم خاص بعرض الخريطة التفاعلية مع كروت جانبية -->
+    <h2 >الخريطة التفاعلية</h2> <!-- عنوان قسم الخريطة التفاعلية -->
+
+    <div class="map-wrapper"> <!-- حاوية تجمع بين القائمة الجانبية وصندوق الخريطة -->
+
+        <!-- القائمة الجانبية -->
+        <div class="map-sidebar"> <!-- عمود جانبي يحتوي على كروت مواقع مرتبطة بالخريطة -->
+
+            <!-- عالم التحدي والترفيه -->
+            <a href="https://sa.maptons.com/p/12106467917" class="card-link" target="_blank"> <!-- رابط يفتح صفحة عالم التحدي والترفيه في تبويب جديد -->
+                <div class="map-card"
+                     data-lat="17.534281490313646"
+                     data-lng="44.23720673679559"
+                     data-name="عالم التحدي والترفيه"
+                     data-zoom="11"> <!-- كرت خريطة مع إحداثيات ومعلومات للموقع -->
+                    <img src="images/العالم التحدي والترفيه.jpg" alt="عالم التحدي والترفيه"> <!-- صورة للموقع -->
+                    <span>عالم التحدي والترفيه</span> <!-- اسم الموقع يظهر داخل الكرت -->
+                </div> <!-- نهاية كرت الخريطة -->
+            </a> <!-- نهاية رابط عالم التحدي والترفيه -->
+
+            <!-- منتزه خيال رفيف -->
+            <a href="https://saudipedia.com/article/13742/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE/%D9%85%D8%B9%D8%A7%D9%84%D9%85-%D9%88-%D8%A2%D8%AB%D8%A7%D8%B1/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A9-%D9%81%D9%8A-%D9%86%D8%AC%D8%B1%D8%A7%D9%86" class="card-link" target="_blank"> <!-- رابط لموقع متعلق بمنتزه خيال رفيف -->
+                <div class="map-card"
+                     data-lat="17.66906342429133"
+                     data-lng="43.87898167542861"
+                     data-name="منتزه خيال رفيف"
+                     data-zoom="13"> <!-- كرت خريطة مع بيانات المنتزه -->
+                    <img src="images/ا منتزه خيال رفيف الحرشف.jpg" alt="منتزه خيال رفيف"> <!-- صورة المنتزه -->
+                    <span>منتزه خيال رفيف</span> <!-- اسم المنتزه -->
+                </div> <!-- نهاية كرت المنتزه -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- منتزه الأمير جلوي -->
+            <a href="https://www.najran.gov.sa/ar/News/NewsDetails/102/%D9%85%D8%AA%D9%86%D8%B2%D9%87-%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D8%B1-%D8%AC%D9%84%D9%88%D9%8A-%D8%A8%D9%86%D8%AC%D8%B1%D8%A7%D9%86-%D9%88%D8%AC%D9%87%D8%A9-%D8%AF%D8%A7%D8%A6%D9%85%D8%A9-%D9%84%D9%85%D8%AD%D8%A8%D9%8A-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%85%D8%AA%D8%A7%D8%B9-%D8%A8%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D8%A9" class="card-link" target="_blank"> <!-- رابط لمتنزه الأمير جلوي -->
+                <div class="map-card"
+                     data-lat="17.775866870353155"
+                     data-lng="44.443130772877616"
+                     data-name="منتزه الأمير جلوي"
+                     data-zoom="13"> <!-- بيانات الخريطة الخاصة بالمنتزه -->
+                    <img src="images/ا منتزه الامير جلوي.jpg" alt="منتزه الأمير جلوي"> <!-- صورة المنتزه -->
+                    <span>منتزه الأمير جلوي</span> <!-- اسم المنتزه -->
+                </div> <!-- نهاية كرت الخريطة -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- نوفا ليس -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM640938762626%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-912298704121%3Alp9207286%3Ali%3Adem%3Adm%3Aag20153462185%3Acmp313748545&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=13313469&maxrooms=10&stage=1&interval=1&checkin=2025-11-28&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=4&rt_num_blocks_per_room=%7B%221331346905%22%3A1%2C%221331346901%22%3A1%2C%221331346906%22%3A1%2C%221331346904%22%3A1%7D&rt_selected_blocks_info=%7B%221331346901_405663331_1_0_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=&rt_selected_total_price=230&rt_with_no_dimensions=1&rt_relevance_metric_id=6039d91a-5754-4eae-b2c6-31ccd67d94ab&rt_pageview_id=6b5a7ac930c907eb&from_source=hotel&srpvid=776b7ac46a68085a&selected_rate_1331346901=1331346901_405663331_1_0_0&nr_rooms_1331346901_405663331_1_0_0=1&rt_mf_ux_type=0&basket_id=c0d2c0f5-de0a-4ee0-a53b-fdb58eb8e206"
+               class="card-link" target="_blank"> <!-- رابط حجز فندق نوفا ليس في الخريطة -->
+                <div class="map-card"
+                     data-lat="17.545416307461124"
+                     data-lng="44.21993216563148"
+                     data-name="نوفا ليس"
+                     data-zoom="13"> <!-- بيانات الخريطة لفندق نوفا ليس -->
+                    <img src="images/ا نوفا ليس.jpg" alt="نوفا ليس"> <!-- صورة الفندق -->
+                    <span>نوفا ليس</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية الكرت -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- بارك إن -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=holiday-inn-najran-MDr_1qlCHs*UoeegyTdnJASM438051828448%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-474467463798%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=3064298&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=4&rt_num_rooms=2&rt_num_blocks_per_room=%7B%22306429801%22%3A2%2C%22306429803%22%3A2%7D&rt_selected_blocks_info=%7B%22306429801_116162729_2_2_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=400&rt_selected_total_price=400&rt_with_no_dimensions=&rt_relevance_metric_id=19059611-2904-409f-ba8b-3c86ae01db4f&rt_pageview_id=90537b34df8404ba&from_source=hotel&srpvid=8b117b2806c11687&selected_rate_306429801=306429801_116162729_2_2_0&nr_rooms_306429801_116162729_2_2_0=1&nr_guests_306429801_116162729_2_2_0=2&nr_guests_306429801_116162729_2_2_0=2&rt_mf_ux_type=0&basket_id=a49a3655-b247-47e6-99bb-9ba5a8bc410f"
+               class="card-link" target="_blank"> <!-- رابط فندق بارك إن ضمن الخريطة -->
+                <div class="map-card"
+                     data-lat="17.568452951693487"
+                     data-lng="44.23046923679641"
+                     data-name="بارك إن نجران"
+                     data-zoom="13"> <!-- بيانات الخريطة للفندق -->
+                    <img src="images/ا بارك ان.jpg" alt="بارك إن نجران"> <!-- صورة الفندق -->
+                    <span>بارك إن نجران</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية الكرت -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- ذا دستركت -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325251&label=the-district-najran-x0qMPgmoj5xPh_ByvdukJQSM546026528816%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-901461185727%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXL5GV3cgz10cbuxf2iLPDA&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325251&hotel_id=5134024&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=14&rt_num_rooms=5&rt_num_blocks_per_room=%7B%22513402403%22%3A3%2C%22513402408%22%3A3%2C%22513402402%22%3A3%2C%22513402409%22%3A2%2C%22513402404%22%3A3%7D&rt_selected_blocks_info=%7B%22513402403_177106568_2_42_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=248&rt_selected_total_price=248&rt_with_no_dimensions=&rt_relevance_metric_id=816bf670-4b5f-4114-a485-ad19cd2eb435&rt_pageview_id=6b5a7bd1e4e50195&from_source=hotel&srpvid=60727bcd04fc0954&selected_rate_513402403=513402403_177106568_2_42_0&nr_rooms_513402403_177106568_2_42_0=1&nr_guests_513402403_177106568_2_42_0=2&nr_guests_513402403_177106568_2_42_0=2&nr_guests_513402403_177106568_2_42_0=2&rt_mf_ux_type=0&basket_id=527c4be2-9011-4c6f-b061-f920083e6f5e"
+               class="card-link" target="_blank"> <!-- رابط فندق ذا دستركت للخريطة -->
+                <div class="map-card"
+                     data-lat="17.541359462514322"
+                     data-lng="44.212210009809695"
+                     data-name="ذا دستركت نجران"
+                     data-zoom="13"> <!-- بيانات الخريطة للفندق -->
+                    <img src="images/ا ذا دستركت.jpg" alt="ذا دستركت نجران"> <!-- صورة الفندق -->
+                    <span>ذا دستركت نجران</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية الكرت -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- سن سيت -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=325250&label=najran-KbCQSN9cRGf2nH8JQ25gNwSM650650103444%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-2328873635903%3Alp9207286%3Ali%3Adem%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YfNeh-lbHkPZBh1Z24Ekd1M&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=325250&hotel_id=11434522&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=8&rt_num_rooms=8&rt_num_blocks_per_room=%7B%221143452205%22%3A1%2C%221143452202%22%3A1%2C%221143452208%22%3A1%2C%221143452209%22%3A1%2C%221143452211%22%3A1%2C%221143452218%22"
+               class="card-link" target="_blank"> <!-- رابط حجز فندق سن سيت في الخريطة -->
+                <div class="map-card"
+                     data-lat="17.553868343674637"
+                     data-lng="44.22612505213875"
+                     data-name="سن سيت"
+                     data-zoom="13"> <!-- بيانات موقع الفندق -->
+                    <img src="images/ا سن سيت.jpg" alt="سن سيت"> <!-- صورة سن سيت -->
+                    <span>سن سيت</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية map-card -->
+            </a> <!-- نهاية رابط سن سيت -->
+
+            <!-- سمو إن -->
+            <a href="https://secure.booking.com/book.html?rt_pos_matches_filters=&rt_pos_has_filters=false&rt_pos_final=1&rt_pos_initial=1&aid=318615&label=New_Arabic_AR_SA_20153462185-L3wByPLAmM3YaOu59bebVASM217286726536%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&lang=ar&sid=2307d965066903050f01a463bf561ff9&room1=A%2CA&hostname=www.booking.com&aid=318615&hotel_id=11878590&maxrooms=10&stage=1&interval=1&checkin=2025-11-27&sr_order=popularity&rt_pos_selected=1&occupancy_setup_issue_flags=&rt_selected_block_position=&rt_num_blocks=3&rt_num_rooms=3&rt_num_blocks_per_room=%7B%221187859002%22%3A1%2C%221187859004%22%3A1%2C%221187859001%22%3A1%7D&rt_selected_blocks_info=%7B%221187859002_393643842_2_2_0%22%3A%7B%22rt_selected_block_position_in_rt%22%3A1%2C%22rt_selected_block_position_in_room_group%22%3A1%2C%22count%22%3A1%2C%22rt_selected_room_index%22%3A1%2C%22rt_room_symmetry_category%22%3A%22%22%7D%7D&rt_cheapest_search_price=200&rt_selected_total_price=200&rt_with_no_dimensions=1&rt_relevance_metric_id=3c3729ee-a791-4dfc-b346-82d9b2d0ed5e&rt_pageview_id=cf4e7ca510290385&from_source=hotel&srpvid=ff8f7ca222300f8c&selected_rate_1187859002=1187859002_393643842_2_2_0&nr_rooms_1187859002_393643842_2_2_0=1&nr_guests_1187859002_393643842_2_2_0=2&rt_mf_ux_type=0&basket_id=892f4acf-372d-4c3a-bf27-8140e789db68"
+               class="card-link" target="_blank"> <!-- رابط فندق سمو إن -->
+                <div class="map-card"
+                     data-lat="17.550544642508488"
+                     data-lng="44.24696340981001"
+                     data-name="سمو إن"
+                     data-zoom="13"> <!-- بيانات الموقع للفندق -->
+                    <img src="images/ا سمو ان.jpg" alt="سمو إن"> <!-- صورة سمو إن -->
+                    <span>سمو إن</span> <!-- اسم الفندق -->
+                </div> <!-- نهاية كرت الخريطة -->
+            </a> <!-- نهاية الرابط -->
+
+            <!-- مهرجان نجران الشتوي -->
+            <a href="https://www.najran.gov.sa/ar/News/NewsDetails/1144/%D8%A7%D9%86%D8%B7%D9%84%D8%A7%D9%82-%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A7%D8%AA-%D9%85%D9%87%D8%B1%D8%AC%D8%A7%D9%86-%D9%86%D8%AC%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D8%B4%D8%AA%D9%88%D9%8A" class="card-link" target="_blank"> <!-- رابط لمهرجان نجران الشتوي في الخريطة -->
+                <div class="map-card"
+                     data-lat="17.623952216364167"
+                     data-lng="44.22198709261957"
+                     data-name="مهرجان نجران الشتوي"
+                     data-zoom="13"> <!-- بيانات الخريطة للمهرجان -->
+                    <img src="images/ا مهرجان نجران الشتوي.jpg" alt="مهرجان نجران الشتوي"> <!-- صورة المهرجان -->
+                    <span>مهرجان نجران الشتوي</span> <!-- اسم المهرجان -->
+                </div> <!-- نهاية map-card -->
+            </a> <!-- نهاية رابط المهرجان -->
+
+        </div> <!-- نهاية القائمة الجانبية map-sidebar -->
+
+        <!-- صندوق الخريطة -->
+        <div id="map" data-first-zoom="10"></div> <!-- عنصر الخريطة الفعلي الذي ستعرض فيه Leaflet الخريطة (مع زوم ابتدائي 10) -->
+
+    </div> <!-- نهاية map-wrapper -->
+
+    <!-- مكتبة Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" /> <!-- استيراد ملف CSS الخاص بمكتبة Leaflet لخريطة تفاعلية -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- استيراد ملف JavaScript الخاص بمكتبة Leaflet -->
+
+    <!-- ملف JS واحد لكل الصفحات -->
+    <script src="js/map.js"></script> <!-- ملف جافاسكربت المسؤول عن تهيئة الخريطة والتعامل مع الكروت والإحداثيات -->
+
+</section> <!-- نهاية قسم الخريطة التفاعلية -->
+
+
+<footer> <!-- تذييل الموقع -->
+    <p>&copy; 2025 رحّول - جميع الحقوق محفوظة</p> <!-- نص حقوق النشر للسنة 2025 -->
+    <div> <!-- حاوية روابط وسائل التواصل الاجتماعي -->
+        <a href="#">فيسبوك</a> |  <!-- رابط لصفحة فيسبوك (حاليًا مجرد رابط فارغ) -->
+        <a href="#">تويتر</a> |  <!-- رابط لصفحة تويتر -->
+        <a href="#">إنستجرام</a> <!-- رابط لصفحة إنستجرام -->
+    </div> <!-- نهاية حاوية روابط السوشال ميديا -->
+</footer> <!-- نهاية الـ footer -->
+
+        <!-- Login / Register Modal -->
+<div id="authModal">
+    <div class="auth-modal-content">
+
+        <span class="auth-close" id="closeAuth">&times;</span>
+
+        <!-- قسم تسجيل الدخول -->
+        <div id="loginSection">
+            <h2>تسجيل الدخول</h2>
+
+            <form id="loginForm">
+                <label>الإيميل:</label>
+                <input type="text" id="loginEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="modal-btn">دخول</button>
+            </form>
+
+            <p>ليس لديك حساب؟ <a href="#" id="showRegister">إنشاء حساب</a></p>
+        </div>
+
+        <!-- قسم إنشاء حساب -->
+        <div id="registerSection" style="display:none;">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form id="registerForm">
+                <label>الإيميل:</label>
+                <input type="text" id="regEmail" required>
+
+                <label>كلمة المرور:</label>
+                <input type="password" id="regPassword" required>
+
+                <label>تأكيد كلمة المرور:</label>
+                <input type="password" id="regPasswordConfirm" required>
+
+                <button type="submit" class="modal-btn">تسجيل</button>
+            </form>
+
+            <p>لديك حساب؟ <a href="#" id="showLogin">تسجيل الدخول</a></p>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- ربط ملف script.js الأساسي للموقع (السلايدر، المفضلة، اقرأ المزيد، إلخ) -->
+</body> <!-- نهاية جسم الصفحة -->
+</html> <!-- نهاية مستند HTML -->
