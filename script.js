@@ -794,138 +794,163 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // =======================
+// =======================
 // تسجيل الدخول + تغيير زر النافبار
 // =======================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const openLoginBtn    = document.getElementById("openLoginModal");
-    const authModal       = document.getElementById("authModal");
-    const closeAuth       = document.getElementById("closeAuth");
-    const showRegister    = document.getElementById("showRegister");
-    const showLogin       = document.getElementById("showLogin");
-    const loginSection    = document.getElementById("loginSection");
-    const registerSection = document.getElementById("registerSection");
-    const registerForm    = document.getElementById("registerForm");
-    const loginForm       = document.getElementById("loginForm");
-    const loginLogoutBtn  = document.getElementById("loginLogoutBtn");
+  const openLoginBtn    = document.getElementById("openLoginModal");
+  const authModal       = document.getElementById("authModal");
+  const closeAuth       = document.getElementById("closeAuth");
+  const showRegister    = document.getElementById("showRegister");
+  const showLogin       = document.getElementById("showLogin");
+  const loginSection    = document.getElementById("loginSection");
+  const registerSection = document.getElementById("registerSection");
+  const registerForm    = document.getElementById("registerForm");
+  const loginForm       = document.getElementById("loginForm");
+  const loginLogoutBtn  = document.getElementById("loginLogoutBtn");
 
-    // فتح المودال عند الضغط على زر "تسجيل الدخول" (لو استخدمناه مباشرة)
-    if (openLoginBtn && authModal) {
-        openLoginBtn.addEventListener("click", function () {
-            authModal.style.display = "block";
-        });
-    }
+  // ✅ دالة تحديث نص زر النافبار (تسجيل الدخول / تسجيل الخروج)
+  function updateLoginLogoutBtn() {
+    if (!loginLogoutBtn) return;
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    loginLogoutBtn.textContent = isLoggedIn ? "تسجيل الخروج" : "تسجيل الدخول";
+  }
 
-    // زر النافبار (تسجيل الدخول / تسجيل الخروج)
-    if (loginLogoutBtn) {
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        loginLogoutBtn.textContent = isLoggedIn ? "تسجيل الخروج" : "تسجيل الدخول";
-
-        loginLogoutBtn.addEventListener("click", function () {
-            const nowLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-            if (nowLoggedIn) {
-    // تسجيل خروج
-    localStorage.removeItem("isLoggedIn");
-    window.location.reload();
-} else {
-    
-                // فتح مودال تسجيل الدخول
-                if (authModal) authModal.style.display = "block";
-            }
-        });
-    }
-
-    // إغلاق المودال عند الضغط على X
-    if (closeAuth && authModal) {
-        closeAuth.addEventListener("click", function () {
-            authModal.style.display = "none";
-        });
-    }
-
-    // إغلاق المودال عند الضغط خارج الصندوق
-    window.addEventListener("click", function (e) {
-        if (e.target === authModal) {
-            authModal.style.display = "none";
-        }
+  // فتح المودال عند الضغط على زر "تسجيل الدخول" (لو استخدمناه مباشرة)
+  if (openLoginBtn && authModal) {
+    openLoginBtn.addEventListener("click", function () {
+      authModal.style.display = "block";
+      // افتراضياً افتح قسم تسجيل الدخول
+      if (loginSection) loginSection.style.display = "block";
+      if (registerSection) registerSection.style.display = "none";
     });
+  }
 
-    // الانتقال من تسجيل الدخول إلى إنشاء حساب
-    if (showRegister && loginSection && registerSection) {
-        showRegister.addEventListener("click", function (e) {
-            e.preventDefault();
-            loginSection.style.display = "none";
-            registerSection.style.display = "block";
-        });
+  // زر النافبار (تسجيل الدخول / تسجيل الخروج)
+  if (loginLogoutBtn) {
+    updateLoginLogoutBtn();
+
+    loginLogoutBtn.addEventListener("click", function () {
+      const nowLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+      if (nowLoggedIn) {
+        // ✅ تسجيل خروج
+        localStorage.setItem("isLoggedIn", "false");
+        localStorage.removeItem("currentUserEmail"); // اختياري
+        updateLoginLogoutBtn();
+        if (authModal) authModal.style.display = "none";
+      } else {
+        // فتح مودال تسجيل الدخول
+        if (authModal) authModal.style.display = "block";
+        if (loginSection) loginSection.style.display = "block";
+        if (registerSection) registerSection.style.display = "none";
+      }
+    });
+  }
+
+  // إغلاق المودال عند الضغط على X
+  if (closeAuth && authModal) {
+    closeAuth.addEventListener("click", function () {
+      authModal.style.display = "none";
+    });
+  }
+
+  // إغلاق المودال عند الضغط خارج الصندوق
+  window.addEventListener("click", function (e) {
+    if (e.target === authModal) {
+      authModal.style.display = "none";
     }
+  });
 
-    // الانتقال من إنشاء حساب إلى تسجيل الدخول
-    if (showLogin && loginSection && registerSection) {
-        showLogin.addEventListener("click", function (e) {
-            e.preventDefault();
-            registerSection.style.display = "none";
-            loginSection.style.display = "block";
-        });
-    }
+  // الانتقال من تسجيل الدخول إلى إنشاء حساب
+  if (showRegister && loginSection && registerSection) {
+    showRegister.addEventListener("click", function (e) {
+      e.preventDefault();
+      loginSection.style.display = "none";
+      registerSection.style.display = "block";
+    });
+  }
 
-    // إنشاء حساب جديد
-    if (registerForm) {
-        registerForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+  // الانتقال من إنشاء حساب إلى تسجيل الدخول
+  if (showLogin && loginSection && registerSection) {
+    showLogin.addEventListener("click", function (e) {
+      e.preventDefault();
+      registerSection.style.display = "none";
+      loginSection.style.display = "block";
+    });
+  }
 
-            const email       = document.getElementById("regEmail").value.trim();
-            const pass        = document.getElementById("regPassword").value.trim();
-            const passConfirm = document.getElementById("regPasswordConfirm").value.trim();
+  // إنشاء حساب جديد
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-            if (pass !== passConfirm) {
-                alert("كلمتا المرور غير متطابقتين");
-                return;
-            }
+      const email       = document.getElementById("regEmail")?.value.trim();
+      const pass        = document.getElementById("regPassword")?.value.trim();
+      const passConfirm = document.getElementById("regPasswordConfirm")?.value.trim();
 
-            if (pass.length < 4) {
-                alert("كلمة المرور يجب أن تكون 4 أحرف على الأقل");
-                return;
-            }
+      if (!email || !pass || !passConfirm) {
+        alert("الرجاء تعبئة جميع الحقول");
+        return;
+      }
 
-            localStorage.setItem("userEmail", email);
-            localStorage.setItem("userPassword", pass);
+      if (pass !== passConfirm) {
+        alert("كلمتا المرور غير متطابقتين");
+        return;
+      }
 
-            alert("تم إنشاء الحساب بنجاح! يمكنك تسجيل الدخول الآن.");
+      if (pass.length < 4) {
+        alert("كلمة المرور يجب أن تكون 4 أحرف على الأقل");
+        return;
+      }
 
-            registerSection.style.display = "none";
-            loginSection.style.display = "block";
-        });
-    }
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", pass);
 
-    // تسجيل الدخول
-    if (loginForm) {
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+      alert("تم إنشاء الحساب بنجاح! يمكنك تسجيل الدخول الآن.");
 
-            const savedEmail    = localStorage.getItem("userEmail");
-            const savedPassword = localStorage.getItem("userPassword");
+      registerSection.style.display = "none";
+      loginSection.style.display = "block";
+    });
+  }
 
-            const email    = document.getElementById("loginEmail").value.trim();
-            const password = document.getElementById("loginPassword").value.trim();
+  // تسجيل الدخول
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-            if (!savedEmail) {
-                alert("لا يوجد حساب مسجل. الرجاء إنشاء حساب.");
-                return;
-            }
+      const savedEmail    = localStorage.getItem("userEmail");
+      const savedPassword = localStorage.getItem("userPassword");
 
-           if (email === savedEmail && password === savedPassword) {
-    localStorage.setItem("isLoggedIn", "true");
-    if (authModal) authModal.style.display = "none";
-    window.location.reload();
-} else {
+      const email    = document.getElementById("loginEmail")?.value.trim();
+      const password = document.getElementById("loginPassword")?.value.trim();
 
-                alert("الإيميل أو كلمة المرور غير صحيحة");
-            }
-        });
-    }
+      if (!savedEmail || !savedPassword) {
+        alert("لا يوجد حساب مسجل. الرجاء إنشاء حساب.");
+        return;
+      }
+
+      if (!email || !password) {
+        alert("الرجاء إدخال الإيميل وكلمة المرور");
+        return;
+      }
+
+      if (email === savedEmail && password === savedPassword) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("currentUserEmail", email); // اختياري
+        updateLoginLogoutBtn();
+        if (authModal) authModal.style.display = "none";
+        // ✅ بدون reload عشان ما يسبب مشاكل
+      } else {
+        alert("الإيميل أو كلمة المرور غير صحيحة");
+      }
+    });
+  }
 
 });
+
 
 /* =========================
    Contact Page Logic
@@ -1601,6 +1626,7 @@ document.addEventListener("click", (e) => {
   navLinks.classList.remove("open");
 });
 
+
 function updateLoginLogoutBtn() {
   const btn = document.getElementById("loginLogoutBtn");
   if (!btn) return;
@@ -1609,27 +1635,5 @@ function updateLoginLogoutBtn() {
   btn.textContent = isLoggedIn ? "تسجيل الخروج" : "تسجيل الدخول";
 }
 
-// أول ما تفتح الصفحة
+// عند فتح الصفحة
 document.addEventListener("DOMContentLoaded", updateLoginLogoutBtn);
-
-// عند الضغط على الزر
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest("#loginLogoutBtn");
-  if (!btn) return;
-
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-  if (isLoggedIn) {
-    // تسجيل خروج
-    localStorage.setItem("isLoggedIn", "false");
-    localStorage.removeItem("currentUserEmail");
-    updateLoginLogoutBtn();
-  } else {
-    // يوديه لصفحة تسجيل الدخول
-    window.location.href = "login.html";
-  }
-});
-
-
-
-
