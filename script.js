@@ -944,7 +944,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (authModal) authModal.style.display = "none";
         // ✅ بدون reload عشان ما يسبب مشاكل
       } else {
-        alert("الإيميل أو كلمة المرور غير صحيحة");
+       
       }
     });
   }
