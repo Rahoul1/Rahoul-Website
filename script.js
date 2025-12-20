@@ -1601,6 +1601,35 @@ document.addEventListener("click", (e) => {
   navLinks.classList.remove("open");
 });
 
+function updateLoginLogoutBtn() {
+  const btn = document.getElementById("loginLogoutBtn");
+  if (!btn) return;
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  btn.textContent = isLoggedIn ? "تسجيل الخروج" : "تسجيل الدخول";
+}
+
+// أول ما تفتح الصفحة
+document.addEventListener("DOMContentLoaded", updateLoginLogoutBtn);
+
+// عند الضغط على الزر
+document.addEventListener("click", function (e) {
+  const btn = e.target.closest("#loginLogoutBtn");
+  if (!btn) return;
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+  if (isLoggedIn) {
+    // تسجيل خروج
+    localStorage.setItem("isLoggedIn", "false");
+    localStorage.removeItem("currentUserEmail");
+    updateLoginLogoutBtn();
+  } else {
+    // يوديه لصفحة تسجيل الدخول
+    window.location.href = "login.html";
+  }
+});
+
 
 
 
