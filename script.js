@@ -9,7 +9,7 @@ document.getElementById('next')?.addEventListener('click', () => { // إذا و�
     slides[current].classList.add('active'); // إضافة كلاس active للشريحة الجديدة
 });
 
-// زر السهم "السابق"
+// زر السهم "السابق" 
 document.getElementById('prev')?.addEventListener('click', () => { // إذا وُجد زر prev أضف له حدث عند الضغط
     slides[current].classList.remove('active'); // إزالة كلاس active من الشريحة الحالية
     current = (current - 1 + slides.length) % slides.length; // الانتقال للشريحة السابقة مع الدوران عند أول شريحة
